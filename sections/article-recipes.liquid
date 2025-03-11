@@ -315,13 +315,13 @@
                                     <a class="recipe-gallery">
                                         {{ image | strip }}
                                         {% assign alt_text = image | split: 'alt="' | last | split: '"' | first %}
-
-                                        <span class="d-block title test?">{{ alt_text }}</span>
-                                
+                        
+                                        <span class="d-block title">{{ alt_text }}</span>
                                     </a>
                                 </div>
                             {% endfor %}
                         {% endif %}
+                        
                       <!-- Method Gallery -->
                       {% if article.metafields["global"]["Method-Gallery"] %}
                               {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}

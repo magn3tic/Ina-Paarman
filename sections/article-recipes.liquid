@@ -309,18 +309,24 @@
 
                     <div class="recipe-details-slider">
                         {% if article.metafields["global"]["Test"] %} 
-                            {% assign images = article.metafields["global"]["Test"] | split: ',' %}
-                            {% for image in images %}
-                                <div class="slide">
-                                    <a class="recipe-gallery">
-                                        {{ image | strip }}
-                                        {% assign alt_text = image | split: 'alt="' | last | split: '"' | first %}
+                            {% assign raw_html = article.metafields["global"]["Test"] %}
+                            {% assign image_parts = raw_html | split: '<img ' %}
                         
-                                        <span class="d-block title">{{ alt_text }}</span>
-                                    </a>
-                                </div>
+                            {% for part in image_parts %}
+                                {% if part contains 'src="' %}
+                                    {% assign image_url = part | split: 'src="' | last | split: '"' | first %}
+                                    {% assign alt_text = part | split: 'alt="' | last | split: '"' | first %}
+                                    
+                                    <div class="slide">
+                                        <a class="recipe-gallery">
+                                            <img src="{{ image_url }}" alt="{{ alt_text }}" width="600" height="600">
+                                            <span class="d-block title">{{ alt_text }}</span>
+                                        </a>
+                                    </div>
+                                {% endif %}
                             {% endfor %}
                         {% endif %}
+                        
                         
                       <!-- Method Gallery -->
                       {% if article.metafields["global"]["Method-Gallery"] %}

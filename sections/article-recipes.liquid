@@ -313,7 +313,7 @@
                             {% for image in images %}
                                 <div class="slide">
                                     <a class="recipe-gallery">
-                                        <img src="{{ image | strip }}" alt="{{ image.alt }}" class="Test">
+                                        {{ image | strip }}
                                         <span class="d-block title">{{ article.metafields["global"]["Test"] }}</span>
                                     </a>
                                 </div>

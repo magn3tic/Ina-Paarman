@@ -308,6 +308,17 @@
                     </div>
 
                     <div class="recipe-details-slider">
+                        {% if article.metafields["global"]["test"] %} 
+                            {% assign images = article.metafields["global"]["test"] | split: ',' %}
+                            {% for image in images %}
+                                <div class="slide">
+                                    <a class="recipe-gallery">
+                                        <img src="{{ image | strip }}" alt="{{ image.alt }}" class="test">
+                                        <span class="d-none">{{ image.alt }}</span>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                       <!-- Method Gallery -->
                       {% if article.metafields["global"]["Method-Gallery"] %}
                               {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}

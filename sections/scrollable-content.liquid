@@ -1,0 +1,267 @@
+<!-- Content Start -->
+<section class="technical-content-area">
+    {% if section.settings.f_image %}
+        <img src="{{ section.settings.f_image | image_url }}" alt="{{ section.settings.f_image.alt | escape }}" class="technical-banner">
+    {% endif %}  
+
+    {% if section.settings.shape_image %}
+        <img src="{{ section.settings.shape_image | image_url }}" alt="image" class="story_shape_1">
+    {% endif %}  
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-5">
+                {% if section.settings.f_image %}
+                    <div class="content-img d-xxl-none sticky">
+                      <img src="{{ section.settings.f_image | image_url }}" alt="{{ section.settings.f_image.alt | escape }}" >
+                    </div>
+                {% endif %}  
+            </div>
+            <div class="col-md-8 col-sm-7">
+                <div class="content-text ps-lg-5">
+                    {% if section.settings.sub_heading != blank %}
+                        <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
+                    {% endif %}
+                    
+                    {% if section.settings.title != blank %}
+                        <h1 class="heading">{{ section.settings.title }}</h1>
+                    {% endif %}                  
+                  
+                    <hr />
+                    {% if section.settings.description != blank %}
+                    <div class="technical-info">
+                        {{ section.settings.description }}
+                    </div>
+                    {% endif %} 
+                      
+                    {% assign has_measurements = false %}
+                    
+                    {% for block in section.blocks %}
+                      {% if block.type == 'measurement' %}
+                        {% assign has_measurements = true %}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                    
+                    {% if has_measurements %}
+                    
+                    <hr>
+                    <div class="measure-table">
+                      {% if section.settings.mtitle != blank %}
+                          <h3 class="h2"><strong>{{ section.settings.mtitle }}</strong></h3>
+                      {% endif %}
+                                          
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Millilitre</th>
+                            <th>Cups / Spoons</th>
+                            <th>Fluid oz</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for block in section.blocks %}
+                            {% if block.type == 'measurement' %}
+                              <tr>
+                                <td>{{ block.settings.millilitres }}</td>
+                                <td>{{ block.settings.cups_spoons }}</td>
+                                <td>{{ block.settings.fluid_oz }}</td>
+                              </tr>
+                            {% endif %}
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                    {% endif %}
+
+                    {% assign has_faqs = false %}
+                    
+                    {% for block in section.blocks %}
+                      {% if block.type == 'faq' %}
+                        {% assign has_faqs = true %}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                    
+                    {% if has_faqs %}
+                    <hr>
+                      <div class="faqs_box faq_accordion">
+                        {% if section.settings.ftitle != blank %}
+                            <h3 class="h2"><strong>{{ section.settings.ftitle }}</strong></h3>
+                        {% endif %}                        
+                        <div class="accordion" id="accordionExample">
+                          {% for block in section.blocks %}
+                            {% if block.type == 'faq' %}
+                              <div class="accordion-item">
+                                <div class="accordion-header" id="heading{{ forloop.index }}">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}" aria-expanded="false" aria-controls="collapse{{ forloop.index }}">
+                                    {{ block.settings.faq_question }}
+                                    <span class="plus-minus"></span>
+                                  </button>
+                                </div>
+                                <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    {{ block.settings.faq_answer }}
+                                  </div>
+                                </div>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% endif %}
+
+                  {% unless section.settings.btn_primary_url == blank %}
+                        <div class="d-inline-flex mt-5">
+                          {% unless section.settings.btn_primary_text == blank %}
+                            <a 
+                              class="cta_btn btn_default" 
+                              href="{{ section.settings.btn_primary_url }}">
+                              {{ section.settings.btn_primary_text }}
+                            </a>
+                          {% endunless %}
+                          {% unless section.settings.btn_secondary_url == blank %}
+                            <a 
+                              class="cta_btn btn_white ms-3" 
+                              href="{{ section.settings.btn_secondary_url }}">
+                              {{ section.settings.btn_secondary_text }}
+                            </a>
+                          {% endunless %}
+                        </div>
+                      {% endunless %}                  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+{% schema %}
+{
+  "name": "Scrollable Content",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "shape_image",
+      "label": "Shape Image"
+    },       
+    {
+      "type": "image_picker",
+      "id": "f_image",
+      "label": "Main Image"
+    },    
+    {
+      "type": "text",
+      "label": "Tagline",
+      "id": "sub_heading",
+      "default": "Handy Alternatives —"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "title",
+      "default": "Alcohol Substitution"
+    },
+    {
+      "type": "richtext",
+      "label": "Content",
+      "id": "description"
+    },
+    {
+      "type": "header",
+      "content": "TABLE",
+    },
+    {
+      "type": "text",
+      "label": "Table Title",
+      "id": "mtitle"
+    },
+    {
+      "type": "header",
+      "content": "ACCORDIONS",
+    },
+    {
+      "type": "text",
+      "label": "Accordion Title",
+      "id": "ftitle"
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "btn_primary_text",
+      "label": "Button text",
+      "default": "Primary button",
+      "info": "Leave empty to disable"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "btn_secondary_text",
+      "label": "Button text",
+      "default": "Secondary button",
+      "info": "Leave empty to disable"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_url",
+      "label": "Button URL"
+    }    
+  ],
+  "blocks": [
+    {
+      "type": "measurement",
+      "name": "Title Item",
+      "settings": [
+        {
+          "type": "number",
+          "id": "millilitres",
+          "label": "Millilitres"
+        },
+        {
+          "type": "text",
+          "id": "cups_spoons",
+          "label": "Cups / Spoons"
+        },
+        {
+          "type": "number",
+          "id": "fluid_oz",
+          "label": "Fluid Ounces"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_question",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_answer",
+          "label": "Content"
+        }
+      ]
+    }
+  ],  
+  "presets": [
+    {
+      "name": "Scrollable Content",
+      "category": "Custom"
+    }
+  ]
+}  
+{% endschema %}

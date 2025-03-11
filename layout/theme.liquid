@@ -1,0 +1,97 @@
+<!doctype html>
+<html 
+  lang="{{ request.locale.iso_code }}"
+  class="{% if request.design_mode %}design-mode{% endif %}">
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+
+  {%- unless settings.favicon == blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
+  {%- endunless -%}
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KH7XJXJP');</script>
+<!-- End Google Tag Manager -->
+  <meta name="google-site-verification" content="-Cw1X_0oNJ3wkiQUtoGhzeliW_B2LvV6EusafGT0h7U" />
+  
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% render 'meta-tags' %}
+
+  {{ content_for_header }}
+
+  {% render 'styles-scripts' %}
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select all anchor tags
+    var links = document.querySelectorAll('a');
+
+    links.forEach(function (link) {
+      // Check if the link is external
+      if (link.hostname !== window.location.hostname) {
+        // Set the target to open in a new tab
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer'); // Security best practice
+      }
+    });
+  });
+</script>
+
+
+
+</head>
+
+<body class="{{ request.page_type | prepend: 'page-type-' }} {{ template }}">
+  <a class="visually-hidden-focusable" href="#main">
+    {{ 'general.accessibility.skip_content' | t }}
+  </a>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH7XJXJP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+  <div class="main-wrapper">
+    
+    <div id="header-group" class="sticky-top">
+      {% sections 'header-group' %}
+    </div>
+  
+    <main id="main">
+      {{ content_for_layout }}
+    </main>
+  
+    <div id="footer-group">
+      {% sections 'footer-group' %}
+    </div>
+  </div>
+
+  {% liquid
+    render 'offcanvas-cart'
+    render 'offcanvas-search'
+    render 'modal-localization'
+    render 'rich-snippets'
+  %}
+</body>
+</html>
+    

@@ -1,0 +1,167 @@
+{% if section.settings.header_style == 'style2' %}
+<section class="recipes-box-area-v3 pt-0">
+
+  {% if section.settings.shape_image != blank %}
+    <img src="{{ section.settings.shape_image | image_url }}" alt="Shape Image" class="recipes_shape_v3">
+  {% endif %}
+  
+{% else %}
+<section class="recipes-box-area">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#FDF0DD">
+      <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
+  </svg>
+
+  {% if section.settings.shape_image != blank %}
+    <img src="{{ section.settings.shape_image | image_url }}" alt="Shape Image" class="recipes_shape">
+  {% endif %}
+  
+{% endif %}
+  
+  <div class="container">
+    <div class="row align-items-lg-center">
+      <div class="col-sm-6">
+        <div class="text-sm-start text-center">
+
+{% if section.settings.header_style == 'style2' %}
+
+          {% if section.settings.sub_heading != blank %}
+            <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
+          {% endif %}
+          
+          {% if section.settings.heading != blank %}
+            <h3 class="heading">{{ section.settings.heading }}</h3>
+          {% endif %}  
+  
+{% else %}
+          {% if section.settings.sub_heading != blank %}
+            <span class="d-block text_light sub_heading">{{ section.settings.sub_heading }}</span>
+          {% endif %}
+          
+          {% if section.settings.heading != blank %}
+            <h3 class="heading text_light">{{ section.settings.heading }}</h3>
+          {% endif %}
+  
+{% endif %}
+  
+          
+
+        </div>
+      </div>
+      
+      <div class="col-sm-6">
+        <div class="content text-sm-start text-center ps-lg-5">
+          {% if section.settings.paragraph != blank %}
+            <p>{{ section.settings.paragraph }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="three-column-slider">
+      {% for block in section.blocks %}
+        <div class="slide">
+          <a href="{{ block.settings.slide_link }}" class="recipe-box">
+            {% if block.settings.slide_image != blank %}
+              <img src="{{ block.settings.slide_image | image_url }}" alt="{{ block.settings.slide_image.alt | escape }}" width = "402" height="530" >
+            {% endif %}
+            
+            {% if block.settings.title != blank %}
+              <span class="d-block title">{{ block.settings.title }}</span>
+            {% endif %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center section_action">
+      {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="cta_btn btn_default">{{ section.settings.button_text }}
+          <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon">
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Recipe Box",
+  "settings": [
+    {
+      "type": "select",
+      "id": "header_style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "style1",
+          "label": "Style 1"
+        },
+        {
+          "value": "style2",
+          "label": "Style 2"
+        }
+      ],
+      "default": "style1"
+    },    
+    {
+      "type": "image_picker",
+      "id": "shape_image",
+      "label": "Shape Image"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Tagline"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph",
+      "label": "Intro Text"
+    },
+       {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "recipe_slide",
+      "name": "Recipe Box",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recipe Box",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

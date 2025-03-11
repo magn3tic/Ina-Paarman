@@ -1,0 +1,120 @@
+<!-- Content Start -->
+{% if section.settings.shape_image != blank %}
+<section class="content-area image-text-area pb-0">
+{% else %}
+<section class="content-area image-text-area pt-0">
+{% endif %}
+  
+  <!-- Background Shape Image -->
+  {% if section.settings.shape_image != blank %}
+    <img src="{{ section.settings.shape_image | image_url }}" alt="Background Shape" class="shape_bg">
+  {% endif %}
+
+  <div class="container">
+    <div class="image-text style1 {% if section.settings.image_position == 'right' %} image-right {% endif %}">
+      
+      <!-- Background Image for desktop -->
+      <div class="bg_image d-none d-lg-block" 
+           {% if section.settings.bg_image != blank %}
+             style="background: url({{ section.settings.bg_image | image_url  }}) no-repeat scroll 0 0/cover"
+           {% endif %}>
+      </div>
+
+      <div class="row">
+        
+        <!-- Switch position based on checkbox -->
+        <div class="col-sm-6 {% if section.settings.image_position == 'right' %} order-sm-2 {% endif %}">
+          <!-- Mobile Image -->
+          <div class="content-img d-lg-none">
+            {% if section.settings.bg_image != blank %}
+              <img src="{{ section.settings.bg_image | image_url }}" alt="{{ section.settings.bg_image.alt | escape }}" />
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="content-text">
+            {% if section.settings.sub_heading != blank %}
+              <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
+            {% endif %}
+
+            {% if section.settings.heading != blank %}
+              <h2 class="heading">{{ section.settings.heading }}</h2>
+            {% endif %}
+
+            {% if section.settings.rich_content != blank %}
+              <p>{{ section.settings.rich_content }}</p>
+            {% endif %}
+
+            {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+              <a href="{{ section.settings.button_link }}" class="cta_btn btn_default">
+                {{ section.settings.button_text }}
+                <img src="{{ 'arrow-right-white.svg' | file_url }}" alt="icon">
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Content End -->
+
+{% schema %}
+{
+  "name": "New Recipes",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "shape_image",
+      "label": "Sketch"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Tagline",
+      "default": "(Month) (Year) -"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "New Recipes"
+    },
+    {
+      "type": "richtext",
+      "id": "rich_content",
+      "label": "Content",
+      "default": "<p>Aside from being the last stretch of winter, August is National Women’s Month in South Africa...</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_position",
+      "label": "Switch Image",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Recipes",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

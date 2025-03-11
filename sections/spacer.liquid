@@ -1,0 +1,25 @@
+{% schema %}
+{
+  "name": "Spacer",
+  "settings": [
+    {
+      "type": "range",
+      "id": "spacer_height",
+      "label": "Spacer Height",
+      "default": 20,
+      "min": 10,
+      "max": 300,
+      "step": 10,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spacer",
+      "category": "Custom"
+    }
+  ]  
+}
+{% endschema %}
+
+<div class="spacer" style="height: {{ section.settings.spacer_height }}px;"></div>

@@ -1,0 +1,261 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<section class="recipe-filter banner-cta-area py-0">
+  <div class="container">
+    <div class="inner">
+      <div class="select-wrap">
+
+          {% if section.settings.mm_link %}
+            <div class="select-container" id="select1">
+              <div class="select-button">Filter by Recipe Category</div>
+              <ul class="options">
+                {% for link in linklists[section.settings.mm_link].links %}
+                  <li>
+                    <!-- Extract the handle from the link URL -->
+                    {% assign link_handle = link.url | split: '/' | last %}
+          
+                    <!-- Fetch the page dynamically using the extracted handle -->
+                    {% assign target_page = pages[link_handle] %}
+          
+                    <!-- Check if the target page exists and has the recipe_type metafield -->
+                    {% if target_page and target_page.metafields.custom.recipe_type %}
+                      <a href="{{ link.url }}" class="recipe-link" 
+                         data-handle="{{ link_handle }}" 
+                         data-recipetype="{{ target_page.metafields.custom.recipe_type | downcase }}">
+                        {{ link.title }} <span id="total-posts-count-{{ link_handle }}"></span>
+                      </a>
+                    {% else %}
+                      <p>No recipe type defined for this page.</p>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          
+            <script>
+              $(document).ready(function() {
+                $('.recipe-link').each(function() {
+                  var linkHandle = $(this).data('handle');  
+                  var recipetype = $(this).data('recipetype'); 
+          
+                  var formattedRecipetype = recipetype
+                    .toLowerCase()                         
+                    .replace(/[^a-z0-9\s-]/g, '')            
+                    .replace(/\s+/g, '-')                    
+                    .replace(/-+/g, '-');                    
+          
+                  $(this).attr('data-recipetype', formattedRecipetype);
+          
+                  var tagUrl = '/blogs/all-recipes/tagged/' + formattedRecipetype;
+          
+                  function countBlogPosts(handle) {
+                    var totalPosts = 0;
+                    var maxPages = 10;  
+                    var delay = 200;   
+          
+                    for (let i = 1; i <= maxPages; i++) {
+                      setTimeout(function() {
+                        $.get(tagUrl + '?page=' + i, function(response) {
+                          var html = $(response);
+                          var posts = html.find('.recipe-box-alt'); 
+                          totalPosts += posts.length; 
+          
+                          if (i === maxPages) {
+                            $('#total-posts-count-' + handle).text('(' + totalPosts + ')');
+                          }
+                        });
+                      }, i * delay); 
+                    }
+                  }
+          
+                  countBlogPosts(linkHandle);
+                });
+              });
+            </script>
+          
+          {% endif %}
+
+          {% if section.settings.mmm_link %}
+            <div class="select-container" id="select2">
+              <div class="select-button">Filter by Recipe Category</div>
+              <ul class="options">
+                {% for link in linklists[section.settings.mmm_link].links %}
+                  <li>
+                    <!-- Extract the handle from the link URL -->
+                    {% assign link_handle = link.url | split: '/' | last %}
+          
+                    <!-- Fetch the page dynamically using the extracted handle -->
+                    {% assign target_page = pages[link_handle] %}
+          
+                    <!-- Check if the target page exists and has the recipe_type metafield -->
+                    {% if target_page and target_page.metafields.custom.recipe_type %}
+                      <a href="{{ link.url }}" class="recipe-link" 
+                         data-handle="{{ link_handle }}" 
+                         data-recipetype="{{ target_page.metafields.custom.recipe_type | downcase }}">
+                        {{ link.title }} <span id="total-posts-count-{{ link_handle }}"></span>
+                      </a>
+                    {% else %}
+                      <p>No recipe type defined for this page.</p>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          
+            <script>
+              $(document).ready(function() {
+                $('.recipe-link').each(function() {
+                  var linkHandle = $(this).data('handle');  
+                  var recipetype = $(this).data('recipetype'); 
+          
+                  var formattedRecipetype = recipetype
+                    .toLowerCase()                         
+                    .replace(/[^a-z0-9\s-]/g, '')            
+                    .replace(/\s+/g, '-')                    
+                    .replace(/-+/g, '-');                    
+          
+                  $(this).attr('data-recipetype', formattedRecipetype);
+          
+                  var tagUrl = '/blogs/all-recipes/tagged/' + formattedRecipetype;
+          
+                  function countBlogPosts(handle) {
+                    var totalPosts = 0;
+                    var maxPages = 10;  
+                    var delay = 200;   
+          
+                    for (let i = 1; i <= maxPages; i++) {
+                      setTimeout(function() {
+                        $.get(tagUrl + '?page=' + i, function(response) {
+                          var html = $(response);
+                          var posts = html.find('.recipe-box-alt'); 
+                          totalPosts += posts.length; 
+          
+                          if (i === maxPages) {
+                            $('#total-posts-count-' + handle).text('(' + totalPosts + ')');
+                          }
+                        });
+                      }, i * delay); 
+                    }
+                  }
+          
+                  countBlogPosts(linkHandle);
+                });
+              });
+            </script>
+          
+          {% endif %}        
+
+        </div>
+
+        <div class="search-wrap-recipes">
+            <form action="/search" method="get" class="search-form">
+              <input type="text" name="q" placeholder="Search..." class="search-input" aria-label="Search" />
+              <button type="submit" class="search-button"><svg height=800px version=1.1 viewBox="0 0 32 32"width=800px xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink><defs></defs><g fill=none id=Page-1 sketch:type=MSPage fill-rule=evenodd stroke=none stroke-width=1><g fill=#000000 id=Icon-Set sketch:type=MSLayerGroup transform="translate(-256.000000, -1139.000000)"><path d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z"id=search sketch:type=MSShapeGroup></path></g></g></svg></button>
+            </form>  
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+
+  const selectContainers = document.querySelectorAll('.select-container');
+
+  selectContainers.forEach(container => {
+    const button = container.querySelector('.select-button');
+    button.addEventListener('click', () => {
+      container.classList.toggle('open');
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    selectContainers.forEach(container => {
+      if (!container.contains(event.target)) {
+        container.classList.remove('open');
+      }
+    });
+  });
+</script>
+
+
+<section class="content-area receipe_list pt-0 ">
+    <div class="container">
+        <div class="row justify-content-center" id="blog-container">
+         
+        </div>
+  </div>
+</section>
+
+
+<!-- Use Liquid to output the metafield values into JavaScript variables -->
+<script>
+var recipetype = "{{ page.metafields.custom.recipe_type | downcase }}"
+    .replace(/[^a-z0-9\s-]/g, '')  
+    .replace(/\s+/g, '-')           
+    .replace(/-+/g, '-');           
+  
+</script>
+
+<script>
+$(document).ready(function() {
+  // Construct the tag URL with the formatted month and year
+  var tagUrl = `/blogs/all-recipes/tagged/${recipetype}`;
+
+  function fetchBlogPosts(pageNumber) {
+    jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
+      var html = $(response);
+
+      html.find('.recipe-box-alt').each(function() {
+        var postUrl = $(this).attr('href');
+        var postImage = $(this).find('img').attr('src');
+        var postTitle = $(this).find('.title').text();
+
+        var postElement = $('<a>')
+          .attr('href', postUrl)
+          .addClass('recipe-box-alt')
+          .append($('<img>').attr('src', postImage).attr('alt', postTitle))
+          .append($('<span>').addClass('d-block title').text(postTitle));
+
+        var wrappedElement = $('<div>').addClass('col-md-3 col-6').append(postElement);
+
+        $('#blog-container').append(wrappedElement);
+      });
+    });
+  }
+
+  for (let i = 1; i <= 25; i++) {
+    fetchBlogPosts(i);
+  }
+});
+
+</script>
+
+
+{% schema %}
+  
+{
+  "name": "Recipe Type",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Filter",
+    },    
+    {
+      "type": "link_list",
+      "id": "mm_link",
+      "label": "Recipe Types"
+    },
+    {
+      "type": "link_list",
+      "id": "mmm_link",
+      "label": "Occasion"
+    }      
+  ],
+  "presets": [
+    {
+      "name": "Recipe Type"
+    }
+  ]
+}
+{% endschema %}

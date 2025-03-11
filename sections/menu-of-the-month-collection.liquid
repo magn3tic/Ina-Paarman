@@ -1,0 +1,101 @@
+<!-- Content Start -->
+<section class="recipe-banner-area  menu-of-the-month-collection  alt " style="background: url(https://cdn.shopify.com/s/files/1/0583/8415/4690/files/menu-of-the-month-collection-banner.png) no-repeat scroll top center/cover">
+    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
+</section>
+<!-- Content End -->
+
+<!-- content Start -->
+<section class="banner-cta-area py-0">
+    <div class="container">
+        <div class="px-lg-5">
+            <div class="inner text-center">
+
+                {% assign month = page.metafields.custom.menu_of_the_month__month %}
+                {% assign year = page.metafields.custom.menu_of_the_month_year %}
+                
+                {% if month and year %}
+                    <span class="d-block text_white sub_heading">{{ month }} {{ year }} — new recipes</span>
+                {% endif %}                     
+                <h1 class="heading text_white">{{ page.title }}</h1>
+                <ul class="banner-social">
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/fb-white.svg" alt="Share on Facebook"></a></li>
+                    <li><a href="https://www.instagram.com/inapaarmanskitchen" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-white.svg" alt="Share on Instagram"></a></li>
+                    <li><a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/x-white.svg" alt="Share on Twitter"></a></li>
+                    <li><a href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-white.svg" alt="Share on Pinterest"></a></li>
+                    <li><a href="mailto:?subject=Check out this recipe&body={{ shop.url }}{{ page.url }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-white.svg" alt="Share via Email"></a></li>
+                </ul>                      
+            </div>
+        </div>
+    </div>
+</section>
+<!-- content End -->
+
+<!-- Content Start -->
+<section class="recipes-listing-area pt_40">
+    <div class="container">
+        <div class="px-lg-5">
+            <div class="row" id="blog-container">{{ page.content }}</div>        
+              
+                <div class="listing_actions mt-5">
+                    <div class="text-center">
+                        <a href="{{ shop.url }}/blogs/all-recipes" class="cta_btn btn_border_default">all recipes</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+<!-- Use Liquid to output the metafield values into JavaScript variables -->
+<script>
+  var month = "{{ page.metafields.custom.menu_of_the_month__month | downcase }}";
+  var year = "{{ page.metafields.custom.menu_of_the_month_year }}";
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Construct the tag URL with the formatted month and year
+  var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
+
+  function fetchBlogPosts(pageNumber) {
+    jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
+      var html = $(response);
+
+      html.find('.recipe-box-alt').each(function() {
+        var postUrl = $(this).attr('href');
+        var postImage = $(this).find('img').attr('src');
+        var postTitle = $(this).find('.title').text();
+
+        var postElement = $('<a>')
+          .attr('href', postUrl)
+          .addClass('recipe-box-alt')
+          .append($('<img>').attr('src', postImage).attr('alt', postTitle))
+          .append($('<span>').addClass('d-block title').text(postTitle));
+
+        var wrappedElement = $('<div>').addClass('col-md-3 col-6').append(postElement);
+
+        $('#blog-container').append(wrappedElement);
+      });
+    });
+  }
+
+  for (let i = 1; i <= 25; i++) {
+    fetchBlogPosts(i);
+  }
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "Menu of the Month",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Menu of the Month",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

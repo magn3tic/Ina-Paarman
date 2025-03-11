@@ -1,0 +1,139 @@
+<!-- Content Start -->
+<section class="map-area pt-0">
+    <svg class="bottom_shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#064956">
+        <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
+    </svg>
+    <div class="container">
+        <div class="map">
+            {% if section.settings.map_iframe_code != blank %}
+                <div class="map-iframe">
+                    {{ section.settings.map_iframe_code | raw }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="content-text text-sm-start text-center pe-lg-5">
+                    {% if section.settings.visit_heading != blank %}
+                        <span class="d-block sub_heading">{{ section.settings.visit_heading }}</span>
+                    {% endif %}
+                    {% if section.settings.factory_shop_title != blank %}
+                        <h3 class="heading">{{ section.settings.factory_shop_title }}</h3>
+                    {% endif %}
+                    {% if section.settings.factory_shop_description != blank %}
+                        <p>{{ section.settings.factory_shop_description }}</p>
+                    {% endif %}
+                    {% if section.settings.ct_cta_link != blank and section.settings.ct_cta_text != blank %}
+                        <a href="{{ section.settings.ct_cta_link }}" class="cta_btn btn_default">{{ section.settings.ct_cta_text }} <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon">
+</a>
+                    {% endif %}                  
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="map-info-inner">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            {% if section.settings.phone_number != blank %}
+                                <div class="map-widget">
+                                    <span class="d-block title">Contact Number</span>
+                                    <a href="tel:{{ section.settings.phone_number }}">{{ section.settings.phone_number }}</a>
+                                </div>
+                            {% endif %}
+                            {% if section.settings.email_address != blank %}
+                                <div class="map-widget email">
+                                    <span class="d-block title">E-Mail Address</span>
+                                    <a href="mailto:{{ section.settings.email_address }}">{{ section.settings.email_address }}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-lg-4">
+                            {% if section.settings.address != blank %}
+                                <div class="map-widget">
+                                    <span class="d-block title">Address</span>
+                                    {{ section.settings.address }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-lg-4">
+                            {% if section.settings.business_hours != blank %}
+                                <div class="map-widget">
+                                    <span class="d-block title">Business Hours</span>
+                                    {{ section.settings.business_hours }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+{% schema %}
+{
+  "name": "Contact Info",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "map_iframe_code",
+      "label": "Map Embed Code"
+    },    
+    {
+      "type": "text",
+      "id": "visit_heading",
+      "label": "Tagline",
+      "default": "Visit -"
+    },
+    {
+      "type": "text",
+      "id": "factory_shop_title",
+      "label": "Heading",
+      "default": "Our Factory Shop"
+    },
+    {
+      "type": "textarea",
+      "id": "factory_shop_description",
+      "label": "Intro",
+      "default": "Stop by our factory shop when you’re in the area to stock up on all your Ina Paarman favourites at reduced prices."
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Contact Number",
+      "default": "+27 (0)21 705 6440/1"
+    },
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "E-Mail Address"
+    },
+    {
+      "type": "richtext",
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "type": "richtext",
+      "id": "business_hours",
+      "label": "Business Hours"
+    },
+    {
+      "type": "text",
+      "id": "ct_cta_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "ct_cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Info",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,124 @@
+<div
+  id="richtext-{{ section.id }}" 
+  class="
+    richtext  
+    {{ section.settings.text_align }}
+  ">
+  <div 
+    class="container" 
+    style="max-width: {{ section.settings.container_max_width }}px;">
+    {% unless section.settings.title == blank %}
+      <h2 class="title mb-0">
+        {{ section.settings.title }}
+      </h2>
+    {% endunless %}
+    {% unless section.settings.description == blank %}
+      <div class="description rte mt-3 mb-0">
+        {{ section.settings.description }}
+      </div>
+    {% endunless %}
+    {% unless section.settings.btn_primary_text == blank %}
+      <div class="d-inline-flex mx-n2 mt-3">
+        {% unless section.settings.btn_primary_text == blank %}
+          <a 
+            class="cta_btn btn_default m-2" 
+            href="{{ section.settings.btn_primary_url }}">
+            {{ section.settings.btn_primary_text }}
+          </a>
+        {% endunless %}
+        {% unless section.settings.btn_secondary_text == blank %}
+          <a 
+            class="cta_btn btn_white m-2" 
+            href="{{ section.settings.btn_secondary_url }}">
+            {{ section.settings.btn_secondary_text }}
+          </a>
+        {% endunless %}
+      </div>
+    {% endunless %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Richtext",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "text",
+      "id": "container_max_width",
+      "label": "Container max-width (px)",
+      "info": "Leave empty to use the global container width",
+      "default": "900"
+    },
+
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text align",
+      "default": "text-center",
+      "options": [
+        { "value": "text-start", "label": "Left" },
+        { "value": "text-center", "label": "Center" },
+        { "value": "text-end", "label": "Right" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Richtext"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description (optional)",
+      "default": "<p>Add on optional description for this section</p>"
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "btn_primary_text",
+      "label": "Button text",
+      "default": "Primary button",
+      "info": "Leave empty to disable"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "btn_secondary_text",
+      "label": "Button text",
+      "default": "Secondary button",
+      "info": "Leave empty to disable"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Richtext"
+    }
+  ]
+}
+{% endschema %}

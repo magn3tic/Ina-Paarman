@@ -306,10 +306,10 @@
                           {% endif %}     
                         </div>
                     </div>
-
+                    <!-- Method Gallery With Text-->
                     <div class="recipe-details-slider">
-                        {% if article.metafields["global"]["Test"] %} 
-                            {% assign raw_html = article.metafields["global"]["Test"] %}
+                        {% if article.metafields["global"]["Method-Gallery-With-Text"] %} 
+                            {% assign raw_html = article.metafields["global"]["Method-Gallery-With-Text"] %}
                             {% assign image_parts = raw_html | split: '<img ' %}
                         
                             {% for part in image_parts %}

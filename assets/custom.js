@@ -211,7 +211,6 @@
         $('.recipe-details-slider').slick({
             dots: true,
             arrows: false,
-            infinite: true,
             speed: 300,
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -244,7 +243,6 @@
                         slidesToShow: 2,
                         dots: true,
                         centerMode: false,
-                        infinite: true,
                     }
                 },
                 {
@@ -253,7 +251,6 @@
                         slidesToShow: 1,
                         dots: true,
                         centerMode: true,
-                        infinite: true,
                     }
                 },
                 {
@@ -262,7 +259,6 @@
                         slidesToShow: 1,
                         dots: true,
                         centerMode: true,
-                        infinite: true,
                     }
                 }
 

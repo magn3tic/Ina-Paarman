@@ -212,6 +212,7 @@
             dots: true,
             arrows: false,
             speed: 300,
+            infinite: false,
             slidesToShow: 3,
             slidesToScroll: 1,
             centerMode: false,

@@ -308,6 +308,27 @@
                     </div>
 
                     <div class="recipe-details-slider">
+                       <!-- Method Gallery With Text-->
+               
+                        {% if article.metafields["global"]["Method-Gallery-With-Text"] %} 
+                            {% assign raw_html = article.metafields["global"]["Method-Gallery-With-Text"] %}
+                            {% assign image_parts = raw_html | split: '<img ' %}
+                        
+                            {% for part in image_parts %}
+                                {% if part contains 'src="' %}
+                                    {% assign image_url = part | split: 'src="' | last | split: '"' | first %}
+                                    {% assign alt_text = part | split: 'alt="' | last | split: '"' | first %}
+                                    
+                                    <div class="slide">
+                                        <a class="recipe-gallery">
+                                            <img src="{{ image_url }}" alt="{{ alt_text }}" width="600" height="600">
+                                            <span class="d-block title">{{ alt_text }}</span>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        
                       <!-- Method Gallery -->
                       {% if article.metafields["global"]["Method-Gallery"] %}
                               {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}

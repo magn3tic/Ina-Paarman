@@ -4905,5 +4905,6 @@ body[class*="article.recipes"] .recipe-banner-area {
   list-style: disc;
 }
 .small-icons{ 
-  width:auto;
+  width:30px;
+  height:auto;
     }

@@ -4920,6 +4920,6 @@ body[class*="article.recipes"] .recipe-banner-area {
     }
 .recipe-img{
   border-top:solid #fff 50px;
-  border-left:solid #fff 50px;
+  border-left:solid #fff 50px; 
   border-bottom:solid #fff 50px
 }

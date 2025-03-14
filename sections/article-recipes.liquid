@@ -22,9 +22,9 @@
                     <div class="half_bg d-none d-lg-block" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover"></div>
                     {% endif %}                            
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 pt-lg-5 pl-lg-5 pb-lg-5">
                             {% if article.image %}
-                            <div class="content-img d-lg-none pt-lg-5 pl-lg-5 pb-lg-5">
+                            <div class="content-img d-lg-none">
                                 <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
                             </div>                                      
                             {% endif %}                                    

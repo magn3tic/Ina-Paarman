@@ -4918,3 +4918,8 @@ body[class*="article.recipes"] .recipe-banner-area {
   width:30px;
   height:auto;
     }
+.recipe-img{
+  border-top:solid #fff 50px;
+  border-left:solid #fff 50px;
+  border-bottom:solid #fff 50px
+}

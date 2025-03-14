@@ -3041,6 +3041,9 @@ blockquote .date_author {
 
 @media(max-width:991px) {
 
+  .recipe-banner-area{
+    padding-top:100px;
+    }
 	.address-info {
 		display: flex
 	}

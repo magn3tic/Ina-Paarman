@@ -19,8 +19,10 @@
             <div class="col-lg-11 mx-auto">
                 <div class="recipe-promo-inner">
                     {% if article.image %}
-                    <div class="half_bg d-none d-lg-block mt-lg-5 pl-lg-5 mb-lg-5" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover"></div>
-                    {% endif %}                            
+                      <div class = "pt-lg-5 pl-lg-5 mb-lg-5">
+                    <div class="half_bg d-none d-lg-block" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover"></div>
+                      </div>
+                        {% endif %}                            
                     <div class="row">
                         <div class="col-sm-6">
                             {% if article.image %}

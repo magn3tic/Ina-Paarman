@@ -3061,9 +3061,13 @@ blockquote .date_author {
 	}
 
 
-	.heading, .recipe-heading {
+	.heading, {
 		font-size: 40px;
 	}
+    .recipe-header{
+    margin: 20px 0;
+    font-size: 40px;
+  }
 
 	section,
 	.section {

@@ -5,10 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-9 mx-auto">
-                <div class="text-center">
-                    <h1 class="heading text_white">{{ article.title }}</h1>
-                    {{ article.excerpt }}
-                </div>
+                
             </div>
         </div>
     </div>
@@ -34,6 +31,10 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="content-text">
+                             <div class="text-center">
+                                <h1 class="heading">{{ article.title }}</h1>
+                                  {{ article.excerpt }}
+                                </div>
                                 <ul class="promo-list">
                                     {% if article.metafields["global"]["Makes"] %}
                                     <li>

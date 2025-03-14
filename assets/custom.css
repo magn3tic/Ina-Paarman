@@ -3061,7 +3061,7 @@ blockquote .date_author {
 	}
 
 
-	.heading {
+	.heading, .small-heading {
 		font-size: 40px;
 	}
 

@@ -1,6 +1,6 @@
 <!-- Content Start -->
 <section class="recipe-banner-area ">
-    <div class="recipe-banner-bg" style="background: url({{ article.image | image_url }}) no-repeat scroll top center/cover;max-height:580px"></div>
+    <div class="recipe-banner-bg" style="background: url({{ article.image | image_url }}) no-repeat scroll top center/cover"></div>
     <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
     <div class="container">
         <div class="row">
@@ -20,7 +20,7 @@
                 <div class="recipe-promo-inner">
                     {% if article.image %}
                       <div class = "t-lg-5 pl-lg-5 mb-lg-5 h-100 w-100">
-                    <div class="half_bg d-none d-lg-block recipe-img" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover"></div>
+                    <div class="half_bg d-none d-lg-block recipe-img" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover;max-height:580px"></div>
                       </div>
                         {% endif %}                            
                     <div class="row">

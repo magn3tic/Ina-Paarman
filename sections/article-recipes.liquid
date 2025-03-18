@@ -20,7 +20,7 @@
                 <div class="recipe-promo-inner">
                     {% if article.image %}
                       <div class = "t-lg-5 pl-lg-5 mb-lg-5 h-100 w-100">
-                    <div class="half_bg d-none d-lg-block recipe-img" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover;height:41vw"></div>
+                    <div class="half_bg d-none d-lg-block recipe-img" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover;height:41vw;max-width:580px;max-height:580px"></div>
                       </div>
                         {% endif %}                            
                     <div class="row">

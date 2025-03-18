@@ -1,0 +1,121 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_products_UP83Ji": {
+      "type": "collection-products",
+      "settings": {
+        "limit": 50
+      }
+    },
+    "inas_menu_of_the_month_kizHUN": {
+      "type": "inas-menu-of-the-month",
+      "settings": {
+        "bg_image": "shopify://shop_images/Menu-Of-The-Month-November.jpg",
+        "sub_heading": "November 2024 -",
+        "heading": "New Recipes",
+        "rich_content": "<p><em>\"Dear Diamonds, we all know who’s really a girl’s best friend. Sincerely, Chocolate” – Anonymous</em></p><p><br/>November is all about festive prep with recipes like our Carrot Cake Rusks with Pecans, Easy Cheese Scones, and Basic Mince Mix.</p><p>These wholesome staples will not only help you beat the holiday chaos, but also ensure you and your guests are eating well during the season of indulgence.</p>",
+        "button_text": "Discover",
+        "button_link": "shopify://pages/recipes-menu-of-the-month",
+        "image_position": false
+      }
+    },
+    "recipe_box_f49Ykd": {
+      "type": "recipe-box",
+      "blocks": {
+        "recipe_slide_W48QNd": {
+          "type": "recipe_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Whats-For-Supper.jpg",
+            "title": "What’s for Supper",
+            "slide_link": "shopify://pages/recipes-whats-for-supper"
+          }
+        },
+        "recipe_slide_tHDpxK": {
+          "type": "recipe_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Party-Ideas.jpg",
+            "title": "Party Ideas",
+            "slide_link": "shopify://pages/recipes-party-ideas"
+          }
+        },
+        "recipe_slide_Vj8Qcp": {
+          "type": "recipe_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Vegetarian.jpg",
+            "title": "Vegetarian",
+            "slide_link": "shopify://pages/recipes-vegetarian"
+          }
+        }
+      },
+      "block_order": [
+        "recipe_slide_W48QNd",
+        "recipe_slide_tHDpxK",
+        "recipe_slide_Vj8Qcp"
+      ],
+      "settings": {
+        "header_style": "style1",
+        "sub_heading": "Cooking -",
+        "heading": "Recipes for All Tastes & Occasions",
+        "paragraph": "Cooking for a vegetarian or vegan, preparing for a birthday party, or needing tasty braai ideas and inspiration for imaginative sides? You will find just what you need in Ina Paarman’s Kitchen recipe library: recipes that cater to all skill levels, taste preferences, and time and budget constraints.",
+        "button_text": "Explore All",
+        "button_link": "shopify://blogs/all-recipes"
+      }
+    },
+    "reviews_tMk3Hn": {
+      "type": "Reviews",
+      "blocks": {
+        "review_block_UBThGr": {
+          "type": "review_block",
+          "settings": {
+            "review_text": "This book annoys me. I have just one copy, and I cannot decide whether it should be kept on the coffee table, by the stove, or by my bed. It is that good.",
+            "reviewer_name": "John Fraser",
+            "review_source": "Business Day"
+          }
+        },
+        "review_block_H8EPHN": {
+          "type": "review_block",
+          "settings": {
+            "review_text": "The perfect present for any foodie, both young and old.",
+            "reviewer_name": "Sandy Norman",
+            "review_source": "Food & Home"
+          }
+        },
+        "review_block_8HDQKY": {
+          "type": "review_block",
+          "settings": {
+            "review_text": "For every one of us who does cook, sometimes we forget there are 10 who don’t know how. [Ina] Paarman has included some step-by-step instructions with photographs in this book.",
+            "reviewer_name": "Bianca Coleman",
+            "review_source": "Daily Maverick"
+          }
+        }
+      },
+      "block_order": [
+        "review_block_UBThGr",
+        "review_block_H8EPHN",
+        "review_block_8HDQKY"
+      ],
+      "settings": {
+        "header_style": "style1",
+        "review_bg_image": "shopify://shop_images/My-Favourite-Recipes.jpg",
+        "review_heading_sub": "Reader Reviews -",
+        "review_heading": "My Favourite Recipes",
+        "cta_text": "More",
+        "cta_link": "shopify://products/my-favourite-recipes"
+      }
+    }
+  },
+  "order": [
+    "collection_products_UP83Ji",
+    "inas_menu_of_the_month_kizHUN",
+    "recipe_box_f49Ykd",
+    "reviews_tMk3Hn"
+  ]
+}

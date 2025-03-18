@@ -211,8 +211,12 @@
         $('.recipe-details-slider').slick({
             dots: true,
             arrows: false,
+<<<<<<< HEAD
             infinite: false,
+=======
+>>>>>>> staging
             speed: 300,
+            infinite: false,
             slidesToShow: 3,
             slidesToScroll: 1,
             centerMode: false,

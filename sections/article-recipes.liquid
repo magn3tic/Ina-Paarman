@@ -5,10 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-9 mx-auto">
-                <div class="text-center">
-                    <h1 class="heading text_white">{{ article.title }}</h1>
-                    {{ article.excerpt }}
-                </div>
+                
             </div>
         </div>
     </div>
@@ -22,8 +19,10 @@
             <div class="col-lg-11 mx-auto">
                 <div class="recipe-promo-inner">
                     {% if article.image %}
-                    <div class="half_bg d-none d-lg-block" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover"></div>
-                    {% endif %}                            
+                      <div class = "t-lg-5 pl-lg-5 mb-lg-5 h-100 w-100">
+                    <div class="half_bg d-none d-lg-block recipe-img" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover;height:41vw;width:41vw;max-width:580px;max-height:620px"></div>
+                      </div>
+                        {% endif %}                            
                     <div class="row">
                         <div class="col-sm-6">
                             {% if article.image %}
@@ -34,6 +33,10 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="content-text">
+                             <div class="text-left mb-5">
+                                <h1 class="recipe-heading">{{ article.title }}</h1>
+                                  {{ article.excerpt }}
+                                </div>
                                 <ul class="promo-list">
                                     {% if article.metafields["global"]["Makes"] %}
                                     <li>
@@ -100,29 +103,29 @@
                                 </ul>
                                 <div class="promo-actions">
                                     <ul>
-                                        <li><a id="printPDF"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/download.svg" alt="icon"></a></li>
-                                        <li><a id="downloadPDF"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/print.svg" alt="icon"></a></li>
+                                        <li><a id="printPDF"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/download.svg" alt="icon" class = "small-icons"></a></li>
+                                        <li><a id="downloadPDF"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/print.svg" alt="icon" class = "small-icons"></a></li>
                                     </ul>
 
                                     <ul>
                                         <li>
                                             <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}" target="_blank">
-                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-red.svg" alt="Share on Facebook">
+                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-red.svg" alt="Share on Facebook"class = "small-icons">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title }}" target="_blank">
-                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-red.svg" alt="Share on Twitter">
+                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-red.svg" alt="Share on Twitter" class = "small-icons">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://www.instagram.com/inapaarmanskitchen" target="_blank">
-                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-red.svg" alt="Instagram">
+                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-red.svg" alt="Instagram" class = "small-icons">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="mailto:?subject={{ shop.url }}{{ article.title }}&body={{ article.url }}">
-                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-red.svg" alt="Share via Email">
+                                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-red.svg" alt="Share via Email" class = "small-icons">
                                             </a>
                                         </li>
                                     </ul>                                          

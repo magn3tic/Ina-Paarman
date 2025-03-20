@@ -306,7 +306,10 @@ section {
 	font-weight: 700;
 	margin: 20px 0
 }
-
+.recipe-heading {
+	font-size: 60px;
+	font-weight: 700;
+}
 .sub_heading {
 	font-family: 'PP Monument Extended';
 	font-weight: 800;
@@ -1157,7 +1160,7 @@ blockquote {
 
 .recipe-banner-area {
 	color: rgba(255, 255, 255, 0.8);
-	padding-top: 160px;
+	padding-top: 65px;
 	padding-bottom: 400px;
 	position: relative;
 	z-index: 1
@@ -1220,7 +1223,7 @@ blockquote {
 }
 
 .recipe-promo-inner .content-text {
-	padding: 40px
+	padding: 0 40px 40px 40px
 }
 
 .recipe-promo-inner .half_bg {
@@ -3037,7 +3040,12 @@ blockquote .date_author {
 }
 
 @media(max-width:991px) {
-
+.recipe-img{
+  border:none !important;
+}
+  .recipe-banner-area{
+    padding-top:35px;
+    }
 	.address-info {
 		display: flex
 	}
@@ -3058,6 +3066,10 @@ blockquote .date_author {
 	.heading {
 		font-size: 40px;
 	}
+    .recipe-heading{
+    margin: 20px 0;
+    font-size: 40px;
+  }
 
 	section,
 	.section {
@@ -4903,4 +4915,13 @@ body[class*="article.recipes"] .recipe-banner-area {
 
 .inner-widget ul li {
   list-style: disc;
+}
+.small-icons{ 
+  width:30px;
+  height:auto;
+    }
+.recipe-img{
+  border-top:solid #fff 50px;
+  border-left:solid #fff 50px; 
+  border-bottom:solid #fff 50px
 }

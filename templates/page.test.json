@@ -26,7 +26,7 @@
         "liquid": "<div class='TablePress' data-table='51219'></div>",
         "header_title": "Nutritional Info",
         "remove_space": false,
-        "remove_bspace": true
+        "remove_bspace": false
       }
     }
   },

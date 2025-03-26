@@ -1,1 +1,385 @@
-{"sections":{"hero_carousel_CmDneU":{"type":"hero-carousel","blocks":{"hero_slide_UybmEB":{"type":"hero_slide","settings":{"image":"shopify:\/\/shop_images\/Ina-Paarmans-Kitchen.jpg","video_link":"https:\/\/www.youtube.com\/watch?v=TV-c3dKX3bg","sub_heading":"Our Promise –","heading":"It Starts At Home","rich_content":"<p>That feeling of true belonging. The things and people that keep you grounded. The wholesome choices you make. This is where it all begins.<br\/><br\/>This is where our story begins.<\/p>","cta_text":"Our Story","cta_link":"shopify:\/\/pages\/about"}},"hero_slide_dyEFja":{"type":"hero_slide","settings":{"image":"shopify:\/\/shop_images\/Ina-Paarman-Products.jpg","video_link":"","sub_heading":"Ina Paarman's –","heading":"Pantry Must-Haves","rich_content":"<p>Prepared using time-honoured, traditional methods, our array of products contains only the freshest ingredients for wholesome home cooking.<\/p><p>Explore our nutritionally dense Ina Paarman Spices & Seasoning, Sauces, Baking Mixes, and beyond to infuse your meals with authentic flavour.<\/p>","cta_text":"Browse Products","cta_link":"shopify:\/\/collections"}},"hero_slide_p3bmFB":{"type":"hero_slide","settings":{"image":"shopify:\/\/shop_images\/Ina-Paarman-Meals.jpg","video_link":"","sub_heading":"Recipes –","heading":"From Our Kitchen","rich_content":"<p>Anyone can cook with the proper guidance. Each of our thousands of original recipes is tried and tested to set you up for success every time.<\/p><p>A homemade meal, prepared with love and care, is the way to everyone’s heart.<\/p>","cta_text":"Browse Recipes","cta_link":"shopify:\/\/blogs\/all-recipes"}},"hero_slide_R4EJK8":{"type":"hero_slide","settings":{"image":"shopify:\/\/shop_images\/My-Favourite-Recipes.jpg","video_link":"","sub_heading":"Cookbook –","heading":"My Favourite Recipes","rich_content":"<p>Far more than ‘just another cookbook’, Ina Paarman generously shares recipes for the head, hands, and heart in her latest publication.<\/p><p>Ina’s illustrious culinary career will give you the confidence and know-how to cook like a seasoned professional, making her hints and tips invaluable.<\/p>","cta_text":"View Cookbook","cta_link":"shopify:\/\/pages\/cookbook"}}},"block_order":["hero_slide_UybmEB","hero_slide_dyEFja","hero_slide_p3bmFB","hero_slide_R4EJK8"],"settings":{}},"new_recipes_N3dcxV":{"type":"new-recipes","settings":{"bg_image":"shopify:\/\/shop_images\/Ina-Paarmans-Fire-Spice-Recipes.jpg","sub_heading":"March 2025 –","heading":"New Recipes","rich_content":"<p><em>“There is a certain barbaric splendour about a good barbecue which rises above any other form of cooking.” – Savitri Bhatia, Shahi (Turke, 1975)<\/em><\/p><p>Few cooking methods can equal the flavour of flame-grilled foods, especially when enhanced with spicy and flavourful condiments.<\/p><p>Make the most of the mellow March evenings by serving up this magical, no-fuss menu of refreshing Granadilla Sundowners, fragrant Potato Bread with Red Pepper Pesto, zesty Chicken Mozambique, and more!<\/p>","button_text":"Discover Menu","button_link":"shopify:\/\/pages\/march-2025","image_position":false}},"spacer_8qbHJ6":{"type":"spacer","settings":{"spacer_height":40}},"recipe_box_krqVzA":{"type":"recipe-box","blocks":{"recipe_slide_wrC7NC":{"type":"recipe_slide","settings":{"slide_image":"shopify:\/\/shop_images\/Whats-For-Supper.jpg","title":"What’s for Supper","slide_link":"shopify:\/\/pages\/recipes-whats-for-supper"}},"recipe_slide_EdLPdW":{"type":"recipe_slide","settings":{"slide_image":"shopify:\/\/shop_images\/Party-Ideas.jpg","title":"Party Ideas","slide_link":"shopify:\/\/pages\/recipes-party-ideas"}},"recipe_slide_CqGAbV":{"type":"recipe_slide","settings":{"slide_image":"shopify:\/\/shop_images\/Vegetarian.jpg","title":"Vegetarian","slide_link":"shopify:\/\/pages\/recipes-vegetarian"}}},"block_order":["recipe_slide_wrC7NC","recipe_slide_EdLPdW","recipe_slide_CqGAbV"],"settings":{"header_style":"style1","sub_heading":"Cooking & Baking -","heading":"Recipes for All Tastes & Occasions","paragraph":"Cooking for a vegetarian or vegan, preparing for a birthday party, or needing tasty braai ideas and inspiration for imaginative sides? You will find just what you need in Ina Paarman’s Kitchen recipe library: recipes that cater to all skill levels, taste preferences, and time and budget constraints.","button_text":"Explore All","button_link":"shopify:\/\/blogs\/all-recipes"}},"reviews_gyRwBV":{"type":"Reviews","blocks":{"review_block_QRyJ8N":{"type":"review_block","settings":{"review_text":"This book annoys me. I have just one copy, and I cannot decide whether it should be kept on the coffee table, by the stove, or by my bed. It is that good.","reviewer_name":"John Fraser","review_source":"Business Day"}},"review_block_WqjmFz":{"type":"review_block","settings":{"review_text":"The perfect present for any foodie, both young and old.","reviewer_name":"Sandy Norman","review_source":"Food & Home"}},"review_block_RqqFpQ":{"type":"review_block","settings":{"review_text":"For every one of us who does cook, sometimes we forget there are 10 who don’t know how. [Ina] Paarman has included some step-by-step instructions with photographs in this book.","reviewer_name":"Bianca Coleman","review_source":"Daily Maverick"}}},"block_order":["review_block_QRyJ8N","review_block_WqjmFz","review_block_RqqFpQ"],"settings":{"header_style":"style1","remove_shapes":false,"review_bg_image":"shopify:\/\/shop_images\/My-Favourite-Recipes.jpg","review_heading_sub":"Reader Reviews -","review_heading":"My Favourite Recipes","cta_text":"More","cta_link":"shopify:\/\/products\/my-favourite-recipes"}},"shop_KYhExg":{"type":"shop","blocks":{"product_TwqqWX":{"type":"product","settings":{"shop_color_picker":"#f2d22e","product_image":"shopify:\/\/shop_images\/Spices-Seasoning.png","product_title":"Spices & Seasoning","product_link":"shopify:\/\/collections\/seasonings-spices"}},"product_xPBMzf":{"type":"product","settings":{"shop_color_picker":"#286134","product_image":"shopify:\/\/shop_images\/Ready-To-Serve-Sauces.png","product_title":"Ready To Serve Sauces","product_link":"shopify:\/\/collections\/sauces-readyserve"}},"product_pYf6nj":{"type":"product","settings":{"shop_color_picker":"#06363f","product_image":"shopify:\/\/shop_images\/Salad-Dressings.png","product_title":"Salad Dressings","product_link":"shopify:\/\/collections\/salad-dressings"}},"product_M4x9qL":{"type":"product","settings":{"shop_color_picker":"#5c294b","product_image":"shopify:\/\/shop_images\/Soups.png","product_title":"Soups","product_link":"shopify:\/\/collections\/soups"}},"product_KkaFwH":{"type":"product","settings":{"shop_color_picker":"#fe4520","product_image":"shopify:\/\/shop_images\/Stocks-Gravies.png","product_title":"Stocks & Gravies","product_link":"shopify:\/\/collections\/stocks-gravies"}},"product_gdgbXR":{"type":"product","settings":{"shop_color_picker":"#5a749b","product_image":"shopify:\/\/shop_images\/Stuffing-Mix.png","product_title":"Stuffing Mix","product_link":"shopify:\/\/products\/poultry-stuffing"}},"product_NEBBcK":{"type":"product","settings":{"shop_color_picker":"#8ca75d","product_image":"shopify:\/\/shop_images\/Pestos.png","product_title":"Antipasti & Pestos","product_link":"shopify:\/\/collections\/antipasti-pestos"}},"product_mDBBKL":{"type":"product","settings":{"shop_color_picker":"#f2d22e","product_image":"shopify:\/\/shop_images\/Baking.png","product_title":"Baking","product_link":"shopify:\/\/collections\/baking"}},"product_WkMVDD":{"type":"product","settings":{"shop_color_picker":"#286134","product_image":"shopify:\/\/shop_images\/Pasta-Sauces.png","product_title":"Pasta Sauces","product_link":"shopify:\/\/collections\/pasta-sauces"}},"product_86gWUx":{"type":"product","settings":{"shop_color_picker":"#e3c52a","product_image":"shopify:\/\/shop_images\/Cook-In-Sauces.png","product_title":"Cook-In Sauces","product_link":"shopify:\/\/collections\/cookin-sauces"}},"product_H4W6cq":{"type":"product","settings":{"shop_color_picker":"#be2033","product_image":"shopify:\/\/shop_images\/Marinades.png","product_title":"Marinades","product_link":"shopify:\/\/collections\/marinades-bastes"}},"product_JyyrLB":{"type":"product","settings":{"shop_color_picker":"#fe4520","product_image":"shopify:\/\/shop_images\/Chutneys.png","product_title":"Chutneys","product_link":"shopify:\/\/collections\/chutneys"}}},"block_order":["product_TwqqWX","product_xPBMzf","product_pYf6nj","product_M4x9qL","product_KkaFwH","product_gdgbXR","product_NEBBcK","product_mDBBKL","product_WkMVDD","product_86gWUx","product_H4W6cq","product_JyyrLB"],"settings":{"header_style":"style1","shop_sub_heading":"- Shop -","shop_heading":"Home-Style Products from Wholesome Ingredients","shop_description":"<p>Our wide array of products, from Ina Paarman’s Spices, Pestos, Antipasti, and more, are all manufactured under the strictest family supervision. Produced according to our personal conviction of using time-honoured, traditional preparation methods and only the freshest seasonal ingredients, we consistently achieve that full-flavoured, natural, and authentic taste that you would normally associate with the very best home cooking. <\/p><p>Explore our world of tasty, flavoursome, and nutritious products that will add immeasurably to your pleasure of cooking and eating.<\/p>"}},"about_info_NfmaLP":{"type":"about-info","settings":{"style":"style-1","about_bg_image":"shopify:\/\/shop_images\/Background-Image-Quality-Pledge.jpg","about_subheading":"- The -","about_title":"Ina Paarman","about_heading":"Quality Pledge","about_quote":"We are constantly improving our products. We never want to become complacent and feel we’ve arrived.","about_quote_author":"– Graham Paarman","about_text":"<p>Since day one, we’ve worked tirelessly to offer exceptional-quality products and ways to enhance people’s cooking experiences. Our promise to you is we’ll always recreate the goodness of home cooking in our high-tech, internationally accredited FSSC22000 production facility.<\/p>","about_cta_text":"Our Story","about_cta_link":"shopify:\/\/pages\/about"}},"newsletter_6ezKfV":{"type":"newsletter","settings":{"style":"style-1","sub_heading":"- Sign Up -","main_heading":"Ina Paarman’s Kitchen Newsletter","description":"<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.<\/p>"}},"contact_info_aUjhYE":{"type":"contact-info","settings":{"map_iframe_code":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3306.3432778641727!2d18.47216882266883!3d-34.035064458268934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc43b54046a51d%3A0xf7fdab38d51cb311!2sIna%20Paarman%20Factory%20Shop!5e0!3m2!1sen!2sin!4v1728718204927!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>","visit_heading":"Visit -","factory_shop_title":"Our Factory Shop","factory_shop_description":"Stop by our factory shop when you’re in the area to stock up on all your Ina Paarman favourites at reduced prices.\n\nAlthough our on-premises parking is limited, you’ll find plenty more along the adjoining private road.","phone_number":"+27 (0)21 705 6440\/1","email_address":"sarah@paarman.co.za","address":"<p>Unit B7<br\/>Diep River Industrial Park<br\/>Greenville Road<br\/>Diep River<br\/>Cape Town  7945<\/p>","business_hours":"<p>Mon-Fri:  10:00 - 15:00<br\/>Sat:  09:00 - 13:00<br\/>Closed on Public Holidays<\/p>","ct_cta_text":"Directions","ct_cta_link":"https:\/\/maps.app.goo.gl\/snFdPUj7eafk3GraA"}},"featured_blog_posts_agdx88":{"type":"featured-blog-posts","settings":{"header_style":"style2","show_featured":true,"blog_sub_heading":"– BLOG –","blog_title":"Great Food, Great Living","all_articles_button_text":"ALL ARTICLES","all_articles_button_link":"shopify:\/\/blogs\/news"}}},"order":["hero_carousel_CmDneU","new_recipes_N3dcxV","spacer_8qbHJ6","recipe_box_krqVzA","reviews_gyRwBV","shop_KYhExg","about_info_NfmaLP","newsletter_6ezKfV","contact_info_aUjhYE","featured_blog_posts_agdx88"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_carousel_CmDneU": {
+      "type": "hero-carousel",
+      "blocks": {
+        "hero_slide_UybmEB": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Kitchen.jpg",
+            "video_link": "https://www.youtube.com/watch?v=TV-c3dKX3bg",
+            "sub_heading": "Our Promise –",
+            "heading": "It Starts At Home",
+            "rich_content": "<p>That feeling of true belonging. The things and people that keep you grounded. The wholesome choices you make. This is where it all begins.<br/><br/>This is where our story begins.</p>",
+            "cta_text": "Our Story",
+            "cta_link": "shopify://pages/about"
+          }
+        },
+        "hero_slide_dyEFja": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify://shop_images/Ina-Paarman-Products.jpg",
+            "video_link": "",
+            "sub_heading": "Ina Paarman's –",
+            "heading": "Pantry Must-Haves",
+            "rich_content": "<p>Prepared using time-honoured, traditional methods, our array of products contains only the freshest ingredients for wholesome home cooking.</p><p>Explore our nutritionally dense Ina Paarman Spices & Seasoning, Sauces, Baking Mixes, and beyond to infuse your meals with authentic flavour.</p>",
+            "cta_text": "Browse Products",
+            "cta_link": "shopify://collections"
+          }
+        },
+        "hero_slide_p3bmFB": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify://shop_images/Ina-Paarman-Meals.jpg",
+            "video_link": "",
+            "sub_heading": "Recipes –",
+            "heading": "From Our Kitchen",
+            "rich_content": "<p>Anyone can cook with the proper guidance. Each of our thousands of original recipes is tried and tested to set you up for success every time.</p><p>A homemade meal, prepared with love and care, is the way to everyone’s heart.</p>",
+            "cta_text": "Browse Recipes",
+            "cta_link": "shopify://blogs/all-recipes"
+          }
+        },
+        "hero_slide_R4EJK8": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify://shop_images/My-Favourite-Recipes.jpg",
+            "video_link": "",
+            "sub_heading": "Cookbook –",
+            "heading": "My Favourite Recipes",
+            "rich_content": "<p>Far more than ‘just another cookbook’, Ina Paarman generously shares recipes for the head, hands, and heart in her latest publication.</p><p>Ina’s illustrious culinary career will give you the confidence and know-how to cook like a seasoned professional, making her hints and tips invaluable.</p>",
+            "cta_text": "View Cookbook",
+            "cta_link": "shopify://pages/cookbook"
+          }
+        }
+      },
+      "block_order": [
+        "hero_slide_UybmEB",
+        "hero_slide_dyEFja",
+        "hero_slide_p3bmFB",
+        "hero_slide_R4EJK8"
+      ],
+      "settings": {}
+    },
+    "new_recipes_N3dcxV": {
+      "type": "new-recipes",
+      "settings": {
+        "bg_image": "shopify://shop_images/Ina-Paarmans-Fire-Spice-Recipes.jpg",
+        "sub_heading": "March 2025 –",
+        "heading": "New Recipes",
+        "rich_content": "<p><em>“There is a certain barbaric splendour about a good barbecue which rises above any other form of cooking.” – Savitri Bhatia, Shahi (Turke, 1975)</em></p><p>Few cooking methods can equal the flavour of flame-grilled foods, especially when enhanced with spicy and flavourful condiments.</p><p>Make the most of the mellow March evenings by serving up this magical, no-fuss menu of refreshing Granadilla Sundowners, fragrant Potato Bread with Red Pepper Pesto, zesty Chicken Mozambique, and more!</p>",
+        "button_text": "Discover Menu",
+        "button_link": "shopify://pages/march-2025",
+        "image_position": false
+      }
+    },
+    "new_recipes_W3gL8Y": {
+      "type": "new-recipes",
+      "disabled": true,
+      "settings": {
+        "bg_image": "shopify://shop_images/Ina_Paarman_s_New_Recipes_April_2025.jpg",
+        "sub_heading": "April 2025 –",
+        "heading": "New Recipes",
+        "rich_content": "<p>The simple, superb flavours of classic Greek food remain evergreen favourites worldwide. In fact, in a recent 2025 food survey, Greek food has proven to surpass the popularity of Italian food.</p><p>Here is our selection of a few low-effort, big-result Greek recipes that will elevate your Easter table into an azure, sensory feast!</p>",
+        "button_text": "Discover Menu",
+        "button_link": "",
+        "image_position": false
+      }
+    },
+    "spacer_8qbHJ6": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40
+      }
+    },
+    "recipe_box_krqVzA": {
+      "type": "recipe-box",
+      "blocks": {
+        "recipe_slide_wrC7NC": {
+          "type": "recipe_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Whats-For-Supper.jpg",
+            "title": "What’s for Supper",
+            "slide_link": "shopify://pages/recipes-whats-for-supper"
+          }
+        },
+        "recipe_slide_EdLPdW": {
+          "type": "recipe_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Party-Ideas.jpg",
+            "title": "Party Ideas",
+            "slide_link": "shopify://pages/recipes-party-ideas"
+          }
+        },
+        "recipe_slide_CqGAbV": {
+          "type": "recipe_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Vegetarian.jpg",
+            "title": "Vegetarian",
+            "slide_link": "shopify://pages/recipes-vegetarian"
+          }
+        }
+      },
+      "block_order": [
+        "recipe_slide_wrC7NC",
+        "recipe_slide_EdLPdW",
+        "recipe_slide_CqGAbV"
+      ],
+      "settings": {
+        "header_style": "style1",
+        "sub_heading": "Cooking & Baking -",
+        "heading": "Recipes for All Tastes & Occasions",
+        "paragraph": "Cooking for a vegetarian or vegan, preparing for a birthday party, or needing tasty braai ideas and inspiration for imaginative sides? You will find just what you need in Ina Paarman’s Kitchen recipe library: recipes that cater to all skill levels, taste preferences, and time and budget constraints.",
+        "button_text": "Explore All",
+        "button_link": "shopify://blogs/all-recipes"
+      }
+    },
+    "reviews_gyRwBV": {
+      "type": "Reviews",
+      "blocks": {
+        "review_block_QRyJ8N": {
+          "type": "review_block",
+          "settings": {
+            "review_text": "This book annoys me. I have just one copy, and I cannot decide whether it should be kept on the coffee table, by the stove, or by my bed. It is that good.",
+            "reviewer_name": "John Fraser",
+            "review_source": "Business Day"
+          }
+        },
+        "review_block_WqjmFz": {
+          "type": "review_block",
+          "settings": {
+            "review_text": "The perfect present for any foodie, both young and old.",
+            "reviewer_name": "Sandy Norman",
+            "review_source": "Food & Home"
+          }
+        },
+        "review_block_RqqFpQ": {
+          "type": "review_block",
+          "settings": {
+            "review_text": "For every one of us who does cook, sometimes we forget there are 10 who don’t know how. [Ina] Paarman has included some step-by-step instructions with photographs in this book.",
+            "reviewer_name": "Bianca Coleman",
+            "review_source": "Daily Maverick"
+          }
+        }
+      },
+      "block_order": [
+        "review_block_QRyJ8N",
+        "review_block_WqjmFz",
+        "review_block_RqqFpQ"
+      ],
+      "settings": {
+        "header_style": "style1",
+        "remove_shapes": false,
+        "review_bg_image": "shopify://shop_images/My-Favourite-Recipes.jpg",
+        "review_heading_sub": "Reader Reviews -",
+        "review_heading": "My Favourite Recipes",
+        "cta_text": "More",
+        "cta_link": "shopify://products/my-favourite-recipes"
+      }
+    },
+    "shop_KYhExg": {
+      "type": "shop",
+      "blocks": {
+        "product_TwqqWX": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#f2d22e",
+            "product_image": "shopify://shop_images/Spices-Seasoning.png",
+            "product_title": "Spices & Seasoning",
+            "product_link": "shopify://collections/seasonings-spices"
+          }
+        },
+        "product_xPBMzf": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#286134",
+            "product_image": "shopify://shop_images/Ready-To-Serve-Sauces.png",
+            "product_title": "Ready To Serve Sauces",
+            "product_link": "shopify://collections/sauces-readyserve"
+          }
+        },
+        "product_pYf6nj": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#06363f",
+            "product_image": "shopify://shop_images/Salad-Dressings.png",
+            "product_title": "Salad Dressings",
+            "product_link": "shopify://collections/salad-dressings"
+          }
+        },
+        "product_M4x9qL": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#5c294b",
+            "product_image": "shopify://shop_images/Soups.png",
+            "product_title": "Soups",
+            "product_link": "shopify://collections/soups"
+          }
+        },
+        "product_KkaFwH": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#fe4520",
+            "product_image": "shopify://shop_images/Stocks-Gravies.png",
+            "product_title": "Stocks & Gravies",
+            "product_link": "shopify://collections/stocks-gravies"
+          }
+        },
+        "product_gdgbXR": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#5a749b",
+            "product_image": "shopify://shop_images/Stuffing-Mix.png",
+            "product_title": "Stuffing Mix",
+            "product_link": "shopify://products/poultry-stuffing"
+          }
+        },
+        "product_NEBBcK": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#8ca75d",
+            "product_image": "shopify://shop_images/Pestos.png",
+            "product_title": "Antipasti & Pestos",
+            "product_link": "shopify://collections/antipasti-pestos"
+          }
+        },
+        "product_mDBBKL": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#f2d22e",
+            "product_image": "shopify://shop_images/Baking.png",
+            "product_title": "Baking",
+            "product_link": "shopify://collections/baking"
+          }
+        },
+        "product_WkMVDD": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#286134",
+            "product_image": "shopify://shop_images/Pasta-Sauces.png",
+            "product_title": "Pasta Sauces",
+            "product_link": "shopify://collections/pasta-sauces"
+          }
+        },
+        "product_86gWUx": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#e3c52a",
+            "product_image": "shopify://shop_images/Cook-In-Sauces.png",
+            "product_title": "Cook-In Sauces",
+            "product_link": "shopify://collections/cookin-sauces"
+          }
+        },
+        "product_H4W6cq": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#be2033",
+            "product_image": "shopify://shop_images/Marinades.png",
+            "product_title": "Marinades",
+            "product_link": "shopify://collections/marinades-bastes"
+          }
+        },
+        "product_JyyrLB": {
+          "type": "product",
+          "settings": {
+            "shop_color_picker": "#fe4520",
+            "product_image": "shopify://shop_images/Chutneys.png",
+            "product_title": "Chutneys",
+            "product_link": "shopify://collections/chutneys"
+          }
+        }
+      },
+      "block_order": [
+        "product_TwqqWX",
+        "product_xPBMzf",
+        "product_pYf6nj",
+        "product_M4x9qL",
+        "product_KkaFwH",
+        "product_gdgbXR",
+        "product_NEBBcK",
+        "product_mDBBKL",
+        "product_WkMVDD",
+        "product_86gWUx",
+        "product_H4W6cq",
+        "product_JyyrLB"
+      ],
+      "settings": {
+        "header_style": "style1",
+        "shop_sub_heading": "- Shop -",
+        "shop_heading": "Home-Style Products from Wholesome Ingredients",
+        "shop_description": "<p>Our wide array of products, from Ina Paarman’s Spices, Pestos, Antipasti, and more, are all manufactured under the strictest family supervision. Produced according to our personal conviction of using time-honoured, traditional preparation methods and only the freshest seasonal ingredients, we consistently achieve that full-flavoured, natural, and authentic taste that you would normally associate with the very best home cooking. </p><p>Explore our world of tasty, flavoursome, and nutritious products that will add immeasurably to your pleasure of cooking and eating.</p>"
+      }
+    },
+    "about_info_NfmaLP": {
+      "type": "about-info",
+      "settings": {
+        "style": "style-1",
+        "about_bg_image": "shopify://shop_images/Background-Image-Quality-Pledge.jpg",
+        "about_subheading": "- The -",
+        "about_title": "Ina Paarman",
+        "about_heading": "Quality Pledge",
+        "about_quote": "We are constantly improving our products. We never want to become complacent and feel we’ve arrived.",
+        "about_quote_author": "– Graham Paarman",
+        "about_text": "<p>Since day one, we’ve worked tirelessly to offer exceptional-quality products and ways to enhance people’s cooking experiences. Our promise to you is we’ll always recreate the goodness of home cooking in our high-tech, internationally accredited FSSC22000 production facility.</p>",
+        "about_cta_text": "Our Story",
+        "about_cta_link": "shopify://pages/about"
+      }
+    },
+    "newsletter_6ezKfV": {
+      "type": "newsletter",
+      "settings": {
+        "style": "style-1",
+        "sub_heading": "- Sign Up -",
+        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "description": "<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>"
+      }
+    },
+    "contact_info_aUjhYE": {
+      "type": "contact-info",
+      "settings": {
+        "map_iframe_code": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.3432778641727!2d18.47216882266883!3d-34.035064458268934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc43b54046a51d%3A0xf7fdab38d51cb311!2sIna%20Paarman%20Factory%20Shop!5e0!3m2!1sen!2sin!4v1728718204927!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "visit_heading": "Visit -",
+        "factory_shop_title": "Our Factory Shop",
+        "factory_shop_description": "Stop by our factory shop when you’re in the area to stock up on all your Ina Paarman favourites at reduced prices.\n\nAlthough our on-premises parking is limited, you’ll find plenty more along the adjoining private road.",
+        "phone_number": "+27 (0)21 705 6440/1",
+        "email_address": "sarah@paarman.co.za",
+        "address": "<p>Unit B7<br/>Diep River Industrial Park<br/>Greenville Road<br/>Diep River<br/>Cape Town  7945</p>",
+        "business_hours": "<p>Mon-Fri:  10:00 - 15:00<br/>Sat:  09:00 - 13:00<br/>Closed on Public Holidays</p>",
+        "ct_cta_text": "Directions",
+        "ct_cta_link": "https://maps.app.goo.gl/snFdPUj7eafk3GraA"
+      }
+    },
+    "featured_blog_posts_agdx88": {
+      "type": "featured-blog-posts",
+      "settings": {
+        "header_style": "style2",
+        "show_featured": true,
+        "blog_sub_heading": "– BLOG –",
+        "blog_title": "Great Food, Great Living",
+        "all_articles_button_text": "ALL ARTICLES",
+        "all_articles_button_link": "shopify://blogs/news"
+      }
+    }
+  },
+  "order": [
+    "hero_carousel_CmDneU",
+    "new_recipes_N3dcxV",
+    "new_recipes_W3gL8Y",
+    "spacer_8qbHJ6",
+    "recipe_box_krqVzA",
+    "reviews_gyRwBV",
+    "shop_KYhExg",
+    "about_info_NfmaLP",
+    "newsletter_6ezKfV",
+    "contact_info_aUjhYE",
+    "featured_blog_posts_agdx88"
+  ]
+}

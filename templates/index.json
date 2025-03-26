@@ -83,14 +83,13 @@
     },
     "new_recipes_W3gL8Y": {
       "type": "new-recipes",
-      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina_Paarman_s_New_Recipes_April_2025.jpg",
         "sub_heading": "April 2025 –",
         "heading": "New Recipes",
         "rich_content": "<p>The simple, superb flavours of classic Greek food remain evergreen favourites worldwide. In fact, in a recent 2025 food survey, Greek food has proven to surpass the popularity of Italian food.</p><p>Here is our selection of a few low-effort, big-result Greek recipes that will elevate your Easter table into an azure, sensory feast!</p>",
         "button_text": "Discover Menu",
-        "button_link": "",
+        "button_link": "shopify://pages/april-2025",
         "image_position": false
       }
     },

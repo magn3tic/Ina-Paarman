@@ -134,56 +134,31 @@
       ],
       "settings": {}
     },
-    "richtext_7btbGw": {
-      "type": "richtext",
-      "settings": {
-        "container_max_width": "900",
-        "text_align": "text-center",
-        "title": "Cooking & Baking Resources",
-        "description": "<p>Additional resources to assist you during cooking and baking</p>",
-        "btn_primary_text": "EQUIVALENT & CONVERSIONS",
-        "btn_primary_url": "shopify://pages/conversions",
-        "btn_secondary_text": "ALCOHOL SUBSTITUTION",
-        "btn_secondary_url": "shopify://pages/substitution"
-      }
-    },
-    "spacer_DXVDhW": {
-      "type": "spacer",
-      "settings": {
-        "spacer_height": 80
-      }
-    },
     "new_recipes_id7qqW": {
       "type": "new-recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Fire-Spice-Recipes.jpg",
-        "sub_heading": "March 2025 –",
-        "heading": "New Recipes",
-        "rich_content": "<p><em>“There is a certain barbaric splendour about a good barbecue which rises above any other form of cooking.” – Savitri Bhatia, Shahi (Turke, 1975)</em></p><p>Few cooking methods can equal the flavour of flame-grilled foods, especially when enhanced with spicy and flavourful condiments.</p><p>Make the most of the mellow March evenings by serving up this magical, no-fuss menu of refreshing Granadilla Sundowners, fragrant Potato Bread with Red Pepper Pesto, zesty Chicken Mozambique, and more!</p>",
-        "button_text": "Discover Menu",
-        "button_link": "shopify://pages/march-2025",
+        "sub_heading": "April 2025 –",
+        "heading": "Why bake with kids?",
+        "rich_content": "<p>Baking is more than just making treats – it’s an opportunity to teach important skills like measuring, following directions, and patience. Plus, it's a wonderful way to create lasting memories that your family will cherish.</p><p>Ready to get started? Simply enter your details below and download our free Baking with Kids guide to begin a fun-filled holiday baking adventure today!</p>",
+        "button_text": "Download",
+        "button_link": "",
         "image_position": false
       }
     },
-    "new_recipes_3h8Egg": {
-      "type": "new-recipes",
-      "disabled": true,
+    "newsletter_HHCmp8": {
+      "type": "newsletter",
       "settings": {
-        "bg_image": "shopify://shop_images/Ina_Paarman_s_New_Recipes_April_2025.jpg",
-        "sub_heading": "April 2025 –",
-        "heading": "New Recipes",
-        "rich_content": "<p>The simple, superb flavours of classic Greek food remain evergreen favourites worldwide.</p><p>In fact, in a recent 2025 food survey, Greek food has proven to surpass the popularity of Italian food.</p><p>Here is our selection of a few low-effort, big-result Greek recipes that will elevate your Easter table into an azure, sensory feast!</p>",
-        "button_text": "Discover Menu",
-        "button_link": "shopify://pages/april-2025",
-        "image_position": false
+        "style": "style-1",
+        "sub_heading": "– Sign Up –",
+        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "description": "<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>"
       }
     }
   },
   "order": [
     "hero_carousel_7C9TAB",
-    "richtext_7btbGw",
-    "spacer_DXVDhW",
     "new_recipes_id7qqW",
-    "new_recipes_3h8Egg"
+    "newsletter_HHCmp8"
   ]
 }

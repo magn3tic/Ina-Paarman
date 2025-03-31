@@ -153,21 +153,8 @@
         "spacer_height": 80
       }
     },
-    "new_recipes_id7qqW": {
-      "type": "new-recipes",
-      "settings": {
-        "bg_image": "shopify://shop_images/Ina-Paarmans-Fire-Spice-Recipes.jpg",
-        "sub_heading": "March 2025 –",
-        "heading": "New Recipes",
-        "rich_content": "<p><em>“There is a certain barbaric splendour about a good barbecue which rises above any other form of cooking.” – Savitri Bhatia, Shahi (Turke, 1975)</em></p><p>Few cooking methods can equal the flavour of flame-grilled foods, especially when enhanced with spicy and flavourful condiments.</p><p>Make the most of the mellow March evenings by serving up this magical, no-fuss menu of refreshing Granadilla Sundowners, fragrant Potato Bread with Red Pepper Pesto, zesty Chicken Mozambique, and more!</p>",
-        "button_text": "Discover Menu",
-        "button_link": "shopify://pages/march-2025",
-        "image_position": false
-      }
-    },
     "new_recipes_3h8Egg": {
       "type": "new-recipes",
-      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina_Paarman_s_New_Recipes_April_2025.jpg",
         "sub_heading": "April 2025 –",
@@ -183,7 +170,6 @@
     "hero_carousel_7C9TAB",
     "richtext_7btbGw",
     "spacer_DXVDhW",
-    "new_recipes_id7qqW",
     "new_recipes_3h8Egg"
   ]
 }

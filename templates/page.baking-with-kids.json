@@ -16,12 +16,12 @@
           "type": "hero_slide",
           "settings": {
             "image": "shopify://shop_images/Ina-Paarmans-Hints-Tips-4.jpg",
-            "video_link": "https://www.youtube.com/watch?v=AYekrvBocjU",
+            "video_link": "",
             "sub_heading": "",
             "heading": "Get In on the Holiday Baking Fun!",
             "rich_content": "<p>School holidays are the perfect time to get creative in the kitchen with your little ones! Our Junior Chef Baking Edition is filled with simple, delicious, and fun recipes that will turn your kitchen into a place of laughter, learning, and bonding.<br/></p>",
-            "cta_text": "",
-            "cta_link": ""
+            "cta_text": "Download Recipe Booklet",
+            "cta_link": "shopify://pages/motm-october-2016"
           }
         },
         "hero_slide_KQXMNY": {
@@ -45,7 +45,7 @@
             "heading": "Wholesome Creations",
             "rich_content": "<p>Our kids' recipes are made with high-quality ingredients from Ina Paarman’s Kitchen to ensure every creation is both tasty and wholesome.</p>",
             "cta_text": "Ina Paarman Products Dietary Info",
-            "cta_link": "https://chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Ina-Paarmans-Product-Allergen-Information.pdf"
+            "cta_link": "https://chrome-extension//efaidnbmnnnibpcajpcglclefindmkaj/https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Ina-Paarmans-Product-Allergen-Information.pdf"
           }
         }
       },

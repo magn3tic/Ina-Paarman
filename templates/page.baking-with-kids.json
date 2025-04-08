@@ -67,10 +67,20 @@
         "button_link": "shopify://pages/substitution",
         "image_position": false
       }
+    },
+    "download_pdf_form_ML4bGN": {
+      "type": "download-pdf-form",
+      "settings": {
+        "style": "style-1",
+        "sub_heading": "- sign up -",
+        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "description": ""
+      }
     }
   },
   "order": [
     "hero_carousel_7C9TAB",
-    "new_recipes_id7qqW"
+    "new_recipes_id7qqW",
+    "download_pdf_form_ML4bGN"
   ]
 }

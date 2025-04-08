@@ -71,10 +71,10 @@
     "download_pdf_form_ML4bGN": {
       "type": "download-pdf-form",
       "settings": {
-        "style": "style-1",
+        "style": "style-2",
         "sub_heading": "– Download –",
         "main_heading": "Kids Recipe Booklet",
-        "description": ""
+        "description": "<p>Download our recipe booklet here and start baking!</p>"
       }
     }
   },

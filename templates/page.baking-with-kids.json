@@ -67,32 +67,10 @@
         "button_link": "shopify://pages/substitution",
         "image_position": false
       }
-    },
-    "newsletter_HHCmp8": {
-      "type": "newsletter",
-      "settings": {
-        "style": "style-1",
-        "sub_heading": "– Sign Up –",
-        "main_heading": "Ina Paarman’s Kitchen Newsletter",
-        "description": "<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>"
-      }
-    },
-    "contact_8HcXmr": {
-      "type": "contact",
-      "settings": {
-        "sub_heading": "Contact Details -",
-        "heading": "Ina Paarman",
-        "phone_number": "+27 (0)21 705 6440/1",
-        "email_address": "ina@paarman.co.za",
-        "physical_address": "",
-        "postal_address": ""
-      }
     }
   },
   "order": [
     "hero_carousel_7C9TAB",
-    "new_recipes_id7qqW",
-    "newsletter_HHCmp8",
-    "contact_8HcXmr"
+    "new_recipes_id7qqW"
   ]
 }

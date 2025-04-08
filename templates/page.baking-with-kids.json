@@ -63,8 +63,8 @@
         "sub_heading": "April 2025 –",
         "heading": "Why bake with kids?",
         "rich_content": "<p>Baking is more than just making treats – it’s an opportunity to teach important skills like measuring, following directions, and patience. Plus, it's a wonderful way to create lasting memories that your family will cherish.</p><p>Ready to get started? Simply enter your details below and download our free Baking with Kids guide to begin a fun-filled holiday baking adventure today!</p>",
-        "button_text": "Download Recipe Book",
-        "button_link": "shopify://pages/substitution",
+        "button_text": "",
+        "button_link": "",
         "image_position": false
       }
     },
@@ -72,8 +72,8 @@
       "type": "download-pdf-form",
       "settings": {
         "style": "style-1",
-        "sub_heading": "- sign up -",
-        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "sub_heading": "– Download –",
+        "main_heading": "Kids Recipe Book",
         "description": ""
       }
     }

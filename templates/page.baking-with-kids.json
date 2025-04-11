@@ -11,7 +11,6 @@
   "sections": {
     "blog_header_zHcnBL": {
       "type": "blog-header",
-      "disabled": true,
       "settings": {
         "background_image": "shopify://shop_images/Ina_Paarmans_Decorative_Flat_Bread.jpg",
         "sub_heading": "Baking with Kids",
@@ -23,12 +22,14 @@
     },
     "spacer_xwxfRQ": {
       "type": "spacer",
+      "disabled": true,
       "settings": {
         "spacer_height": 120
       }
     },
     "new_recipes_id7qqW": {
       "type": "new-recipes",
+      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Fire-Spice-Recipes.jpg",
         "sub_heading": "Baking with Kids",

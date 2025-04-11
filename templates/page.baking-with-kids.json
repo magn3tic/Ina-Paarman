@@ -11,12 +11,11 @@
   "sections": {
     "blog_header_zHcnBL": {
       "type": "blog-header",
-      "disabled": true,
       "settings": {
         "background_image": "shopify://shop_images/Ina_Paarmans_Decorative_Flat_Bread.jpg",
-        "sub_heading": "The Ina Paarman Blog:",
-        "heading": "Great Food, Great Living",
-        "paragraph_1": "",
+        "sub_heading": "Baking with Kids",
+        "heading": "Get In on the Holiday Baking Fun!",
+        "paragraph_1": "<p>School holidays are the perfect time to get creative in the kitchen with your little ones! Our Junior Chef Baking Edition is filled with simple, delicious, and fun recipes that will turn your kitchen into a place of laughter, learning, and bonding.</p><p>Whether you're whipping up cupcakes, cookies, or a warm loaf of banana bread, these kid-friendly recipes are designed to be easy to follow and fun for all ages. <br/><br/>Plus, they’re made with high-quality ingredients from Ina Paarman’s Kitchen to ensure every creation is both tasty and wholesome.</p>",
         "cta_text": "",
         "cta_link": ""
       }
@@ -31,9 +30,9 @@
       "type": "new-recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Fire-Spice-Recipes.jpg",
-        "sub_heading": "April 2025 –",
-        "heading": "Why bake with kids?",
-        "rich_content": "<p>Baking is more than just making treats – it’s an opportunity to teach important skills like measuring, following directions, and patience. Plus, it's a wonderful way to create lasting memories that your family will cherish.</p><p>Ready to get started? Simply enter your details below and download our free Baking with Kids guide to begin a fun-filled holiday baking adventure today!</p>",
+        "sub_heading": "Baking with Kids",
+        "heading": "Get In on the Holiday Baking Fun!",
+        "rich_content": "<p>School holidays are the perfect time to get creative in the kitchen with your little ones! Our Junior Chef Baking Edition is filled with simple, delicious, and fun recipes that will turn your kitchen into a place of laughter, learning, and bonding.<br/><br/>Whether you're whipping up cupcakes, cookies, or a warm loaf of banana bread, these kid-friendly recipes are designed to be easy to follow and fun for all ages. <br/><br/>Plus, they’re made with high-quality ingredients from Ina Paarman’s Kitchen to ensure every creation is both tasty and wholesome.<br/></p>",
         "button_text": "",
         "button_link": "",
         "image_position": false
@@ -47,60 +46,12 @@
         "main_heading": "Kids Recipe Booklet",
         "description": "<p>Download our recipe booklet in PDF format here and start baking!</p>"
       }
-    },
-    "hero_carousel_7C9TAB": {
-      "type": "hero-carousel",
-      "blocks": {
-        "hero_slide_qkaFyd": {
-          "type": "hero_slide",
-          "settings": {
-            "image": "shopify://shop_images/Ina-Paarmans-Hints-Tips-4.jpg",
-            "video_link": "",
-            "sub_heading": "",
-            "heading": "Get In on the Holiday Baking Fun!",
-            "rich_content": "<p>School holidays are the perfect time to get creative in the kitchen with your little ones! Our Junior Chef Baking Edition is filled with simple, delicious, and fun recipes that will turn your kitchen into a place of laughter, learning, and bonding.<br/></p>",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "hero_slide_KQXMNY": {
-          "type": "hero_slide",
-          "settings": {
-            "image": "shopify://shop_images/Ina_Paarman_s_New_Recipes_April_2025.jpg",
-            "video_link": "",
-            "sub_heading": "",
-            "heading": "Fun For All Ages",
-            "rich_content": "<p>Whether you're whipping up cupcakes, cookies, or a warm loaf of banana bread, these kid-friendly recipes are designed to be easy to follow and fun for all ages. </p>",
-            "cta_text": "Online Junior Recipes",
-            "cta_link": "https://paarman.co.za/pages/recipes-junior-chef"
-          }
-        },
-        "hero_slide_Jp3wVL": {
-          "type": "hero_slide",
-          "settings": {
-            "image": "shopify://shop_images/SmokeBraaiedVeg-5-smoke-veg.jpg",
-            "video_link": "",
-            "sub_heading": "",
-            "heading": "Wholesome Creations",
-            "rich_content": "<p>Our kids' recipes are made with high-quality ingredients from Ina Paarman’s Kitchen to ensure every creation is both tasty and wholesome.</p>",
-            "cta_text": "Ina Paarman Products Dietary Info",
-            "cta_link": "https://chrome-extension//efaidnbmnnnibpcajpcglclefindmkaj/https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Ina-Paarmans-Product-Allergen-Information.pdf"
-          }
-        }
-      },
-      "block_order": [
-        "hero_slide_qkaFyd",
-        "hero_slide_KQXMNY",
-        "hero_slide_Jp3wVL"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "blog_header_zHcnBL",
     "spacer_xwxfRQ",
     "new_recipes_id7qqW",
-    "download_pdf_form_ML4bGN",
-    "hero_carousel_7C9TAB"
+    "download_pdf_form_ML4bGN"
   ]
 }

@@ -20,26 +20,6 @@
         "cta_link": ""
       }
     },
-    "spacer_xwxfRQ": {
-      "type": "spacer",
-      "disabled": true,
-      "settings": {
-        "spacer_height": 120
-      }
-    },
-    "new_recipes_id7qqW": {
-      "type": "new-recipes",
-      "disabled": true,
-      "settings": {
-        "bg_image": "shopify://shop_images/Ina-Paarmans-Fire-Spice-Recipes.jpg",
-        "sub_heading": "Baking with Kids",
-        "heading": "Get In on the Holiday Baking Fun!",
-        "rich_content": "<p>School holidays are the perfect time to get creative in the kitchen with your little ones! Our Junior Chef Baking Edition is filled with simple, delicious, and fun recipes that will turn your kitchen into a place of laughter, learning, and bonding.<br/><br/>Whether you're whipping up cupcakes, cookies, or a warm loaf of banana bread, these kid-friendly recipes are designed to be easy to follow and fun for all ages. <br/><br/>Plus, they’re made with high-quality ingredients from Ina Paarman’s Kitchen to ensure every creation is both tasty and wholesome.<br/></p>",
-        "button_text": "",
-        "button_link": "",
-        "image_position": false
-      }
-    },
     "download_pdf_form_ML4bGN": {
       "type": "download-pdf-form",
       "settings": {
@@ -52,8 +32,6 @@
   },
   "order": [
     "blog_header_zHcnBL",
-    "spacer_xwxfRQ",
-    "new_recipes_id7qqW",
     "download_pdf_form_ML4bGN"
   ]
 }

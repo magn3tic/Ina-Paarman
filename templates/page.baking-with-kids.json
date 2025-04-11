@@ -27,6 +27,15 @@
         "image_position": false
       }
     },
+    "download_pdf_form_ML4bGN": {
+      "type": "download-pdf-form",
+      "settings": {
+        "style": "style-2",
+        "sub_heading": "– Download –",
+        "main_heading": "Kids Recipe Booklet",
+        "description": "<p>Download our recipe booklet in PDF format here and start baking!</p>"
+      }
+    },
     "hero_carousel_7C9TAB": {
       "type": "hero-carousel",
       "blocks": {
@@ -73,21 +82,12 @@
         "hero_slide_Jp3wVL"
       ],
       "settings": {}
-    },
-    "download_pdf_form_ML4bGN": {
-      "type": "download-pdf-form",
-      "settings": {
-        "style": "style-2",
-        "sub_heading": "– Download –",
-        "main_heading": "Kids Recipe Booklet",
-        "description": "<p>Download our recipe booklet in PDF format here and start baking!</p>"
-      }
     }
   },
   "order": [
     "spacer_xwxfRQ",
     "new_recipes_id7qqW",
-    "hero_carousel_7C9TAB",
-    "download_pdf_form_ML4bGN"
+    "download_pdf_form_ML4bGN",
+    "hero_carousel_7C9TAB"
   ]
 }

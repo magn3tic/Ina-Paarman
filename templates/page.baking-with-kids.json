@@ -11,6 +11,7 @@
   "sections": {
     "blog_header_zHcnBL": {
       "type": "blog-header",
+      "disabled": true,
       "settings": {
         "background_image": "shopify://shop_images/Ina_Paarmans_Decorative_Flat_Bread.jpg",
         "sub_heading": "Baking with Kids",

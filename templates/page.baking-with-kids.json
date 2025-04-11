@@ -82,12 +82,24 @@
         "hero_slide_Jp3wVL"
       ],
       "settings": {}
+    },
+    "blog_header_zHcnBL": {
+      "type": "blog-header",
+      "settings": {
+        "background_image": "shopify://shop_images/Ina_Paarmans_Decorative_Flat_Bread.jpg",
+        "sub_heading": "The Ina Paarman Blog:",
+        "heading": "Great Food, Great Living",
+        "paragraph_1": "",
+        "cta_text": "",
+        "cta_link": ""
+      }
     }
   },
   "order": [
     "spacer_xwxfRQ",
     "new_recipes_id7qqW",
     "download_pdf_form_ML4bGN",
-    "hero_carousel_7C9TAB"
+    "hero_carousel_7C9TAB",
+    "blog_header_zHcnBL"
   ]
 }

@@ -20,8 +20,9 @@
             <div class="col-md-6">
                 <div class="ps-lg-5">
                   {% if section.settings.form_id != blank %}
-                    {%- render 'shopify-form', id: section.settings.form_id -%}
+                    <div class="shopify-custom-form" data-form-id="{{ section.settings.form_id }}"></div>
                   {% else %}
+                    {% comment %} --- Fallback Form --- {% endcomment %}
                     {% form 'customer', class: 'newsletter-form' %}
                     <input type="hidden" name="contact[tags]" value="newsletter">
                       <label for="newsletter-input-email" class="d-none">
@@ -79,8 +80,9 @@
                     {% endif %}
 
                     {% if section.settings.form_id != blank %}
-                      {%- render 'shopify-form', id: section.settings.form_id -%}
+                      <div class="shopify-custom-form" data-form-id="{{ section.settings.form_id }}"></div>
                     {% else %}
+                      {% comment %} --- Fallback Form --- {% endcomment %}
                       {% form 'customer', class: 'newsletter-form' %}
                       <input type="hidden" name="contact[tags]" value="newsletter">
                         <label for="newsletter-input-email" class="d-none">
@@ -138,7 +140,7 @@
       "type": "text",
       "id": "form_id",
       "label": "Shopify Form ID",
-      "info": "Enter the ID of your Shopify Forms app form. Leave blank to use the default form."
+      "info": "Enter the ID of your Shopify Form. Requires the Forms App Embed to be enabled in Theme Settings. Leave blank for default email signup."
     },     
     {
       "type": "text",
@@ -160,11 +162,11 @@
     {
       "type": "image_picker",
       "id": "background_image",
-      "label": "Background Image"
+      "label": "Background Image (Style 2 only)"
     },
     {
       "type": "header",
-      "content": "Shape Image"
+      "content": "Shape Image (Style 1 only)"
     },
     {
       "type": "image_picker",

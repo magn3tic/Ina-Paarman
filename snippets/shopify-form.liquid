@@ -1,0 +1,15 @@
+<div class="shopify-form-container">
+  {%- if id != blank -%}
+    <div id="shopify-form-{{ id }}">
+      {{ form_object }}
+    </div>
+    
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        ShopifyForm.load('{{ id }}', '#shopify-form-{{ id }}');
+      });
+    </script>
+  {%- else -%}
+    <div class="shopify-form-error">Form ID is required</div>
+  {%- endif -%}
+</div> 

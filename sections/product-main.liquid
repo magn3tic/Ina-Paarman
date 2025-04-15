@@ -142,7 +142,12 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="p7-tab" data-bs-toggle="tab" data-bs-target="#p7" type="button" role="tab" aria-controls="p7" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Instructions.svg?v=1729890296" alt="icon"><span class="product-tabtext">Instructions</span></button>
                         </li>                          
-                        {% endif %}                      
+                        {% endif %} 
+                       {% if product.metafields.custom.additional-info.value %}
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="p7-tab" data-bs-toggle="tab" data-bs-target="#p7" type="button" role="tab" aria-controls="p7" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Instructions.svg?v=1729890296" alt="icon"><span class="product-tabtext">Additional Info</span></button>
+                        </li>                          
+                        {% endif %}
                     </ul>             
                     <div class="tab-content" id="myTabContent">
                         {% if product.metafields.custom.ingredients.value %}

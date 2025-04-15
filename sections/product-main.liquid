@@ -152,7 +152,7 @@
                                   <div class="product-ingredients">
                                       {% assign ingredients = product.metafields.custom.ingredients.value %}
                                       {% for ingredient in ingredients %}
-                                          <span class="red_bullets"></span> {{ ingredient }}&nbsp;&nbsp;
+                                          <li><span class="red_bullets"></span> {{ ingredient }}</li>
                                       {% endfor %}
                                   </div>
                               {% endif %}

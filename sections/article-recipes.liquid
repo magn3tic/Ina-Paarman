@@ -310,8 +310,7 @@
                         </div>
                     </div>
                     <!-- Method Gallery With Text-->
-                    <div class="recipe-details-slider">
-
+                   <div class="recipe-details-slider">
                         {% if article.metafields["global"]["Method-Gallery-With-Text-2"] %} 
                             {% assign raw_html = article.metafields["global"]["Method-Gallery-With-Text-2"] %}
                             {% assign image_parts = raw_html | split: '<img ' %}
@@ -324,14 +323,33 @@
                                     <div class="slide">
                                         <a class="recipe-gallery">
                                             <img src="{{ image_url }}" alt="{{ alt_text }}" width="600" height="600">
-                                            <span class="d-block title">{{ alt_text }}</span>
+                                            {%  if alt_text!="Image" %} <span class="d-block title">{{ alt_text }}</span> {% endif %} 
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if article.metafields["global"]["Inas-Tip-2"] %} 
+                            {% assign raw_html = article.metafields["global"]["Inas-Tip-2"] %}
+                            {% assign image_parts = raw_html | split: '<img ' %}
+                        
+                            {% for part in image_parts %}
+                                {% if part contains 'src="' %}
+                                    {% assign image_url = part | split: 'src="' | last | split: '"' | first %}
+                                    {% assign alt_text = part | split: 'alt="' | last | split: '"' | first %}
+                                    
+                                    <div class="slide">
+                                        <a class="recipe-gallery">
+                                            <img src="{{ image_url }}" alt="{{ alt_text }}" width="600" height="600">
+                                            {%  if alt_text!="Image" %} <span class="d-block title">{{ alt_text }}</span> {% endif %} 
                                         </a>
                                     </div>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
                         
-                      <!-- Method Gallery -->
+                        
+                      <!-- Method Gallery 
                       {% if article.metafields["global"]["Method-Gallery"] %}
                               {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}
                               {% for image in method_images %}
@@ -342,8 +360,8 @@
                                   </div>
                               {% endfor %}
                       {% endif %}
-                        
-                      <!-- Tip Gallery -->
+                        -->
+                      <!-- Tip Gallery 
                       {% if article.metafields["global"]["Tip-Gallery"] %}
                             {% assign tip_images = article.metafields["global"]["Tip-Gallery"] | split: ',' %}
                             {% for image in tip_images %}
@@ -354,8 +372,9 @@
                                 </div>
                             {% endfor %}
                       {% endif %}
+                      -->
                     </div>
-
+                    <!--
                     {% if article.metafields["global"]["Inas-Tip"] %}
                     <div class="inas-tip">
                         <div class="row align-items-center">
@@ -372,7 +391,7 @@
                         </div>
                     </div>  
                     {% endif %}
-
+                            -->
                     <div class="method">
                         <h3 class="h2 mb-4"><strong>Method:</strong></h3>
                         {{ article.content }}                              

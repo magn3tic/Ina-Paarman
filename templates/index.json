@@ -86,10 +86,11 @@
       "disabled": true,
       "name": "New Recipes",
       "settings": {
-        "sub_heading": "(Month) (Year) -",
+        "bg_image": "shopify://shop_images/Ina-Paarmans-Cajun-Spiced-Pulled-Lamb.jpg",
+        "sub_heading": "May 2025 –",
         "heading": "New Recipes",
         "rich_content": "<p>Aside from being the last stretch of winter, August is National Women’s Month in South Africa...</p>",
-        "button_text": "",
+        "button_text": "Discover Menu",
         "button_link": "",
         "image_position": false
       }

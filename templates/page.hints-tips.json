@@ -155,6 +155,7 @@
     },
     "new_recipes_3h8Egg": {
       "type": "new-recipes",
+      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-New-Recipes-April-2025.jpg",
         "sub_heading": "April 2025 –",
@@ -167,10 +168,9 @@
     },
     "new_recipes_z4EPft": {
       "type": "new-recipes",
-      "disabled": true,
       "name": "New Recipes",
       "settings": {
-        "bg_image": "shopify://shop_images/Ina-Paarmans-Cajun-Spiced-Pulled-Lamb.jpg",
+        "bg_image": "shopify://shop_images/Ina-Paarmans-Mezze-Pulled-Pork.jpg",
         "sub_heading": "May 2025 –",
         "heading": "New Recipes",
         "rich_content": "<p>Slowly but surely, the way in which we present and serve food – either at the family table or for more formal occasions – has changed.</p><p>The idea of mezze-style eating has taken the food world by storm. It basically means placing all the dishes on the table (except dessert), allowing people to help themselves. They are now in control of personal taste and portion size. The meal is often enhanced and extended with flatbreads.</p><p>On a practical level, mezze-style eating saves washing up and makes serving a breeze.</p>",

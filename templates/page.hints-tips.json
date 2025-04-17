@@ -155,7 +155,6 @@
     },
     "new_recipes_3h8Egg": {
       "type": "new-recipes",
-      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-New-Recipes-April-2025.jpg",
         "sub_heading": "April 2025 –",
@@ -168,6 +167,7 @@
     },
     "new_recipes_z4EPft": {
       "type": "new-recipes",
+      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Mezze-Pulled-Pork.jpg",

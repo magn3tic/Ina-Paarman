@@ -1329,6 +1329,8 @@ blockquote {
 
 .recipe-gallery img {
 	border-radius: 8px;
+	object-fit: cover;
+	aspect-ratio: 1/1;
 }
 
 .recipe-details-slider {

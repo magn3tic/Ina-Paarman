@@ -388,7 +388,9 @@ section {
 }
 
 .hero-img img {
-	border-radius: 8px
+	border-radius: 8px;
+  aspect-ratio: 134 / 129;
+  width:100%
 }
 
 .hero_slider_navigation {

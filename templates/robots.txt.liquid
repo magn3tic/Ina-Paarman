@@ -14,5 +14,11 @@
   {%- endif -%}
 {% endfor %}
 
+# Custom Rule for SemrushBot
 User-agent: SemrushBot
 Allow: /
+Disallow: /checkouts/internal/preloads.js
+Disallow: /checkouts/internal/preloads.js?locale=en-ZA
+
+User-agent: SiteAuditBot
+Disallow: /checkouts/internal/preloads.js?locale=en-ZA

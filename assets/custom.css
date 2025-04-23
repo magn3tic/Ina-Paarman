@@ -414,6 +414,7 @@ section {
 
 .hero-area {
 	padding-top: 160px;
+    overflow:hidden;
 }
 
 .header-area {

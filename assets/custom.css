@@ -4927,3 +4927,5 @@ body[class*="article.recipes"] .recipe-banner-area {
   border-left:solid #fff 50px; 
   border-bottom:solid #fff 50px
 }
+  .slick-slider { visibility: hidden; }
+  .slick-initialized .slick-slider { visibility: visible; }

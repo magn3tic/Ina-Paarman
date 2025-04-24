@@ -3066,7 +3066,9 @@ blockquote .date_author {
 		width: auto;
 	}
 
-
+.hero-row{
+  overflow: hidden;
+}
 	.heading {
 		font-size: 40px;
 	}

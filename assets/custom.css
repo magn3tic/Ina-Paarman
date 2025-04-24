@@ -4928,5 +4928,6 @@ body[class*="article.recipes"] .recipe-banner-area {
   border-bottom:solid #fff 50px
 }
 .hero-slider{
-  min-height: 350px
+  min-height: 350px;
+  overflow:hidden;
 }

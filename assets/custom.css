@@ -381,7 +381,6 @@ section {
 }
 
 .hero-img {
-    overflow: hidden;
     position: relative;
 	border-radius: 8px;
     min-height:350px

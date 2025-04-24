@@ -322,7 +322,9 @@ section {
 .hero-slider .slick-list {
 	width: 1400px;
 	margin-left: -15px;
-	margin-right: -15px
+	margin-right: -15px;
+    overflow: hidden;
+    max-height:800px
 }
 
 .hero-slider .slide {

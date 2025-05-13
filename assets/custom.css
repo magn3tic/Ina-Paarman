@@ -1377,7 +1377,9 @@ blockquote {
 	color: rgba(255, 255, 255, 0.8);
 	margin: 50px 0 20px
 }
-
+.inas-tip h5{
+	color: rgba(255, 255, 255, 0.8);
+}
 .inas-tip .h1 {
 	margin: 0
 }

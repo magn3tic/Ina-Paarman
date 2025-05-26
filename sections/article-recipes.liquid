@@ -411,6 +411,7 @@
   </div></section>
 <!-- Content End -->
 
+{% assign video_aspect_ratio = article.metafields["global"]["Youtube-Video-Aspect"] %}
 {% assign youtube_url = article.metafields["global"]["YouTube-Video"] %}
 {% if youtube_url %}
   {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
@@ -421,7 +422,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <div class="video-box">
+          <div class="video-box {%  if video_aspect_ratio %} video-box-{{ video_aspect_ratio }} {% endif %}">
             <img
               src="{{ thumbnail_url }}"
               alt="YouTube Thumbnail"

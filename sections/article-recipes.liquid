@@ -422,7 +422,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <div class="video-box {%  if video_aspect_ratio %} video-box--{{ video_aspect_ratio }} {% endif %}">
+          <div class="video-box">
             <img
               src="{{ thumbnail_url }}"
               alt="YouTube Thumbnail"
@@ -430,6 +430,7 @@
             <a
               href="{{ youtube_url }}"
               data-lity
+              {%  if video_aspect_ratio == "9x16"  %} data-lity-aspect-ratio="9:16" {% endif %}
               class="play_btn">
               <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/play-btn.svg" alt="Play Button">
             </a>

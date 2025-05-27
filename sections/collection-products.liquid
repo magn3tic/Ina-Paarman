@@ -65,7 +65,7 @@
     {% endpaginate %}
 {% if collection.metafields.custom.animation-video %}
   <div class="ratio ratio-16x9 mb-5">
-    <video autoplay loop>
+    <video autoplay loop muted>
       <source src="{{ collection.metafields.custom.animation-video | file_url }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>

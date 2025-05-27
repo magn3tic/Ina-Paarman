@@ -165,12 +165,27 @@
         "button_link": "shopify://pages/may-2025",
         "image_position": false
       }
+    },
+    "new_recipes_HXrgay": {
+      "type": "new-recipes",
+      "disabled": true,
+      "name": "New Recipes",
+      "settings": {
+        "bg_image": "shopify://shop_images/Ina-Paarmans-Fabulous-Favourites.jpg",
+        "sub_heading": "June 2025 –",
+        "heading": "New Recipes",
+        "rich_content": "<p>We all have some totally reliable and much-loved recipes that have stood the test of time.</p><p>This month’s winter collection consists of some of Ina’s personal, A-list favourites. We share them with you to enjoy during this time of the year when we sit around a table and focus on good, honest, real food.</p>",
+        "button_text": "Discover Menu",
+        "button_link": "shopify://pages/june-2025",
+        "image_position": false
+      }
     }
   },
   "order": [
     "hero_carousel_7C9TAB",
     "richtext_7btbGw",
     "spacer_DXVDhW",
-    "new_recipes_z4EPft"
+    "new_recipes_z4EPft",
+    "new_recipes_HXrgay"
   ]
 }

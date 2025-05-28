@@ -24,6 +24,18 @@
             "cta_link": "shopify://pages/about"
           }
         },
+        "hero_slide_CXydqx": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Creamy-Mushroom-Soup.jpg",
+            "video_link": "https://www.youtube.com/watch?v=Mtwj4fT8z0Y",
+            "sub_heading": "Cold Much? –",
+            "heading": "There’s a Simpler Way to Do Winter",
+            "rich_content": "<p>Winter often sees us South Africans become a little… Dramatic. But staying cosy doesn’t have to be so over-the-top!</p><p>Our Ready To Serve Soups, Cook-In Curry and Pasta Sauces bring comfort with heartwarming meals, ready in a flash. It’s The Simple Way to Do Winter.</p>",
+            "cta_text": "Browse Soups",
+            "cta_link": "shopify://collections/soups-readyserve"
+          }
+        },
         "hero_slide_dyEFja": {
           "type": "hero_slide",
           "settings": {
@@ -63,6 +75,7 @@
       },
       "block_order": [
         "hero_slide_UybmEB",
+        "hero_slide_CXydqx",
         "hero_slide_dyEFja",
         "hero_slide_p3bmFB",
         "hero_slide_R4EJK8"
@@ -71,7 +84,6 @@
     },
     "new_recipes_YnrcEa": {
       "type": "new-recipes",
-      "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Mezze-Pulled-Pork.jpg",
         "sub_heading": "May 2025 –",
@@ -85,7 +97,6 @@
     "new_recipes_7YgaEa": {
       "type": "new-recipes",
       "disabled": true,
-      "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Fabulous-Favourites.jpg",
         "sub_heading": "June 2025 –",

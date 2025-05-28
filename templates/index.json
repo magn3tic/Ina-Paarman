@@ -12,18 +12,6 @@
     "hero_carousel_CmDneU": {
       "type": "hero-carousel",
       "blocks": {
-        "hero_slide_UybmEB": {
-          "type": "hero_slide",
-          "settings": {
-            "image": "shopify://shop_images/Ina-Paarmans-Kitchen.jpg",
-            "video_link": "https://www.youtube.com/watch?v=TV-c3dKX3bg",
-            "sub_heading": "Our Promise –",
-            "heading": "It Starts At Home",
-            "rich_content": "<p>That feeling of true belonging. The things and people that keep you grounded. The wholesome choices you make. This is where it all begins.<br/><br/>This is where our story begins.</p>",
-            "cta_text": "Our Story",
-            "cta_link": "shopify://pages/about"
-          }
-        },
         "hero_slide_CXydqx": {
           "type": "hero_slide",
           "settings": {
@@ -46,6 +34,18 @@
             "rich_content": "<p>Prepared using time-honoured, traditional methods, our array of products contains only the freshest ingredients for wholesome home cooking.</p><p>Explore our nutritionally dense Ina Paarman Spices & Seasoning, Sauces, Baking Mixes, and beyond to infuse your meals with authentic flavour.</p>",
             "cta_text": "Browse Products",
             "cta_link": "shopify://collections"
+          }
+        },
+        "hero_slide_UybmEB": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Kitchen.jpg",
+            "video_link": "https://www.youtube.com/watch?v=TV-c3dKX3bg",
+            "sub_heading": "Our Promise –",
+            "heading": "It Starts At Home",
+            "rich_content": "<p>That feeling of true belonging. The things and people that keep you grounded. The wholesome choices you make. This is where it all begins.<br/><br/>This is where our story begins.</p>",
+            "cta_text": "Our Story",
+            "cta_link": "shopify://pages/about"
           }
         },
         "hero_slide_p3bmFB": {
@@ -74,9 +74,9 @@
         }
       },
       "block_order": [
-        "hero_slide_UybmEB",
         "hero_slide_CXydqx",
         "hero_slide_dyEFja",
+        "hero_slide_UybmEB",
         "hero_slide_p3bmFB",
         "hero_slide_R4EJK8"
       ],

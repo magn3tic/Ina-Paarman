@@ -34,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   {% if page_description %}
 <meta name="description" content="{{ page_description | escape }}">
-    {% else if collection %}
+    {% elsif collection %}
     <meta name="description" content="{{ collection.meta_description | escape }}">
   {% endif %}
   {% render 'meta-tags' %}
@@ -55,8 +55,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   });
 </script>
-
-
 
 </head>
 

@@ -35,11 +35,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% if page_description %}
     <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
-
   {% render 'meta-tags' %}
-
   {{ content_for_header }}
-
   {% render 'styles-scripts' %}
   <script>
   document.addEventListener('DOMContentLoaded', function () {

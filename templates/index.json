@@ -94,6 +94,19 @@
         "image_position": false
       }
     },
+    "new_recipes_y9m9KP": {
+      "type": "new-recipes",
+      "disabled": true,
+      "name": "New Recipes",
+      "settings": {
+        "sub_heading": "June 2025 –",
+        "heading": "New Recipes",
+        "rich_content": "<p>Aside from being the last stretch of winter, August is National Women’s Month in South Africa...</p>",
+        "button_text": "Discover Menu",
+        "button_link": "",
+        "image_position": false
+      }
+    },
     "spacer_8qbHJ6": {
       "type": "spacer",
       "settings": {
@@ -372,6 +385,7 @@
   "order": [
     "hero_carousel_CmDneU",
     "new_recipes_7YgaEa",
+    "new_recipes_y9m9KP",
     "spacer_8qbHJ6",
     "recipe_box_krqVzA",
     "reviews_gyRwBV",

@@ -53,7 +53,8 @@
                   {% endif %}
               {% else %}    
                   {% if block.settings.image != blank %}
-                    <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width = "670" height = "645">
+                    {{ block.settings.image | image_url: width:420 | class: 'img-fluid object-fit-cover' }}
+                    
                   {% endif %}                
               {% endif %}    
             </div>

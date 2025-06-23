@@ -4539,7 +4539,9 @@ body[class*="page.competitions"] .promo-area {
 .recipe-box-alt img {
     height: 250px;
 }
-  
+  .hero-text-slider{
+    padding:0
+  }
 }
 
 .video-box img {

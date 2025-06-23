@@ -53,8 +53,7 @@
                   {% endif %}
               {% else %}    
                   {% if block.settings.image != blank %}
-                    {{ block.settings.image | image_url: width:420 | class: 'img-fluid object-fit-cover' }}
-                    
+                    {{ block.settings.image | image_url: width:420 | class: 'img-fluid object-fit-cover' }}   
                   {% endif %}                
               {% endif %}    
             </div>

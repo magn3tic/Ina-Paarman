@@ -80,5 +80,6 @@
 {% comment %} 
   Custom 
 {% endcomment %}
-<link href="{{ 'custom.css' | asset_url }}" rel="stylesheet">
+
+{{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
 <script src="{{ 'custom.js' | asset_url }}" defer></script>

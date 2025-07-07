@@ -82,4 +82,4 @@
 {% endcomment %}
 
 {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
-<script src="{{ 'custom.js' | asset_url }}" defer></script>
+{{ 'custom.js' | asset_url | preload_tag: as: 'script' }}

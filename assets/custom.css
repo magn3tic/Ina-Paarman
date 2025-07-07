@@ -1,8 +1,4 @@
-/** Shopify CDN: Minification failed
 
-Line 4911:0 Unexpected "}"
-
-**/
 body {
 	margin: 0;
 	padding: 0;
@@ -1685,7 +1681,6 @@ blockquote {
 .blog-box p {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
 	overflow: hidden;
 }
 

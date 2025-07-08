@@ -33,7 +33,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </title>
 
   {% if page_description %}
-<meta name="description" content="{{ page_description | escape }}">
+    {% if template == 'collection-list' %}
+    <meta name="description" content="Browse all our collections and discover our best categories.">
+  {% else %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
   {% endif %}
   {% render 'meta-tags' %}
   {{ content_for_header }}

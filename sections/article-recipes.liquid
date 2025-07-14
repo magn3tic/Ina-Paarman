@@ -428,7 +428,7 @@
 {% assign youtube_url = article.metafields["global"]["YouTube-Video"] %}
 {% if youtube_url %}
     {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
-    {% assign thumbnail_url = "https://img.youtube.com/vi/" | append: video_id | append: "/mqdefault.jpg" %}
+    {% assign thumbnail_url = "https://img.youtube.com/vi/" | append: video_id | append: "/maxresdefault.jpg" %}
 
     <!-- Content Start Video -->
     <section class="content-area pt-0" style="margin-top:-55px">

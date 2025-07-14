@@ -63,14 +63,41 @@
        {% render 'pagination', paginate: paginate %}
       {% endif %}
     {% endpaginate %}
-{% if collection.metafields.custom.animation-video %}
-  <div class="ratio ratio-16x9 mb-5">
-    <video autoplay loop muted>
-      <source src="{{ collection.metafields.custom.animation-video | file_url }}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-{% endif %}     
+
+  {% if collection.metafields.custom['animation-video-youtube'] %}
+    <!-- Use this for Youtube -->
+    {% assign youtube_url = collection.metafields.custom['animation-video-youtube'].value %}
+    {% if youtube_url contains 'youtube.com/watch?v=' %}
+      {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
+      {% assign embed_url = 'https://www.youtube.com/embed/' | append: video_id | append: '?rel=0' %}
+    {% elsif youtube_url contains 'youtu.be/' %}
+      {% assign video_id = youtube_url | split: 'youtu.be/' | last | split: '?' | first %}
+      {% assign embed_url = 'https://www.youtube.com/embed/' | append: video_id | append: '?rel=0' %}
+    {% else %}
+      {% assign embed_url = youtube_url %}
+      {% if youtube_url contains '?' %}
+        {% assign embed_url = embed_url | append: '&rel=0' %}
+      {% else %}
+        {% assign embed_url = embed_url | append: '?rel=0' %}
+      {% endif %}
+    {% endif %}
+    <div class="ratio ratio-16x9 mb-5">
+      <iframe src="{{ embed_url }}" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </div>
+  {% elsif collection.metafields.custom['animation-video'] %}
+  <!-- Use this for video file -->
+    <div class="ratio ratio-16x9 mb-5">
+      <video autoplay loop muted controls>
+        <source src="{{ collection.metafields.custom['animation-video'] | file_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  {% endif %}  
+    
   </div>
 </section>
 {% schema %}

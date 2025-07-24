@@ -68,6 +68,25 @@
         </div>
     </div>
 </section>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('[data-testid="form"]');
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        // Wait briefly in case validation or AJAX is async
+        setTimeout(function () {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "custom_form_submitted",
+            formType: "recipe_download"
+          });
+        }, 500); // Adjust delay based on how long submission takes
+      });
+    }
+  });
+</script>
 <!-- Content End -->
 {% endif %}
 

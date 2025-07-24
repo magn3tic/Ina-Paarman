@@ -4934,3 +4934,19 @@ body[class*="article.recipes"] .recipe-banner-area {
 .hero-img-col{
   overflow: hidden
 }
+.hero-slider:not(.slick-initialized) .slick-slide {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: none;
+}
+.hero-slider.slick-initialized {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+.hero-slider:not(.slick-initialized) {
+  opacity: 0;
+}

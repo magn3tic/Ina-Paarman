@@ -69,21 +69,32 @@
     </div>
 </section>
 
-  <script>
+<script>
   document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('[data-testid="form"]');
+    // Wait until the DOM is ready
+    function bindFormSubmitListener() {
+      const form = document.querySelector('form[id="560368"]');
 
-    if (form) {
-      form.addEventListener("submit", function (e) {
-  
-        setTimeout(function () {
+      if (form) {
+        console.log("✅ Form #560368 found");
+
+        form.addEventListener("submit", function () {
+          console.log("📨 Form #560368 submitted");
+
+          // Push custom event to GTM's data layer
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-            event: "recipe_download_success",
-            formType: "recipe_download"
+            event: "custom_form_submit_560368",
+            form_id: "560368"
           });
-        }, 500);
+        });
+      } else {
+        console.log(" Form #560368 not found — retrying...");
+        setTimeout(bindFormSubmitListener, 500); // Retry after 500ms
+      }
     }
+
+    bindFormSubmitListener();
   });
 </script>
 <!-- Content End -->

@@ -75,15 +75,14 @@
 
     if (form) {
       form.addEventListener("submit", function (e) {
-        // Wait briefly in case validation or AJAX is async
+  
         setTimeout(function () {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             event: "recipe_download_success",
             formType: "recipe_download"
           });
-        }, 500); // Adjust delay based on how long submission takes
-      });
+        }, 500);
     }
   });
 </script>

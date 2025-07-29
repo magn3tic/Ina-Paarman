@@ -39,6 +39,11 @@
                               <p>{{ article.metafields.custom['author-bio'] }}</p>
                             </div>
                           {% endif %}
+                      {% if article.metafields.custom['author-biography'] %}
+                            <div class="author-bio">
+                              <p>{{ article.metafields.custom['author-biography'] }}</p>
+                            </div>
+                          {% endif %}
                       </div>
                     {% endif %}
                   

@@ -29,22 +29,7 @@
                           {% if article.metafields.custom['author-bio'] %}
                             <div class="author-bio">
                               <h4>{{ article.metafields.custom.author }}</h4>
-                              {% assign biography = article.metafields.custom['author-biography'] %}
-                              {% if biography.children %}
-                                {% for paragraph in biography.children %}
-                                  {% if paragraph.type == 'paragraph' %}
-                                    <p>
-                                      {% for child in paragraph.children %}
-                                        {% if child.type == 'text' %}
-                                          {{ child.value }}
-                                        {% elsif child.type == 'link' %}
-                                          <a href="{{ child.url }}" {% if child.target %}target="{{ child.target }}"{% endif %}>{{ child.children[0].value }}</a>
-                                        {% endif %}
-                                      {% endfor %}
-                                    </p>
-                                  {% endif %}
-                                {% endfor %}
-                              {% endif %}
+                              <p>{{ article.metafields.custom['author-bio'] }}</p>
                             </div>
                           {% endif %}
                       </div>

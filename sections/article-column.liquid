@@ -2,14 +2,14 @@
 <section class="technical-content-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+            <div class="col-md-8 offset-md-2">
                 <div class="content-img mb-4">
                   {% if article.image %}
-                      <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
-                  {% endif %}                  
+                      <img src="{{ article.image | image_url: width: 1200, height: 1200, crop: 'center' }}" alt="{{ article.title }}" width="800" height="800">
+                  {% endif %}                    
                 </div>
             </div>
-            <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+            <div class="col-md-8 offset-md-2">
                 <div class="content-text post-content">
                     {% assign blog_tagline = article.metafields.custom.tagline %}
                     {% if blog_tagline %}

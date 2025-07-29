@@ -29,7 +29,7 @@
                           {% if article.metafields.custom['author-bio'] %}
                             <div class="author-bio">
                               <h4>{{ article.metafields.custom.author }}</h4>
-                              <p>{{ article.metafields.custom['author-bio'] }}</p>
+                              {{ article.metafields.custom['author-biography'] | metafield_tag }}
                             </div>
                           {% endif %}
                       </div>

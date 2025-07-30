@@ -34,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   {% if page_description %}
     {% if template == 'list-collections' %}
-    <meta name="description" content="Browse all our collections and discover our best categories.">
+    <meta name="description" content="Explore our world of tasty and nutritious products that will add immeasurably to your pleasure of cooking.">
   {% else %}
     <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
@@ -58,6 +58,121 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   });
 </script>
 
+<style>
+  @font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-LightItalic.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-LightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-Light.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-Light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-BlackItalic.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-BlackItalic.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-Black.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-Black.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quarto';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HelveticaNowText';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/HelveticaNowText-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/HelveticaNowText-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HelveticaNowText';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/HelveticaNowText-Medium.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/HelveticaNowText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HelveticaNowText';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/HelveticaNowText-Bold.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/HelveticaNowText-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-RegularItalic.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/PPMonumentExtended-RegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quarto';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Semibold.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quarto';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Medium.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quarto';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Bold.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Quarto-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Allison';
+    src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Allison-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Allison-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+</style>
+    
 </head>
 
 <body class="{{ request.page_type | prepend: 'page-type-' }} {{ template }}">

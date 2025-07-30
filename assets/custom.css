@@ -419,6 +419,7 @@ section {
 	left: 0;
 	width: 100%;
 	z-index: 9;
+  max-height:50px
 }
 
 .hero-area .cta_btn {

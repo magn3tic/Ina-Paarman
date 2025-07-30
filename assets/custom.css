@@ -197,7 +197,6 @@ section {
     }
   .hero-row{
     max-height:750px;
-    overflow:hidden
   }
 
     .mainmenu>ul>li:not(:last-child)>a:before {

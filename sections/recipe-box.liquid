@@ -60,6 +60,7 @@
           <a href="{{ block.settings.slide_link }}" class="recipe-box">
             {% if block.settings.slide_image != blank %}
               <img src="{{ block.settings.slide_image | image_url }}" alt="{{ block.settings.slide_image.alt | escape }}" width = "402" height="530" >
+            {{ block.settings.slide_image | image_url: width: 620, height: 360 | image_tag: class: 'object-fit-cover', loading: 'lazy' }}
             {% endif %}
             
             {% if block.settings.title != blank %}

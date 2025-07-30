@@ -128,24 +128,29 @@
                             <button class="nav-link" id="p4-tab" data-bs-toggle="tab" data-bs-target="#p4" type="button" role="tab" aria-controls="p4" aria-selected="false"><span class="product-tabtext">Dietary Info</span></button>
                         </li>                          
                         {% endif %}
+                      {% if product.metafields.custom.additional-dietary-info-text.value %}
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="p5-tab" data-bs-toggle="tab" data-bs-target="#p5" type="button" role="tab" aria-controls="p5" aria-selected="false"><span class="product-tabtext">Dietary Info</span></button>
+                        </li>                          
+                        {% endif %}
                         {% if product.metafields.custom.additional-ingredients-required.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p5-tab" data-bs-toggle="tab" data-bs-target="#p5" type="button" role="tab" aria-controls="p5" aria-selected="false"><span class="product-tabtext">Ingredients Required</span></button>
+                            <button class="nav-link" id="p6-tab" data-bs-toggle="tab" data-bs-target="#p6" type="button" role="tab" aria-controls="p6" aria-selected="false"><span class="product-tabtext">Ingredients Required</span></button>
                         </li>                          
                         {% endif %}  
                         {% if product.metafields.custom.equipment-required.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p6-tab" data-bs-toggle="tab" data-bs-target="#p6" type="button" role="tab" aria-controls="p6" aria-selected="false"><span class="product-tabtext">Equipment Required</span></button>
+                            <button class="nav-link" id="p7-tab" data-bs-toggle="tab" data-bs-target="#p7" type="button" role="tab" aria-controls="p7" aria-selected="false"><span class="product-tabtext">Equipment Required</span></button>
                         </li>                          
                         {% endif %}  
                         {% if product.metafields.custom.temperature-duration.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p7-tab" data-bs-toggle="tab" data-bs-target="#p7" type="button" role="tab" aria-controls="p7" aria-selected="false"><span class="product-tabtext">Temperature & Duration</span></button>
+                            <button class="nav-link" id="p8-tab" data-bs-toggle="tab" data-bs-target="#p8" type="button" role="tab" aria-controls="p8" aria-selected="false"><span class="product-tabtext">Temperature & Duration</span></button>
                         </li>                          
                         {% endif %}  
                         {% if product.metafields.custom.instructions.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p8-tab" data-bs-toggle="tab" data-bs-target="#p8" type="button" role="tab" aria-controls="p8" aria-selected="false"><span class="product-tabtext">Instructions</span></button>
+                            <button class="nav-link" id="p9-tab" data-bs-toggle="tab" data-bs-target="#p9" type="button" role="tab" aria-controls="p9" aria-selected="false"><span class="product-tabtext">Instructions</span></button>
                         </li>                          
                         {% endif %}
                     </ul>             
@@ -201,8 +206,22 @@
                             </div>
                         </div>
                         {% endif %} 
-                        {% if product.metafields.custom.additional-ingredients-required.value %}
+                      {% if product.metafields.custom.additional-dietary-info-text.value %}
                         <div class="tab-pane fade" id="p5" role="tabpanel" aria-labelledby="p5-tab">
+                            <div class="product-tab-content">
+                              {% if product.metafields.custom.additional-dietary-info-text %}
+                                  <ul>
+                                      {% assign info = product.metafields.custom.additional-dietary-info-text.value %}
+                                      {% for info in info %}
+                                          <li><span class="red_bullets"></span> {{ info }}</li>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                            </div>
+                        </div>
+                        {% endif %} 
+                        {% if product.metafields.custom.additional-ingredients-required.value %}
+                        <div class="tab-pane fade" id="p6" role="tabpanel" aria-labelledby="p6-tab">
                             <div class="product-tab-content">
                                 {% if product.metafields.custom.additional-ingredients-required %}
                                   <ul>
@@ -216,7 +235,7 @@
                         </div>                        
                         {% endif %}  
                         {% if product.metafields.custom.equipment-required.value %}
-                        <div class="tab-pane fade" id="p6" role="tabpanel" aria-labelledby="p6-tab">
+                        <div class="tab-pane fade" id="p7" role="tabpanel" aria-labelledby="p7-tab">
                             <div class="product-tab-content">
                               {% if product.metafields.custom.equipment-required %}
                                   <ul>
@@ -230,7 +249,7 @@
                         </div>                       
                         {% endif %}  
                         {% if product.metafields.custom.temperature-duration.value %}
-                        <div class="tab-pane fade" id="p7" role="tabpanel" aria-labelledby="p7-tab">
+                        <div class="tab-pane fade" id="p8" role="tabpanel" aria-labelledby="p8-tab">
                             <div class="product-tab-content">
                               {% if product.metafields.custom.temperature-duration %}
                                   <ul>
@@ -244,7 +263,7 @@
                         </div>                      
                         {% endif %}  
                         {% if product.metafields.custom.instructions.value %}
-                        <div class="tab-pane fade" id="p8" role="tabpanel" aria-labelledby="p8-tab">
+                        <div class="tab-pane fade" id="p9" role="tabpanel" aria-labelledby="p9-tab">
                             <div class="product-tab-content">
                                 {{ product.metafields.custom.instructions | metafield_tag }}
                             </div>

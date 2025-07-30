@@ -44,7 +44,7 @@
             <a href="{{ block.settings.product_link }}" class="product-box">
               <div class="shape_color" style="background-color: {{ block.settings.shop_color_picker }}"></div>
               {% if block.settings.product_image != blank %}
-                <img src="{{ block.settings.product_image | image_url }}" alt="image" width = "267" height = "270">
+                <img src="{{ block.settings.product_image | image_url }}" alt="image" loading ="lazy" width= "267" height= "270">
               {% endif %}
               
               {% if block.settings.product_title != blank %}

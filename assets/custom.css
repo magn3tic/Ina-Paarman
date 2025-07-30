@@ -3244,6 +3244,10 @@ blockquote .date_author {
 		padding-top: 150px;
 	}
 
+	.technical-content-area--blog {
+		padding-top: 100px;
+	}
+
     .measure-table .h2,
 	.faqs_box .h2 {
 		font-size: 34px;

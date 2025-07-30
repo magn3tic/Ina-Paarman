@@ -209,14 +209,10 @@
                       {% if product.metafields.custom.additional-dietary-info-text.value %}
                         <div class="tab-pane fade" id="p5" role="tabpanel" aria-labelledby="p5-tab">
                             <div class="product-tab-content">
-                              {% if product.metafields.custom.additional-dietary-info-text %}
-                                  <ul>
-                                      {% assign info = product.metafields.custom.additional-dietary-info-text.value %}
-                                      {% for info in info %}
-                                          <li><span class="red_bullets"></span> {{ info }}</li>
-                                      {% endfor %}
-                                  </ul>
-                              {% endif %}
+                             {{ product.metafields.custom.additional-dietary-info-text | metafield_tag }}
+                              </div>
+                        </div>                      
+                        {% endif %} 
                             </div>
                         </div>
                         {% endif %} 
@@ -276,7 +272,6 @@
     </div>
 </section>
 <!-- Content End -->
-{% endif %}
 {% if product.metafields.custom.tablepress != blank %}
 <section class="product-table pt-5 pb-0">
   <div class="container">

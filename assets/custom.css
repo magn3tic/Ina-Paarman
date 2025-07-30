@@ -195,6 +195,9 @@ section {
         margin-right: 15px;
         padding-right: 15px;
     }
+  .hero-row{
+    max-height:750px
+  }
 
     .mainmenu>ul>li:not(:last-child)>a:before {
         content: "";

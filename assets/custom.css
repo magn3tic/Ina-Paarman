@@ -4975,3 +4975,6 @@ body[class*="article.recipes"] .recipe-banner-area {
   min-height:20px;
   overflow: hidden
 }
+.hero-row{
+  overflow: hidden
+}

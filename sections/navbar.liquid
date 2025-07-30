@@ -5,7 +5,7 @@
       <!-- Logo -->
       <a class="site-logo" href="{{ routes.root_url }}">
         {% if settings.logo %}
-          <img class="mx-auto" class = "head-logo" src="{{ settings.logo | image_url: height: logo_height_x2 }}" alt="{{ shop.name }}" loading="lazy" width = "210" height = "151">
+          <img class="mx-auto" class = "head-logo" src="{{ settings.logo | image_url: height: logo_height_x2 }}" alt="{{ shop.name }}" loading="eager" width = "210" height = "151">
         {% else %}
           <span>{{ shop.name }}</span>
         {% endif %}

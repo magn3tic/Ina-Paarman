@@ -4958,3 +4958,8 @@ body[class*="article.recipes"] .recipe-banner-area {
 .hero-slider:not(.slick-initialized) {
   opacity: 0;
 }
+.head-logo{
+  width:210;
+  height: 151px;
+  display:block
+}

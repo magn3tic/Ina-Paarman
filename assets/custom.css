@@ -4970,4 +4970,5 @@ body[class*="article.recipes"] .recipe-banner-area {
 }
 .header-navigation{
   min-height:20px;
+  overflow: hidden
 }

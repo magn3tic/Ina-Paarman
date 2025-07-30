@@ -370,6 +370,7 @@ section {
     background: #000;
     display: table;
     width: 100%;
+  border-radius:8px
 }
 
 .hero-img a img {

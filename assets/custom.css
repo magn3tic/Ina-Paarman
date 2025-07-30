@@ -4968,3 +4968,6 @@ body[class*="article.recipes"] .recipe-banner-area {
   width:20px;
   height:20px
 }
+.header-navigation{
+  min-height:20px;
+}

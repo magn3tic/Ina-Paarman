@@ -2312,6 +2312,10 @@ blockquote {
 	padding-top: 200px;
 }
 
+.technical-content-area--blog {
+	padding-top: 100px;
+}
+
 .technical-banner {
 	position: absolute;
 	top: 0;

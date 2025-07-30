@@ -375,6 +375,7 @@ section {
 .hero-img a img {
   opacity: 0.85;
   background:#064956;
+  aspect-ratio: 25 / 26
 }
 
 .hero-img {

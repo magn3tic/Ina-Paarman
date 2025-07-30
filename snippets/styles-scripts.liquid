@@ -61,7 +61,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js" defer></script>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-{{ 'custom.css' | asset_url | stylesheet_tag }}
+{{ 'custom.css' | asset_url | stylesheet_tag:preload: true}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 

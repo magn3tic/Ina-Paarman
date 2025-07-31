@@ -46,6 +46,7 @@
         },
         "video_4zCPEe": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "youtube_id": "j1USxTpRTTM"
           }
@@ -88,6 +89,7 @@
         },
         "video_Pt7DWx": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "youtube_id": "WdJMZwWx91k"
           }
@@ -148,6 +150,7 @@
         },
         "video_tCQJHF": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "youtube_id": "l87doAlksCM"
           }
@@ -160,6 +163,7 @@
         },
         "video_T8bLbw": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "youtube_id": "sxPB2ugJHEs"
           }
@@ -178,6 +182,7 @@
         },
         "video_LL6MAM": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "youtube_id": "byFTTM7TdfA"
           }

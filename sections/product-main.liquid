@@ -155,115 +155,113 @@
                         {% endif %}
                     </ul>  
                     
-                          <div class="tab-content" id="myTabContent">
-                              {% if product.metafields.custom.ingredients.value %}
-                              <div class="tab-pane fade show active" id="p1" role="tabpanel" aria-labelledby="p1-tab">
-                                  <div class="product-tab-content">
-                                      {% if product.metafields.custom.ingredients %}
-                                      <div class="product-ingredients">
-                                          {% assign ingredients = product.metafields.custom.ingredients.value %}
-                                          {% for ingredient in ingredients %}
-                                          <li><span class="red_bullets"></span> {{ ingredient }}</li>
-                                          {% endfor %}
-                                      </div>
-                                      {% endif %}
-                                  </div>
-                              </div>
-                              {% endif %}
-                              {% if product.metafields.custom.nutritional-info.value %}
-                              <div class="tab-pane fade" id="p2" role="tabpanel" aria-labelledby="p2-tab">
-                                  <div class="product-tab-content">
-                                      {% if product.metafields.custom.nutritional-info %}
-                                      <img src="{{ product.metafields.custom.nutritional-info.value | image_url }}"
-                                          alt="Nutritional Info">
-                                      {% endif %}
-                                  </div>
-                              </div>
-                              {% endif %}
-                              {% if product.metafields.custom.allergens.value %}
-                              <div class="tab-pane fade" id="p3" role="tabpanel" aria-labelledby="p3-tab">
-                                  <div class="product-tab-content">
-                                      {% if product.metafields.custom.allergens %}
-                                      <ul>
-                                          {% assign allergens = product.metafields.custom.allergens.value %}
-                                          {% for allergen in allergens %}
-                                          <li><span class="red_bullets"></span> {{ allergen }}</li>
-                                          {% endfor %}
-                                      </ul>
-                                      {% endif %}
-                                  </div>
-                              </div>
-                              {% endif %}
-                              {% if product.metafields.custom.additional-info.value %}
-                              <div class="tab-pane fade" id="p4" role="tabpanel" aria-labelledby="p4-tab">
-                                  <div class="product-tab-content">
-                                      {% if product.metafields.custom.additional-info %}
-                                      <ul>
-                                          {% assign info = product.metafields.custom.additional-info.value %}
-                                          {% for info in info %}
-                                          <li><span class="red_bullets"></span> {{ info }}</li>
-                                          {% endfor %}
-                                      </ul>
-                                      {% endif %}
-                                  </div>
-                              </div>
-                              {% endif %}
-                              {% if product.metafields.custom.additional-dietary-info-text.value %}
-                              <div class="tab-pane fade" id="p5" role="tabpanel" aria-labelledby="p5-tab">
-                                  <div class="product-tab-content">
-                                      {{ product.metafields.custom.additional-dietary-info-text | metafield_tag }}
-                                  </div>
-                              </div>
-                              {% endif %}
-                            {% if product.metafields.custom.additional-ingredients-required.value %}
-                            <div class="tab-pane fade" id="p6" role="tabpanel" aria-labelledby="p6-tab">
-                                <div class="product-tab-content">
-                                    {% if product.metafields.custom.additional-ingredients-required %}
-                                      <ul>
-                                            {% assign ingredients = product.metafields.custom.additional-ingredients-required.value %}
-                                            {% for ingredient in ingredients %}
-                                                <li><span class="red_bullets"></span> {{ ingredient }}</li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}                              
+                    <div class="tab-content" id="myTabContent">
+                        {% if product.metafields.custom.ingredients.value %}
+                        <div class="tab-pane fade show active" id="p1" role="tabpanel" aria-labelledby="p1-tab">
+                            <div class="product-tab-content">
+                                {% if product.metafields.custom.ingredients %}
+                                <div class="product-ingredients">
+                                    {% assign ingredients = product.metafields.custom.ingredients.value %}
+                                    {% for ingredient in ingredients %}
+                                    <li><span class="red_bullets"></span> {{ ingredient }}</li>
+                                    {% endfor %}
                                 </div>
-                            </div>                        
-                            {% endif %}  
-                            {% if product.metafields.custom.equipment-required.value %}
-                            <div class="tab-pane fade" id="p7" role="tabpanel" aria-labelledby="p7-tab">
-                                <div class="product-tab-content">
-                                  {% if product.metafields.custom.equipment-required %}
-                                      <ul>
-                                          {% assign equipment = product.metafields.custom.equipment-required.value %}
-                                          {% for item in equipment %}
-                                              <li><span class="red_bullets"></span> {{ item }}</li>
-                                          {% endfor %}
-                                      </ul>
-                                  {% endif %}
-                                </div>
-                            </div>                       
-                            {% endif %}  
-                            {% if product.metafields.custom.temperature-duration.value %}
-                            <div class="tab-pane fade" id="p8" role="tabpanel" aria-labelledby="p8-tab">
-                                <div class="product-tab-content">
-                                  {% if product.metafields.custom.temperature-duration %}
-                                      <ul>
-                                          {% assign temperature_duration = product.metafields.custom.temperature-duration.value %}
-                                          {% for item in temperature_duration %}
-                                              <li><span class="red_bullets"></span> {{ item }}</li>
-                                          {% endfor %}
-                                      </ul>
-                                  {% endif %}                              
-                                </div>
-                            </div>                      
-                            {% endif %}  
-                            {% if product.metafields.custom.instructions.value %}
-                            <div class="tab-pane fade" id="p9" role="tabpanel" aria-labelledby="p9-tab">
-                                <div class="product-tab-content">
-                                    {{ product.metafields.custom.instructions | metafield_tag }}
-                                </div>
-                            </div>                      
-                            {% endif %} 
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if product.metafields.custom.nutritional-info.value %}
+                        <div class="tab-pane fade" id="p2" role="tabpanel" aria-labelledby="p2-tab">
+                            <div class="product-tab-content">
+                                {% if product.metafields.custom.nutritional-info %}
+                                <img src="{{ product.metafields.custom.nutritional-info.value | image_url }}" alt="Nutritional Info">
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if product.metafields.custom.allergens.value %}
+                        <div class="tab-pane fade" id="p3" role="tabpanel" aria-labelledby="p3-tab">
+                            <div class="product-tab-content">
+                                {% if product.metafields.custom.allergens %}
+                                <ul>
+                                    {% assign allergens = product.metafields.custom.allergens.value %}
+                                    {% for allergen in allergens %}
+                                    <li><span class="red_bullets"></span> {{ allergen }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if product.metafields.custom.additional-info.value %}
+                        <div class="tab-pane fade" id="p4" role="tabpanel" aria-labelledby="p4-tab">
+                            <div class="product-tab-content">
+                                {% if product.metafields.custom.additional-info %}
+                                <ul>
+                                    {% assign info = product.metafields.custom.additional-info.value %}
+                                    {% for info in info %}
+                                    <li><span class="red_bullets"></span> {{ info }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if product.metafields.custom.additional-dietary-info-text.value %}
+                        <div class="tab-pane fade" id="p5" role="tabpanel" aria-labelledby="p5-tab">
+                            <div class="product-tab-content">
+                                {{ product.metafields.custom.additional-dietary-info-text | metafield_tag }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if product.metafields.custom.additional-ingredients-required.value %}
+                        <div class="tab-pane fade" id="p6" role="tabpanel" aria-labelledby="p6-tab">
+                            <div class="product-tab-content">
+                                {% if product.metafields.custom.additional-ingredients-required %}
+                                  <ul>
+                                        {% assign ingredients = product.metafields.custom.additional-ingredients-required.value %}
+                                        {% for ingredient in ingredients %}
+                                            <li><span class="red_bullets"></span> {{ ingredient }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}                              
+                            </div>
+                        </div>                        
+                        {% endif %}  
+                        {% if product.metafields.custom.equipment-required.value %}
+                        <div class="tab-pane fade" id="p7" role="tabpanel" aria-labelledby="p7-tab">
+                            <div class="product-tab-content">
+                              {% if product.metafields.custom.equipment-required %}
+                                  <ul>
+                                      {% assign equipment = product.metafields.custom.equipment-required.value %}
+                                      {% for item in equipment %}
+                                          <li><span class="red_bullets"></span> {{ item }}</li>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                            </div>
+                        </div>                       
+                        {% endif %}  
+                        {% if product.metafields.custom.temperature-duration.value %}
+                        <div class="tab-pane fade" id="p8" role="tabpanel" aria-labelledby="p8-tab">
+                            <div class="product-tab-content">
+                              {% if product.metafields.custom.temperature-duration %}
+                                  <ul>
+                                      {% assign temperature_duration = product.metafields.custom.temperature-duration.value %}
+                                      {% for item in temperature_duration %}
+                                          <li><span class="red_bullets"></span> {{ item }}</li>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}                              
+                            </div>
+                        </div>                      
+                        {% endif %}  
+                        {% if product.metafields.custom.instructions.value %}
+                        <div class="tab-pane fade" id="p9" role="tabpanel" aria-labelledby="p9-tab">
+                            <div class="product-tab-content">
+                                {{ product.metafields.custom.instructions | metafield_tag }}
+                            </div>
+                        </div>                      
                         {% endif %} 
                     </div>
                 </div>
@@ -271,6 +269,7 @@
         </div>
     </div>
 </section>
+{% endif %} 
 <!-- Content End -->
 {% if product.metafields.custom.tablepress != blank %}
 <section class="product-table pt-5 pb-0">

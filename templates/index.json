@@ -84,6 +84,7 @@
     },
     "new_recipes_y9m9KP": {
       "type": "new-recipes",
+      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Winter-Warmers.jpg",
@@ -97,7 +98,6 @@
     },
     "new_recipes_7YgaEa": {
       "type": "new-recipes",
-      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarman-Mushroom-Omelette.jpg",
         "sub_heading": "August 2025 –",
@@ -385,8 +385,8 @@
   },
   "order": [
     "hero_carousel_CmDneU",
-    "new_recipes_y9m9KP",
     "new_recipes_7YgaEa",
+    "new_recipes_y9m9KP",
     "spacer_8qbHJ6",
     "recipe_box_krqVzA",
     "reviews_gyRwBV",

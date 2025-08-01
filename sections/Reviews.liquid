@@ -9,18 +9,15 @@
     <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
   </svg>
 
-  
 {% endif %}
   
   <div class="container">
     <div class="image-text style1">
-      <div class="bg_image right d-none d-lg-block" style="background: url({{ section.settings.review_bg_image | image_url }}) no-repeat scroll 0 0/cover"></div>
-      
       <div class="row">
         <div class="col-sm-6 order-sm-2 order-1">
-          <div class="content-img d-lg-none ">
+          <div class="content-img ">
             {% if section.settings.review_bg_image != blank %}
-              <img src="{{ section.settings.review_bg_image | image_url }}" alt="{{ section.settings.review_bg_image.alt | escape }}">
+              {{ section.settings.review_bg_image | image_url: width: 670 | image_tag: class: 'bg-image', loading: 'lazy' }} 
             {% endif %}
           </div>
         </div>

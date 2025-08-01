@@ -13,22 +13,11 @@
   <div class="container">
     <div class="image-text style1 {% if section.settings.image_position == 'right' %} image-right {% endif %}">
       
-      <!-- Background Image for desktop -->
-      
-      <div class = "bg_image d-none d-lg-block">
-      {{ section.settings.bg_image | image_url: width: 800 | image_tag: class: 'bg_image d-none d-lg-block', loading: 'lazy' }}  
-      </div>
-
       <div class="row">
         
         <!-- Switch position based on checkbox -->
         <div class="col-sm-6 {% if section.settings.image_position == 'right' %} order-sm-2 {% endif %}">
-          <!-- Mobile Image -->
-          <div class="content-img d-lg-none">
-            {% if section.settings.bg_image != blank %}
-              <img src="{{ section.settings.bg_image | image_url }}" alt="{{ section.settings.bg_image.alt | escape }}" />
-            {% endif %}
-          </div>
+            {{ section.settings.bg_image | image_url: width: 800 | image_tag: class: 'bg-image', loading: 'lazy' }}    
         </div>
 
         <div class="col-sm-6">

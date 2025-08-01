@@ -14,10 +14,9 @@
     <div class="image-text style1 {% if section.settings.image_position == 'right' %} image-right {% endif %}">
       
       <!-- Background Image for desktop -->
-      <div class="bg_image d-none d-lg-block" 
-           {% if section.settings.bg_image != blank %}
-             style="background: url({{ section.settings.bg_image | image_url  }}) no-repeat scroll 0 0/cover"
-           {% endif %}>
+      
+      <div class = "bg_image d-none d-lg-block">
+      {{ section.settings.bg_image | image_url: width: 800 | image_tag: class: 'bg_image d-none d-lg-block', loading: 'lazy' }}  
       </div>
 
       <div class="row">

@@ -4978,3 +4978,6 @@ body[class*="article.recipes"] .recipe-banner-area {
 .hero-row{
   overflow: hidden
 }
+.bg-image{
+	height:100%
+}

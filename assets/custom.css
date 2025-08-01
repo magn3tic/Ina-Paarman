@@ -4979,5 +4979,6 @@ body[class*="article.recipes"] .recipe-banner-area {
   overflow: hidden
 }
 .bg-image{
-	height:100%
+	height:100%;
+	object-fit:cover
 }

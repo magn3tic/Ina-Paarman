@@ -19,7 +19,13 @@
             
             <div class="col-sm-6 col-md-5 order-md-1 order-sm-1 order-2">
                 <div class="banner-text">
-                   
+                    {% if section.settings.sub_heading != '' %}
+                        <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
+                    {% endif %}
+                    
+                    {% if section.settings.heading != '' %}
+                        <h1 class="heading">{{ section.settings.heading }}</h1>
+                    {% endif %}
                     
                     {% if section.settings.paragraph_1 != '' %}
                         {{ section.settings.paragraph_1 }}

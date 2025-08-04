@@ -112,7 +112,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="megamenu-banner pe-lg-5">
-      <img src="{{ block.settings.dd_dimage | image_url }}" alt="{{ block.settings.dd_dimage.alt | escape }}">
+                                {{ block.settings.dd_dimage | image_url: width: 670 | image_tag: loading: 'lazy' }} 
                                 </div>
                             </div>
                             <div class="col-lg-6">

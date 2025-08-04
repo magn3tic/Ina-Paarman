@@ -4549,9 +4549,6 @@ body[class*="page.competitions"] .promo-area {
 .recipe-box-alt img {
     height: 250px;
 }
-  .hero-text-slider{
-    padding:0 !important
-  }
 }
 
 .video-box img {
@@ -4942,9 +4939,6 @@ body[class*="article.recipes"] .recipe-banner-area {
   border-top:solid #fff 50px;
   border-left:solid #fff 50px; 
   border-bottom:solid #fff 50px
-}
-.hero-text-slider{
-  padding-left:80px
 }
 .hero-img-col{
   overflow: hidden

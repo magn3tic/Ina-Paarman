@@ -52,7 +52,7 @@
                   {% endif %}
               {% else %}    
                   {% if block.settings.image != blank %}
-                    {{ block.settings.image | image_url: width: 620 | image_tag: preload: true, width: 670, height: 645, class: 'object-fit-cover', fetchpriority: 'high' }}
+                    {{ block.settings.image | image_url: width: 620, format: 'webp' | image_tag: preload: true, width: 670, height: 645, class: 'object-fit-cover' }}
                   {% endif %}                
               {% endif %}    
             </div>

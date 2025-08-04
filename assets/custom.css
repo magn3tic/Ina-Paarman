@@ -240,7 +240,7 @@ section {
 }
 
 .mainmenu ul li a {
-	font-family: 'PP Monument Extended';
+	font-family: 'PP Monument Extended, Arial, sans-serif';
 	font-weight: 800;
 	color: #000;
 	text-transform: uppercase;
@@ -1805,7 +1805,7 @@ blockquote {
 
 .mainmenu ul li a.menu-box {
 	color: #FFF;
-	font-family: "PP Monument Extended, Arial, sans-serif";
+	font-family: "PP Monument Extended";
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 700;

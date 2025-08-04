@@ -20,6 +20,12 @@
     "video_gallery_KmBQHq": {
       "type": "video-gallery",
       "blocks": {
+        "video_ihyPrA": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "9zr5RA3W-TE"
+          }
+        },
         "video_3cheb4": {
           "type": "video",
           "settings": {
@@ -213,6 +219,7 @@
         }
       },
       "block_order": [
+        "video_ihyPrA",
         "video_3cheb4",
         "video_UXg9MF",
         "video_4wrcxR",

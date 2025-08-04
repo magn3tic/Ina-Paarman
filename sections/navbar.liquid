@@ -38,7 +38,7 @@
                                 <div class="col-sm-6">
                                   <a href="{{ block.settings.mm1_nav }}" class="menu-box">
                                     <div class="image">
-                                      <img src="{{ block.settings.mm1_image | image_url }}" alt="image" width = "347" height = "96">
+                                      {{ block.settings.mm1_image | image_url: width: 347 | image_tag: loading: 'lazy' }} 
                                     </div>
                                     {{ block.settings.mm1_title }}
                                   </a>

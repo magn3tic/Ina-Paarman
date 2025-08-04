@@ -2,7 +2,7 @@
 <section class="hero-area">
   <div class="container-fluid">
     {% if section.settings.patternimage != blank %}
-      <img src="{{ section.settings.patternimage | image_url }}" alt="image" class="hero_bg">
+      {{ section.settings.patternimage | image_url | image_tag: width:670 }}
     {% endif %}
 
     <div class="row align-items-lg-center hero-row">

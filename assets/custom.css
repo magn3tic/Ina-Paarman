@@ -1031,6 +1031,9 @@ section {
 	padding-bottom: 40px;
     width: 1200px;
 }
+.hero-img img{
+	min-height:600px
+}
 }
 
 .footer-area {

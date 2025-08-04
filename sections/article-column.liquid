@@ -10,10 +10,10 @@
                     {% endif %}                  
                     <h1 class="heading">{{ article.title }}</h1>
                     <span class="date_author"><a>{{ article.created_at | date: "%d %B %Y" }}</a></span>
-                    <hr />
+                    {% comment %} <hr /> {% endcomment %}
 
 
-                    <div class="content-img w-100 mb-4" style="aspect-ratio: 1/1; background-image: url({{ article.image | image_url: width: 800, height: 800, crop: 'center' }}); background-size: cover; background-position: center;">         
+                    <div class="content-img w-100 my-4" style="aspect-ratio: 1/1; background-image: url({{ article.image | image_url: width: 800, height: 800, crop: 'center' }}); background-size: cover; background-position: center;">         
                     </div>
 
                     {{ article.content }}

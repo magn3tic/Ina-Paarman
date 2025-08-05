@@ -153,9 +153,7 @@
                 {% endif %}
               <!-- Link Block -->
               {% when 'block-3' %}
-                {% if block.settings.link_title and block.settings.nn_link %}
-                  <li><a href="{{ block.settings.nn_link }}">{{ block.settings.link_title }}</a></li>
-                {% endif %}
+                {% if block.settings.link_title and block.settings.nn_link %}<li><a href="{{ block.settings.nn_link }}">{{ block.settings.link_title }}</a></li>{% endif %}
               {% endcase %}
             {% endfor %}
           </ul>

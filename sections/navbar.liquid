@@ -10,15 +10,11 @@
           <span>{{ shop.name }}</span>
         {% endif %}
       </a>
-
       <!-- Header Navigation -->
       <div class="header-navigation d-flex align-items-center ">
         <div class="mainmenu">
           <ul id="menu">
-
-            {% for block in section.blocks %}
-              {% case block.type %}
-              
+            {% for block in section.blocks %}{% case block.type %}
               <!-- Megamenu Block -->
               {% when 'block-1' %}
                 {% if block.settings.mm_title or block.settings.mm_link or block.settings.mm1_title or block.settings.mm1_nav or block.settings.mm2_title or block.settings.mm2_nav or block.settings.mm3_title or block.settings.mm3_nav or block.settings.mm4_title or block.settings.mm4_nav or block.settings.mm5_title or block.settings.mm5_nav or block.settings.mm6_title or block.settings.mm6_nav %}
@@ -101,14 +97,12 @@
                     </div>
                   </li>
                 {% endif %}
-
               <!-- Dropdown Block -->
               {% when 'block-2' %}
                 {% if block.settings.dd_title or block.settings.dd_link or block.settings.dd_nav or block.settings.dd_nav_right %}
                   <li class="menu-item-has-children">
                     <a href="{{ block.settings.dd_link }}">{{ block.settings.dd_title }}</a>
                     <div class="megamenu">
-
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="megamenu-banner pe-lg-5">
@@ -134,7 +128,6 @@
                                           {% endfor %}
                                         </ul>
                                       </div>
-                                    
                                       <div class="col-lg-6">
                                         <ul>
                                           {% for link in block.settings.dd_nav_right.links %}
@@ -158,21 +151,15 @@
                     </div>
                   </li>
                 {% endif %}
-
               <!-- Link Block -->
               {% when 'block-3' %}
                 {% if block.settings.link_title and block.settings.nn_link %}
-                  <li>
-                   <a href="{{ block.settings.nn_link }}">{{ block.settings.link_title }}</a>
-                  </li>
+                  <li><a href="{{ block.settings.nn_link }}">{{ block.settings.link_title }}</a></li>
                 {% endif %}
-
               {% endcase %}
             {% endfor %}
-
           </ul>
         </div>
-
         <!-- Header Action -->
         <div class="header-action">
           <div class="header-search">
@@ -187,7 +174,6 @@
   </div>
 </header>
 <!-- Header End -->
-
 <div class="search-wrap">
   <div class="search-close">&times;</div>
   <div>
@@ -197,7 +183,6 @@
     </form>  
   </div>
 </div>
-
 {% schema %}
 {
   "name": "Navbar",

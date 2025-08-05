@@ -11,19 +11,8 @@
     assign resources_type = resources_type | append: ',page'
   endif
 %}
-
-<div
-  id="offcanvas-search"
-  class="offcanvas-search offcanvas offcanvas-end" 
-  tabindex="-1" 
-  aria-labelledby="offcanvas-search-label">
-  <predictive-search 
-    class="predictive-search"
-    data-img-orientation="{{ settings.product_img_orientation }}"
-    data-img-border="{{ settings.product_img_border }}"
-    data-show-quick-view="{{ settings.search_show_quick_view }}"
-    data-quick-view-btn-color="{{ settings.search_quick_view_btn_color }}"
-    data-resources-type="{{ resources_type }}">
+<div id="offcanvas-search" class="offcanvas-search offcanvas offcanvas-end"  tabindex="-1" aria-labelledby="offcanvas-search-label">
+  <predictive-search  class="predictive-search" data-img-orientation="{{ settings.product_img_orientation }}" data-img-border="{{ settings.product_img_border }}" data-show-quick-view="{{ settings.search_show_quick_view }}" data-quick-view-btn-color="{{ settings.search_quick_view_btn_color }}" data-resources-type="{{ resources_type }}">
     <div class="offcanvas-header">
       <h2 id="offcanvas-search-label" class="offcanvas-title">
         {{ 'general.search.title' | t }}
@@ -36,23 +25,7 @@
       <form action="{{ routes.search_url }}" class="search-form mb-6" method="get" role="search">
         <input name="options[prefix]" type="hidden" value="last">
         <div class="form-control-wrapper">
-          <input
-            class="form-control"
-            type="search"
-            name="q"
-            value="{{ search.terms | escape }}"
-            role="combobox"
-            aria-expanded="false"
-            aria-owns="predictive-search-results"
-            aria-controls="predictive-search-results"
-            aria-haspopup="listbox"
-            aria-autocomplete="list"
-            aria-label="{{ 'general.search.input_label' | t }}"
-            placeholder="{{ 'general.search.input_label' | t }}"
-            autocorrect="off" 
-            autocomplete="off" 
-            autocapitalize="off"
-            spellcheck="false">
+          <input class="form-control" type="search" name="q" value="{{ search.terms | escape }}" role="combobox" aria-expanded="false" aria-owns="predictive-search-results" aria-controls="predictive-search-results" aria-haspopup="listbox" aria-autocomplete="list" aria-label="{{ 'general.search.input_label' | t }}" placeholder="{{ 'general.search.input_label' | t }}" autocorrect="off"   autocomplete="off"   autocapitalize="off"  spellcheck="false">
           <button type="submit" class="btn btn-link" aria-label="{{ 'general.search.btn_label' | t }}">
             {% render 'svg-icons', icon: 'search', size: 20, class: '' %}
           </button>

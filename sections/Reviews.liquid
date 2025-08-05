@@ -8,29 +8,23 @@
   <svg class="bottom_shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#064956">
     <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
   </svg>
-
 {% endif %}
-  
   <div class="container">
     <div class="image-text style1">
       <div class="row">
         <div class="col-sm-6 order-sm-2 order-1">
-        
             {% if section.settings.review_bg_image != blank %}
               {{ section.settings.review_bg_image | image_url: width: 670 | image_tag: class: 'bg-image', loading: 'lazy' }} 
             {% endif %}
-        
         </div>
         <div class="col-sm-6 order-sm-1 order-2">
           <div class="content-text">
              {% if section.settings.review_heading_sub != blank %}
               <span class="d-block sub_heading">{{ section.settings.review_heading_sub | escape }}</span>
             {% endif %}
-
             {% if section.settings.review_heading != blank %}
               <h3 class="heading">{{ section.settings.review_heading | escape }}</h3>
             {% endif %}
-            
             {% for block in section.blocks %}
               <div class="items">
                 {% if block.settings.review_text != blank %}
@@ -40,28 +34,24 @@
                   {% if block.settings.reviewer_name != blank %}
                     <span>{{ block.settings.reviewer_name | escape }}</span>
                   {% endif %}    
-
                   {% if block.settings.review_source != blank %}
                      | <span>{{ block.settings.review_source | escape }}</span>
                   {% endif %}                  
                 </div>
               </div>
             {% endfor %}
-
             {% if section.settings.cta_link != blank %}
               <a href="{{ section.settings.cta_link }}" class="cta_btn btn_default">
                 {{ section.settings.cta_text }}
                 <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
               </a>
             {% endif %}
-            
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-  
 {% schema %}
 {
   "name": "Cookbook Reviews",

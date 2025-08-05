@@ -4977,3 +4977,6 @@ body[class*="article.recipes"] .recipe-banner-area {
 	height:100%;
 	object-fit:cover
 }
+.slides-numbers{
+	display:block;
+}

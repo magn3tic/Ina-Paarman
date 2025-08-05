@@ -4,36 +4,28 @@
 {% else %}
 <section class="content-area image-text-area pt-0">
 {% endif %}
-  
   <!-- Background Shape Image -->
   {% if section.settings.shape_image != blank %}
     <img src="{{ section.settings.shape_image | image_url }}" alt="Background Shape" class="shape_bg">
   {% endif %}
-
   <div class="container">
-    <div class="image-text style1 {% if section.settings.image_position == 'right' %} image-right {% endif %}">
-      
-      <div class="row">
-        
+    <div class="image-text style1 {% if section.settings.image_position == 'right' %} image-right {% endif %}"> 
+      <div class="row">   
         <!-- Switch position based on checkbox -->
         <div class="col-sm-6 {% if section.settings.image_position == 'right' %} order-sm-2 {% endif %}">
             {{ section.settings.bg_image | image_url: width: 800 | image_tag: class: 'bg-image', loading: 'lazy' }}    
         </div>
-
         <div class="col-sm-6">
           <div class="content-text">
             {% if section.settings.sub_heading != blank %}
               <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
             {% endif %}
-
             {% if section.settings.heading != blank %}
               <h2 class="heading">{{ section.settings.heading }}</h2>
             {% endif %}
-
             {% if section.settings.rich_content != blank %}
               <p>{{ section.settings.rich_content }}</p>
             {% endif %}
-
             {% if section.settings.button_link != blank and section.settings.button_text != blank %}
               <a href="{{ section.settings.button_link }}" class="cta_btn btn_default">
                 {{ section.settings.button_text }}
@@ -41,8 +33,7 @@
               </a>
             {% endif %}
           </div>
-        </div>
-        
+        </div>  
       </div>
     </div>
   </div>

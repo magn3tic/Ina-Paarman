@@ -4,11 +4,9 @@
    {% if section.settings.shape_img_left %}
     <!-- <img src="{{ section.settings.shape_img_left | img_url: 'original' }}" alt="Shape Image Left" class="footer_shape_1">-->
    {% endif %}
-   
    {% if section.settings.shape_img_right %}
    <!--<img src="{{ section.settings.shape_img_right | img_url: 'original' }}" alt="Shape Image Right" class="footer_shape_2">-->
    {% endif %}
-   
    <div class="container">
       <div class="row justify-content-between">
          <!-- Footer Logo -->
@@ -17,7 +15,6 @@
                <img src="{{ section.settings.flogo | img_url: 'original' }}" alt="{{ shop.name }}" width = "299" height = "214">
             </a>
          </div>
-
          <!-- Footer Inner -->
          <div class="col-lg-8">
             <div class="footer-inner">
@@ -37,7 +34,6 @@
                       </div>
                     {% endif %}
                   {% endfor %}
-
                   <!-- Contact Block -->
                   {% for block in section.blocks %}
                     {% if block.type == 'block-2' %}
@@ -67,7 +63,6 @@
                   {% endfor %}
                </div>
             </div>
-
             <!-- Footer Middle -->
             <div class="footer-middle">
                <div class="row">
@@ -100,13 +95,11 @@
                         </ul>
                      </div>
                   </div>
-
                   <!-- Newsletter Section -->
                   <div class="col-md-6">
                      <div class="footer-widget">
                         <span class="d-block footer_title">Subscribe to our newsletter</span>
                         <div class="footer-newsletter">
-
                     {% form 'customer', class: 'newsletter-form' %}
                     <input type="hidden" name="contact[tags]" value="newsletter">
                       <label for="newsletter-input-email" class="d-none">
@@ -121,15 +114,13 @@
                         placeholder="E-MAIL ADDRESS"
                         autocorrect="off" 
                         autocapitalize="off">
-                    <button type="submit"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon"></button>
-                    
+                    <button type="submit"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon"></button>   
                     {{ form.errors | default_errors }}
                     {% if form.posted_successfully? %}
                       <small class="mt-2 text-white">
                         {{ 'general.newsletter.confirmation_text' | t }}
                       </small>
                     {% endif %} 
-                    
                     {% endform %}
 
                         </div>
@@ -137,11 +128,9 @@
                   </div>
                </div>
             </div>
-
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                <div class="row">
-
                   <div class="col-md-8">
                      <ul class="footer_bottom_link">
                          {% for link in section.settings.f_legal_nav.links %}
@@ -161,7 +150,6 @@
    </div>
 </footer>
 <!-- Footer End -->
-
 {% schema %}
 {
   "name": "Footer",

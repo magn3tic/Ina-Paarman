@@ -1,23 +1,17 @@
 {% if section.settings.header_style == 'style2' %}
 <section class="shop-area pt-0">
-
    {% if section.settings.shop_area_shape != blank %}
     <img src="{{ section.settings.shop_area_shape | image_url }}" alt="image" class="collection_shape_1">
   {% endif %}
-  
 {% else %}
 <section class="shop-area">
-
    {% if section.settings.shop_area_shape != blank %}
     <img src="{{ section.settings.shop_area_shape | image_url }}" alt="image" class="shop_shape">
   {% endif %}
-  
   {% if section.settings.shop_shape_2 != blank %}
     <img src="{{ section.settings.shop_shape_2 | image_url }}" alt="image" class="shop_shape_2">
   {% endif %}
-  
 {% endif %}
-  
   <div class="container">
     <div class="row">
       <div class="col-lg-9 mx-auto">
@@ -25,18 +19,15 @@
           {% if section.settings.shop_sub_heading != blank %}
             <span class="d-block sub_heading">{{ section.settings.shop_sub_heading | escape }}</span>
           {% endif %}
-          
           {% if section.settings.shop_heading != blank %}
             <h3 class="heading">{{ section.settings.shop_heading | escape }}</h3>
           {% endif %}
-          
           {% if section.settings.shop_description != blank %}
             <p>{{ section.settings.shop_description }}</p>
           {% endif %}
         </div>
       </div>
     </div>
-
     <div class="row g-2 g-lg-4">
       {% for block in section.blocks %}
         <div class="col-md-4 col-lg-3 col-6">
@@ -46,7 +37,6 @@
               {% if block.settings.product_image != blank %}
                 <img src="{{ block.settings.product_image | image_url }}" alt="image" loading ="lazy" width= "267" height= "270">
               {% endif %}
-              
               {% if block.settings.product_title != blank %}
                 <span class="d-block title">{{ block.settings.product_title | escape }}</span>
               {% endif %}

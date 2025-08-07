@@ -41,6 +41,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% endif %}
   {% render 'meta-tags' %}
   {{ content_for_header }}
+
+  {{ 'bootstrap.css' | asset_url | stylesheet_tag:preload: true }}
+{{ 'custom.css' | asset_url | stylesheet_tag:preload: true}}
+
   {% render 'styles-scripts' %}
   <script>
   document.addEventListener('DOMContentLoaded', function () {

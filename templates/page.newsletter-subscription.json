@@ -28,10 +28,23 @@
         "main_heading": "Ina Paarman’s Kitchen Newsletter",
         "description": "<p>Sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>"
       }
+    },
+    "featured_blog_posts_H3Wim4": {
+      "type": "featured-blog-posts",
+      "name": "Featured Blog Posts",
+      "settings": {
+        "header_style": "style1",
+        "show_featured": true,
+        "blog_sub_heading": "– BLOG –",
+        "blog_title": "Great Food, Great Living",
+        "all_articles_button_text": "ALL ARTICLES",
+        "all_articles_button_link": "shopify://blogs/news"
+      }
     }
   },
   "order": [
     "newsletter_QdBFHk",
-    "newsletter_cxGCe6"
+    "newsletter_cxGCe6",
+    "featured_blog_posts_H3Wim4"
   ]
 }

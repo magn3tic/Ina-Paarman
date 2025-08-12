@@ -21,6 +21,7 @@
     },
     "newsletter_cxGCe6": {
       "type": "newsletter",
+      "disabled": true,
       "name": "Newsletter",
       "settings": {
         "style": "style-1",

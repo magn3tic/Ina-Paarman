@@ -18,9 +18,20 @@
         "description": "<p>Sign up for our newsletter to be the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>",
         "background_image": "shopify://shop_images/Background-Image-Newsletter.png"
       }
+    },
+    "newsletter_cxGCe6": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "style": "style-1",
+        "sub_heading": "- Sign Up -",
+        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "description": "<p>Sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>"
+      }
     }
   },
   "order": [
-    "newsletter_QdBFHk"
+    "newsletter_QdBFHk",
+    "newsletter_cxGCe6"
   ]
 }

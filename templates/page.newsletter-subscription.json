@@ -9,60 +9,6 @@
  */
 {
   "sections": {
-    "blog_header_reQkCn": {
-      "type": "blog-header",
-      "settings": {
-        "background_image": "shopify://shop_images/Ina-Paarman-Book-Signing.jpg",
-        "sub_heading": "Join Us –",
-        "heading": "Ina Paarman Events",
-        "paragraph_1": "<p>Stay tuned for details on our next book signing event.</p><p>Join us for a chance to meet Ina Paarman in person, and to get your copy of her new <em>My Favourite Recipes </em>cookbook signed.</p>",
-        "cta_text": "COOKBOOKS",
-        "cta_link": "shopify://pages/cookbook"
-      }
-    },
-    "reviews_MHqwgX": {
-      "type": "Reviews",
-      "blocks": {
-        "review_block_YrqVjA": {
-          "type": "review_block",
-          "settings": {
-            "review_text": "A sumptuous volume of her best dishes accompanied by gorgeous pictures.",
-            "reviewer_name": "Pieter van Zyl",
-            "review_source": "YOU"
-          }
-        },
-        "review_block_4nbmpT": {
-          "type": "review_block",
-          "settings": {
-            "review_text": "Not only is the book filled with delicious recipes like Crustless Asparagus Quiche, Honey Pumpkin with Ginger, Chicken Pasta Salad with Bacon & Parmesan Shavings, and Granadilla Sheet Cake with Lemon Icing, but it also has suggestions for preparing in advance so cooks can relax at their own parties.",
-            "reviewer_name": "Unknown",
-            "review_source": "Checkers"
-          }
-        },
-        "review_block_QahyKV": {
-          "type": "review_block",
-          "settings": {
-            "review_text": "All the recipes are thoroughly tested and will always work. How can that not work for those of us in our own kitchens? It's exactly what you want.",
-            "reviewer_name": "Diane de Beer",
-            "review_source": "De Beer Necessities"
-          }
-        }
-      },
-      "block_order": [
-        "review_block_YrqVjA",
-        "review_block_4nbmpT",
-        "review_block_QahyKV"
-      ],
-      "settings": {
-        "header_style": "style1",
-        "remove_shapes": true,
-        "review_bg_image": "shopify://shop_images/My-Favourite-Recipes.jpg",
-        "review_heading_sub": "Reader Reviews -",
-        "review_heading": "My Favourite Recipes",
-        "cta_text": "More",
-        "cta_link": "shopify://products/my-favourite-recipes"
-      }
-    },
     "newsletter_QdBFHk": {
       "type": "newsletter",
       "settings": {
@@ -75,8 +21,6 @@
     }
   },
   "order": [
-    "blog_header_reQkCn",
-    "reviews_MHqwgX",
     "newsletter_QdBFHk"
   ]
 }

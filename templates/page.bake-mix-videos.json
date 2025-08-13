@@ -23,7 +23,7 @@
       "settings": {
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "",
+        "title": "&nbsp",
         "description": "<p>Here is a library of useful ‘how-to’ videos, featuring our flop-proof Bake Mixes.</p>",
         "btn_primary_text": "BAKE MIX PRODUCTS",
         "btn_primary_url": "shopify://collections/bake-mixes",

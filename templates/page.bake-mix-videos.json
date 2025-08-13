@@ -89,6 +89,7 @@
         },
         "video_KAKEmY": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "youtube_id": "83hxOyf6POc"
           }

@@ -17,14 +17,21 @@
         "description": ""
       }
     },
+    "spacer_tf3n3X": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 20
+      }
+    },
     "richtext_EaLWgU": {
       "type": "richtext",
       "name": "Richtext",
       "settings": {
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "&nbsp",
-        "description": "<p>Here is a library of useful ‘how-to’ videos, featuring our flop-proof Bake Mixes.</p>",
+        "title": "Here is a library of useful ‘how-to’ videos, featuring our flop-proof Bake Mixes.",
+        "description": "",
         "btn_primary_text": "BAKE MIX PRODUCTS",
         "btn_primary_url": "shopify://collections/bake-mixes",
         "btn_secondary_text": "",
@@ -276,13 +283,6 @@
         "video_TjNbmz"
       ],
       "settings": {}
-    },
-    "spacer_tf3n3X": {
-      "type": "spacer",
-      "name": "Spacer",
-      "settings": {
-        "spacer_height": 20
-      }
     }
   },
   "order": [

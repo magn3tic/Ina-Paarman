@@ -91,11 +91,22 @@
         "about_cta_text": "OUR PRODUCTS",
         "about_cta_link": "shopify://collections/our-products"
       }
+    },
+    "html_bKxW8c": {
+      "type": "html",
+      "name": "HTML/Liquid",
+      "settings": {
+        "liquid": "<iframe width=\"800\" height=\"450\" src=\"https://www.youtube.com/embed/Rywn4wOCVAI?si=nDaMHR1LF8zSNMUu\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+        "header_title": "",
+        "remove_space": true,
+        "remove_bspace": true
+      }
     }
   },
   "order": [
     "our_story_ViPPre",
     "contact_info_Pr7bRx",
-    "about_info_hhcNQ7"
+    "about_info_hhcNQ7",
+    "html_bKxW8c"
   ]
 }

@@ -101,12 +101,35 @@
         "remove_space": true,
         "remove_bspace": true
       }
+    },
+    "hero_carousel_4XcDcL": {
+      "type": "hero-carousel",
+      "blocks": {
+        "hero_slide_yfYLYe": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify://shop_images/Background-Image-Quality-Pledge.jpg",
+            "video_link": "https://www.youtube.com/watch?v=Rywn4wOCVAI",
+            "sub_heading": "The Ina Paarman",
+            "heading": "Quality Pledge",
+            "rich_content": "<p>Since day one, we’ve worked tirelessly to offer exceptional-quality products and ways to enhance people’s cooking experiences. Our promise to you is we’ll always recreate the goodness of home cooking in our high-tech production facility.</p>",
+            "cta_text": "OUR PRODUCTS",
+            "cta_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "hero_slide_yfYLYe"
+      ],
+      "name": "Hero Section",
+      "settings": {}
     }
   },
   "order": [
     "our_story_ViPPre",
     "contact_info_Pr7bRx",
     "about_info_hhcNQ7",
-    "html_bKxW8c"
+    "html_bKxW8c",
+    "hero_carousel_4XcDcL"
   ]
 }

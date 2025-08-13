@@ -123,6 +123,7 @@
       "block_order": [
         "hero_slide_yfYLYe"
       ],
+      "disabled": true,
       "name": "Hero Section",
       "settings": {}
     }

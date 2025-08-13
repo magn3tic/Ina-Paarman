@@ -19,6 +19,7 @@
     },
     "spacer_tf3n3X": {
       "type": "spacer",
+      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 20
@@ -26,6 +27,7 @@
     },
     "richtext_EaLWgU": {
       "type": "richtext",
+      "disabled": true,
       "name": "Richtext",
       "settings": {
         "container_max_width": "900",

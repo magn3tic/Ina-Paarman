@@ -276,10 +276,18 @@
         "video_TjNbmz"
       ],
       "settings": {}
+    },
+    "spacer_tf3n3X": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 20
+      }
     }
   },
   "order": [
     "header_general_dWqi7d",
+    "spacer_tf3n3X",
     "richtext_EaLWgU",
     "video_gallery_KmBQHq"
   ]

@@ -14,7 +14,21 @@
       "settings": {
         "banner_image": "shopify://shop_images/Ina-Paarmans-Hints-Tips-7.jpg",
         "heading": "Bake Mix Videos",
-        "description": "Here is a library of useful ‘how-to’ videos,<br>featuring our flop-proof Bake Mixes."
+        "description": ""
+      }
+    },
+    "richtext_EaLWgU": {
+      "type": "richtext",
+      "name": "Richtext",
+      "settings": {
+        "container_max_width": "900",
+        "text_align": "text-center",
+        "title": "",
+        "description": "<p><br/>Here is a library of useful ‘how-to’ videos, featuring our flop-proof Bake Mixes.</p>",
+        "btn_primary_text": "BAKE MIX PRODUCTS",
+        "btn_primary_url": "shopify://collections/bake-mixes",
+        "btn_secondary_text": "",
+        "btn_secondary_url": ""
       }
     },
     "video_gallery_KmBQHq": {
@@ -266,6 +280,7 @@
   },
   "order": [
     "header_general_dWqi7d",
+    "richtext_EaLWgU",
     "video_gallery_KmBQHq"
   ]
 }

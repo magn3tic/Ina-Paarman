@@ -26,6 +26,12 @@
             "youtube_id": "9zr5RA3W-TE"
           }
         },
+        "video_N8ttWG": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "HmPgjXCP_lg"
+          }
+        },
         "video_3cheb4": {
           "type": "video",
           "settings": {
@@ -222,6 +228,7 @@
       },
       "block_order": [
         "video_ihyPrA",
+        "video_N8ttWG",
         "video_3cheb4",
         "video_UXg9MF",
         "video_4wrcxR",

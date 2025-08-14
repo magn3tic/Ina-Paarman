@@ -27,6 +27,7 @@
     },
     "richtext_EaLWgU": {
       "type": "richtext",
+      "disabled": true,
       "name": "Richtext",
       "settings": {
         "container_max_width": "900",

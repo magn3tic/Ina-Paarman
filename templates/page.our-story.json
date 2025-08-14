@@ -53,24 +53,29 @@
             "cta_text": "",
             "cta_link": ""
           }
+        },
+        "content_EUytP6": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "The Ina Paarman Story -",
+            "heading": "Heading",
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
         }
       },
       "block_order": [
         "content_aMRkeR",
         "content_an8pqa",
-        "content_HfyNJc"
+        "content_HfyNJc",
+        "content_EUytP6"
       ],
       "settings": {}
-    },
-    "html_bKxW8c": {
-      "type": "html",
-      "name": "HTML/Liquid",
-      "settings": {
-        "liquid": "<div style=\"text-align: center;\">\n<iframe width=\"800\" height=\"450\" src=\"https://www.youtube.com/embed/Rywn4wOCVAI?si=nDaMHR1LF8zSNMUu\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n</div>",
-        "header_title": "",
-        "remove_space": true,
-        "remove_bspace": true
-      }
     },
     "contact_info_Pr7bRx": {
       "type": "contact-info",
@@ -102,12 +107,21 @@
         "about_cta_link": "shopify://collections/our-products"
       }
     },
+    "html_bKxW8c": {
+      "type": "html",
+      "name": "HTML/Liquid",
+      "settings": {
+        "liquid": "<div style=\"text-align: center;\">\n<iframe width=\"800\" height=\"450\" src=\"https://www.youtube.com/embed/Rywn4wOCVAI?si=nDaMHR1LF8zSNMUu\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n</div>",
+        "header_title": "",
+        "remove_space": true,
+        "remove_bspace": true
+      }
+    },
     "hero_carousel_4XcDcL": {
       "type": "hero-carousel",
       "blocks": {
         "hero_slide_yfYLYe": {
           "type": "hero_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Background-Image-Quality-Pledge.jpg",
             "video_link": "https://www.youtube.com/watch?v=Rywn4wOCVAI",
@@ -122,16 +136,15 @@
       "block_order": [
         "hero_slide_yfYLYe"
       ],
-      "disabled": true,
       "name": "Hero Section",
       "settings": {}
     }
   },
   "order": [
+    "hero_carousel_4XcDcL",
     "our_story_ViPPre",
-    "html_bKxW8c",
     "contact_info_Pr7bRx",
     "about_info_hhcNQ7",
-    "hero_carousel_4XcDcL"
+    "html_bKxW8c"
   ]
 }

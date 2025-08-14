@@ -40,6 +40,20 @@
             "cta_link": ""
           }
         },
+        "content_EUytP6": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "",
+            "heading": "Video to go here",
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
         "content_HfyNJc": {
           "type": "content",
           "settings": {
@@ -53,27 +67,13 @@
             "cta_text": "",
             "cta_link": ""
           }
-        },
-        "content_EUytP6": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "tagline": "The Ina Paarman Story -",
-            "heading": "Heading",
-            "bquote": "",
-            "description": "",
-            "cta_text": "",
-            "cta_link": ""
-          }
         }
       },
       "block_order": [
         "content_aMRkeR",
         "content_an8pqa",
-        "content_HfyNJc",
-        "content_EUytP6"
+        "content_EUytP6",
+        "content_HfyNJc"
       ],
       "settings": {}
     },
@@ -109,6 +109,7 @@
     },
     "html_bKxW8c": {
       "type": "html",
+      "disabled": true,
       "name": "HTML/Liquid",
       "settings": {
         "liquid": "<div style=\"text-align: center;\">\n<iframe width=\"800\" height=\"450\" src=\"https://www.youtube.com/embed/Rywn4wOCVAI?si=nDaMHR1LF8zSNMUu\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n</div>",
@@ -116,32 +117,9 @@
         "remove_space": true,
         "remove_bspace": true
       }
-    },
-    "hero_carousel_4XcDcL": {
-      "type": "hero-carousel",
-      "blocks": {
-        "hero_slide_yfYLYe": {
-          "type": "hero_slide",
-          "settings": {
-            "image": "shopify://shop_images/Background-Image-Quality-Pledge.jpg",
-            "video_link": "https://www.youtube.com/watch?v=Rywn4wOCVAI",
-            "sub_heading": "The Ina Paarman",
-            "heading": "Quality Pledge",
-            "rich_content": "<p>Since day one, we’ve worked tirelessly to offer exceptional-quality products and ways to enhance people’s cooking experiences. Our promise to you is we’ll always recreate the goodness of home cooking in our high-tech production facility.</p>",
-            "cta_text": "OUR PRODUCTS",
-            "cta_link": "shopify://collections"
-          }
-        }
-      },
-      "block_order": [
-        "hero_slide_yfYLYe"
-      ],
-      "name": "Hero Section",
-      "settings": {}
     }
   },
   "order": [
-    "hero_carousel_4XcDcL",
     "our_story_ViPPre",
     "contact_info_Pr7bRx",
     "about_info_hhcNQ7",

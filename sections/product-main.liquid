@@ -298,16 +298,26 @@
   </div>
 </section>
 {% endif %}
-{% if product.metafields.custom.video-embed.value != blank %}
+{% if product.metafields.custom.video.value != blank %}
   <section class="pt-5 pb-0">
     <div class="container">  
-        <div class="text-center mb-4">
+        <div class="text-center mb-4 d-none">
           <h4 class="h2"><strong>Video</strong></h4>
         </div>
         <div class="row">
-          <div class="col-lg-10 mx-auto">    
+          <div class="col-lg-10 mx-auto">
              <div class="ratio ratio-16x9">
-                {{ product.metafields.custom.video-embed.value }}                  
+                {% if product.metafields.custom.video.value != blank %}
+                  {% assign youtube_url = product.metafields.custom.video-embed.value %}
+                  {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
+                  <iframe 
+                    src="https://www.youtube.com/embed/{{ video_id }}?rel=0" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                {% endif %}   
              </div>
           </div>
         </div>

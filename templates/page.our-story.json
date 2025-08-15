@@ -40,6 +40,15 @@
             "cta_link": ""
           }
         },
+        "video_aD7yY7": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "youtube_id": "Rywn4wOCVAI",
+            "description": ""
+          }
+        },
         "content_EUytP6": {
           "type": "content",
           "disabled": true,
@@ -72,6 +81,7 @@
       "block_order": [
         "content_aMRkeR",
         "content_an8pqa",
+        "video_aD7yY7",
         "content_EUytP6",
         "content_HfyNJc"
       ],

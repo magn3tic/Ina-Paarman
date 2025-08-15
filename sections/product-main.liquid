@@ -307,28 +307,16 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
              <div class="ratio ratio-16x9">
-                {% if product.metafields.custom.video.value != blank %}
-                  {% assign youtube_url = product.metafields.custom.video.value %}
-                  {% if youtube_url contains 'youtube.com' or youtube_url contains 'youtu.be' %}
-                    {% if youtube_url contains 'youtu.be' %}
-                      {% assign video_id = youtube_url | split: 'youtu.be/' | last | split: '?' | first %}
-                    {% else %}
-                      {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
-                    {% endif %}
-                    {% if video_id != blank and video_id != '[UrlDrop]' %}
-                      <iframe 
-                        src="https://www.youtube.com/embed/{{ video_id }}?rel=0" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                      </iframe>
-                    {% else %}
-                      <p>Invalid YouTube URL or video ID. Please check the video metafield value.</p>
-                    {% endif %}
-                  {% else %}
-                    <p>Please enter a valid YouTube URL in the video metafield.</p>
-                  {% endif %}
+                {% if product.metafields.custom.video != blank %}
+                  {% assign youtube_url = product.metafields.custom.video %}
+                  {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
+                  <iframe 
+                    src="https://www.youtube.com/embed/{{ video_id }}?rel=0" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
                 {% endif %}
              </div>
           </div>

@@ -16,7 +16,10 @@
             </div>
             <div class="col-md-8 col-sm-7">
                 <div class="content-text post-content ps-lg-5">
-                                    
+                    {% assign blog_tagline = article.metafields.custom.tagline %}
+                    {% if blog_tagline %}
+                        <span class="d-block sub_heading">{{ blog_tagline }}</span>
+                    {% endif %}                  
                     <h1 class="heading">{{ article.title }}</h1>
                     <span class="date_author"><a>{{ article.created_at | date: "%d %B %Y" }}</a></span>
                     <hr />

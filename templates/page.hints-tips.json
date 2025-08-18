@@ -150,7 +150,7 @@
     "spacer_DXVDhW": {
       "type": "spacer",
       "settings": {
-        "spacer_height": 80
+        "spacer_height": 40
       }
     },
     "video_gallery_hUhJ44": {
@@ -196,18 +196,6 @@
           "type": "video",
           "settings": {
             "youtube_id": "d0DG1bY5qpY"
-          }
-        },
-        "video_tiQdLq": {
-          "type": "video",
-          "settings": {
-            "youtube_id": ""
-          }
-        },
-        "video_HcpKeF": {
-          "type": "video",
-          "settings": {
-            "youtube_id": ""
           }
         },
         "video_Ekryij": {
@@ -279,8 +267,6 @@
         "video_mXe94T",
         "video_iFGDCL",
         "video_dYTw8t",
-        "video_tiQdLq",
-        "video_HcpKeF",
         "video_Ekryij",
         "video_njQy9e",
         "video_74394T",

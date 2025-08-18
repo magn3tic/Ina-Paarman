@@ -147,6 +147,13 @@
         "btn_secondary_url": "shopify://pages/substitution"
       }
     },
+    "spacer_DXVDhW": {
+      "type": "spacer",
+      "disabled": true,
+      "settings": {
+        "spacer_height": 80
+      }
+    },
     "video_gallery_hUhJ44": {
       "type": "video-gallery",
       "blocks": {
@@ -289,13 +296,6 @@
       "name": "Video Gallery",
       "settings": {}
     },
-    "spacer_DXVDhW": {
-      "type": "spacer",
-      "disabled": true,
-      "settings": {
-        "spacer_height": 80
-      }
-    },
     "new_recipes_HXrgay": {
       "type": "new-recipes",
       "settings": {
@@ -326,8 +326,8 @@
   "order": [
     "hero_carousel_7C9TAB",
     "richtext_7btbGw",
-    "video_gallery_hUhJ44",
     "spacer_DXVDhW",
+    "video_gallery_hUhJ44",
     "new_recipes_HXrgay",
     "new_recipes_jpYPNg"
   ]

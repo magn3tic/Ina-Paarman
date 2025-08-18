@@ -149,7 +149,6 @@
     },
     "spacer_DXVDhW": {
       "type": "spacer",
-      "disabled": true,
       "settings": {
         "spacer_height": 80
       }

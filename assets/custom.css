@@ -4344,8 +4344,8 @@ body .tablepress tr th {
 
 
 .product-slider .slick-dots li button {
-	opacity:0.95;
-    background: #FFF;
+	opacity:0.4;
+    background: #be2033;
 }
 
 .product-slider .slick-dots li.slick-active button {

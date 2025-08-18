@@ -4342,7 +4342,14 @@ body .tablepress tr th {
     top: 15px;
 }
 
+
+.product-slider .slick-dots li button {
+	opacity:0.5;
+    background: #FFF;
+}
+
 .product-slider .slick-dots li.slick-active button {
+	opacity:1;
     background: #be2033;
 }
 

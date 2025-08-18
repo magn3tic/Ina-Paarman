@@ -147,8 +147,151 @@
         "btn_secondary_url": "shopify://pages/substitution"
       }
     },
+    "video_gallery_hUhJ44": {
+      "type": "video-gallery",
+      "blocks": {
+        "video_WWnGkQ": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "_-Rl1gE4ECE"
+          }
+        },
+        "video_M6bcie": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "UgHsEcS79l8"
+          }
+        },
+        "video_gief7V": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "xz9qr3_FVz8"
+          }
+        },
+        "video_FWjBY8": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "BmAOwIcrIFY"
+          }
+        },
+        "video_mXe94T": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "0ib7ifrtKjI"
+          }
+        },
+        "video_iFGDCL": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "SJKYolOVWYI"
+          }
+        },
+        "video_dYTw8t": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "d0DG1bY5qpY"
+          }
+        },
+        "video_tiQdLq": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_HcpKeF": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_Ekryij": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "9UiggHTMv30"
+          }
+        },
+        "video_njQy9e": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "gACCyiMGmmI"
+          }
+        },
+        "video_74394T": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "ITYDnvlOgFY"
+          }
+        },
+        "video_J8yqFf": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "QU-Pz7H3WT8"
+          }
+        },
+        "video_eiWDie": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "gAjub5ZOgSk"
+          }
+        },
+        "video_VR7f4D": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "nGr1pyH4uSg"
+          }
+        },
+        "video_amnNMH": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "Xnt2ZN3Zdj4"
+          }
+        },
+        "video_i8Xhtf": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "1ECY-U0Y40s"
+          }
+        },
+        "video_p7TMMp": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "crlPN7nQb08"
+          }
+        },
+        "video_ywUAkt": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "FRuoCZNInYM"
+          }
+        }
+      },
+      "block_order": [
+        "video_WWnGkQ",
+        "video_M6bcie",
+        "video_gief7V",
+        "video_FWjBY8",
+        "video_mXe94T",
+        "video_iFGDCL",
+        "video_dYTw8t",
+        "video_tiQdLq",
+        "video_HcpKeF",
+        "video_Ekryij",
+        "video_njQy9e",
+        "video_74394T",
+        "video_J8yqFf",
+        "video_eiWDie",
+        "video_VR7f4D",
+        "video_amnNMH",
+        "video_i8Xhtf",
+        "video_p7TMMp",
+        "video_ywUAkt"
+      ],
+      "name": "Video Gallery",
+      "settings": {}
+    },
     "spacer_DXVDhW": {
       "type": "spacer",
+      "disabled": true,
       "settings": {
         "spacer_height": 80
       }
@@ -183,6 +326,7 @@
   "order": [
     "hero_carousel_7C9TAB",
     "richtext_7btbGw",
+    "video_gallery_hUhJ44",
     "spacer_DXVDhW",
     "new_recipes_HXrgay",
     "new_recipes_jpYPNg"

@@ -2,8 +2,8 @@
 <html 
   lang="{{ request.locale.iso_code }}"
   class="{% if request.design_mode %}design-mode{% endif %}">
-
-  <head>{% comment %}{% render 'sb-js-lazyload' %} {% endcomment %} 
+  
+  <head> {% render 'sb-js-lazyload' %} 
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -188,8 +188,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-display: swap;
 }
 </style>
-    
-{% render 'lazyload_img' %} {% render 'sb-cls-improve' %} </head>
+ {% comment %}
+   {% render 'lazyload_img' %} 
+ {% endcomment %}   
+{% render 'sb-cls-improve' %} </head>
 
 <body class="{{ request.page_type | prepend: 'page-type-' }} {{ template }}">
   <a class="visually-hidden-focusable" href="#main">

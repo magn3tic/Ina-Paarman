@@ -283,6 +283,7 @@
     },
     "new_recipes_HXrgay": {
       "type": "new-recipes",
+      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarman-Mushroom-Omelette.jpg",
         "sub_heading": "August 2025 –",
@@ -295,7 +296,6 @@
     },
     "new_recipes_jpYPNg": {
       "type": "new-recipes",
-      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarman_s-South-African-Heritage-September-2025.jpg",
@@ -313,7 +313,7 @@
     "richtext_7btbGw",
     "spacer_DXVDhW",
     "video_gallery_hUhJ44",
-    "new_recipes_HXrgay",
-    "new_recipes_jpYPNg"
+    "new_recipes_jpYPNg",
+    "new_recipes_HXrgay"
   ]
 }

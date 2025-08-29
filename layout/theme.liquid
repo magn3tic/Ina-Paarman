@@ -2,7 +2,8 @@
 <html 
   lang="{{ request.locale.iso_code }}"
   class="{% if request.design_mode %}design-mode{% endif %}">
-  <head> {% render 'sb-js-lazyload' %} 
+
+  <head>{% comment %}{% render 'sb-js-lazyload' %} {% endcomment %} 
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">

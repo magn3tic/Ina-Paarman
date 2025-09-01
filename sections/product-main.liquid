@@ -3,34 +3,34 @@
 %}
 <!-- Content Start -->
 <section class="product-details-area">
-    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="product_details_shape" >
+    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="product_details_shape" >
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mx-auto">
                 <ul class="product_social">
                     <li>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ product.url }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-green.svg" alt="Facebook">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-green.svg" alt="Facebook">
                         </a>
                     </li>                    
                     <li>
                         <a href="https://www.instagram.com/?url={{ shop.url }}{{ product.url }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-green.svg" alt="Instagram">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-green.svg" alt="Instagram">
                         </a>
                     </li>                    
                     <li>
                         <a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ product.url }}&text={{ product.title }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-green.svg" alt="Twitter">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-green.svg" alt="Twitter">
                         </a>
                     </li>                    
                     <li>
                         <a href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | img_url: '1024x1024' }}&description={{ product.title }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-green.svg" alt="Pinterest">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-green.svg" alt="Pinterest">
                         </a>
                     </li>                    
                     <li>
                         <a href="mailto:?subject={{ product.title }}&body=Check out this product: {{ shop.url }}{{ product.url }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-green.svg" alt="Email">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-green.svg" alt="Email">
                         </a>
                     </li>
                 </ul>          
@@ -42,7 +42,7 @@
                                 {% if product.images.size > 0 %}
                                 <div class="product-slider">
                                     {% for image in product.images %}
-                                        <div class="ps-slide"><img src="{{ image | image_url }}" alt="{{ product.title }}"></div>
+                                        <div class="ps-slide"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ image | image_url }}" alt="{{ product.title }}"></div>
                                     {% endfor %}
                                 </div>
                                 {% endif %}
@@ -174,7 +174,7 @@
                         <div class="tab-pane fade" id="p2" role="tabpanel" aria-labelledby="p2-tab">
                             <div class="product-tab-content">
                                 {% if product.metafields.custom.nutritional-info %}
-                                <img src="{{ product.metafields.custom.nutritional-info.value | image_url }}" alt="Nutritional Info">
+                                <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ product.metafields.custom.nutritional-info.value | image_url }}" alt="Nutritional Info">
                                 {% endif %}
                             </div>
                         </div>
@@ -336,7 +336,7 @@
                             {% if article.title contains product.title or article.tags contains product.title %}
                                 <div class="slide">
                                     <a href="{{ article.url }}" class="recipe-gallery">
-                                        <img src="{{ article.featured_image | img_url: '1024x1024' }}" alt="image">
+                                        <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ article.featured_image | img_url: '1024x1024' }}" alt="image">
                                         <span class="d-block title">{{ article.title }}</span>
                                     </a>
                                 </div>
@@ -370,7 +370,7 @@
                         {% for related_product in related_products %}
                             <div class="slide">
                                 <a href="{{ shop.url | append: '/products/' | append: related_product.handle }}" class="related-product">
-                                    <img src="{{ related_product.featured_image | img_url: '500x' }}" alt="{{ related_product.title }}">
+                                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ related_product.featured_image | img_url: '500x' }}" alt="{{ related_product.title }}">
                                     <span class="d-block title">{{ related_product.title }}</span>
                                 </a>
                             </div>
@@ -381,7 +381,7 @@
                         {% for product in default_related_products %}
                             <div class="slide">
                                 <a href="{{ shop.url | append: '/products/' | append: product.handle }}" class="related-product">
-                                    <img src="{{ product.featured_image | img_url: '500x' }}" alt="{{ product.title }}">
+                                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ product.featured_image | img_url: '500x' }}" alt="{{ product.title }}">
                                     <span class="d-block title">{{ product.title }}</span>
                                     <span class="d-block cta_btn btn_border_default">Shop Now</span>
                                 </a>

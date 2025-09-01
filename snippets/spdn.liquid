@@ -25,11 +25,7 @@ if(node.nodeType===1&&node.tagName==='SCRIPT'&&node.src.includes('privy')){node.
 if(node.nodeType===1&&node.tagName==='SCRIPT'&&node.src.includes('incart')){node.type='text/spdnscript'}
 if(node.nodeType===1&&node.tagName==='SCRIPT'&&node.src.includes('webui')){node.type='text/spdnscript'}
 
- if(node.nodeType===1&&node.tagName==='SCRIPT'&&node.innerHTML.includes('gtag')){node.type='text/spdnscript'}
-if(node.nodeType===1&&node.tagName==='SCRIPT'&&node.innerHTML.includes('tagmanager')){node.type='text/spdnscript'}
-if(node.nodeType===1&&node.tagName==='SCRIPT'&&node.innerHTML.includes('gtm')){node.type='text/spdnscript'}
-if(node.nodeType===1&&node.tagName==='SCRIPT'&&node.src.includes('googlet')){node.type='text/spdnscript'}
-if(node.tagName==='SCRIPT'&&node.className=='analytics'){node.type='text/spdnscript'} if(node.tagName==='IMG'){node.loading='lazy'}
+ if(node.tagName==='SCRIPT'&&node.className=='analytics'){node.type='text/javascript'} if(node.tagName==='IMG'){node.loading='lazy'}
 if(node.tagName==='IFRAME'){node.loading='lazy'}
 if(node.id==='svgicon'){node.loading='eager'}
  if(node.tagName==='SCRIPT'&&node.src!==""&&node.type!=='text/spdnscript'){node.type='text/2spdnscript'}

@@ -27,7 +27,7 @@
         "hero_slide_dyEFja": {
           "type": "hero_slide",
           "settings": {
-            "image": "shopify://shop_images/Ina-Paarman-Products.jpg",
+            "image": "shopify://shop_images/Ina-Paarman-Products.webp",
             "video_link": "",
             "sub_heading": "Ina Paarman's –",
             "heading": "Pantry Must-Haves",
@@ -39,7 +39,7 @@
         "hero_slide_UybmEB": {
           "type": "hero_slide",
           "settings": {
-            "image": "shopify://shop_images/Ina-Paarmans-Kitchen.jpg",
+            "image": "shopify://shop_images/Ina-Paarmans-Kitchen.webp",
             "video_link": "https://www.youtube.com/watch?v=TV-c3dKX3bg",
             "sub_heading": "Our Promise –",
             "heading": "It Starts At Home",
@@ -51,7 +51,7 @@
         "hero_slide_p3bmFB": {
           "type": "hero_slide",
           "settings": {
-            "image": "shopify://shop_images/Ina-Paarman-Meals.jpg",
+            "image": "shopify://shop_images/Ina-Paarman-Meals.webp",
             "video_link": "",
             "sub_heading": "Recipes –",
             "heading": "From Our Kitchen",
@@ -63,7 +63,7 @@
         "hero_slide_R4EJK8": {
           "type": "hero_slide",
           "settings": {
-            "image": "shopify://shop_images/My-Favourite-Recipes.jpg",
+            "image": "shopify://shop_images/My-Favourite-Recipes.webp",
             "video_link": "",
             "sub_heading": "Cookbook –",
             "heading": "My Favourite Recipes",
@@ -120,7 +120,7 @@
         "recipe_slide_wrC7NC": {
           "type": "recipe_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/Whats-For-Supper.jpg",
+            "slide_image": "shopify://shop_images/Whats-For-Supper.webp",
             "title": "What’s for Supper",
             "slide_link": "shopify://pages/recipes-whats-for-supper"
           }
@@ -128,7 +128,7 @@
         "recipe_slide_EdLPdW": {
           "type": "recipe_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/Party-Ideas.jpg",
+            "slide_image": "shopify://shop_images/Party-Ideas.webp",
             "title": "Party Ideas",
             "slide_link": "shopify://pages/recipes-party-ideas"
           }
@@ -136,7 +136,7 @@
         "recipe_slide_CqGAbV": {
           "type": "recipe_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/Vegetarian.jpg",
+            "slide_image": "shopify://shop_images/Vegetarian.webp",
             "title": "Vegetarian",
             "slide_link": "shopify://pages/recipes-vegetarian"
           }
@@ -192,7 +192,7 @@
       "settings": {
         "header_style": "style1",
         "remove_shapes": false,
-        "review_bg_image": "shopify://shop_images/My-Favourite-Recipes.jpg",
+        "review_bg_image": "shopify://shop_images/My-Favourite-Recipes.webp",
         "review_heading_sub": "Reader Reviews -",
         "review_heading": "My Favourite Recipes",
         "cta_text": "More",
@@ -206,7 +206,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#f2d22e",
-            "product_image": "shopify://shop_images/Spices-Seasoning.png",
+            "product_image": "shopify://shop_images/Spices-Seasoning.webp",
             "product_title": "Spices & Seasoning",
             "product_link": "shopify://collections/seasonings-spices"
           }
@@ -215,7 +215,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#286134",
-            "product_image": "shopify://shop_images/Ready-To-Serve-Sauces.png",
+            "product_image": "shopify://shop_images/Ready-To-Serve-Sauces.webp",
             "product_title": "Ready To Serve Sauces",
             "product_link": "shopify://collections/sauces-readyserve"
           }
@@ -224,7 +224,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#06363f",
-            "product_image": "shopify://shop_images/Salad-Dressings.png",
+            "product_image": "shopify://shop_images/Salad-Dressings.webp",
             "product_title": "Salad Dressings",
             "product_link": "shopify://collections/salad-dressings"
           }
@@ -233,7 +233,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#5c294b",
-            "product_image": "shopify://shop_images/Soups.png",
+            "product_image": "shopify://shop_images/Soups.webp",
             "product_title": "Soups",
             "product_link": "shopify://collections/soups"
           }
@@ -242,7 +242,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#fe4520",
-            "product_image": "shopify://shop_images/Stocks-Gravies.png",
+            "product_image": "shopify://shop_images/Stocks-Gravies.webp",
             "product_title": "Stocks & Gravies",
             "product_link": "shopify://collections/stocks-gravies"
           }
@@ -251,7 +251,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#5a749b",
-            "product_image": "shopify://shop_images/Stuffing-Mix.png",
+            "product_image": "shopify://shop_images/Stuffing-Mix.webp",
             "product_title": "Stuffing Mix",
             "product_link": "shopify://products/poultry-stuffing"
           }
@@ -260,7 +260,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#8ca75d",
-            "product_image": "shopify://shop_images/Pestos.png",
+            "product_image": "shopify://shop_images/Pestos.webp",
             "product_title": "Antipasti & Pestos",
             "product_link": "shopify://collections/antipasti-pestos"
           }
@@ -269,7 +269,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#f2d22e",
-            "product_image": "shopify://shop_images/Baking.png",
+            "product_image": "shopify://shop_images/Baking.webp",
             "product_title": "Baking",
             "product_link": "shopify://collections/baking"
           }
@@ -278,7 +278,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#286134",
-            "product_image": "shopify://shop_images/Pasta-Sauces.png",
+            "product_image": "shopify://shop_images/Pasta-Sauces.webp",
             "product_title": "Pasta Sauces",
             "product_link": "shopify://collections/pasta-sauces"
           }
@@ -287,7 +287,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#e3c52a",
-            "product_image": "shopify://shop_images/Cook-In-Sauces.png",
+            "product_image": "shopify://shop_images/Cook-In-Sauces.webp",
             "product_title": "Cook-In Sauces",
             "product_link": "shopify://collections/cookin-sauces"
           }
@@ -296,7 +296,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#be2033",
-            "product_image": "shopify://shop_images/Marinades.png",
+            "product_image": "shopify://shop_images/Marinades.webp",
             "product_title": "Marinades",
             "product_link": "shopify://collections/marinades-bastes"
           }
@@ -305,7 +305,7 @@
           "type": "product",
           "settings": {
             "shop_color_picker": "#fe4520",
-            "product_image": "shopify://shop_images/Chutneys.png",
+            "product_image": "shopify://shop_images/Chutneys.webp",
             "product_title": "Chutneys",
             "product_link": "shopify://collections/chutneys"
           }
@@ -336,7 +336,7 @@
       "type": "about-info",
       "settings": {
         "style": "style-1",
-        "about_bg_image": "shopify://shop_images/Background-Image-Quality-Pledge.jpg",
+        "about_bg_image": "shopify://shop_images/Background-Image-Quality-Pledge.webp",
         "about_subheading": "- The -",
         "about_title": "Ina Paarman",
         "about_heading": "Quality Pledge",

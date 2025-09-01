@@ -27,9 +27,9 @@
                             <a href="{{ article.url }}" class="blog-box">
                                 <div class="image">
                                     {% if article.image %}
-                                        <img src="{{ article.image | image_url }}" alt="{{ article.title }}" height="{{ article.image.height }}" width = "{{ article.image.width }}" loading="lazy">
+                                        <img data-wpsob="1" data-wpsob-width="1" width="1" src="{{ article.image | image_url }}" alt="{{ article.title }}" height="{{ article.image.height }}" width = "{{ article.image.width }}" loading="lazy">
                                     {% else %}
-                                        <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}" height="406" width = "406" loading="lazy">
+                                        <img data-wpsob="1" data-wpsob-width="1" width="1" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}" height="406" width = "406" loading="lazy">
                                     {% endif %}
                                 </div>
                                 <div class="text">
@@ -51,9 +51,9 @@
                     <a href="{{ article.url }}" class="blog-box">
                         <div class="image blog-img">
                             {% if article.image %}
-                                <img src="{{ article.image | image_url }}" alt="{{ article.title }}" height="406" width = "406" loading="lazy">
+                                <img data-wpsob="1" data-wpsob-width="1" width="1" src="{{ article.image | image_url }}" alt="{{ article.title }}" height="406" width = "406" loading="lazy">
                             {% else %}
-                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}" height="406" width = "406" loading="lazy" >
+                                <img data-wpsob="1" data-wpsob-width="1" width="1" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}" height="406" width = "406" loading="lazy" >
                             {% endif %}
                         </div>
                         <div class="text">
@@ -71,7 +71,7 @@
               {% if section.settings.all_articles_button_text != blank %}
         <div class="text-center section_action">
            <a href="{{ section.settings.all_articles_button_link }}" class="cta_btn btn_default">
-              {{ section.settings.all_articles_button_text }} <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
+              {{ section.settings.all_articles_button_text }} <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
            </a>
         </div>
         {% endif %}
@@ -83,7 +83,7 @@
 <!-- Content Start -->
 <section class="blog-area pt-0">
     {% if section.settings.blog_shape_image %}
-        <img src="{{ section.settings.blog_shape_image | image_url }}" alt="image" class="blog_shape">
+        <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ section.settings.blog_shape_image | image_url }}" alt="image" class="blog_shape">
     {% endif %}  
     <div class="container">
         <div class="text-center">
@@ -101,8 +101,8 @@
                 <div class="slide dd">
                     <a href="{{ article.url }}" class="blog-box">
                         <div class="image">
-                            {% if article.image %} <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
-                            {% else %} <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}">
+                            {% if article.image %} <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ article.image | image_url }}" alt="{{ article.title }}">
+                            {% else %} <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}">
                             {% endif %}
                         </div>
                         <div class="text">
@@ -119,8 +119,8 @@
                 <div class="slide dd">
                     <a href="{{ article.url }}" class="blog-box">
                         <div class="image">
-                            {% if article.image %} <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
-                            {% else %}<img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}">
+                            {% if article.image %} <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ article.image | image_url }}" alt="{{ article.title }}">
+                            {% else %}<img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.webp" alt="{{ article.title }}">
                             {% endif %}
                         </div>
                         <div class="text">
@@ -136,7 +136,7 @@
         {% if section.settings.all_articles_button_text != blank %}
         <div class="text-center section_action">
            <a href="{{ section.settings.all_articles_button_link }}" class="cta_btn btn_default">
-              {{ section.settings.all_articles_button_text }} <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon">
+              {{ section.settings.all_articles_button_text }} <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon">
            </a>
         </div>
         {% endif %}

@@ -3,7 +3,7 @@
   lang="{{ request.locale.iso_code }}"
   class="{% if request.design_mode %}design-mode{% endif %}">
   
-  <head> {% render 'sb-js-lazyload' %} 
+  <head>{% render 'spdn' %} {% render 'sb-js-lazyload' %} 
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -234,6 +234,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   %}
 
 
- {% render 'sb-preload-booster' %} </body>
+ {% render 'sb-preload-booster' %} {% render 'spdn4' %}</body>
 </html>
     

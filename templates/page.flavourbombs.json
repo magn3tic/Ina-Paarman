@@ -20,40 +20,110 @@
         "cta_link": ""
       }
     },
-    "download_pdf_form_ML4bGN": {
-      "type": "download-pdf-form",
+    "richtext_aftrCg": {
+      "type": "richtext",
+      "name": "Richtext",
+      "settings": {
+        "container_max_width": "900",
+        "text_align": "text-center",
+        "title": "Richtext",
+        "description": "<p>Add on optional description for this section</p>",
+        "btn_primary_text": "Primary button",
+        "btn_primary_url": "",
+        "btn_secondary_text": "Secondary button",
+        "btn_secondary_url": ""
+      }
+    },
+    "video_gallery_bA9gmL": {
+      "type": "video-gallery",
       "blocks": {
-        "forms_inline_XAy8eX": {
-          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+        "video_aGh4xi": {
+          "type": "video",
           "settings": {
-            "form_id": "424332",
-            "text_color": "#202020",
-            "button_background_color": "#202020",
-            "button_label_color": "#ffffff",
-            "links_color": "#1878b9",
-            "errors_color": "#e02229",
-            "text_alignment": "center",
-            "form_alignment": "center",
-            "padding_top": 0,
-            "padding_bottom": 0,
-            "padding_right": 0,
-            "padding_left": 0
+            "youtube_id": ""
+          }
+        },
+        "video_Gznadg": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_egkHtG": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_rbt79f": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_GjAYF8": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_wY7FnE": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_TBCQhj": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_HjVp4K": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_xP3yUm": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_3zHCJ4": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_wrGb7h": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
           }
         }
       },
       "block_order": [
-        "forms_inline_XAy8eX"
+        "video_aGh4xi",
+        "video_Gznadg",
+        "video_egkHtG",
+        "video_rbt79f",
+        "video_GjAYF8",
+        "video_wY7FnE",
+        "video_TBCQhj",
+        "video_HjVp4K",
+        "video_xP3yUm",
+        "video_3zHCJ4",
+        "video_wrGb7h"
       ],
-      "settings": {
-        "style": "style-2",
-        "sub_heading": "– Download –",
-        "main_heading": "Flavour Bomb Recipes",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo nunc et massa venenatis euismod. Etiam arcu orci, dapibus at mattis a, egestas eget tellus. Nam semper iaculis mauris, at fringilla urna ultrices non.</p>"
-      }
+      "name": "Video Gallery",
+      "settings": {}
     }
   },
   "order": [
     "blog_header_zHcnBL",
-    "download_pdf_form_ML4bGN"
+    "richtext_aftrCg",
+    "video_gallery_bA9gmL"
   ]
 }

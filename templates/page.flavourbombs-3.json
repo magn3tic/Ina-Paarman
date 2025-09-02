@@ -9,15 +9,12 @@
  */
 {
   "sections": {
-    "blog_header_zHcnBL": {
-      "type": "blog-header",
+    "header_general_iQTN6H": {
+      "type": "header-general",
+      "name": "Collection - Header",
       "settings": {
-        "background_image": "shopify://shop_images/Ina-Paarmans-Baking-with-Kids-Recipe-Book.jpg",
-        "sub_heading": "FLAVOUR BOMBS",
-        "heading": "Headline",
-        "paragraph_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo nunc et massa venenatis euismod. Etiam arcu orci, dapibus at mattis a, egestas eget tellus.</p><p>Nam semper iaculis mauris, at fringilla urna ultrices non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin nec magna et nunc sollicitudin pulvinar in volutpat justo. Cras aliquam a quam vel porttitor. Duis ut tempor lacus. Nunc et massa mollis, suscipit justo sed, ultrices risus.</p>",
-        "cta_text": "",
-        "cta_link": ""
+        "heading": "",
+        "description": ""
       }
     },
     "richtext_aftrCg": {
@@ -122,7 +119,7 @@
     }
   },
   "order": [
-    "blog_header_zHcnBL",
+    "header_general_iQTN6H",
     "richtext_aftrCg",
     "video_gallery_bA9gmL"
   ]

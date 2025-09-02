@@ -1,0 +1,129 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog_header_zHcnBL": {
+      "type": "blog-header",
+      "settings": {
+        "background_image": "shopify://shop_images/Ina-Paarmans-Baking-with-Kids-Recipe-Book.jpg",
+        "sub_heading": "FLAVOUR BOMBS",
+        "heading": "Headline",
+        "paragraph_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo nunc et massa venenatis euismod. Etiam arcu orci, dapibus at mattis a, egestas eget tellus.</p><p>Nam semper iaculis mauris, at fringilla urna ultrices non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin nec magna et nunc sollicitudin pulvinar in volutpat justo. Cras aliquam a quam vel porttitor. Duis ut tempor lacus. Nunc et massa mollis, suscipit justo sed, ultrices risus.</p>",
+        "cta_text": "",
+        "cta_link": ""
+      }
+    },
+    "richtext_aftrCg": {
+      "type": "richtext",
+      "name": "Richtext",
+      "settings": {
+        "container_max_width": "900",
+        "text_align": "text-center",
+        "title": "Richtext",
+        "description": "<p>Add on optional description for this section</p>",
+        "btn_primary_text": "Primary button",
+        "btn_primary_url": "",
+        "btn_secondary_text": "Secondary button",
+        "btn_secondary_url": ""
+      }
+    },
+    "video_gallery_bA9gmL": {
+      "type": "video-gallery",
+      "blocks": {
+        "video_aGh4xi": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_Gznadg": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_egkHtG": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_rbt79f": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_GjAYF8": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_wY7FnE": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_TBCQhj": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_HjVp4K": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_xP3yUm": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_3zHCJ4": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        },
+        "video_wrGb7h": {
+          "type": "video",
+          "settings": {
+            "youtube_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_aGh4xi",
+        "video_Gznadg",
+        "video_egkHtG",
+        "video_rbt79f",
+        "video_GjAYF8",
+        "video_wY7FnE",
+        "video_TBCQhj",
+        "video_HjVp4K",
+        "video_xP3yUm",
+        "video_3zHCJ4",
+        "video_wrGb7h"
+      ],
+      "name": "Video Gallery",
+      "settings": {}
+    }
+  },
+  "order": [
+    "blog_header_zHcnBL",
+    "richtext_aftrCg",
+    "video_gallery_bA9gmL"
+  ]
+}

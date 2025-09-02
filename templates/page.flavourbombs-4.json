@@ -13,9 +13,9 @@
       "type": "header-general",
       "name": "Collection - Header",
       "settings": {
-        "banner_image": "shopify://shop_images/Flavour-Bombs-Header.jpg",
         "heading": "",
-        "description": ""
+        "description": "",
+        "video_file": "shopify://files/videos/IPK FB 3 logo.mp4"
       }
     },
     "spacer_VfQ7Lb": {

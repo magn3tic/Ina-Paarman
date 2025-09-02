@@ -13,9 +13,9 @@
       "type": "blog-header",
       "settings": {
         "background_image": "shopify://shop_images/Ina-Paarman_s-Flavour-Bombs-Black.jpg",
-        "sub_heading": "FLAVOUR BOMBS",
-        "heading": "Headline",
-        "paragraph_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo nunc et massa venenatis euismod. Etiam arcu orci, dapibus at mattis a, egestas eget tellus.</p><p>Nam semper iaculis mauris, at fringilla urna ultrices non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin nec magna et nunc sollicitudin pulvinar in volutpat justo. Cras aliquam a quam vel porttitor. Duis ut tempor lacus. Nunc et massa mollis, suscipit justo sed, ultrices risus.</p>",
+        "sub_heading": "Introducing Our New",
+        "heading": "Flavour Bombs",
+        "paragraph_1": "<p><strong>Experience a Flavour Bomb taste explosion!</strong></p><p>Our new range of Flavour Bomb sachets offers the perfect seasoning balance to enhance your cooking.</p><p>No need to pre-salt or spice your meat and vegetables. Simply add your favourite Flavour Bomb – suitable for cooking on the braai or griddle pan, pan frying, or in the oven or air-fryer.</p>",
         "cta_text": "",
         "cta_link": ""
       }
@@ -126,10 +126,18 @@
       ],
       "name": "Video Gallery",
       "settings": {}
+    },
+    "spacer_Lk8Cmj": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 20
+      }
     }
   },
   "order": [
     "blog_header_zHcnBL",
+    "spacer_Lk8Cmj",
     "richtext_aftrCg",
     "spacer_G44Mgh",
     "video_gallery_bA9gmL"

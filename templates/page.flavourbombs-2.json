@@ -12,7 +12,7 @@
     "blog_header_zHcnBL": {
       "type": "blog-header",
       "settings": {
-        "background_image": "shopify://shop_images/Ina-Paarmans-Baking-with-Kids-Recipe-Book.jpg",
+        "background_image": "shopify://shop_images/Ina-Paarman_s-Flavour-Bombs-Black.jpg",
         "sub_heading": "FLAVOUR BOMBS",
         "heading": "Headline",
         "paragraph_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo nunc et massa venenatis euismod. Etiam arcu orci, dapibus at mattis a, egestas eget tellus.</p><p>Nam semper iaculis mauris, at fringilla urna ultrices non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin nec magna et nunc sollicitudin pulvinar in volutpat justo. Cras aliquam a quam vel porttitor. Duis ut tempor lacus. Nunc et massa mollis, suscipit justo sed, ultrices risus.</p>",
@@ -26,12 +26,19 @@
       "settings": {
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "Richtext",
-        "description": "<p>Add on optional description for this section</p>",
-        "btn_primary_text": "Primary button",
+        "title": "",
+        "description": "<p><strong>Available in five explosive flavours:<br/></strong>Spicy Cajun  ·  Zesty Lemon  ·  Portuguese Peri-Peri  ·  Steakhouse Pepper  ·  Spanish Tomato</p>",
+        "btn_primary_text": "Download Leaflet",
         "btn_primary_url": "",
-        "btn_secondary_text": "Secondary button",
+        "btn_secondary_text": "",
         "btn_secondary_url": ""
+      }
+    },
+    "spacer_G44Mgh": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40
       }
     },
     "video_gallery_bA9gmL": {
@@ -124,6 +131,7 @@
   "order": [
     "blog_header_zHcnBL",
     "richtext_aftrCg",
+    "spacer_G44Mgh",
     "video_gallery_bA9gmL"
   ]
 }

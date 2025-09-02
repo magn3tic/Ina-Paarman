@@ -34,6 +34,13 @@
         "btn_secondary_url": ""
       }
     },
+    "spacer_icrBa3": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40
+      }
+    },
     "video_gallery_bA9gmL": {
       "type": "video-gallery",
       "blocks": {
@@ -124,6 +131,7 @@
   "order": [
     "blog_header_zHcnBL",
     "richtext_aftrCg",
+    "spacer_icrBa3",
     "video_gallery_bA9gmL"
   ]
 }

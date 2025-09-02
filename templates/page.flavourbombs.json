@@ -12,10 +12,10 @@
     "blog_header_zHcnBL": {
       "type": "blog-header",
       "settings": {
-        "background_image": "shopify://shop_images/Ina-Paarmans-Baking-with-Kids-Recipe-Book.jpg",
+        "background_image": "shopify://shop_images/Ina-Paarman_s-Flavour-Bombs-Red.jpg",
         "sub_heading": "FLAVOUR BOMBS",
-        "heading": "Headline",
-        "paragraph_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo nunc et massa venenatis euismod. Etiam arcu orci, dapibus at mattis a, egestas eget tellus.</p><p>Nam semper iaculis mauris, at fringilla urna ultrices non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin nec magna et nunc sollicitudin pulvinar in volutpat justo. Cras aliquam a quam vel porttitor. Duis ut tempor lacus. Nunc et massa mollis, suscipit justo sed, ultrices risus.</p>",
+        "heading": "Flavour Bombs",
+        "paragraph_1": "<p><strong>Experience a flavour bomb taste explosion!</strong></p><p><strong>Our new range of Flavour Bombs offer the perfect seasoning balance. No need to pre-salt your meat or vegetables. Simply add a Flavour Bomb sachet, suitable for cooking on the braai or griddle pan, pan frying, or in the oven or air-frier.</strong></p>",
         "cta_text": "",
         "cta_link": ""
       }
@@ -26,11 +26,11 @@
       "settings": {
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "Richtext",
-        "description": "<p>Add on optional description for this section</p>",
-        "btn_primary_text": "Primary button",
+        "title": "",
+        "description": "<p><strong>Available in five explosive flavours:<br/></strong>Spicy Cajun  ·  Zesty Lemon  ·  Portuguese Peri-Peri  ·  Steakhouse Pepper  ·  Spanish Tomato</p>",
+        "btn_primary_text": "Download Leaflet",
         "btn_primary_url": "",
-        "btn_secondary_text": "Secondary button",
+        "btn_secondary_text": "",
         "btn_secondary_url": ""
       }
     },

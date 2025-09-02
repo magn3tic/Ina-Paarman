@@ -9,15 +9,20 @@
  */
 {
   "sections": {
-    "blog_header_zHcnBL": {
-      "type": "blog-header",
+    "header_general_34FzC4": {
+      "type": "header-general",
+      "name": "Collection - Header",
       "settings": {
-        "background_image": "shopify://shop_images/Ina-Paarmans-Baking-with-Kids-Recipe-Book.jpg",
-        "sub_heading": "FLAVOUR BOMBS",
-        "heading": "Headline",
-        "paragraph_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo nunc et massa venenatis euismod. Etiam arcu orci, dapibus at mattis a, egestas eget tellus.</p><p>Nam semper iaculis mauris, at fringilla urna ultrices non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin nec magna et nunc sollicitudin pulvinar in volutpat justo. Cras aliquam a quam vel porttitor. Duis ut tempor lacus. Nunc et massa mollis, suscipit justo sed, ultrices risus.</p>",
-        "cta_text": "",
-        "cta_link": ""
+        "banner_image": "shopify://shop_images/Flavour-Bombs-Header.jpg",
+        "heading": "",
+        "description": ""
+      }
+    },
+    "spacer_VfQ7Lb": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40
       }
     },
     "richtext_aftrCg": {
@@ -26,11 +31,11 @@
       "settings": {
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "Richtext",
-        "description": "<p>Add on optional description for this section</p>",
-        "btn_primary_text": "Primary button",
+        "title": "Flavour Bombs",
+        "description": "<p><strong>Experience a Flavour Bomb taste explosion!</strong></p><p>Our new range of Flavour Bomb sachets offers the perfect seasoning balance to enhance your cooking.</p><p>No need to pre-salt or spice your meat and vegetables. Simply add your favourite Flavour Bomb – suitable for cooking on the braai or griddle pan, pan frying, or in the oven or air-fryer.</p>",
+        "btn_primary_text": "Download Leaflet",
         "btn_primary_url": "",
-        "btn_secondary_text": "Secondary button",
+        "btn_secondary_text": "",
         "btn_secondary_url": ""
       }
     },
@@ -119,11 +124,20 @@
       ],
       "name": "Video Gallery",
       "settings": {}
+    },
+    "spacer_jYmnMi": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 20
+      }
     }
   },
   "order": [
-    "blog_header_zHcnBL",
+    "header_general_34FzC4",
+    "spacer_VfQ7Lb",
     "richtext_aftrCg",
+    "spacer_jYmnMi",
     "video_gallery_bA9gmL"
   ]
 }

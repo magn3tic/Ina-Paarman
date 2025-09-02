@@ -111,6 +111,7 @@
         },
         "video_wrGb7h": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "youtube_id": "b7JNNtKLWvA"
           }

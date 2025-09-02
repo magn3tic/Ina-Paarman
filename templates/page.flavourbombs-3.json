@@ -14,7 +14,15 @@
       "name": "Collection - Header",
       "settings": {
         "heading": "",
-        "description": ""
+        "description": "",
+        "video_file": "shopify://files/videos/IPK FB Email Sig.mp4"
+      }
+    },
+    "spacer_nitAbC": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40
       }
     },
     "richtext_aftrCg": {
@@ -123,13 +131,6 @@
       ],
       "name": "Video Gallery",
       "settings": {}
-    },
-    "spacer_nitAbC": {
-      "type": "spacer",
-      "name": "Spacer",
-      "settings": {
-        "spacer_height": 20
-      }
     }
   },
   "order": [

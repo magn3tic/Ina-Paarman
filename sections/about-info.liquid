@@ -1,0 +1,151 @@
+{% if section.settings.style == "style-2" %}
+<!-- Content Start -->
+<section class="promo-area-boxed pt-0">
+    <!--<img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/promo-shape.webp" alt="image" class="promo_shape">-->
+    <div class="container">  
+    <div class="promo-area" style="background: url({{ section.settings.about_bg_image | image_url }}) no-repeat scroll center center/cover">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <div class="inner text-center">
+                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/promo-shape-top.webp" width = "712" height = "134" alt="image" class="shape_top">
+                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/promo-shape-bottom.webp" width = "712" height = "134" alt="image" class="shape_bottom">
+                    {% if section.settings.about_subheading != blank %}
+                        <span class="d-block text_light sub_heading">{{ section.settings.about_subheading | escape }}</span>
+                    {% endif %}
+                    {% if section.settings.about_title != blank %}
+                        <h3 class="heading-alt">{{ section.settings.about_title | escape }}</h3>
+                    {% endif %}
+                    {% if section.settings.about_heading != blank %}
+                        <h3 class="heading text_light">{{ section.settings.about_heading | escape }}</h3>
+                    {% endif %}
+                    <div class="content">
+                        {% if section.settings.about_quote != blank %}
+                            <p><em>“{{ section.settings.about_quote | escape }}”</em><span class="d-block"><em>{{ section.settings.about_quote_author | escape }}</em></span></p>
+                        {% endif %}
+                        {% if section.settings.about_text != blank %}
+                            <p>{{ section.settings.about_text }}</p>
+                        {% endif %}
+                        {% if section.settings.about_cta_link != blank and section.settings.about_cta_text != blank %}
+                            <a href="{{ section.settings.about_cta_link }}" class="cta_btn btn_default">{{ section.settings.about_cta_text }} <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
+</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- Content End -->
+{% else %}
+<!-- Content Start -->
+<section class="promo-area" style="background: url({{ section.settings.about_bg_image | image_url }}) no-repeat scroll center center/cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <div class="inner text-center">
+                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/promo-shape-top.webp" width = "712" height = "134" alt="image" class="shape_top">
+                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/promo-shape-bottom.webp" width = "712" height = "134" alt="image" class="shape_bottom">
+                    {% if section.settings.about_subheading != blank %}
+                        <span class="d-block text_light sub_heading">{{ section.settings.about_subheading | escape }}</span>
+                    {% endif %}
+                    {% if section.settings.about_title != blank %}
+                        <h3 class="heading-alt">{{ section.settings.about_title | escape }}</h3>
+                    {% endif %}
+                    {% if section.settings.about_heading != blank %}
+                        <h3 class="heading text_light">{{ section.settings.about_heading | escape }}</h3>
+                    {% endif %}
+                    <div class="content">
+                        {% if section.settings.about_quote != blank %}
+                            <p><em>“{{ section.settings.about_quote | escape }}”</em><span class="d-block"><em>{{ section.settings.about_quote_author | escape }}</em></span></p>
+                        {% endif %}
+                        {% if section.settings.about_text != blank %}
+                            <p>{{ section.settings.about_text }}</p>
+                        {% endif %}
+                        {% if section.settings.about_cta_link != blank and section.settings.about_cta_text != blank %}
+                            <a href="{{ section.settings.about_cta_link }}" class="cta_btn btn_default">{{ section.settings.about_cta_text }} <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
+</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+{% endif %}
+
+{% schema %}
+{
+  "name": "Focus Content",
+  "settings": [
+   {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "style-1",
+          "label": "Fullscreen"
+        },
+        {
+          "value": "style-2",
+          "label": "Boxed"
+        }
+      ],
+      "default": "style-1"
+    },     
+    {
+      "type": "image_picker",
+      "id": "about_bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "about_subheading",
+      "label": "Tagline"
+    },
+    {
+      "type": "text",
+      "id": "about_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "about_heading",
+      "label": "Main Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "about_quote",
+      "label": "Quote"
+    },
+    {
+      "type": "text",
+      "id": "about_quote_author",
+      "label": "Quote Author"
+    },
+    {
+      "type": "richtext",
+      "id": "about_text",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "about_cta_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "about_cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Focus Content",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,79 @@
+<!-- Content Start -->
+
+    {% if section.settings.video_file %}
+<section class="recipe-banner-area alt r-video" style="{% if section.settings.banner_image != blank %}background: url({{ section.settings.banner_image | img_url: '2048x2048' }}) no-repeat scroll top center/cover;{% endif %}">
+    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
+      
+      <div class="header-background-video">
+        <video autoplay loop muted playsinline>
+            <source src="{{section.settings.video_file.sources[1].url}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+      </div>
+    {% else %}
+<section class="recipe-banner-area alt " style="{% if section.settings.banner_image != blank %}background: url({{ section.settings.banner_image | img_url: '2048x2048' }}) no-repeat scroll top center/cover;{% endif %}">
+    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
+  
+    {% endif %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-9 mx-auto">
+                <div class="text-center">
+                    {% if section.settings.heading != blank %}
+                        <h1 class="heading text_white">{{ section.settings.heading }}</h1>
+                    {% endif %}
+
+                    {% if section.settings.description != blank %}
+                        {{ section.settings.description }}
+                    {% endif %}                  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+{% if collection.metafields.custom.header_background_video %}
+  <div class="header-background-video">
+    <video autoplay loop muted playsinline>
+      <source src="{{ collection.metafields.custom.header_background_video | file_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Collection - Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "video",
+      "id": "video_file",
+      "label": "Video"
+    }    
+  ],
+  "presets": [
+    {
+      "name": "Collection - Header",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

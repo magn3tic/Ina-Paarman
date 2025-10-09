@@ -1,0 +1,58 @@
+{% schema %}
+{
+  "name": "Collection List",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "shop_area_shape",
+      "label": "Sketch Image"
+    },    
+    {
+      "type": "number",
+      "id": "collections_per_page",
+      "label": "Number of collections per page",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign collections_per_page = section.settings.collections_per_page %}
+
+<section class="shop-area list__collection pt-0">
+
+   {% if section.settings.shop_area_shape != blank %}
+    <img src="{{ section.settings.shop_area_shape | image_url }}" alt="image" class="collection_shape_1">
+  {% endif %}
+
+  <div class="container">
+    <div class="row g-2 g-lg-4">  
+
+{% paginate collections by collections_per_page %}
+    {% for collection in collections %}
+
+    <div class="col-md-4 col-lg-3 col-6">
+      <a href="{{ collection.url }}" class="product-box">
+        <div class="shape_color"></div>
+
+            <!-- No collection image, use the first product's image if available -->
+            {% assign first_product = collection.products.first %}
+            {% if first_product and first_product.featured_image %}
+              <img src="{{ first_product.featured_image.src | img_url: 'large' }}" alt="{{ first_product.title }}" width = "267" height = "270">
+            {% endif %}
+          <span class="d-block title">{{ collection.title }}</span>
+      </a>
+    </div>
+    {% endfor %}
+    {% render 'pagination', paginate: paginate %}
+{% endpaginate %}
+</div>
+</div>
+
+</section>

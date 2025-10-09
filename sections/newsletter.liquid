@@ -1,0 +1,153 @@
+{% if section.settings.style == 'style-2' %}
+<!-- Content Start -->
+<section class="newsletter-area-style3" style="background: url({{ section.settings.background_image | image_url }}) no-repeat scroll center center/cover">
+    <div class="container">
+        <div class="row align-items-md-end">
+            <div class="col-md-6">
+                <div class="content-text pe-lg-5">
+                    {% if section.settings.sub_heading != blank %}
+                    <span class="d-block text_light sub_heading">{{ section.settings.sub_heading }}</span>
+                    {% endif %}
+                    {% if section.settings.main_heading != blank %}
+                    <h3 class="heading text_light">{{ section.settings.main_heading }}</h3>
+                    {% endif %}
+                    {% if section.settings.description != blank %}
+                      {{ section.settings.description }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ps-lg-5">
+                  {% form 'customer', class: 'newsletter-form' %}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                    <label for="newsletter-input-email" class="d-none">
+                      Email
+                    </label>
+                    <input  id="newsletter-input-email" type="email" name="contact[email]"  size="30" value="{% if customer.email != blank %}{{ customer.email }}{% endif %}" placeholder="E-MAIL ADDRESS" autocorrect="off" autocapitalize="off">
+                    <button type="submit" name="commit" class="cta_btn btn_default">SUBSCRIBE TO NEWSLETTER <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon"></button>
+                  {{ form.errors | default_errors }}
+                  {% if form.posted_successfully? %}
+                    <p class="mt-3">
+                      {{ 'general.newsletter.confirmation_text' | t }}
+                    </p>
+                  {% endif %} 
+                  {% endform %}                  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+{% else %}
+<!-- Content Start -->
+<section class="newsletter-area">
+    {% if section.settings.shape_image_left %}
+    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ section.settings.shape_image_left | image_url }}" width = "{{ section.settings.shape_image_left.width }}" height = "{{ section.settings.shape_image_left.height }}" alt="image" class="newsletter_shape">
+    {% endif %}
+    {% if section.settings.shape_image_right %}
+    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ section.settings.shape_image_right | image_url }}" width = "{{ section.settings.shape_image_right.width }}" height = "{{ section.settings.shape_image_right.height }}" alt="image" class="newsletter_shape_right">
+    {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-7 mx-auto">
+                <div class="inner text-center">
+                    {% if section.settings.sub_heading != blank %}
+                    <span class="d-block text_light sub_heading">{{ section.settings.sub_heading }}</span>
+                    {% endif %}
+                    {% if section.settings.main_heading != blank %}
+                    <h3 class="heading text_light">{{ section.settings.main_heading }}</h3>
+                    {% endif %}
+                    {% if section.settings.description != blank %}
+                      {{ section.settings.description }}
+                    {% endif %}
+                    {% form 'customer', class: 'newsletter-form' %}
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <label for="newsletter-input-name" class="d-none">
+                      Name
+                    </label>
+                    <input class = "mb-2"id="newsletter-input-name" type="text" name="contact[first_name]" size="30" value="{% if customer.first_name != blank %}{{ customer.first_name }}{% endif %}" placeholder="NAME & SURNAME" autocorrect="off" autocapitalize="off">
+
+                      <label for="newsletter-input-email" class="d-none">
+                        Email
+                      </label>
+                      <input id="newsletter-input-email" type="email" name="contact[email]" size="30"  value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"  placeholder="E-MAIL ADDRESS" autocorrect="off"   autocapitalize="off">
+                      <button type="submit" name="commit" class="cta_btn newsletter_btn btn_default">SUBSCRIBE TO NEWSLETTER <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width ="20" height = "20" alt="icon"></button>
+                    {{ form.errors | default_errors }}
+                    {% if form.posted_successfully? %}
+                      <p class="mt-3">
+                        {{ 'general.newsletter.confirmation_text' | t }}
+                      </p>
+                    {% endif %} 
+                    {% endform %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+{% endif %}
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "style-1",
+          "label": "Style 1"
+        },
+        {
+          "value": "style-2",
+          "label": "Style 2"
+        }
+      ],
+      "default": "style-1"
+    },     
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Pre- Heading",
+      "default": "- sign up -"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Ina Paarman’s Kitchen Newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Shape Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_image_left",
+      "label": "Image: Left"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_image_right",
+      "label": "Image: Right"
+    }    
+  ],
+  "presets": [
+    {
+      "name": "Newsletter",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

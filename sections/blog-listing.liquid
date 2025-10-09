@@ -1,0 +1,64 @@
+{% liquid
+  if shop.permanent_domain contains 'ks-'
+    assign limit = 6
+  else
+    assign limit = section.settings.limit
+  endif
+%}
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+          {% paginate blogs.news.articles by limit %}
+            {% if blogs.news.articles.size == 0 %}
+            {% else %}
+                {% for article in blogs.news.articles %}
+                       <div class="col-md-4 col-sm-6">
+                    <a href="{{ article.url }}" class="blog-box">
+                        <div class="image">
+                            {% if article.image %}
+                                <img src="{{ article.image | image_url }}" alt="{{ article.title }}" height="406" width = "406" loading="lazy">
+                            {% else %}
+                                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="{{ article.title }}" height="406" width = "406" loading="lazy">
+                            {% endif %}
+                        </div>
+                        <div class="text">
+                            <div class="text__wrap">
+                              <h4 class="h3"><strong>{{ article.title }}</strong></h4>
+                              <p>{{ article.excerpt | strip_html | truncate: 180 }}</p>
+                            </div>
+                            <span class="cta_btn btn_border_default">READ MORE</span>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+              
+              {% render 'pagination', paginate: paginate %}
+            {% endif %}
+          {% endpaginate %}
+        </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog Listing",
+  "settings": [
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit articles",
+      "min": 1,
+      "max": 50,
+      "default": 6,
+      "step": 1
+    }
+  ],
+  "templates": ["blog"],
+  "presets": [
+    {
+      "name": "Blog Listing"
+    }
+  ]
+}
+{% endschema %}

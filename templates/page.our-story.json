@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "our_story_ViPPre": {
+      "type": "our-story",
+      "blocks": {
+        "content_aMRkeR": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Ina-Paarman-Story.png",
+            "tagline": "The Ina Paarman Story -",
+            "heading": "From Humble Origins, Great Things Grow",
+            "bquote": "“To understand what Paarman Foods is all about, one has to believe in dreams, the amazing spirit when experiences are shared, and the positive energy that’s unleashed when people embrace a cause they wholeheartedly endorse and believe in.” – Ina Paarman",
+            "description": "<p>Ina Paarman’s story is an inspirational tale that unfolds like a journey.</p><p>And, like all life’s great journeys, it combines the best ingredients: humble beginnings, dogged perseverance, a tireless dedication to exceptional quality, a passion for food, and an unwavering commitment towards enriching people’s lives by making cooking and eating a more pleasurable, healthy experience.</p><p>It’s the progress made – the challenges encountered and overcome along the way, the experiences and the people – that make this journey so rewarding and meaningful for all those involved.</p>",
+            "cta_text": "My Favourite Recipes",
+            "cta_link": "shopify://pages/cookbook"
+          }
+        },
+        "content_an8pqa": {
+          "type": "content",
+          "settings": {
+            "style": "style-2",
+            "remove_space": false,
+            "image": "shopify://shop_images/Paarman-Legacy.png",
+            "tagline": "The Paarman Legacy -",
+            "heading": "Those Who Dare, Win",
+            "bquote": "",
+            "description": "<p>In 1982, Ina threw caution to the wind, leaving behind the security of her lecturing post to start a cookery school in the family’s converted garage. The business got off to a slow start as people were unaccustomed to paying to learn how to cook, and she did not have a budget for advertising. So, her teenage sons were dispatched on their bicycles through the neighbourhood to drop homemade flyers into people’s post boxes. But, seven years later, the school became hugely popular as a result of the life breathed into it by Ina’s infectious love for cooking and teaching.</p><p>At the same time, Ina’s youngest son, Graham, who had recently finished a business degree and was about to write his final chartered accountancy exam, announced, to the horror of his parents, that it was not the career he wanted for himself. She recalls Graham nonchalantly remarking: “Let’s go into business together. You can cook, and I can count. So, what is the problem?”</p><p>And so, a very special entrepreneurial relationship between mother and son came into being, which has served as the foundational strength of the business ever since.</p><p>From those early days in a garage almost a generation ago, this small, but highly respected cookery school morphed into a fledgling food-manufacturing business in 1990.</p><p>Never the risk taker, the late Ted Paarman made the uncharacteristically bold, but brave decision to aid his determined wife and youthfully idealistic, ambitious son in their start-up venture. He invested his hard-earned retirement savings, which, along with the income from Ina’s first self-published cookbook, <em>Cook with Ina Paarman</em>, sowed the seeds for what would grow into the now legendary Paarman Foods. </p><p>In the years since, the business has become a household name with an enviable international reputation for putting quality and flavour first. It now exports Ina Paarman’ Spices, Seasonings, Sauces, and more to 32 countries worldwide.</p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "video_aD7yY7": {
+          "type": "video",
+          "settings": {
+            "heading": "",
+            "youtube_id": "Rywn4wOCVAI",
+            "description": ""
+          }
+        },
+        "content_HfyNJc": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": true,
+            "image": "shopify://shop_images/Ina-Paarman-Factory.png",
+            "tagline": "Our Factory -",
+            "heading": "What Makes Us Different?",
+            "bquote": "“Although the idea is an ostensibly simple one, the concept of producing food on a large scale in a factory that does not taste like it is mass-produced is the goal which all of our staff have willingly and enthusiastically embraced with a certain missionary zeal.” – Graham Paarman.",
+            "description": "<p>Essentially, this means recreating all the goodness and wholesomeness of premium-quality, home-style cooking in our high-tech food processing facility. </p><p>Considering that time is undeniably the most precious resource today, customers demand convenience – but not at the expense of taste, flavour, and health. Having always recognised this, Paarman Foods constantly strives to make food products in the time-honoured, traditional way, using fresh, seasonal ingredients that will deliver a full-flavoured, authentic taste experience.</p><p>The Ina Paarman story is one of enthusiastically embracing the pursuit of flavour by unquestionably going the extra mile and doing the “difficult stuff well” every day. This includes slow-roasting vegetables in wood-burning ovens, the unavoidably time-consuming process of producing traditional bone stocks to extract maximum flavour and nutrition, and more.</p><p>Today, over three decades later, the Paarmans sometimes feel as if their journey has only just begun. They are consumed, more so than ever, with realising their dream of enriching people’s lives by enhancing their joy of cooking and eating – whether they are kitchen novices, enthusiastic home cooks or experienced chefs.</p><p>The entire extended Paarman Foods team are immensely proud of what they do daily and remains dedicated to providing their loyal customers with trusted products they will love and enjoy.</p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_aMRkeR",
+        "content_an8pqa",
+        "video_aD7yY7",
+        "content_HfyNJc"
+      ],
+      "settings": {}
+    },
+    "contact_info_Pr7bRx": {
+      "type": "contact-info",
+      "settings": {
+        "map_iframe_code": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.3432778641727!2d18.47216882266883!3d-34.035064458268934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc43b54046a51d%3A0xf7fdab38d51cb311!2sIna%20Paarman%20Factory%20Shop!5e0!3m2!1sen!2sin!4v1728718204927!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "visit_heading": "Visit -",
+        "factory_shop_title": "Our Factory Shop",
+        "factory_shop_description": "Stop by the Ina Paarman factory shop when you’re in the area to stock up on all your favourites at reduced prices.\n\nAlthough our on-premises parking is limited, you’ll find plenty more along the safe adjoining private road.",
+        "phone_number": "+27 (0)21 705 6440/1",
+        "email_address": "sarah@paarman.co.za",
+        "address": "<p>Unit B7<br/>Diep River Industrial Park<br/>Greenville Road<br/>Diep River<br/>Cape Town  7945</p>",
+        "business_hours": "<p>Mon-Fri:  10:00 - 15:00<br/>Sat:  09:00 - 13:00<br/>Closed on Public Holidays </p>",
+        "ct_cta_text": "Directions",
+        "ct_cta_link": "https://maps.app.goo.gl/snFdPUj7eafk3GraA"
+      }
+    },
+    "about_info_hhcNQ7": {
+      "type": "about-info",
+      "settings": {
+        "style": "style-2",
+        "about_bg_image": "shopify://shop_images/Background-Image-Quality-Pledge.jpg",
+        "about_subheading": "- The -",
+        "about_title": "Ina Paarman",
+        "about_heading": "Quality Pledge",
+        "about_quote": "We are constantly improving our products. We never want to become complacent and feel we’ve arrived.",
+        "about_quote_author": "– Graham Paarman",
+        "about_text": "<p>Since day one, we’ve worked tirelessly to offer exceptional-quality products and ways to enhance people’s cooking experiences. Our promise to you is we’ll always recreate the goodness of home cooking in our high-tech production facility.</p>",
+        "about_cta_text": "OUR PRODUCTS",
+        "about_cta_link": "shopify://collections/our-products"
+      }
+    }
+  },
+  "order": [
+    "our_story_ViPPre",
+    "contact_info_Pr7bRx",
+    "about_info_hhcNQ7"
+  ]
+}

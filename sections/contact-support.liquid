@@ -1,0 +1,208 @@
+<!-- Content Start -->
+<section class="address-listing-area">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#FDF0DD">
+    <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
+  </svg>
+
+  {% if section.settings.shape_image %}
+      <img src="{{ section.settings.shape_image | image_url }}" alt="Shape Image" class="contact_shape" />
+  {% endif %}  
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="address-left-side pe-lg-5">
+          {% if section.settings.customer_care_text != blank %}
+            <p>{{ section.settings.customer_care_text }}</p>
+          {% endif %}
+          
+          <ul class="footer_social">
+            {% if section.settings.facebook_link != blank %}
+              <li><a href="{{ section.settings.facebook_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook.svg" alt="Facebook"></a></li>
+            {% endif %}
+            {% if section.settings.instagram_link != blank %}
+              <li><a href="{{ section.settings.instagram_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram.svg" alt="Instagram"></a></li>
+            {% endif %}
+             {% if section.settings.tiktok_link != blank %}
+              <li><a href="{{ section.settings.tiktok_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/TikTok-icon_1.svg?v=1729808160" alt="Tiktok"></a></li>
+            {% endif %}
+             {% if section.settings.pinterest_link != blank %}
+              <li><a href="{{ section.settings.pinterest_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest.svg" alt="Pinterest"></a></li>
+            {% endif %}
+            {% if section.settings.youtube_link != blank %}
+              <li><a href="{{ section.settings.youtube_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/youtube.svg" alt="YouTube"></a></li>
+            {% endif %}
+                 {% if section.settings.twitter_link_link != blank %}
+              <li><a href="{{ section.settings.instagram_link_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram.svg" alt="Twitter"></a></li>
+            {% endif %}
+            {% if section.settings.linkedin_link != blank %}
+              <li><a href="{{ section.settings.linkedin_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/linkedin.svg" alt="LinkedIn"></a></li>
+            {% endif %}
+            {% if section.settings.twitter_link != blank %}
+              <li><a href="{{ section.settings.twitter_link }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/X_logo.svg?v=1729880520" alt="Twitter"></a></li>
+            {% endif %}
+           
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="address-right-side">
+          {% for block in section.blocks %}
+            <div class="address-listing">
+              <div class="row align-items-md-end">
+                <div class="col-md-7 col-sm-6">
+                  <div class="text">
+                    {% if block.settings.sub_heading != blank %}
+                      <span class="d-block sub_heading">{{ block.settings.sub_heading }}</span>
+                    {% endif %}
+                    {% if block.settings.name != blank %}
+                      <h3 class="heading">{{ block.settings.name }}</h3>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-6">
+                  <ul class="address-info">
+                    {% if block.settings.tel != blank %}
+                      <li>
+                        <span class="d-block title">NUMBER</span>
+                        <a href="tel:{{ block.settings.tel }}">{{ block.settings.tel }}</a>
+                      </li>
+                    {% endif %}
+                    {% if block.settings.email != blank %}
+                      <li>
+                        <span class="d-block title">E-MAIL</span>
+                        <a href="mailto:{{ block.settings.email }}">{{ block.settings.email }}</a>
+                      </li>
+                    {% endif %}
+                  </ul>
+                </div>
+                       {% if block.settings.customer_care_text != blank %}
+                      <li><br>
+                        <a class="text-white" href="tel:{{ block.settings.customer_care_text }}">{{ block.settings.customer_care_text }}</a>
+                      </li>
+                    {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+          {% if section.settings.corporate_profile_link != blank %}
+            <a href="{{ section.settings.corporate_profile_link }}" class="cta_btn btn_border_default">{{ section.settings.corporate_profile_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Content End -->
+
+
+{% schema %}
+{
+  "name": "Contact Support",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "shape_image",
+      "label": "Shape Image"
+    },    
+    {
+      "type": "text",
+      "id": "customer_care_text",
+      "label": "Customer Care Text",
+      "default": "Customer Care, Complaints, Recipe Advice, Product Information, Website & Newsletter Enquiries"
+    },
+    {
+      "type": "text",
+      "id": "corporate_profile_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "corporate_profile_link",
+      "label": "Button Link"
+    },    
+    {
+      "type": "header",
+      "content": "Social Links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook Link"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram Link"
+    },
+     {
+      "type": "url",
+      "id": "tiktok_link",
+      "label": "Tiktok Link"
+    },
+    {
+      "type": "url",
+      "id": "youtube_link",
+      "label": "YouTube Link"
+    },
+    {
+      "type": "url",
+      "id": "twitter_link",
+      "label": "Twitter Link"
+    },
+     {
+      "type": "url",
+      "id": "linkedin_link",
+      "label": "Linkedin Link"
+    },
+    {
+      "type": "url",
+      "id": "pinterest_link",
+      "label": "Pinterest Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "person",
+      "name": "Contact Person",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub_heading",
+          "label": "Sub Heading",
+          "default": "Development Kitchen - PA to Ina Paarman"
+        },
+        {
+          "type": "richtext",
+          "id": "customer_care_text",
+          "label": "Post Heading"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Carine Walton"
+        },
+        {
+          "type": "text",
+          "id": "tel",
+          "label": "Phone Number",
+          "default": "(021) 794 1103"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email",
+          "default": "ina@paarman.co.za"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Support",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

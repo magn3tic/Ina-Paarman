@@ -1,0 +1,54 @@
+<section class="{% if section.settings.remove_space %}pt-0{% endif %} {% if section.settings.remove_bspace %}pb-0{% endif %}">
+  <div class="container">
+      {% if section.settings.header_title %}
+        <h3 class="text-center mb-4">{{ section.settings.header_title }}</h3>
+      {% endif %}
+      {{ section.settings.liquid }}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HTML/Liquid",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "liquid",
+      "label": "HTML/Liquid code",
+      "default": "<p class=\"alert alert-primary text-center\">Current time is: {{ \"now\" | date: \"%Y-%m-%d %H:%M\" }}</p>"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Title",
+      "default": "HTML and Liquid"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },    
+    {
+      "type": "checkbox",
+      "id": "remove_space",
+      "label": "Remove Top Space",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_bspace",
+      "label": "Remove Bottom Space",
+      "default": false
+    }  
+  ],
+  "presets": [
+    {
+      "name": "HTML/Liquid"
+    }
+  ]
+}
+{% endschema %}

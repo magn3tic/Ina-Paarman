@@ -1,0 +1,365 @@
+<!-- Header Start -->
+<header class="header-area {% if template == 'index' %} {% elsif template == 'page.technical' %} {% elsif template == 'article.news' %} {% elsif template == 'page.faq' %} {% elsif template == 'page.hints-tips' %} {% elsif template == 'page.privacy-policy' %} {% elsif template == 'page.terms-conditions' %} {% elsif template == 'page.disclaimer' %} {% elsif template == 'page.copyright-notice' %} {% elsif template == 'page.delivery' %} {% elsif template == 'page.product-leaflets' %} {% elsif template == 'article' and blog.handle == 'article' %}  {% else %} alt {% endif %}">
+  <div class="container">
+    <div class="header-inn d-flex align-items-center justify-content-between">
+      <!-- Logo -->
+      <a class="site-logo" href="{{ routes.root_url }}">
+        {% if settings.logo %}
+          <img class="mx-auto" class = "head-logo" src="{{ settings.logo | image_url: height: logo_height_x2 }}" alt="{{ shop.name }}" loading="eager" width = "210" height = "151">
+        {% else %}
+          <span>{{ shop.name }}</span>
+        {% endif %}
+      </a>
+      <!-- Header Navigation -->
+      <div class="header-navigation d-flex align-items-center ">
+        <div class="mainmenu">
+          <ul id="menu">
+            {% for block in section.blocks %}{% case block.type %}
+              <!-- Megamenu Block -->
+              {% when 'block-1' %}
+                {% if block.settings.mm_title or block.settings.mm_link or block.settings.mm1_title or block.settings.mm1_nav or block.settings.mm2_title or block.settings.mm2_nav or block.settings.mm3_title or block.settings.mm3_nav or block.settings.mm4_title or block.settings.mm4_nav or block.settings.mm5_title or block.settings.mm5_nav or block.settings.mm6_title or block.settings.mm6_nav %}
+                  <li class="menu-item-has-children">
+                    <a href="{{ block.settings.mm_link }}">{{ block.settings.mm_title }}</a>
+                    <div class="megamenu">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="megamenu-banner pe-lg-5">
+                            {{ block.settings.mm1_dimage | image_url: width: 670 | image_tag: loading: 'lazy' }} 
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="mega-menu-items">
+                            <div class="row">
+                              {% if block.settings.mm1_title %}
+                                <div class="col-sm-6">
+                                  <a href="{{ block.settings.mm1_nav }}" class="menu-box">
+                                    <div class="image">
+                                      {{ block.settings.mm1_image | image_url: width: 347 | image_tag: loading: 'lazy' }} 
+                                    </div>
+                                    {{ block.settings.mm1_title }}
+                                  </a>
+                                </div>
+                              {% endif %}
+                              {% if block.settings.mm2_title %}
+                                <div class="col-sm-6">
+                                  <a href="{{ block.settings.mm2_nav }}" class="menu-box">
+                                    <div class="image">
+                                      {{ block.settings.mm2_image | image_url: width: 347 | image_tag: loading: 'lazy' }}
+                                    </div>
+                                    {{ block.settings.mm2_title }}
+                                  </a>
+                                </div>
+                              {% endif %}
+                              {% if block.settings.mm3_title %}
+                                <div class="col-sm-6">
+                                  <a href="{{ block.settings.mm3_nav }}" class="menu-box">
+                                    <div class="image">
+                                      {{ block.settings.mm3_image | image_url: width: 347 | image_tag: loading: 'lazy' }}
+                                    </div>
+                                    {{ block.settings.mm3_title }}
+                                  </a>
+                                </div>
+                              {% endif %}
+                              {% if block.settings.mm4_title %}
+                                <div class="col-sm-6">
+                                  <a href="{{ block.settings.mm4_nav }}" class="menu-box">
+                                    <div class="image">
+                                      {{ block.settings.mm4_image | image_url: width: 347 | image_tag: loading: 'lazy' }}
+                                    </div>
+                                    {{ block.settings.mm4_title }}
+                                  </a>
+                                </div>
+                              {% endif %}
+                              {% if block.settings.mm5_title %}
+                                <div class="col-sm-6">
+                                  <a href="{{ block.settings.mm5_nav }}" class="menu-box">
+                                    <div class="image">
+                                      {{ block.settings.mm5_image | image_url: width: 347 | image_tag: loading: 'lazy' }}
+                                    </div>
+                                    {{ block.settings.mm5_title }}
+                                  </a>
+                                </div>
+                              {% endif %}
+                              {% if block.settings.mm6_title %}
+                                <div class="col-sm-6">
+                                  <a href="{{ block.settings.mm6_nav }}" class="menu-box">
+                                    <div class="image">
+                                      {{ block.settings.mm6_image | image_url: width: 347 | image_tag: loading: 'lazy' }}
+                                    </div>
+                                    {{ block.settings.mm6_title }}
+                                  </a>
+                                </div>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                {% endif %}
+              <!-- Dropdown Block -->
+              {% when 'block-2' %}
+                {% if block.settings.dd_title or block.settings.dd_link or block.settings.dd_nav or block.settings.dd_nav_right %}
+                  <li class="menu-item-has-children">
+                    <a href="{{ block.settings.dd_link }}">{{ block.settings.dd_title }}</a>
+                    <div class="megamenu">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="megamenu-banner pe-lg-5">
+                                {{ block.settings.dd_dimage | image_url: width: 670 | image_tag: loading: 'lazy' }} 
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                               <div class="mega-menu-items">
+                                  <div class="row">
+                                      <div class="col-lg-6">
+                                        <ul>
+                                          {% for link in block.settings.dd_nav.links %}
+                                            <li>
+                                              <a href="{{ link.url }}">{{ link.title }}</a>
+                                              {% if link.links %}
+                                                <ul>
+                                                  {% for sublink in link.links %}
+                                                    <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+                                                  {% endfor %}
+                                                </ul>
+                                              {% endif %}
+                                            </li>
+                                          {% endfor %}
+                                        </ul>
+                                      </div>
+                                      <div class="col-lg-6">
+                                        <ul>
+                                          {% for link in block.settings.dd_nav_right.links %}
+                                            <li>
+                                              <a href="{{ link.url }}">{{ link.title }}</a>
+                                              {% if link.links %}
+                                                <ul>
+                                                  {% for sublink in link.links %}
+                                                    <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+                                                  {% endfor %}
+                                                </ul>
+                                              {% endif %}
+                                            </li>
+                                          {% endfor %}
+                                        </ul>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                {% endif %}
+              <!-- Link Block -->
+              {% when 'block-3' %}
+                {% if block.settings.link_title and block.settings.nn_link %}<li><a href="{{ block.settings.nn_link }}">{{ block.settings.link_title }}</a></li>{% endif %}
+              {% endcase %}
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Header Action -->
+        <div class="header-action">
+          <div class="header-search">
+            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/search.svg" width = "20" height = "21" alt="icon">
+          </div>
+          <div id="menu-toggle">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Header End -->
+<div class="search-wrap">
+  <div class="search-close">&times;</div>
+  <div>
+    <form action="/search" method="get" class="search-form">
+      <input type="text" name="q" placeholder="Search..." class="search-input" aria-label="Search" />
+      <button type="submit" class="search-button"><svg height=20px width=20px version=1.1 viewBox="0 0 32 32" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink><defs></defs><g fill=none id=Page-1 sketch:type=MSPage fill-rule=evenodd stroke=none stroke-width=1><g fill=#000000 id=Icon-Set sketch:type=MSLayerGroup transform="translate(-256.000000, -1139.000000)"><path d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z"id=search sketch:type=MSShapeGroup></path></g></g></svg></button>
+    </form>  
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Navbar",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }    
+  ],
+    "blocks": [
+      {
+        "type": "block-1",
+         "name": "Megamenu",
+         "settings": [
+          {
+            "type": "text",
+            "id": "mm_title",
+            "label": "Menu Name"
+          },
+          {
+            "type": "url",
+            "id": "mm_link",
+            "label": "Menu Link"
+          },          
+          {
+            "type": "image_picker",
+            "id": "mm1_dimage",
+            "label": "Image"
+          },           
+          {
+            "type": "header",
+            "content": "Menu 1"
+          },       
+          {
+            "type": "image_picker",
+            "id": "mm1_image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "mm1_title",
+            "label": "Menu Name"
+          },           
+          {
+            "type": "url",
+            "id": "mm1_nav",
+            "label": "Menu Link"
+          },
+          {
+            "type": "header",
+            "content": "Menu 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "mm2_image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "mm2_title",
+            "label": "Menu Name"
+          },           
+          {
+            "type": "url",
+            "id": "mm2_nav",
+            "label": "Menu Link"
+          },
+          {
+            "type": "header",
+            "content": "Menu 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "mm3_image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "mm3_title",
+            "label": "Menu Name"
+          },           
+          {
+            "type": "url",
+            "id": "mm3_nav",
+            "label": "Menu Link"
+          },
+          {
+            "type": "header",
+            "content": "Menu 4"
+          },
+          {
+            "type": "image_picker",
+            "id": "mm4_image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "mm4_title",
+            "label": "Menu Name"
+          },           
+          {
+            "type": "url",
+            "id": "mm4_nav",
+            "label": "Menu Link"
+          }
+         ]
+      },
+      {
+        "type": "block-2",
+         "name": "Dropdown",
+         "settings": [
+          {
+            "type": "text",
+            "id": "dd_title",
+            "label": "Menu Name"
+          },
+          {
+            "type": "url",
+            "id": "dd_link",
+            "label": "Menu Link"
+          },            
+          {
+            "type": "image_picker",
+            "id": "dd_dimage",
+            "label": "Image"
+          },             
+          {
+            "type": "link_list",
+            "id": "dd_nav",
+            "label": "Dropdown Menu - Left"
+          },
+          {
+            "type": "link_list",
+            "id": "dd_nav_right",
+            "label": "Dropdown Menu - Right"
+          }              
+         ]
+      },
+      {
+        "type": "block-3",
+         "name": "Link",
+         "settings": [
+          {
+            "type": "text",
+            "id": "link_title",
+            "label": "Menu Name"
+          },    
+          {
+            "type": "url",
+            "id": "nn_link",
+            "label": "Menu Link"
+          }           
+         ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Navbar",
+        "blocks": [
+          {
+            "type": "block-1"
+          },
+          {
+            "type": "block-2"
+          },
+          {
+            "type": "block-3"
+          }
+        ]
+      }
+    ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}

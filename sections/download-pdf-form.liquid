@@ -1,0 +1,172 @@
+{% if section.settings.style == 'style-2' %}
+
+<!-- Content Start -->
+<section class="newsletter-area-style3" style="padding-top:100px; padding-bottom:100px; {% if section.settings.background_image != blank %}background: url({{ section.settings.background_image | image_url }}) no-repeat scroll center center/cover;{% endif %}">
+    <div class="container">
+        <div class="row align-items-md-end">
+            <div class="col-md-6">
+                <div class="content-text pe-lg-5">
+                    {% if section.settings.sub_heading != blank %}
+                    <span class="d-block text_light sub_heading">{{ section.settings.sub_heading }}</span>
+                    {% endif %}
+                    {% if section.settings.main_heading != blank %}
+                    <h3 class="heading text_light">{{ section.settings.main_heading }}</h3>
+                    {% endif %}
+                    {% if section.settings.description != blank %}
+                      {{ section.settings.description }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ps-lg-5">
+                  {% comment %} --- Render App Blocks (e.g., Shopify Form) --- {% endcomment %}
+                  {%- for block in section.blocks -%}
+                    <div {{ block.shopify_attributes }}>
+                      {% render block %}
+                    </div>
+                  {%- endfor -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+{% else %}
+<!-- Content Start -->
+<section class="newsletter-area">
+
+    {% if section.settings.shape_image_left %}
+    <img src="{{ section.settings.shape_image_left | image_url }}" alt="image" class="newsletter_shape" width="150" height="150">
+    {% endif %}
+    {% if section.settings.shape_image_right %}
+    <img src="{{ section.settings.shape_image_right | image_url }}" alt="image" class="newsletter_shape_right" width="150" height="150">
+    {% endif %}
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-7 mx-auto">
+                <div class="inner text-center">
+                    {% if section.settings.sub_heading != blank %}
+                    <span class="d-block text_light sub_heading">{{ section.settings.sub_heading }}</span>
+                    {% endif %}
+                    {% if section.settings.main_heading != blank %}
+                    <h3 class="heading text_light">{{ section.settings.main_heading }}</h3>
+                    {% endif %}
+                    {% if section.settings.description != blank %}
+                      {{ section.settings.description }}
+                    {% endif %}
+
+                    {% comment %} --- Render App Blocks (e.g., Shopify Form) --- {% endcomment %}
+                    {%- for block in section.blocks -%}
+                      <div {{ block.shopify_attributes }}>
+                        {% render block %}
+                      </div>
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Wait until the DOM is ready
+    function bindFormSubmitListener() {
+      const form = document.querySelector('form[id="560368"]');
+
+      if (form) {
+        console.log("✅ Form #560368 found");
+
+        form.addEventListener("submit", function () {
+          console.log("📨 Form #560368 submitted");
+
+          // Push custom event to GTM's data layer
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "custom_form_submit_560368",
+            form_id: "560368"
+          });
+        });
+      } else {
+        console.log(" Form #560368 not found — retrying...");
+        setTimeout(bindFormSubmitListener, 500); // Retry after 500ms
+      }
+    }
+
+    bindFormSubmitListener();
+  });
+</script>
+<!-- Content End -->
+{% endif %}
+
+{% schema %}
+{
+  "name": "Download PDF Form",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "style-1",
+          "label": "Style 1"
+        },
+        {
+          "value": "style-2",
+          "label": "Style 2"
+        }
+      ],
+      "default": "style-1"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Pre- Heading",
+      "default": "– PDF Download –"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Download Our Recipe Book"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image (Style 2 only)"
+    },
+    {
+      "type": "header",
+      "content": "Shape Image (Style 1 only)"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_image_left",
+      "label": "Image: Left"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_image_right",
+      "label": "Image: Right"
+    }    
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Download PDF Form",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

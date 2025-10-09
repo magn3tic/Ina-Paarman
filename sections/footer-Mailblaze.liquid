@@ -1,0 +1,285 @@
+<!-- Footer Start -->
+<footer class="footer-area">
+   <!-- Shape Images -->
+   {% if section.settings.shape_img_left %}
+    <!-- <img src="{{ section.settings.shape_img_left | img_url: 'original' }}" alt="Shape Image Left" class="footer_shape_1">-->
+   {% endif %}
+   {% if section.settings.shape_img_right %}
+   <!--<img src="{{ section.settings.shape_img_right | img_url: 'original' }}" alt="Shape Image Right" class="footer_shape_2">-->
+   {% endif %}
+   <div class="container">
+      <div class="row justify-content-between">
+         <!-- Footer Logo -->
+         <div class="col-lg-3">
+            <a href="/" class="footer-logo">
+               <img src="{{ section.settings.flogo | img_url: 'original' }}" alt="{{ shop.name }}" width = "299" height = "214">
+            </a>
+         </div>
+         <!-- Footer Inner -->
+         <div class="col-lg-8">
+            <div class="footer-inner">
+               <div class="row">
+                  <!-- Menu Block -->
+                  {% for block in section.blocks %}
+                    {% if block.type == 'block-1' %}
+                      <div class="col-md-3 col-6">
+                         <div class="footer-widget">
+                            <span class="d-block footer_title">{{ block.settings.fw_title }}</span>
+                            <ul>
+                               {% for link in block.settings.f_nav.links %}
+                                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                               {% endfor %}
+                            </ul>
+                         </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                  <!-- Contact Block -->
+                  {% for block in section.blocks %}
+                    {% if block.type == 'block-2' %}
+                      <div class="col-md-3 col-6">
+                         <div class="footer-widget">
+                            <span class="d-block footer_title">CONTACT</span>
+                            <ul>
+                               <li>
+                                  <a href="tel:{{ block.settings.fw_phone }}" style="display: inline-flex; align-items: center;">
+                                    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/phone-icon.png?v=1729885143" style="max-width: 16px; height: auto; margin-right: 5px;" width = "16" height = "16">
+                                    {{ block.settings.fw_phone }}
+                                  </a>
+                                </li>
+                               <li>
+                                 <a href="mailto:{{ block.settings.fw_email }}" style="display: inline-flex; align-items: center;">
+                                   <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-icon.png?v=1729885454" style="max-width: 16px; height: auto; margin-right: 5px;" width = "16" height = "16">
+                                   {{ block.settings.fw_email }}
+                                 </a></li>
+                               <li style="display: inline-flex; align-items: baseline;">
+                                 <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/location-icon.png?v=1729885454" style="max-width: 16px; height: auto; margin-right: 5px;" width = "16" height = "16">
+                                   {{ block.settings.fw_address }}
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+               </div>
+            </div>
+   <script src="https://storeswlaescript.myshopify.com/cdn/shop/t/2/assets/ina.js"></script>
+
+            <!-- Footer Middle -->
+            <div class="footer-middle">
+               <div class="row">
+                  <!-- Follow Us Section -->
+                  <div class="col-md-6">
+                     <div class="footer-widget">
+                        <span class="d-block footer_title">FOLLOW US</span>
+                        <ul class="footer_social">
+                           {% if section.settings.fw_social_facebook %}
+                              <li><a href="{{ section.settings.fw_social_facebook }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook.svg" width = "20" height = "20" alt="Facebook"></a></li>
+                           {% endif %} 
+                           {% if section.settings.fw_social_instagram %}
+                              <li><a href="{{ section.settings.fw_social_instagram }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram.svg" width = "20" height = "20" alt="Instagram"></a></li>
+                           {% endif %}
+                          {% if section.settings.fw_social_tiktok %}
+                              <li><a href="{{ section.settings.fw_social_tiktok }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/TikTok-icon_1.svg?v=1729808160" width = "20" height = "20" alt="Tiktok"></a></li>
+                           {% endif %}
+                          {% if section.settings.fw_social_pinterest %}
+                              <li><a href="{{ section.settings.fw_social_pinterest }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest.svg" width = "20" height = "20" alt="Pinterest"></a></li>
+                           {% endif %}
+                          {% if section.settings.fw_social_youtube %}
+                              <li><a href="{{ section.settings.fw_social_youtube }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/youtube.svg" width = "20" height = "20" alt="YouTube"></a></li>
+                           {% endif %}
+                            {% if section.settings.fw_social_linkedin %}
+                              <li><a href="{{ section.settings.fw_social_linkedin }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/linkedin.svg" width = "20" height = "20" alt="LinkedIn"></a></li>
+                           {% endif %}
+                           {% if section.settings.fw_social_twitter %}
+                              <li><a href="{{ section.settings.fw_social_twitter }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/X_logo.svg?v=1729880520" width = "20" height = "20" alt="Twitter"></a></li>
+                           {% endif %}       
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- Newsletter Section -->
+                  <div class="col-md-6">
+                     <div class="footer-widget">
+                        <span class="d-block footer_title mailblaze-title">Subscribe to our newsletter</span>
+                        <div class="footer-newsletter">
+                         <iframe src="https://control.mailblaze.com/index.php/lists/nh3494wv8a7d6/brand/yg017g7llk115/subscribe?output=embed&width=100%&height=200" width="100%" height="348" frameborder="0" scrolling="no"></iframe>       
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+               <div class="row">
+                  <div class="col-md-8">
+                     <ul class="footer_bottom_link">
+                         {% for link in section.settings.f_legal_nav.links %}
+                            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                         {% endfor %}
+                      </ul>                    
+                  </div>
+                  <div class="col-md-6">
+                     {% if section.settings.payment_icons %}
+                        <img src="{{ section.settings.payment_icons | img_url: 'original' }}" alt="Payment Icons">
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<!-- Footer End -->
+{% schema %}
+{
+  "name": "Footer Mailblaze",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Footer"
+    },
+    {
+      "type": "image_picker",
+      "id": "flogo",
+      "label": "Logo"
+    },    
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_img_left",
+      "label": "Shape Image - Left"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_img_right",
+      "label": "Shape Image - Right"
+    },
+    {
+      "type": "header",
+      "content": "Social Links"
+    },   
+     {
+      "type": "text",
+      "id": "fw_social_facebook",
+      "label": "Facebook"
+    }, 
+        {
+      "type": "text",
+      "id": "fw_social_instagram",
+      "label": "Instagram"
+    },
+        {
+      "type": "text",
+      "id": "fw_social_tiktok",
+      "label": "Tiktok"
+    },
+        {
+      "type": "text",
+      "id": "fw_social_pinterest",
+      "label": "Pinterest"
+    },
+        {
+      "type": "text",
+      "id": "fw_social_youtube",
+      "label": "Youtube"
+    },  
+        {
+      "type": "text",
+      "id": "fw_social_linkedin",
+      "label": "LinkedIn"
+    },
+    {
+      "type": "text",
+      "id": "fw_social_twitter",
+      "label": "Twitter"
+    },     
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },   
+    {
+      "type": "text",
+      "id": "fw_nl_title",
+      "label": "Newsletter Heading"
+    }, 
+    {
+      "type": "textarea",
+      "id": "fw_nl_code",
+      "label": "Newsletter Code"
+    },
+    {
+      "type": "header",
+      "content": "Legal Menu"
+    },      
+    {
+      "type": "link_list",
+      "id": "f_legal_nav",
+      "label": "Choose Menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_icons",
+      "label": "Payment Icons"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "block-1",
+         "name": "Menu",
+         "settings": [
+          {
+            "type": "text",
+            "id": "fw_title",
+            "label": "Menu Name"
+          },
+          {
+            "type": "link_list",
+            "id": "f_nav",
+            "label": "Choose Menu"
+          }
+         ]
+      },   
+      {
+        "type": "block-2",
+         "name": "Contact",
+         "settings": [
+          {
+            "type": "text",
+            "id": "fw_phone",
+            "label": "Contact Number"
+          },
+          {
+            "type": "text",
+            "id": "fw_email",
+            "label": "E-Mail Address"
+          },
+          {
+            "type": "richtext",
+            "id": "fw_address",
+            "label": "Address"
+          }
+         ]
+      },     
+  ],
+  "enabled_on": {
+    "groups": ["footer"]
+  },  
+    "presets": [
+      {
+        "name": "Footer Mailblaize",
+        "blocks": [
+          {
+            "type": "block-1"
+          },
+          {
+            "type": "block-2"
+          }
+        ]
+      }
+    ],
+}
+{% endschema %}

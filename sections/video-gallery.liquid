@@ -1,0 +1,46 @@
+<section class="video-gallery pt-3">
+  <div class="container">
+    <div class="row">
+        {% assign block_count = 0 %}
+        {% for block in section.blocks %}
+            <div class="col-sm-6 col-md-4 mb-4">
+              {% assign youtube_id = block.settings.youtube_id %}
+              <div class="ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/{{ youtube_id }}?rel=0"
+                  frameborder="0"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video Gallery",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "text",
+          "id": "youtube_id",
+          "label": "YouTube Video ID",
+          "info": "Enter the unique YouTube video ID (e.g., dQw4w9WgXcQ)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Gallery",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,167 @@
+<!-- Content Start -->
+<section class="recipe-banner-area  menu-of-the-month  alt " style="background: url({{ section.settings.background_image | image_url }}) no-repeat scroll top center/cover">
+    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-9 mx-auto">
+                <div class="text-center">
+                    <span class="d-block text_white sub_heading">— Recipes —</span>
+                    <h1 class="heading text_white">{{ page.title }}</h1>
+                    <a href="{{ shop.url }}/blogs/all-recipes" class="cta_btn btn_default">Browse All Recipes<img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon"></a>
+                    <ul class="banner-social">
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/fb-white.svg" alt="Share on Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/inapaarmanskitchen" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-white.svg" alt="Share on Instagram"></a></li>
+                        <li><a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/x-white.svg" alt="Share on Twitter"></a></li>
+                        <li><a href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-white.svg" alt="Share on Pinterest"></a></li>
+                        <li><a href="mailto:?subject=Check out this recipe&body={{ shop.url }}{{ page.url }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-white.svg" alt="Share via Email"></a></li>
+                    </ul>                           
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+<!-- Content Start -->
+<section class="recipes-listing-area pt_40">
+    <div class="container">
+        <div class="recipe-filter">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-7">
+                    <div class="filter-heading">
+                        <h2 class="h2"><strong>Recipes</strong></h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-5">
+                    <div class="filter-select">
+                        <div class="isotopeclass">
+<div class="select-container" id="select1">
+    <div class="select-button">Filter by Month</div>
+                        <ul class="filters options">
+                        <li><a data-filter="*">All Months</a></li>
+                        <li><a data-filter="January">January</a></li>
+                        <li><a data-filter="February">February</a></li>
+                        <li><a data-filter="March">March</a></li>
+                        <li><a data-filter="April">April</a></li>
+                        <li><a data-filter="May">May</a></li>
+                        <li><a data-filter="June">June</a></li>
+                        <li><a data-filter="July">July</a></li>
+                        <li><a data-filter="August">August</a></li>
+                        <li><a data-filter="September">September</a></li>
+                        <li><a data-filter="October">October</a></li>
+                        <li><a data-filter="November">November</a></li>
+                        <li><a data-filter="December">December</a></li>
+                        </ul>
+    </div>                          
+  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="isotope-wrap">
+        <div class="isotope" id="icontainer">
+
+          {% if section.settings.mm_link %}
+            {% for link in linklists[section.settings.mm_link].links %}
+              {% assign slug = link.url | split: '/' | last %}
+              <div class="grid-item col-md-3 col-6" data-filter="{{ pages[slug].metafields.custom.menu_of_the_month__month }}">
+                <a href="{{ link.url }}" class="recipe-box-alt" data-month="{{ pages[slug].metafields.custom.menu_of_the_month__month | downcase }}" data-year="{{ pages[slug].metafields.custom.menu_of_the_month_year }}">
+                  {% assign month = pages[slug].metafields.custom.menu_of_the_month__month | default: '' %}
+                  {% assign year = pages[slug].metafields.custom.menu_of_the_month_year | default: '' %}
+                  
+                  <!-- Placeholder image element for JavaScript to replace -->
+                  <img class="dynamic-image" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="Placeholder Image">
+          
+                  <span class="d-block sub_heading">{{ month }} {{ year }} —</span>
+                  <span class="d-block title">{{ link.title }}</span>
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+        </div>
+        </div>
+      
+        <div class="listing_actions">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="row align-items-lg-center">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <a href="{{ shop.url }}/blogs/all-recipes" class="cta_btn btn_border_default">all recipes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+<script>
+  const selectContainers = document.querySelectorAll('.select-container');
+
+  selectContainers.forEach(container => {
+    const button = container.querySelector('.select-button');
+    button.addEventListener('click', () => {
+      container.classList.toggle('open');
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    selectContainers.forEach(container => {
+      if (!container.contains(event.target)) {
+        container.classList.remove('open');
+      }
+    });
+  });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('.recipe-box-alt').each(function() {
+    var $this = $(this);
+    var month = $this.data('month');
+    var year = $this.data('year');
+    var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
+
+    // Fetch the first post with matching tag to get the image
+    $.get(tagUrl, function(response) {
+      var html = $(response);
+      var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
+
+      // Replace the placeholder image with the retrieved image
+      if (firstPostImage) {
+        $this.find('.dynamic-image').attr('src', firstPostImage);
+      }
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Motm - Listing",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "link_list",
+      "id": "mm_link",
+      "label": "Menu of the Month"
+    }    
+  ],
+  "presets": [
+    {
+      "name": "Menu of the Month - Listing",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

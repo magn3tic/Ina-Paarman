@@ -1,0 +1,105 @@
+<!-- Content Start -->
+<section class="recipe-banner-area menu-of-the-month alt" style="background: url({{ section.settings.background_image | image_url }}) no-repeat scroll top center/cover">
+    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-9 mx-auto">
+                <div class="text-center">
+                    <h1 class="heading text_white">Search for : <span class="text-capitalize">{{ search.terms }}</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+<section class="search-results-container pt-0">
+  <div class="container">
+
+{% paginate search.results by 16 %}
+{% assign productCount = 0 %}
+{% assign articleCount = 0 %}
+
+{% for item in search.results %}
+{% case item.object_type %}
+  {% when 'article' %}
+    {% assign articleCount = articleCount | plus: 1 %}
+  {% when 'product' %}
+    {% assign productCount = productCount | plus: 1 %}
+  {% endcase %}
+{% endfor %}
+
+    <div class="row">
+  
+
+            {% liquid
+              assign index = 1
+            %}
+            {% for item in search.results %}
+              {% if item.object_type == 'product' %}
+
+                  <div class="col-md-3 col-6 type-product">
+                  <a href="{{ item.url | split: '?' | first }}" class="recipe-box-alt">
+                    <span class="type-label">Product</span>
+                  {% if item.featured_image %}
+                    <img src="{{ item.featured_image | image_url }}" class="fimage" alt="{{ item.title }}">
+                  {% else %}
+                    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="{{ item.title }}">
+                  {% endif %}                              
+                  <span class="d-block title">{{ item.title }}</span>
+                  </a>
+                  </div>
+                
+              {% endif %}
+            {% endfor %}
+            {% liquid
+              assign index = 1
+            %}
+
+            {% for item in search.results %}
+              {% if item.object_type == 'article' %}
+
+                  <div class="col-md-3 col-6">
+                  <a href="{{ item.url | split: '?' | first }}" class="recipe-box-alt">
+                  {% if item.image %}
+                  <img src="{{ item.image | image_url }}" alt="{{ item.title }}">
+                  {% else %}
+                  <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="{{ item.title }}">
+                  {% endif %}                              
+                  <span class="d-block title">{{ item.title }}</span>
+                  </a>
+                  </div>
+                
+              {% endif %}
+            {% endfor %}
+              </div>
+            {%- if paginate.pages > 1 -%}
+              {%- render 'pagination', paginate: paginate, index: 1 -%}
+            {%- endif -%}
+        {%- endpaginate -%}
+      
+      
+     
+
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }    
+  ],
+  "templates": ["search"],
+  "presets": [
+    {
+      "name": "Search"
+    }
+  ]
+}
+{% endschema %}

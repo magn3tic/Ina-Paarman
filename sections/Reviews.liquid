@@ -1,0 +1,142 @@
+{% if section.settings.header_style == 'style2' %}
+<section class="content-area image-text-area cooking-review-v3 {% if section.settings.remove_shapes %}cr-alt{% endif %}">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#FDF0DD">
+        <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
+    </svg>
+{% else %}
+<section class="content-area image-text-area py-0 cookbook-reviews-area {% if section.settings.remove_shapes %}cr-alt{% endif %}">
+  <svg class="bottom_shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#064956">
+    <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
+  </svg>
+{% endif %}
+  <div class="container">
+    <div class="image-text style1">
+      <div class="row">
+        <div class="col-sm-6 order-sm-2 order-1">
+            {% if section.settings.review_bg_image != blank %}
+              {{ section.settings.review_bg_image | image_url: width: 670 | image_tag: class: 'bg-image', loading: 'lazy' }} 
+            {% endif %}
+        </div>
+        <div class="col-sm-6 order-sm-1 order-2">
+          <div class="content-text">
+             {% if section.settings.review_heading_sub != blank %}
+              <span class="d-block sub_heading">{{ section.settings.review_heading_sub | escape }}</span>
+            {% endif %}
+            {% if section.settings.review_heading != blank %}
+              <h3 class="heading">{{ section.settings.review_heading | escape }}</h3>
+            {% endif %}
+            {% for block in section.blocks %}
+              <div class="items">
+                {% if block.settings.review_text != blank %}
+                  <p><em>“{{ block.settings.review_text | escape }}”</em></p>
+                {% endif %}
+                <div class="meta">
+                  {% if block.settings.reviewer_name != blank %}
+                    <span>{{ block.settings.reviewer_name | escape }}</span>
+                  {% endif %}    
+                  {% if block.settings.review_source != blank %}
+                     | <span>{{ block.settings.review_source | escape }}</span>
+                  {% endif %}                  
+                </div>
+              </div>
+            {% endfor %}
+            {% if section.settings.cta_link != blank %}
+              <a href="{{ section.settings.cta_link }}" class="cta_btn btn_default">
+                {{ section.settings.cta_text }}
+                <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Cookbook Reviews",
+  "settings": [
+    {
+      "type": "select",
+      "id": "header_style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "style1",
+          "label": "Style 1"
+        },
+        {
+          "value": "style2",
+          "label": "Style 2"
+        }
+      ],
+      "default": "style1"
+    },   
+    {
+      "type": "checkbox",
+      "id": "remove_shapes",
+      "label": "Remove all Shapes",
+      "default": false
+    },    
+    {
+      "type": "image_picker",
+      "id": "review_shape",
+      "label": "Sketch"
+    },
+    {
+      "type": "image_picker",
+      "id": "review_bg_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "text",
+      "id": "review_heading_sub",
+      "label": "Tagline"
+    },
+    {
+      "type": "text",
+      "id": "review_heading",
+      "label": "Heading"
+    },
+       {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_block",
+      "name": "Review Block",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name"
+        },
+        {
+          "type": "text",
+          "id": "review_source",
+          "label": "Review Source"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cookbook Reviews",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

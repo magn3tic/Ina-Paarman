@@ -71,25 +71,76 @@
                     </li>
                   {% endif %}
 
-                  {% assign categories = article.metafields["global"]["Recipe-Category"] | split: ',' %}
+                  {% assign categories = article.metafields.global["Recipe-Category"] | split: ',' %}
                   {% assign selected_categories = '' %}
+
+                  {% assign recipe_labels = "
+                  meat-beef||Meat: Beef,
+                  meat-lamb||Meat: Lamb,
+                  meat-pork||Meat: Pork,
+                  meat-game-venison||Meat: Game & Venison,
+                  poultry-chicken||Poultry: Chicken,
+                  poultry-duck||Poultry: Duck,
+                  poultry-turkey||Poultry: Turkey,
+                  fish-seafood||Fish & Seafood,
+                  pasta||Pasta,
+                  pies-pastries||Pies & Pastries,
+                  quiches||Quiches,
+                  salads||Salads,
+                  rice-grains||Rice & Grains,
+                  lentils-beans||Lentils & Beans,
+                  dessert-hot||Dessert: Hot,
+                  dessert-cold||Dessert: Cold,
+                  baking||Baking,
+                  bread||Bread,
+                  cakes||Cakes,
+                  tarts||Tarts,
+                  muffins-cupcakes-brownies-and-scones||Muffins, Cupcakes, Brownies & Scones,
+                  biscuits-and-rusks||Biscuits & Rusks,
+                  batters-pancakes-wraps||Batters, Pancakes, Wraps,
+                  pizza||Pizza,
+                  breakfast-eggs||Breakfast & Eggs,
+                  soup||Soup,
+                  starters||Starters,
+                  pates-spreads||Patés & Spreads,
+                  preserves-and-pickles||Preserves & Pickles,
+                  snacks-dips||Snacks & Dips,
+                  sambals||Sambals,
+                  beverages||Beverages,
+                  gluten-free||Gluten-Free,
+                  vegetarian-main||Vegetarian: Main,
+                  vegetarian-side||Vegetarian: Side,
+                  vegan||Vegan,
+                  traditional-homegrown-south-african-recipes||Traditional Homegrown South African Recipes,
+                  weeknight-winner||Weeknight Winner,
+                  inas-choice||Ina’s Choice,
+                  junior-chef||Junior Chef
+                  " | strip | split: ',' %}
 
                   {% for category in categories %}
                     {% assign pair = category | split: ':' %}
                     {% if pair[1] == 'true' %}
+                      {% assign category_name = pair[0] | strip %}
+                      {% for label in recipe_labels %}
+                        {% assign label_pair = label | split: '||' %}
+                        {% assign key = label_pair[0] | strip %}
+                        {% assign value = label_pair[1] | strip %}
+                        {% if key == pair[0] %}
+                          {% assign category_name = value %}
+                        {% endif %}
+                      {% endfor %}
+
                       {% if selected_categories != '' %}
                         {% assign selected_categories = selected_categories | append: ', ' %}
                       {% endif %}
-                      {% assign category_name = pair[0] | replace: '-', ' ' | capitalize %}
 
-                      {% assign url = shop_url | append: '/pages/recipe-type-' | append: pair[0] %}
-
+                      {% assign url = shop.url | append: '/pages/recipe-type-' | append: pair[0] %}
                       {% assign selected_categories = selected_categories | append: '<a href="' | append: url | append: '">' | append: category_name | append: '</a>' %}
                     {% endif %}
                   {% endfor %}
 
                   {% if selected_categories != '' %}
-                    <li class="text-capitalize">
+                    <li>
                       <span class="d-block">Recipe Category:</span>
                       {{ selected_categories }}
                     </li>

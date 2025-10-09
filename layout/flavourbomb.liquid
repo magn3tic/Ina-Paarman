@@ -1,0 +1,130 @@
+<!doctype html>
+  <html 
+    lang="{{ request.locale.iso_code }}"
+    class="{% if request.design_mode %}design-mode{% endif %}">
+    
+    <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_primary }}">
+  
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  
+    {%- unless settings.favicon == blank -%}
+        <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
+    {%- endunless -%}
+  
+   
+    <meta name="google-site-verification" content="-Cw1X_0oNJ3wkiQUtoGhzeliW_B2LvV6EusafGT0h7U" />
+    
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+  
+    {% if page_description %}
+      {% if template == 'list-collections' %}
+      <meta name="description" content="Explore our world of tasty and nutritious products that will add immeasurably to your pleasure of cooking.">
+    {% else %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+    {% endif %}
+    {% render 'meta-tags' %}
+    {% include 'wp-page-speed-optimization-header' %} {% render 'sb-js-lazyload' %} 
+       <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KH7XJXJP');</script>
+  <!-- End Google Tag Manager -->
+    {{ content_for_header }}
+  
+    {{ 'bootstrap.css' | asset_url | stylesheet_tag:preload: true }}
+  {{ 'flavour-bombs.css' | asset_url | stylesheet_tag:preload: true}}
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet">
+  
+    {% render 'styles-scripts' %}
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Select all anchor tags
+      var links = document.querySelectorAll('a');
+  
+      links.forEach(function (link) {
+        // Check if the link is external
+        if (link.hostname !== window.location.hostname) {
+          // Set the target to open in a new tab
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer'); // Security best practice
+        }
+      });
+    });
+  </script>
+  
+  <link rel="stylesheet" href="https://use.typekit.net/kfo6dzh.css">
+  <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Royal-Rumble.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Royal-Rumble.woff" as="font" type="font/woff" crossorigin>
+  <style>
+  @font-face {
+      font-family: 'acumin-pro-condensed';
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+    font-family: 'acumin-pro-extra-condensed';
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+      font-family: 'royal-rumble';
+      src: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Royal-Rumble.woff2') format('woff2'),
+          url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Royal-Rumble.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+  }
+  </style>
+  
+     {% render 'lazyload_img' %} 
+    
+  {% render 'sb-cls-improve' %} <script data-custom-wpsob="1">function wpsobIsInViewport(el){const rect=el.getBoundingClientRect();return rect.top>=0&&rect.left>=0&&rect.bottom<=(window.innerHeight||document.documentElement.clientHeight)&&rect.right<=(window.innerWidth||document.documentElement.clientWidth)}function wpsobRemoveDims(img){if(img.hasAttribute("data-wpsob-width"))img.removeAttribute("width");if(img.hasAttribute("data-wpsob-height"))img.removeAttribute("height")}function wpsobCheckVisibleImages(){const imgs=document.querySelectorAll("img");for(let i=0;i<imgs.length;i++)if(wpsobIsInViewport(imgs[i]))wpsobRemoveDims(imgs[i])}function wpsobRemoveDimsAll(){const imgs=document.querySelectorAll("img");for(let i=0;i<imgs.length;i++)wpsobRemoveDims(imgs[i])}window.onload=wpsobCheckVisibleImages;window.addEventListener("scroll",wpsobRemoveDimsAll);</script></head>
+  
+  <body class="{{ request.page_type | prepend: 'page-type-' }} {{ template }}">
+    <a class="visually-hidden-focusable" href="#main">
+      {{ 'general.accessibility.skip_content' | t }}
+    </a>
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH7XJXJP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" defer></script>
+  
+  <script src="{{ 'flavour-bombs.js' | asset_url }}" defer></script>
+    <div class="main-wrapper">
+      
+        {{ content_for_layout }}
+    
+    </div>
+  
+    {% liquid
+      render 'modal-localization'
+      render 'rich-snippets'
+    %}
+  
+  
+   {% render 'sb-preload-booster' %} </body>
+  
+  <!--Speed Optimized By SpeedBoostr WebPlanex Infotech App-->
+  </html>
+      

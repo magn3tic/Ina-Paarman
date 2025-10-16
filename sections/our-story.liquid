@@ -64,7 +64,7 @@
                                   <span class="d-block text_light sub_heading">{{ block.settings.tagline }}</span>
                               {% endif %}
                               {% if block.settings.heading != blank %}
-                                  <h1 class="heading text_light">{{ block.settings.heading }}</h1>
+                                  <{% if block.settings.header_tag == true %}h2{% else %}h1{% endif %} class="heading text_light h1">{{ block.settings.heading }}</{% if block.settings.header_tag == true %}h2{% else %}h1{% endif %}>
                               {% endif %}
                               {% if block.settings.bquote != blank %}
                                   <blockquote>{{ block.settings.bquote }}</blockquote>
@@ -231,7 +231,7 @@
           "type": "checkbox",
           "id": "header_tag",
           "default": false,
-          "label": "Header Tag - H2"
+          "label": "Header Tag - H2",
         },
         {
           "type": "textarea",

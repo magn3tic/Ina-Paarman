@@ -59,7 +59,7 @@
             "video_link": "",
             "sub_heading": "Recipes –",
             "heading": "From Our Kitchen",
-            "header_tag": false,
+            "header_tag": true,
             "rich_content": "<p>Anyone can cook with the proper guidance. Each of our thousands of original recipes is tried and tested to set you up for success every time.</p><p>A homemade meal, prepared with love and care, is the way to everyone’s heart.</p>",
             "cta_text": "Browse Recipes",
             "cta_link": "shopify://blogs/all-recipes"
@@ -72,7 +72,7 @@
             "video_link": "",
             "sub_heading": "Cookbook –",
             "heading": "My Favourite Recipes",
-            "header_tag": false,
+            "header_tag": true,
             "rich_content": "<p>Far more than ‘just another cookbook’, Ina Paarman generously shares recipes for the head, hands, and heart in her latest publication.</p><p>Ina’s illustrious culinary career will give you the confidence and know-how to cook like a seasoned professional, making her hints and tips invaluable.</p>",
             "cta_text": "View Cookbook",
             "cta_link": "shopify://pages/cookbook"

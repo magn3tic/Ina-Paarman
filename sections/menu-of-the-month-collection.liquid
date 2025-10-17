@@ -17,7 +17,6 @@
                     <span class="d-block text_white sub_heading">{{ month }} {{ year }} — new recipes</span>
                 {% endif %}                     
                 <h1 class="heading text_white">{{ page.title }}</h1>
-                <div class="row" id="blog-container">{{ page.content }}</div> 
                 <ul class="banner-social">
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/fb-white.svg" alt="Share on Facebook"></a></li>
                     <li><a href="https://www.instagram.com/inapaarmanskitchen" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-white.svg" alt="Share on Instagram"></a></li>
@@ -35,6 +34,8 @@
 <section class="recipes-listing-area pt_40">
     <div class="container">
         <div class="px-lg-5">
+            <div class="row" id="blog-container">{{ page.content }}</div>        
+              
                 <div class="listing_actions mt-5">
                     <div class="text-center">
                         <a href="{{ shop.url }}/blogs/all-recipes" class="cta_btn btn_border_default">all recipes</a>

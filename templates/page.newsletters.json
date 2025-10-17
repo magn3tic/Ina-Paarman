@@ -57,7 +57,7 @@
             "media_align_desktop": "",
             "media_border": "img-thumbnail",
             "img": "shopify://shop_images/Ina-Paarmans-Grilled-Fish.jpg",
-            "img_orientation": "adapt",
+            "img_orientation": "ratio-1x1",
             "video_ratio": "adapt",
             "video_autoplay": true,
             "video_loop": true,

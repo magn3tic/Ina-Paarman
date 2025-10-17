@@ -1,1 +1,143 @@
-{"sections":{"blog_header_t3jByR":{"type":"blog-header","settings":{"background_image":"shopify:\/\/shop_images\/Header-Image-Contact.jpg","sub_heading":"Get In Touch –","heading":"We Love Hearing From You","paragraph_1":"<p>Whether it’s a question, compliment, concern, or enquiry, we value your correspondence.<\/p><p>Please send us a message by completing the fields below, or contact the relevant party via the Ina Paarman contact details provided.<\/p>","cta_text":"Frequently Asked Questions","cta_link":"shopify:\/\/pages\/faq"}},"contact_mUzaGH":{"type":"contact","settings":{"sub_heading":"Contact Details –","heading":"Ina Paarman","phone_number":"+27 (0)21 794 1103","email_address":"ina@paarman.co.za","physical_address":"<p>Unit B7<br\/>Diep River Industrial Park<br\/>Greenville Road<br\/>Diep River<br\/>Cape Town  7945<\/p>","postal_address":"<p>PO Box 316<br\/>Constantia  7848<\/p>"}},"contact_support_RMYdDB":{"type":"contact-support","blocks":{"person_FQPpRP":{"type":"person","settings":{"sub_heading":"Development Kitchen  – (PA to Ina Paarman)","customer_care_text":"<p>Customer Care & Complaints, Product Info, Recipe Advice, Newsletter & Website Enquiries<\/p>","name":"Carine Walton","tel":"+27 (0)21 794 1103","email":"ina@paarman.co.za"}},"person_xTJjAx":{"type":"person","settings":{"sub_heading":"General –","customer_care_text":"","name":"Sarah Davisworth","tel":"+27 (0)21 705 6440\/1","email":"sarah@paarman.co.za"}},"person_3p8nCr":{"type":"person","settings":{"sub_heading":"Sales –","customer_care_text":"","name":"Nasheetah Manuel","tel":"+27 (0)21 705 6440\/1","email":"orders@paarman.co.za"}},"person_UkwRD9":{"type":"person","settings":{"sub_heading":"Taste Africa –","customer_care_text":"<p>Exports<\/p>","name":"Grant McGregor","tel":"+27 (0)21 481 8200","email":"info@taste.africa"}}},"block_order":["person_FQPpRP","person_xTJjAx","person_3p8nCr","person_UkwRD9"],"settings":{"customer_care_text":"CONNECT WITH US ON SOCIAL MEDIA","corporate_profile_text":"","corporate_profile_link":"","facebook_link":"https:\/\/www.facebook.com\/inapaarmanskitchen\/","instagram_link":"https:\/\/www.instagram.com\/inapaarmanskitchen\/","tiktok_link":"https:\/\/www.tiktok.com\/@inapaarmanskitchen\/","youtube_link":"https:\/\/www.youtube.com\/@inapaarmanskitchen\/","twitter_link":"https:\/\/twitter.com\/inapaarman\/","linkedin_link":"https:\/\/www.linkedin.com\/company\/ina-paarmans-kitchen\/","pinterest_link":"https:\/\/pinterest.com\/inapaarmanskitchen\/"}},"contact_info_qQCKYF":{"type":"contact-info","settings":{"map_iframe_code":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3306.3432778641727!2d18.47216882266883!3d-34.035064458268934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc43b54046a51d%3A0xf7fdab38d51cb311!2sIna%20Paarman%20Factory%20Shop!5e0!3m2!1sen!2sin!4v1728718204927!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>","visit_heading":"Visit -","factory_shop_title":"Our Factory Shop","factory_shop_description":"Stop by our factory shop when you’re in the area to stock up on all your Ina Paarman favourites at reduced prices.\n\nAlthough our on-premises parking is limited, you’ll find plenty more along the adjoining private road.","phone_number":"+27 (0)21 705 6440\/1","email_address":"sarah@paarman.co.za","address":"<p>Unit B7<br\/>Diep River Industrial Park<br\/>Greenville Road<br\/>Diep River<br\/>Cape Town  7945<\/p>","business_hours":"<p>Mon-Fri:  10:00 - 15:00<br\/>Sat:  09:00 - 13:00<br\/>Closed on Public Holidays <\/p>","ct_cta_text":"Directions","ct_cta_link":"https:\/\/maps.app.goo.gl\/snFdPUj7eafk3GraA"}},"newsletter_Dq8U7K":{"type":"newsletter","disabled":true,"settings":{"style":"style-2","sub_heading":"- Sign Up -","main_heading":"Ina Paarman’s Kitchen Newsletter","description":"<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.<\/p>","background_image":"shopify:\/\/shop_images\/Background-Image-Newsletter.png"}},"newsletter_mailblaze_7QNaXq":{"type":"newsletter-mailblaze","name":"Newsletter Mailblaze","settings":{"style":"style-2","sub_heading":"- sign up -","main_heading":"Ina Paarman’s Kitchen Newsletter","description":"<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.<\/p>","background_image":"shopify:\/\/shop_images\/Background-Image-Newsletter.png"}}},"order":["blog_header_t3jByR","contact_mUzaGH","contact_support_RMYdDB","contact_info_qQCKYF","newsletter_Dq8U7K","newsletter_mailblaze_7QNaXq"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog_header_t3jByR": {
+      "type": "blog-header",
+      "settings": {
+        "background_image": "shopify://shop_images/Header-Image-Contact.jpg",
+        "sub_heading": "Get In Touch –",
+        "heading": "We Love Hearing From You",
+        "paragraph_1": "<p>Whether it’s a question, compliment, concern, or enquiry, we value your correspondence.</p><p>Please send us a message by completing the fields below, or contact the relevant party via the Ina Paarman contact details provided.</p>",
+        "cta_text": "Frequently Asked Questions",
+        "cta_link": "shopify://pages/faq"
+      }
+    },
+    "contact_mUzaGH": {
+      "type": "contact",
+      "settings": {
+        "sub_heading": "Contact Details –",
+        "heading": "Ina Paarman",
+        "phone_number": "+27 (0)21 794 1103",
+        "email_address": "ina@paarman.co.za",
+        "physical_address": "<p>Unit B7<br/>Diep River Industrial Park<br/>Greenville Road<br/>Diep River<br/>Cape Town  7945</p>",
+        "postal_address": "<p>PO Box 316<br/>Constantia  7848</p>"
+      }
+    },
+    "contact_support_RMYdDB": {
+      "type": "contact-support",
+      "blocks": {
+        "person_FQPpRP": {
+          "type": "person",
+          "settings": {
+            "sub_heading": "Development Kitchen  – (PA to Ina Paarman)",
+            "customer_care_text": "<p>Customer Care & Complaints, Product Info, Recipe Advice, Newsletter & Website Enquiries</p>",
+            "name": "Carine Walton",
+            "tel": "+27 (0)21 794 1103",
+            "email": "ina@paarman.co.za"
+          }
+        },
+        "person_xTJjAx": {
+          "type": "person",
+          "settings": {
+            "sub_heading": "General –",
+            "customer_care_text": "",
+            "name": "Sarah Davisworth",
+            "tel": "+27 (0)21 705 6440/1",
+            "email": "sarah@paarman.co.za"
+          }
+        },
+        "person_3p8nCr": {
+          "type": "person",
+          "settings": {
+            "sub_heading": "Sales –",
+            "customer_care_text": "",
+            "name": "Nasheetah Manuel",
+            "tel": "+27 (0)21 705 6440/1",
+            "email": "orders@paarman.co.za"
+          }
+        },
+        "person_UkwRD9": {
+          "type": "person",
+          "settings": {
+            "sub_heading": "Taste Africa –",
+            "customer_care_text": "<p>Exports</p>",
+            "name": "Grant McGregor",
+            "tel": "+27 (0)21 481 8200",
+            "email": "info@taste.africa"
+          }
+        }
+      },
+      "block_order": [
+        "person_FQPpRP",
+        "person_xTJjAx",
+        "person_3p8nCr",
+        "person_UkwRD9"
+      ],
+      "settings": {
+        "customer_care_text": "CONNECT WITH US ON SOCIAL MEDIA",
+        "corporate_profile_text": "",
+        "corporate_profile_link": "",
+        "facebook_link": "https://www.facebook.com/inapaarmanskitchen/",
+        "instagram_link": "https://www.instagram.com/inapaarmanskitchen/",
+        "tiktok_link": "https://www.tiktok.com/@inapaarmanskitchen/",
+        "youtube_link": "https://www.youtube.com/@inapaarmanskitchen/",
+        "twitter_link": "https://twitter.com/inapaarman/",
+        "linkedin_link": "https://www.linkedin.com/company/ina-paarmans-kitchen/",
+        "pinterest_link": "https://pinterest.com/inapaarmanskitchen/"
+      }
+    },
+    "contact_info_qQCKYF": {
+      "type": "contact-info",
+      "settings": {
+        "map_iframe_code": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.3432778641727!2d18.47216882266883!3d-34.035064458268934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc43b54046a51d%3A0xf7fdab38d51cb311!2sIna%20Paarman%20Factory%20Shop!5e0!3m2!1sen!2sin!4v1728718204927!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "visit_heading": "Visit -",
+        "factory_shop_title": "Our Factory Shop",
+        "factory_shop_description": "Stop by our factory shop when you’re in the area to stock up on all your Ina Paarman favourites at reduced prices.\n\nAlthough our on-premises parking is limited, you’ll find plenty more along the adjoining private road.",
+        "phone_number": "+27 (0)21 705 6440/1",
+        "email_address": "sarah@paarman.co.za",
+        "address": "<p>Unit B7<br/>Diep River Industrial Park<br/>Greenville Road<br/>Diep River<br/>Cape Town  7945</p>",
+        "business_hours": "<p>Mon-Fri:  10:00 - 15:00<br/>Sat:  09:00 - 13:00<br/>Closed on Public Holidays </p>",
+        "ct_cta_text": "Directions",
+        "ct_cta_link": "https://maps.app.goo.gl/snFdPUj7eafk3GraA"
+      }
+    },
+    "newsletter_Dq8U7K": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "style": "style-2",
+        "sub_heading": "- Sign Up -",
+        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "description": "<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>",
+        "background_image": "shopify://shop_images/Background-Image-Newsletter.png"
+      }
+    },
+    "newsletter_mailblaze_7QNaXq": {
+      "type": "newsletter-mailblaze",
+      "name": "Newsletter Mailblaze",
+      "settings": {
+        "style": "style-2",
+        "sub_heading": "– Sign Up –",
+        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "description": "<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>",
+        "background_image": "shopify://shop_images/Background-Image-Newsletter.png"
+      }
+    }
+  },
+  "order": [
+    "blog_header_t3jByR",
+    "contact_mUzaGH",
+    "contact_support_RMYdDB",
+    "contact_info_qQCKYF",
+    "newsletter_Dq8U7K",
+    "newsletter_mailblaze_7QNaXq"
+  ]
+}

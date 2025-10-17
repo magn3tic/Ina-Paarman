@@ -1,6 +1,806 @@
+{% doc %}
+  @prompt
+    Create a section called "Newsletters Archive". Allow cards to be added, three per row, displaying an image, title, description and button. The cards should be styled the same as the cards of the Featured Blog Posts section (https://admin.shopify.com/store/ina-paarman/themes/136618278978). , Allow for 12 cards., Apply this style to the button:     <span class="cta_btn btn_border_default">READ MORE</span>, Apply this style to the card title:   <h4 class="h3"><strong>{{ article.title }}</strong></h4>, Apply the site's fonts., Apply this style to the image:  class="blog-box">, Undo the last command, stretch the button full width, bold the button title, round the card corners 8px, round the card corners 10px, Make the image dimension 400 px wide by 350 px tall.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-newsletters-archive-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding_top }}px 0 {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-newsletters-archive__container-{{ ai_gen_id }} {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .ai-newsletters-archive__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin-bottom: 40px;
+  }
+
+  .ai-newsletters-archive__title-{{ ai_gen_id }} {
+    font-family: ubuntu, sans-serif;
+    font-size: {{ block.settings.heading_size }}rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-newsletters-archive__description-{{ ai_gen_id }} {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: {{ block.settings.text_color }};
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .ai-newsletters-archive__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .ai-newsletters-archive__card-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-newsletters-archive__card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-newsletters-archive__card-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+
+  .ai-newsletters-archive__card-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-newsletters-archive__card-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+  }
+
+  .ai-newsletters-archive__card-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-newsletters-archive__card-body-{{ ai_gen_id }} {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-newsletters-archive__card-title-{{ ai_gen_id }} {
+    font-family: ubuntu, sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    color: #1f2937;
+    font-weight: 700;
+  }
+
+  .ai-newsletters-archive__card-description-{{ ai_gen_id }} {
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    color: #455a64;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    line-height: 1.6;
+  }
+
+  .ai-newsletters-archive__card-button-{{ ai_gen_id }} {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .ai-newsletters-archive__card-button-{{ ai_gen_id }} .cta_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 991px) {
+    .ai-newsletters-archive__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .ai-newsletters-archive__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .ai-newsletters-archive__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}rem * 0.8);
+    }
+
+    .ai-newsletters-archive__card-title-{{ ai_gen_id }} {
+      font-size: 1.5rem;
+    }
+
+    .ai-newsletters-archive-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 0 {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-newsletters-archive-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-newsletters-archive__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank or block.settings.description != blank %}
+      <div class="ai-newsletters-archive__header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-newsletters-archive__title-{{ ai_gen_id }}">
+            {{ block.settings.heading }}
+          </h2>
+        {% endif %}
+        {% if block.settings.description != blank %}
+          <div class="ai-newsletters-archive__description-{{ ai_gen_id }}">
+            {{ block.settings.description }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-newsletters-archive__grid-{{ ai_gen_id }}">
+      {% for i in (1..12) %}
+        {% liquid
+          assign card_enabled_key = 'card_' | append: i | append: '_enabled'
+          assign card_image_key = 'card_' | append: i | append: '_image'
+          assign card_title_key = 'card_' | append: i | append: '_title'
+          assign card_description_key = 'card_' | append: i | append: '_description'
+          assign card_button_text_key = 'card_' | append: i | append: '_button_text'
+          assign card_button_link_key = 'card_' | append: i | append: '_button_link'
+
+          assign card_enabled = block.settings[card_enabled_key]
+          assign card_image = block.settings[card_image_key]
+          assign card_title = block.settings[card_title_key]
+          assign card_description = block.settings[card_description_key]
+          assign card_button_text = block.settings[card_button_text_key]
+          assign card_button_link = block.settings[card_button_link_key]
+        %}
+
+        {% if card_enabled %}
+          <div class="ai-newsletters-archive__card-{{ ai_gen_id }}">
+            <div class="ai-newsletters-archive__card-image-wrapper-{{ ai_gen_id }}">
+              {% if card_image %}
+                <img
+                  src="{{ card_image | image_url: width: 400 }}"
+                  alt="{{ card_image.alt | escape }}"
+                  class="ai-newsletters-archive__card-image-{{ ai_gen_id }}"
+                  loading="lazy"
+                  width="400"
+                  height="350"
+                >
+              {% else %}
+                <div class="ai-newsletters-archive__card-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="ai-newsletters-archive__card-body-{{ ai_gen_id }}">
+              {% if card_title != blank %}
+                <h4 class="ai-newsletters-archive__card-title-{{ ai_gen_id }} h3">
+                  <strong>{{ card_title }}</strong>
+                </h4>
+              {% endif %}
+
+              {% if card_description != blank %}
+                <div class="ai-newsletters-archive__card-description-{{ ai_gen_id }}">
+                  {{ card_description }}
+                </div>
+              {% endif %}
+
+              {% if card_button_text != blank and card_button_link != blank %}
+                <a
+                  href="{{ card_button_link }}"
+                  class="ai-newsletters-archive__card-button-{{ ai_gen_id }}"
+                >
+                  <span class="cta_btn btn_border_default">{{ card_button_text }}</span>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Newsletters Archive",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Newsletters Archive"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 1.5,
+      "max": 4,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Heading size",
+      "default": 2.5
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1f2937"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#455a64"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_1_enabled",
+      "label": "Enable card 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_1_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_1_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_2_enabled",
+      "label": "Enable card 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_2_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_2_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_3_enabled",
+      "label": "Enable card 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_3_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_3_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_4_enabled",
+      "label": "Enable card 4",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_4_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_4_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_4_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_5_enabled",
+      "label": "Enable card 5",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_5_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_5_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_5_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_5_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_5_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_6_enabled",
+      "label": "Enable card 6",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_6_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_6_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_6_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_6_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_6_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_7_enabled",
+      "label": "Enable card 7",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_7_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_7_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_7_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_7_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_7_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_8_enabled",
+      "label": "Enable card 8",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_8_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_8_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_8_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_8_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_8_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 9"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_9_enabled",
+      "label": "Enable card 9",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_9_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_9_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_9_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_9_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_9_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 10"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_10_enabled",
+      "label": "Enable card 10",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_10_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_10_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_10_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_10_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_10_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 11"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_11_enabled",
+      "label": "Enable card 11",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_11_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_11_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_11_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_11_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_11_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card 12"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_12_enabled",
+      "label": "Enable card 12",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "card_12_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "card_12_title",
+      "label": "Title",
+      "default": "Newsletter Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_12_description",
+      "label": "Description",
+      "default": "Brief description of the newsletter content goes here."
+    },
+    {
+      "type": "text",
+      "id": "card_12_button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "card_12_button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletters Archive"
+    }
+  ]
+}
 {% endschema %}

@@ -31,6 +31,7 @@
     },
     "newsletter_mailblaze_hJf9GC": {
       "type": "newsletter-mailblaze",
+      "disabled": true,
       "name": "Newsletter Mailblaze",
       "settings": {
         "style": "style-2",

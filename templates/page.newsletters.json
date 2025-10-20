@@ -113,6 +113,7 @@
     },
     "html_YDrUnz": {
       "type": "html",
+      "disabled": true,
       "settings": {
         "liquid": "<div class='TablePress' data-table='58978'></div>",
         "header_title": "",

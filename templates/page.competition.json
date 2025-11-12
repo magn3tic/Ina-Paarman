@@ -56,9 +56,9 @@
           "settings": {
             "style": "style-1",
             "remove_space": false,
-            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
-            "tagline": "Enter -",
-            "heading": "Heading",
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag.jpg",
+            "tagline": "Enter –",
+            "heading": "Flavour Bomb Competition",
             "header_tag": false,
             "bquote": "",
             "description": "",

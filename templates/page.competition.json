@@ -43,6 +43,7 @@
       "blocks": {
         "content_TmtfcC": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "style": "style-1",
             "remove_space": false,
@@ -73,6 +74,7 @@
         },
         "content_C9UGgJ": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "style": "style-1",
             "remove_space": false,
@@ -152,6 +154,7 @@
         "content_njgdK7",
         "content_nX383V"
       ],
+      "disabled": true,
       "custom_css": [
         "p,h3,blockquote {color: #fff;}"
       ],

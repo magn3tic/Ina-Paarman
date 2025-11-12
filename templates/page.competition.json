@@ -49,20 +49,21 @@
       ],
       "settings": {}
     },
-    "newsletter_mailblaze_bFAnj3": {
-      "type": "newsletter-mailblaze",
-      "name": "Newsletter Mailblaze",
+    "blog_header_aPy7ae": {
+      "type": "blog-header",
+      "name": "General Header",
       "settings": {
-        "style": "style-1",
-        "sub_heading": "- sign up -",
-        "main_heading": "Ina Paarman’s Kitchen Newsletter",
-        "description": ""
+        "sub_heading": "The Ina Paarman Blog:",
+        "heading": "Great Food, Great Living",
+        "paragraph_1": "",
+        "cta_text": "",
+        "cta_link": ""
       }
     }
   },
   "order": [
     "about_info_mPKt8C",
     "our_story_NB6rJR",
-    "newsletter_mailblaze_bFAnj3"
+    "blog_header_aPy7ae"
   ]
 }

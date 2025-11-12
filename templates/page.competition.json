@@ -95,7 +95,7 @@
         "content_C9UGgJ"
       ],
       "custom_css": [
-        "p,h3,h4,blockquote {color: #fff;}"
+        "p,h2,h3,h4,blockquote {color: #fff;}"
       ],
       "name": "Competition Header Red",
       "settings": {}

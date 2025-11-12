@@ -25,32 +25,9 @@
         "about_cta_link": ""
       }
     },
-    "our_story_NB6rJR": {
-      "type": "our-story",
-      "blocks": {
-        "content_cXQkFN": {
-          "type": "content",
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "image": "shopify://shop_images/Ina-Paarman-Book-Signing.jpg",
-            "tagline": "12 - 23 November 2024",
-            "heading": "Competition Details",
-            "header_tag": false,
-            "bquote": "Stand a chance to win a signed copy of Ina Paarman's 'My Favourite Recipes' Cookbook.",
-            "description": "<p>lsjf slkdfj sdlfkj sdlfkjs dlfkjsldfkj sdlfkj sdlkfjsd lfksdj flksjd f</p>",
-            "cta_text": "Enter",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_cXQkFN"
-      ],
-      "settings": {}
-    },
     "blog_header_aPy7ae": {
       "type": "blog-header",
+      "disabled": true,
       "name": "General Header",
       "settings": {
         "background_image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag.jpg",
@@ -74,7 +51,6 @@
   },
   "order": [
     "about_info_mPKt8C",
-    "our_story_NB6rJR",
     "blog_header_aPy7ae",
     "competition_form_zAGimF"
   ]

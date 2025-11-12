@@ -1,525 +1,184 @@
-<!-- Content Start -->
-<section class="recipe-banner-area ">
-  <div class="recipe-banner-bg" style="background: url({{ article.image | image_url }}) no-repeat scroll top center/cover"></div>
-  <img
-    src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png"
-    alt="image"
-    class="recipe_shape">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-9 mx-auto"></div>
-    </div>
-  </div>
-</section>
-<!-- Content End -->
-
-<!-- Content Start -->
-<section class="recipe-promo-area pb_40">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-11 mx-auto">
-        <div class="recipe-promo-inner">
-          {% if article.image %}
-            <div class="t-lg-5 pl-lg-5 mb-lg-5 h-100 w-100">
-              <div class="half_bg d-none d-lg-block recipe-img" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover;height:41vw;width:41vw;max-width:580px;max-height:620px"></div>
-            </div>
-          {% endif %}
-          <div class="row">
-            <div class="col-sm-6">
-              {% if article.image %}
-                <div class="content-img d-lg-none">
-                  <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
-                </div>
-              {% endif %}
-            </div>
-            <div class="col-sm-6">
-              <div class="content-text">
-                <div class="text-left mb-5">
-                  <h1 class="recipe-heading">{{ article.title }}</h1>
-                  {{ article.excerpt }}
-                </div>
-                <ul class="promo-list">
-                  {% if article.metafields["global"]["Makes"] %}
-                    <li>
-                      <span class="d-block">Makes</span>
-                      {{ article.metafields["global"]["Makes"] }}
-                    </li>
-                  {% endif %}
-                  {% if article.metafields["global"]["Serves"] %}
-                    <li>
-                      <span class="d-block">Serves:</span>
-                      {{ article.metafields["global"]["Serves"] }}
-                    </li>
-                  {% endif %}
-                  {% assign occasions = article.metafields["global"]["Occasions"] | split: ',' %}
-                  {% assign selected_occations = '' %}
-
-                  {% for occasion in occasions %}
-                    {% assign pair = occasion | split: ':' %}
-                    {% if pair[1] == 'true' %}
-                      {% if selected_occations != '' %}
-                        {% assign selected_occations = selected_occations | append: ', ' %}
-                      {% endif %}
-                      {% assign selected_occations = selected_occations | append: pair[0] | replace: '-', ' ' | capitalize %}
-                    {% endif %}
-                  {% endfor %}
-
-                  {% if selected_occations != '' %}
-                    <li class="text-capitalize">
-                      <span class="d-block">OCCASION:</span>
-                      {{ selected_occations }}
-                    </li>
-                  {% endif %}
-
-                  {% assign categories = article.metafields.global["Recipe-Category"] | split: ',' %}
-                  {% assign selected_categories = '' %}
-
-                  {% assign recipe_labels = "
-                                                                                                                                                              meat-beef||Meat: Beef,
-                                                                                                                                                              meat-lamb||Meat: Lamb,
-                                                                                                                                                              meat-pork||Meat: Pork,
-                                                                                                                                                              meat-game-venison||Meat: Game & Venison,
-                                                                                                                                                              poultry-chicken||Poultry: Chicken,
-                                                                                                                                                              poultry-duck||Poultry: Duck,
-                                                                                                                                                              poultry-turkey||Poultry: Turkey,
-                                                                                                                                                              fish-seafood||Fish & Seafood,
-                                                                                                                                                              pasta||Pasta,
-                                                                                                                                                              pies-pastries||Pies & Pastries,
-                                                                                                                                                              quiches||Quiches,
-                                                                                                                                                              salads||Salads,
-                                                                                                                                                              rice-grains||Rice & Grains,
-                                                                                                                                                              lentils-beans||Lentils & Beans,
-                                                                                                                                                              dessert-hot||Dessert: Hot,
-                                                                                                                                                              dessert-cold||Dessert: Cold,
-                                                                                                                                                              baking||Baking,
-                                                                                                                                                              bread||Bread,
-                                                                                                                                                              cakes||Cakes,
-                                                                                                                                                              tarts||Tarts,
-                                                                                                                                                              muffins-cupcakes-brownies-and-scones||Muffins, Cupcakes, Brownies & Scones,
-                                                                                                                                                              biscuits-and-rusks||Biscuits & Rusks,
-                                                                                                                                                              batters-pancakes-wraps||Batters, Pancakes, Wraps,
-                                                                                                                                                              pizza||Pizza,
-                                                                                                                                                              breakfast-eggs||Breakfast & Eggs,
-                                                                                                                                                              soup||Soup,
-                                                                                                                                                              starters||Starters,
-                                                                                                                                                              pates-spreads||Patés & Spreads,
-                                                                                                                                                              preserves-and-pickles||Preserves & Pickles,
-                                                                                                                                                              snacks-dips||Snacks & Dips,
-                                                                                                                                                              sambals||Sambals,
-                                                                                                                                                              beverages||Beverages,
-                                                                                                                                                              gluten-free||Gluten-Free,
-                                                                                                                                                              vegetarian-main||Vegetarian: Main,
-                                                                                                                                                              vegetarian-side||Vegetarian: Side,
-                                                                                                                                                              vegan||Vegan,
-                                                                                                                                                              traditional-homegrown-south-african-recipes||Traditional Homegrown South African Recipes,
-                                                                                                                                                              weeknight-winner||Weeknight Winner,
-                                                                                                                                                              inas-choice||Ina’s Choice,
-                                                                                                                                                              junior-chef||Junior Chef
-                                                                                                                                                              " | strip | split: ',' %}
-
-                  {% for category in categories %}
-                    {% assign pair = category | split: ':' %}
-                    {% if pair[1] == 'true' %}
-                      {% assign category_name = pair[0] | strip %}
-                      {% for label in recipe_labels %}
-                        {% assign label_pair = label | split: '||' %}
-                        {% assign key = label_pair[0] | strip %}
-                        {% assign value = label_pair[1] | strip %}
-                        {% if key == pair[0] %}
-                          {% assign category_name = value %}
-                        {% endif %}
-                      {% endfor %}
-
-                      {% if selected_categories != '' %}
-                        {% assign selected_categories = selected_categories | append: ', ' %}
-                      {% endif %}
-
-                      {% assign url = shop.url | append: '/pages/recipe-type-' | append: pair[0] %}
-                      {% assign selected_categories = selected_categories | append: '<a href="' | append: url | append: '">' | append: category_name | append: '</a>' %}
-                    {% endif %}
-                  {% endfor %}
-
-                  {% if selected_categories != '' %}
-                    <li>
-                      <span class="d-block">Recipe Category:</span>
-                      {{ selected_categories }}
-                    </li>
-                  {% endif %}
-
-                  {% if article.metafields["global"]["Products-in-this-recipe"] %}
-                    <li>
-                      <span class="d-block">Products in this recipe:</span>
-                      {{ article.metafields["global"]["Products-in-this-recipe"] }}
-                    </li>
-                  {% endif %}
-                </ul>
-                <div class="promo-actions">
-                  <ul>
-                    <li>
-                      <a id="downloadPDF"><img
-                          src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/download.svg"
-                          alt="icon"
-                          class="small-icons"></a>
-                    </li>
-                    <li>
-                      <a id="printPDF"><img
-                          src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/print.svg"
-                          alt="icon"
-                          class="small-icons"></a>
-                    </li>
-                  </ul>
-
-                  <ul>
-                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-red.svg" alt="Share on Facebook" class="small-icons"></a></li>
-                    <li><a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-red.svg" alt="Share on Twitter" class="small-icons"></a></li>
-                    <li><a href="https://www.instagram.com/inapaarmanskitchen" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-red.svg" alt="Instagram" class="small-icons"></a></li>
-                    <li><a href="mailto:?subject={{ shop.url }}{{ article.title }}&body={{ article.url }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-red.svg" alt="Share via Email" class="small-icons"></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="to-print">
+  <!-- Content Start -->
+  <section class="recipe-banner-area ">
+    <div class="recipe-banner-bg" style="background: url({{ article.image | image_url }}) no-repeat scroll top center/cover"></div>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png"
+      alt="image"
+      class="recipe_shape">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-9 mx-auto"></div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Content End -->
+  </section>
+  <!-- Content End -->
 
-<!-- Cargar html2pdf (una sola vez, por ejemplo en theme.liquid) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // ✅ Selecciona el contenedor a imprimir: primero #main, luego #MainContent, luego <main>
-    function getPdfSourceEl() {
-      return document.querySelector('#main') 
-    }
-
-    function downloadAsPdf(event) {
-      if (event) event.preventDefault();
-
-      const el = getPdfSourceEl();
-
-      // Nombre de archivo: usa Liquid para sanitizar y añadir .pdf
-      const filename = '{{ article.title | handleize }}.pdf';
-
-      const opts = {
-        margin: 10, // mm
-        filename: filename,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['css', 'legacy'] } // respeta .html2pdf__page-break en CSS si la usas
-      };
-
-      html2pdf().set(opts).from(el).save();
-    }
-
-    const printBtn = document.getElementById('printPDF');
-    const downloadBtn = document.getElementById('downloadPDF');
-
-    if (printBtn) {
-      printBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.print();
-      });
-    }
-
-    if (downloadBtn) {
-      downloadBtn.addEventListener('click', downloadAsPdf);
-    }
-  });
-</script>
-
-
-<!-- Content Start -->
-<section class="recipe-details-area pb_40 pt-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-11 mx-auto">
-        <div class="inner">
-          <h2 class="h2 Test">
-            <strong>You Will Need:</strong>
-          </h2>
-          <div class="row gx-lg-5">
-            <div class="col-sm-6 d-none d-sm-block">
-              {% if article.metafields["global"]["You-Will-Need-1---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-1---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-1---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-1---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-3---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-3---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-3---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-3---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-5---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-5---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-5---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-5---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-7---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-7---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-7---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-7---Ingredients"] }}
-                </div>
-              {% endif %}
-            </div>
-            <div class="col-sm-6 d-none d-sm-block">
-              {% if article.metafields["global"]["You-Will-Need-2---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-2---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-2---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-2---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-4---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-4---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-4---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-4---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-6---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-6---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-6---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-6---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-8---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-8---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-8---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-8---Ingredients"] }}
-                </div>
-              {% endif %}
-            </div>
-
-            <div class="col-12 d-sm-none">
-              {% if article.metafields["global"]["You-Will-Need-1---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-1---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-1---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-1---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-2---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-2---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-2---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-2---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-3---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-3---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-3---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-3---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-4---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-4---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-4---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-4---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-5---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-5---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-5---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-5---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-6---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-6---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-6---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-6---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-7---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-7---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-7---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-7---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-8---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-8---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-8---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-8---Ingredients"] }}
-                </div>
-              {% endif %}
-            </div>
-          </div>
-          <!-- Method Gallery With Text -->
-          <div class="recipe-details-slider">
-            {% if article.metafields["global"]["Method-Gallery-With-Text-2"] %}
-              {% assign raw_html = article.metafields["global"]["Method-Gallery-With-Text-2"] %}
-              {% assign image_parts = raw_html | split: '<img ' %}
-
-              {% for part in image_parts %}
-                {% if part contains 'src="' %}
-                  {% assign image_url = part | split: 'src="' | last | split: '"' | first %}
-                  {% assign alt_text = part | split: 'alt="' | last | split: '"' | first %}
-
-                  <div class="slide">
-                    <a class="recipe-gallery">
-                      <img
-                        src="{{ image_url }}"
-                        alt="{{ alt_text }}"
-                        width="600"
-                        height="600">
-                      {% if alt_text != "Image" %}
-                        <span class="d-block title">{{ alt_text }}</span>
-                      {% endif %}
-                    </a>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-            {% if article.metafields["global"]["Inas-Tip-2"] %}
-              {% assign raw_html = article.metafields["global"]["Inas-Tip-2"] %}
-              {% assign image_parts = raw_html | split: '<img ' %}
-
-              {% for part in image_parts %}
-                {% if part contains 'src="' %}
-                  {% assign image_url = part | split: 'src="' | last | split: '"' | first %}
-                  {% assign alt_text = part | split: 'alt="' | last | split: '"' | first %}
-
-                  <div class="slide">
-                    <a class="recipe-gallery">
-                      <img
-                        src="{{ image_url }}"
-                        alt="{{ alt_text }}"
-                        width="600"
-                        height="600">
-                      {% if alt_text != "Image" %}
-                        <span class="d-block title">{{ alt_text }}</span>
-                      {% endif %}
-                    </a>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-
-          <!-- Method Gallery
-          {% if article.metafields["global"]["Method-Gallery"] %}        {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}        {% for image in method_images %}            <div class="slide">                <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">                </a>            </div>        {% endfor %}
-          {% endif %}
-          -->
-          <!-- Tip Gallery
-          {% if article.metafields["global"]["Tip-Gallery"] %}      {% assign tip_images = article.metafields["global"]["Tip-Gallery"] | split: ',' %}      {% for image in tip_images %}          <div class="slide">              <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">              </a>          </div>      {% endfor %}
-          {% endif %}
-          -->
-          </div>
-
-          {% if article.metafields["global"]["Inas-Tip"] %}
-            <div class="inas-tip">
-              <div class="row align-items-center">
-                <div class="col-md-4">
-                  <div class="text-md-start text-center">
-                    <h3 class="h1 text_light">
-                      <strong>Ina’s Tip</strong>
-                    </h3>
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="text-md-start text-center">
-                    {{ article.metafields["global"]["Inas-Tip"] }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-
-          <div class="method">
-            <h3 class="h2 mb-4">
-              <strong>Method:</strong>
-            </h3>
-            {{ article.content }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div></section>
-<!-- Content End -->
-
-{% assign video_aspect_ratio = article.metafields["global"]["Youtube-Video-Aspect"] %}
-{% if video_aspect_ratio == "9x16" %}
-  <style>
-    .lity-youtube .lity-container {
-      max-width: 400px !important;
-    }
-    .lity-youtube .lity-iframe-container {
-      padding-top: 175.75% !important;
-    }
-  </style>
-{% endif %}
-
-
-{% assign youtube_url = article.metafields["global"]["YouTube-Video"] %}
-{% if youtube_url %}
-  {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
-  {% assign thumbnail_url = "https://img.youtube.com/vi/" | append: video_id | append: "/maxresdefault.jpg" %}
-
-  <!-- Content Start Video -->
-  <section class="content-area pt-0" style="margin-top:-55px">
+  <!-- Content Start -->
+  <section class="recipe-promo-area pb_40">
     <div class="container">
       <div class="row">
         <div class="col-lg-11 mx-auto">
-          <div class="p-4" style="background-color:#fff; border-radius:15px;">
-            <div class="video-box m-lg-4">
-              <img
-                src="{{ thumbnail_url }}"
-                alt="YouTube Thumbnail"
-                class="w-100">
-              <a
-                href="{{ youtube_url }}"
-                data-lity
-                class="play_btn">
-                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/play-btn.svg" alt="Play Button">
-              </a>
+          <div class="recipe-promo-inner">
+            {% if article.image %}
+              <div class="t-lg-5 pl-lg-5 mb-lg-5 h-100 w-100">
+                <div class="half_bg d-none d-lg-block recipe-img" style="background: url({{ article.image | image_url }}) no-repeat scroll center center/cover;height:41vw;width:41vw;max-width:580px;max-height:620px"></div>
+              </div>
+            {% endif %}
+            <div class="row">
+              <div class="col-sm-6">
+                {% if article.image %}
+                  <div class="content-img d-lg-none">
+                    <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
+                  </div>
+                {% endif %}
+              </div>
+              <div class="col-sm-6">
+                <div class="content-text">
+                  <div class="text-left mb-5">
+                    <h1 class="recipe-heading">{{ article.title }}</h1>
+                    {{ article.excerpt }}
+                  </div>
+                  <ul class="promo-list">
+                    {% if article.metafields["global"]["Makes"] %}
+                      <li>
+                        <span class="d-block">Makes</span>
+                        {{ article.metafields["global"]["Makes"] }}
+                      </li>
+                    {% endif %}
+                    {% if article.metafields["global"]["Serves"] %}
+                      <li>
+                        <span class="d-block">Serves:</span>
+                        {{ article.metafields["global"]["Serves"] }}
+                      </li>
+                    {% endif %}
+                    {% assign occasions = article.metafields["global"]["Occasions"] | split: ',' %}
+                    {% assign selected_occations = '' %}
+
+                    {% for occasion in occasions %}
+                      {% assign pair = occasion | split: ':' %}
+                      {% if pair[1] == 'true' %}
+                        {% if selected_occations != '' %}
+                          {% assign selected_occations = selected_occations | append: ', ' %}
+                        {% endif %}
+                        {% assign selected_occations = selected_occations | append: pair[0] | replace: '-', ' ' | capitalize %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if selected_occations != '' %}
+                      <li class="text-capitalize">
+                        <span class="d-block">OCCASION:</span>
+                        {{ selected_occations }}
+                      </li>
+                    {% endif %}
+
+                    {% assign categories = article.metafields.global["Recipe-Category"] | split: ',' %}
+                    {% assign selected_categories = '' %}
+
+                    {% assign recipe_labels = "
+                                                                                                                                                                                    meat-beef||Meat: Beef,
+                                                                                                                                                                                    meat-lamb||Meat: Lamb,
+                                                                                                                                                                                    meat-pork||Meat: Pork,
+                                                                                                                                                                                    meat-game-venison||Meat: Game & Venison,
+                                                                                                                                                                                    poultry-chicken||Poultry: Chicken,
+                                                                                                                                                                                    poultry-duck||Poultry: Duck,
+                                                                                                                                                                                    poultry-turkey||Poultry: Turkey,
+                                                                                                                                                                                    fish-seafood||Fish & Seafood,
+                                                                                                                                                                                    pasta||Pasta,
+                                                                                                                                                                                    pies-pastries||Pies & Pastries,
+                                                                                                                                                                                    quiches||Quiches,
+                                                                                                                                                                                    salads||Salads,
+                                                                                                                                                                                    rice-grains||Rice & Grains,
+                                                                                                                                                                                    lentils-beans||Lentils & Beans,
+                                                                                                                                                                                    dessert-hot||Dessert: Hot,
+                                                                                                                                                                                    dessert-cold||Dessert: Cold,
+                                                                                                                                                                                    baking||Baking,
+                                                                                                                                                                                    bread||Bread,
+                                                                                                                                                                                    cakes||Cakes,
+                                                                                                                                                                                    tarts||Tarts,
+                                                                                                                                                                                    muffins-cupcakes-brownies-and-scones||Muffins, Cupcakes, Brownies & Scones,
+                                                                                                                                                                                    biscuits-and-rusks||Biscuits & Rusks,
+                                                                                                                                                                                    batters-pancakes-wraps||Batters, Pancakes, Wraps,
+                                                                                                                                                                                    pizza||Pizza,
+                                                                                                                                                                                    breakfast-eggs||Breakfast & Eggs,
+                                                                                                                                                                                    soup||Soup,
+                                                                                                                                                                                    starters||Starters,
+                                                                                                                                                                                    pates-spreads||Patés & Spreads,
+                                                                                                                                                                                    preserves-and-pickles||Preserves & Pickles,
+                                                                                                                                                                                    snacks-dips||Snacks & Dips,
+                                                                                                                                                                                    sambals||Sambals,
+                                                                                                                                                                                    beverages||Beverages,
+                                                                                                                                                                                    gluten-free||Gluten-Free,
+                                                                                                                                                                                    vegetarian-main||Vegetarian: Main,
+                                                                                                                                                                                    vegetarian-side||Vegetarian: Side,
+                                                                                                                                                                                    vegan||Vegan,
+                                                                                                                                                                                    traditional-homegrown-south-african-recipes||Traditional Homegrown South African Recipes,
+                                                                                                                                                                                    weeknight-winner||Weeknight Winner,
+                                                                                                                                                                                    inas-choice||Ina’s Choice,
+                                                                                                                                                                                    junior-chef||Junior Chef
+                                                                                                                                                                                    " | strip | split: ',' %}
+
+                    {% for category in categories %}
+                      {% assign pair = category | split: ':' %}
+                      {% if pair[1] == 'true' %}
+                        {% assign category_name = pair[0] | strip %}
+                        {% for label in recipe_labels %}
+                          {% assign label_pair = label | split: '||' %}
+                          {% assign key = label_pair[0] | strip %}
+                          {% assign value = label_pair[1] | strip %}
+                          {% if key == pair[0] %}
+                            {% assign category_name = value %}
+                          {% endif %}
+                        {% endfor %}
+
+                        {% if selected_categories != '' %}
+                          {% assign selected_categories = selected_categories | append: ', ' %}
+                        {% endif %}
+
+                        {% assign url = shop.url | append: '/pages/recipe-type-' | append: pair[0] %}
+                        {% assign selected_categories = selected_categories | append: '<a href="' | append: url | append: '">' | append: category_name | append: '</a>' %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if selected_categories != '' %}
+                      <li>
+                        <span class="d-block">Recipe Category:</span>
+                        {{ selected_categories }}
+                      </li>
+                    {% endif %}
+
+                    {% if article.metafields["global"]["Products-in-this-recipe"] %}
+                      <li>
+                        <span class="d-block">Products in this recipe:</span>
+                        {{ article.metafields["global"]["Products-in-this-recipe"] }}
+                      </li>
+                    {% endif %}
+                  </ul>
+                  <div class="promo-actions">
+                    <ul>
+                      <li>
+                        <a id="downloadPDF"><img
+                            src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/download.svg"
+                            alt="icon"
+                            class="small-icons"></a>
+                      </li>
+                      <li>
+                        <a id="printPDF"><img
+                            src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/print.svg"
+                            alt="icon"
+                            class="small-icons"></a>
+                      </li>
+                    </ul>
+
+                    <ul>
+                      <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-red.svg" alt="Share on Facebook" class="small-icons"></a></li>
+                      <li><a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-red.svg" alt="Share on Twitter" class="small-icons"></a></li>
+                      <li><a href="https://www.instagram.com/inapaarmanskitchen" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-red.svg" alt="Instagram" class="small-icons"></a></li>
+                      <li><a href="mailto:?subject={{ shop.url }}{{ article.title }}&body={{ article.url }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-red.svg" alt="Share via Email" class="small-icons"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -527,192 +186,526 @@
     </div>
   </section>
   <!-- Content End -->
-{% endif %}
 
-<div class="print-only">
-  <div class="print-logo"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/logo.png" alt="" /></div>
-  <div class="print-inner">
-    <div class="print-head">
-      <h3 class="h2">{{ article.title }}</h3>
-      {{ article.excerpt }}
-    </div>
+  <!-- Cargar html2pdf (una sola vez, por ejemplo en theme.liquid) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
 
-    <div class="row">
-      <div class="col-sm-4">
-        {% if article.image %}
-          <div class="content-img">
-            <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
-          </div>
-        {% endif %}
-      </div>
-      <div class="col-sm-8">
-        <ul class="promo-list">
-          {% if article.metafields["global"]["Makes"] %}
-            <li>
-              <span class="d-block">Makes</span>
-              {{ article.metafields["global"]["Makes"] }}
-            </li>
-          {% endif %}
-          {% if article.metafields["global"]["Serves"] %}
-            <li>
-              <span class="d-block">Serves:</span>
-              {{ article.metafields["global"]["Serves"] }}
-            </li>
-          {% endif %}
-          {% assign occasions = article.metafields["global"]["Occasions"] | split: ',' %}
-          {% assign selected_occations = '' %}
 
-          {% for occasion in occasions %}
-            {% assign pair = occasion | split: ':' %}
-            {% if pair[1] == 'true' %}
-              {% if selected_occations != '' %}
-                {% assign selected_occations = selected_occations | append: ', ' %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Ajusta este selector al contenedor que quieres “convertir” a PDF
+      const pdfSourceSelector = '.to-print'; // por ejemplo
+
+      function downloadAsPdf() {
+    const el = document.querySelector(pdfSourceSelector) || document.body;
+
+    const opts = {
+      margin:       10,                   // mm
+      filename:     '{{ article.title | handleize }}.pdf',       // nombre final
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Esto dispara la descarga directa (sin diálogo de “Guardar como...”)
+    html2pdf().set(opts).from(el).save();
+      }
+
+      const printBtn = document.getElementById('printPDF');
+      const downloadBtn = document.getElementById('downloadPDF');
+
+      if (printBtn) {
+    printBtn.addEventListener('click', function () {
+      // Este sí abre el diálogo del sistema porque es imprimir
+      window.print();
+    });
+      }
+
+      if (downloadBtn) {
+    downloadBtn.addEventListener('click', downloadAsPdf);
+      }
+    });
+  </script>
+
+
+  <!-- Content Start -->
+  <section class="recipe-details-area pb_40 pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11 mx-auto">
+          <div class="inner">
+            <h2 class="h2 Test">
+              <strong>You Will Need:</strong>
+            </h2>
+            <div class="row gx-lg-5">
+              <div class="col-sm-6 d-none d-sm-block">
+                {% if article.metafields["global"]["You-Will-Need-1---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-1---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-1---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-1---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-3---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-3---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-3---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-3---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-5---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-5---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-5---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-5---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-7---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-7---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-7---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-7---Ingredients"] }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="col-sm-6 d-none d-sm-block">
+                {% if article.metafields["global"]["You-Will-Need-2---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-2---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-2---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-2---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-4---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-4---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-4---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-4---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-6---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-6---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-6---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-6---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-8---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-8---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-8---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-8---Ingredients"] }}
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="col-12 d-sm-none">
+                {% if article.metafields["global"]["You-Will-Need-1---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-1---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-1---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-1---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-2---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-2---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-2---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-2---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-3---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-3---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-3---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-3---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-4---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-4---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-4---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-4---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-5---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-5---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-5---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-5---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-6---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-6---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-6---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-6---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-7---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-7---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-7---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-7---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-8---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-8---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-8---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-8---Ingredients"] }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            <!-- Method Gallery With Text -->
+            <div class="recipe-details-slider">
+              {% if article.metafields["global"]["Method-Gallery-With-Text-2"] %}
+                {% assign raw_html = article.metafields["global"]["Method-Gallery-With-Text-2"] %}
+                {% assign image_parts = raw_html | split: '<img ' %}
+
+                {% for part in image_parts %}
+                  {% if part contains 'src="' %}
+                    {% assign image_url = part | split: 'src="' | last | split: '"' | first %}
+                    {% assign alt_text = part | split: 'alt="' | last | split: '"' | first %}
+
+                    <div class="slide">
+                      <a class="recipe-gallery">
+                        <img
+                          src="{{ image_url }}"
+                          alt="{{ alt_text }}"
+                          width="600"
+                          height="600">
+                        {% if alt_text != "Image" %}
+                          <span class="d-block title">{{ alt_text }}</span>
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endif %}
+                {% endfor %}
               {% endif %}
-              {% assign selected_occations = selected_occations | append: pair[0] | replace: '-', ' ' | capitalize %}
+              {% if article.metafields["global"]["Inas-Tip-2"] %}
+                {% assign raw_html = article.metafields["global"]["Inas-Tip-2"] %}
+                {% assign image_parts = raw_html | split: '<img ' %}
+
+                {% for part in image_parts %}
+                  {% if part contains 'src="' %}
+                    {% assign image_url = part | split: 'src="' | last | split: '"' | first %}
+                    {% assign alt_text = part | split: 'alt="' | last | split: '"' | first %}
+
+                    <div class="slide">
+                      <a class="recipe-gallery">
+                        <img
+                          src="{{ image_url }}"
+                          alt="{{ alt_text }}"
+                          width="600"
+                          height="600">
+                        {% if alt_text != "Image" %}
+                          <span class="d-block title">{{ alt_text }}</span>
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+            <!-- Method Gallery
+            {% if article.metafields["global"]["Method-Gallery"] %}        {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}        {% for image in method_images %}            <div class="slide">                <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">                </a>            </div>        {% endfor %}{% endif %}
+            -->
+            <!-- Tip Gallery
+            {% if article.metafields["global"]["Tip-Gallery"] %}      {% assign tip_images = article.metafields["global"]["Tip-Gallery"] | split: ',' %}      {% for image in tip_images %}          <div class="slide">              <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">              </a>          </div>      {% endfor %}{% endif %}
+            -->
+            </div>
+
+            {% if article.metafields["global"]["Inas-Tip"] %}
+              <div class="inas-tip">
+                <div class="row align-items-center">
+                  <div class="col-md-4">
+                    <div class="text-md-start text-center">
+                      <h3 class="h1 text_light">
+                        <strong>Ina’s Tip</strong>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="text-md-start text-center">
+                      {{ article.metafields["global"]["Inas-Tip"] }}
+                    </div>
+                  </div>
+                </div>
+              </div>
             {% endif %}
-          {% endfor %}
 
-          {% if selected_occations != '' %}
-            <li class="text-capitalize">
-              <span class="d-block">OCCASION:</span>
-              {{ selected_occations }}
-            </li>
-          {% endif %}
-
-          {% assign categories = article.metafields["global"]["Recipe-Category"] | split: ',' %}
-          {% assign selected_categories = '' %}
-
-          {% for category in categories %}
-            {% assign pair = category | split: ':' %}
-            {% if pair[1] == 'true' %}
-              {% if selected_categories != '' %}
-                {% assign selected_categories = selected_categories | append: ', ' %}
-              {% endif %}
-              {% assign selected_categories = selected_categories | append: pair[0] | replace: '-', ' ' | capitalize %}
-            {% endif %}
-          {% endfor %}
-
-          {% if selected_categories != '' %}
-            <li class="text-capitalize">
-              <span class="d-block">Recipe Category:</span>
-              {{ selected_categories }}
-            </li>
-          {% endif %}
-
-          {% if article.metafields["global"]["Products-in-this-recipe"] %}
-            <li>
-              <span class="d-block">Products in this recipe:</span>
-              {{ article.metafields["global"]["Products-in-this-recipe"] }}
-            </li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-lg-11 mx-auto">
-        <div class="inner">
-          <h2 class="h2">
-            <strong>You Will Need:</strong>
-          </h2>
-          <div class="row gx-lg-5">
-            <div class="col-sm-12">
-              {% if article.metafields["global"]["You-Will-Need-1---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-1---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-1---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-1---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-2---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-2---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-2---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-2---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-3---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-3---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-3---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-3---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-4---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-4---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-4---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-4---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-5---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-5---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-5---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-5---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-6---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-6---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-6---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-6---Ingredients"] }}
-                </div>
-              {% endif %}
-
-              {% if article.metafields["global"]["You-Will-Need-7---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-7---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-7---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-7---Ingredients"] }}
-                </div>
-              {% endif %}
-
-
-              {% if article.metafields["global"]["You-Will-Need-8---Ingredients"] %}
-                <div class="inner-widget">
-                  {% if article.metafields["global"]["You-Will-Need-8---Title"] %}
-                    <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-8---Title"] }}</span>
-                  {% endif %}
-                  {{ article.metafields["global"]["You-Will-Need-8---Ingredients"] }}
-                </div>
-              {% endif %}
+            <div class="method">
+              <h3 class="h2 mb-4">
+                <strong>Method:</strong>
+              </h3>
+              {{ article.content }}
             </div>
           </div>
-
-          {% if article.metafields["global"]["Inas-Tip"] %}
-            <div class="inner-widget">
-              <span class="d-block title">Ina’s Tip</span>
-              {{ article.metafields["global"]["Inas-Tip"] }}
-            </div>
-          {% endif %}
         </div>
       </div>
     </div>
+</section>
+  <!-- Content End -->
 
-    <div class="print-only">
-      <div class="method">
-        <h3 class="h2 mb-4">
-          <strong>Method:</strong>
-        </h3>
-        {{ article.content }}
+  {% assign video_aspect_ratio = article.metafields["global"]["Youtube-Video-Aspect"] %}
+  {% if video_aspect_ratio == "9x16" %}
+    <style>
+      .lity-youtube .lity-container {
+        max-width: 400px !important;
+      }
+      .lity-youtube .lity-iframe-container {
+        padding-top: 175.75% !important;
+      }
+    </style>
+  {% endif %}
+
+
+  {% assign youtube_url = article.metafields["global"]["YouTube-Video"] %}
+  {% if youtube_url %}
+    {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
+    {% assign thumbnail_url = "https://img.youtube.com/vi/" | append: video_id | append: "/maxresdefault.jpg" %}
+
+    <!-- Content Start Video -->
+    <section class="content-area pt-0" style="margin-top:-55px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-11 mx-auto">
+            <div class="p-4" style="background-color:#fff; border-radius:15px;">
+              <div class="video-box m-lg-4">
+                <img
+                  src="{{ thumbnail_url }}"
+                  alt="YouTube Thumbnail"
+                  class="w-100">
+                <a
+                  href="{{ youtube_url }}"
+                  data-lity
+                  class="play_btn">
+                  <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/play-btn.svg" alt="Play Button">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content End -->
+  {% endif %}
+
+  <div class="print-only">
+    <div class="print-logo"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/logo.png" alt="" /></div>
+    <div class="print-inner">
+      <div class="print-head">
+        <h3 class="h2">{{ article.title }}</h3>
+        {{ article.excerpt }}
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          {% if article.image %}
+            <div class="content-img">
+              <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
+            </div>
+          {% endif %}
+        </div>
+        <div class="col-sm-8">
+          <ul class="promo-list">
+            {% if article.metafields["global"]["Makes"] %}
+              <li>
+                <span class="d-block">Makes</span>
+                {{ article.metafields["global"]["Makes"] }}
+              </li>
+            {% endif %}
+            {% if article.metafields["global"]["Serves"] %}
+              <li>
+                <span class="d-block">Serves:</span>
+                {{ article.metafields["global"]["Serves"] }}
+              </li>
+            {% endif %}
+            {% assign occasions = article.metafields["global"]["Occasions"] | split: ',' %}
+            {% assign selected_occations = '' %}
+
+            {% for occasion in occasions %}
+              {% assign pair = occasion | split: ':' %}
+              {% if pair[1] == 'true' %}
+                {% if selected_occations != '' %}
+                  {% assign selected_occations = selected_occations | append: ', ' %}
+                {% endif %}
+                {% assign selected_occations = selected_occations | append: pair[0] | replace: '-', ' ' | capitalize %}
+              {% endif %}
+            {% endfor %}
+
+            {% if selected_occations != '' %}
+              <li class="text-capitalize">
+                <span class="d-block">OCCASION:</span>
+                {{ selected_occations }}
+              </li>
+            {% endif %}
+
+            {% assign categories = article.metafields["global"]["Recipe-Category"] | split: ',' %}
+            {% assign selected_categories = '' %}
+
+            {% for category in categories %}
+              {% assign pair = category | split: ':' %}
+              {% if pair[1] == 'true' %}
+                {% if selected_categories != '' %}
+                  {% assign selected_categories = selected_categories | append: ', ' %}
+                {% endif %}
+                {% assign selected_categories = selected_categories | append: pair[0] | replace: '-', ' ' | capitalize %}
+              {% endif %}
+            {% endfor %}
+
+            {% if selected_categories != '' %}
+              <li class="text-capitalize">
+                <span class="d-block">Recipe Category:</span>
+                {{ selected_categories }}
+              </li>
+            {% endif %}
+
+            {% if article.metafields["global"]["Products-in-this-recipe"] %}
+              <li>
+                <span class="d-block">Products in this recipe:</span>
+                {{ article.metafields["global"]["Products-in-this-recipe"] }}
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-11 mx-auto">
+          <div class="inner">
+            <h2 class="h2">
+              <strong>You Will Need:</strong>
+            </h2>
+            <div class="row gx-lg-5">
+              <div class="col-sm-12">
+                {% if article.metafields["global"]["You-Will-Need-1---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-1---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-1---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-1---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-2---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-2---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-2---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-2---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-3---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-3---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-3---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-3---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-4---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-4---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-4---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-4---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-5---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-5---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-5---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-5---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-6---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-6---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-6---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-6---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+                {% if article.metafields["global"]["You-Will-Need-7---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-7---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-7---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-7---Ingredients"] }}
+                  </div>
+                {% endif %}
+
+
+                {% if article.metafields["global"]["You-Will-Need-8---Ingredients"] %}
+                  <div class="inner-widget">
+                    {% if article.metafields["global"]["You-Will-Need-8---Title"] %}
+                      <span class="d-block title">{{ article.metafields["global"]["You-Will-Need-8---Title"] }}</span>
+                    {% endif %}
+                    {{ article.metafields["global"]["You-Will-Need-8---Ingredients"] }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if article.metafields["global"]["Inas-Tip"] %}
+              <div class="inner-widget">
+                <span class="d-block title">Ina’s Tip</span>
+                {{ article.metafields["global"]["Inas-Tip"] }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="print-only">
+        <div class="method">
+          <h3 class="h2 mb-4">
+            <strong>Method:</strong>
+          </h3>
+          {{ article.content }}
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",

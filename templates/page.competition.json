@@ -11,6 +11,7 @@
   "sections": {
     "about_info_mPKt8C": {
       "type": "about-info",
+      "disabled": true,
       "settings": {
         "style": "style-1",
         "about_bg_image": "shopify://shop_images/Background-Image-Events.jpg",
@@ -35,6 +36,7 @@
             "image": "shopify://shop_images/Ina-Paarman-Book-Signing.jpg",
             "tagline": "12 - 23 November 2024",
             "heading": "Competition Details",
+            "header_tag": false,
             "bquote": "Stand a chance to win a signed copy of Ina Paarman's 'My Favourite Recipes' Cookbook.",
             "description": "<p>lsjf slkdfj sdlfkj sdlfkjs dlfkjsldfkj sdlfkj sdlkfjsd lfksdj flksjd f</p>",
             "cta_text": "Enter",
@@ -47,20 +49,20 @@
       ],
       "settings": {}
     },
-    "newsletter_QdBFHk": {
-      "type": "newsletter",
+    "newsletter_mailblaze_bFAnj3": {
+      "type": "newsletter-mailblaze",
+      "name": "Newsletter Mailblaze",
       "settings": {
-        "style": "style-2",
-        "sub_heading": "- Sign Up -",
+        "style": "style-1",
+        "sub_heading": "- sign up -",
         "main_heading": "Ina Paarman’s Kitchen Newsletter",
-        "description": "<p>Sign up for our newsletter to be the first to receive news about our latest competitions and other events.</p>",
-        "background_image": "shopify://shop_images/Background-Image-Newsletter.png"
+        "description": ""
       }
     }
   },
   "order": [
     "about_info_mPKt8C",
     "our_story_NB6rJR",
-    "newsletter_QdBFHk"
+    "newsletter_mailblaze_bFAnj3"
   ]
 }

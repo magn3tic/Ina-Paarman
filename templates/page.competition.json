@@ -59,6 +59,7 @@
         },
         "content_469pJY": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "style": "style-1",
             "remove_space": false,
@@ -74,7 +75,6 @@
         },
         "content_C9UGgJ": {
           "type": "content",
-          "disabled": true,
           "settings": {
             "style": "style-1",
             "remove_space": false,

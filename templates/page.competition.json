@@ -83,7 +83,7 @@
             "heading": "Enter To Win!",
             "header_tag": false,
             "bquote": "Flavour Bomb Competition",
-            "description": "<h3><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</strong></h3>",
+            "description": "<h4><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</strong></h4>",
             "cta_text": "",
             "cta_link": ""
           }
@@ -95,7 +95,7 @@
         "content_C9UGgJ"
       ],
       "custom_css": [
-        "p,h3,blockquote {color: #fff;}"
+        "p,h3,h4,blockquote {color: #fff;}"
       ],
       "name": "Competition Header Red",
       "settings": {}

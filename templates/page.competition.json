@@ -101,68 +101,6 @@
       "name": "Competition Header Red",
       "settings": {}
     },
-    "competition_header_beige_JNm4XA": {
-      "type": "competition-header-beige",
-      "blocks": {
-        "content_jdRFm4": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag.jpg",
-            "tagline": "Enter –",
-            "heading": "Flavour Bomb Competition",
-            "header_tag": false,
-            "bquote": "November 2025",
-            "description": "<h3><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</strong></h3>",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "content_njgdK7": {
-          "type": "content",
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Wider.jpg",
-            "tagline": "Enter –",
-            "heading": "Flavour Bomb Competition",
-            "header_tag": false,
-            "bquote": "November 2025",
-            "description": "<h3><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</strong></h3>",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "content_nX383V": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
-            "tagline": "November 2025 –",
-            "heading": "Enter To Win!",
-            "header_tag": false,
-            "bquote": "Flavour Bomb Competition",
-            "description": "<h3><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</strong></h3>",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_jdRFm4",
-        "content_njgdK7",
-        "content_nX383V"
-      ],
-      "custom_css": [
-        "p,h3,blockquote {color: #fff;}"
-      ],
-      "name": "Competition Header Beige",
-      "settings": {}
-    },
     "competition_form_zAGimF": {
       "type": "competition-form",
       "name": "Competition Form",
@@ -178,7 +116,6 @@
     "about_info_mPKt8C",
     "blog_header_aPy7ae",
     "competition_header_red_fNeJ4H",
-    "competition_header_beige_JNm4XA",
     "competition_form_zAGimF"
   ]
 }

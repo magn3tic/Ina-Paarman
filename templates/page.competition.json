@@ -102,6 +102,9 @@
         "content_469pJY",
         "content_C9UGgJ"
       ],
+      "custom_css": [
+        "p,h3,blockquote {color: #fff;}"
+      ],
       "name": "Competition Header Red",
       "settings": {}
     },
@@ -158,6 +161,9 @@
         "content_jdRFm4",
         "content_njgdK7",
         "content_nX383V"
+      ],
+      "custom_css": [
+        "p,h3,blockquote {color: #fff}"
       ],
       "name": "Competition Header Beige",
       "settings": {}

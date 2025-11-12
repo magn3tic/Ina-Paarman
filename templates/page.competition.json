@@ -77,6 +77,9 @@
         "content_C64Kwj",
         "content_j9DaGD"
       ],
+      "custom_css": [
+        "p,h3,blockquote {color: #fff;}"
+      ],
       "name": "Competition Header",
       "settings": {}
     },

@@ -76,47 +76,47 @@
                     {% assign selected_categories = '' %}
 
                     {% assign recipe_labels = "
-                                                                                                                                                                                    meat-beef||Meat: Beef,
-                                                                                                                                                                                    meat-lamb||Meat: Lamb,
-                                                                                                                                                                                    meat-pork||Meat: Pork,
-                                                                                                                                                                                    meat-game-venison||Meat: Game & Venison,
-                                                                                                                                                                                    poultry-chicken||Poultry: Chicken,
-                                                                                                                                                                                    poultry-duck||Poultry: Duck,
-                                                                                                                                                                                    poultry-turkey||Poultry: Turkey,
-                                                                                                                                                                                    fish-seafood||Fish & Seafood,
-                                                                                                                                                                                    pasta||Pasta,
-                                                                                                                                                                                    pies-pastries||Pies & Pastries,
-                                                                                                                                                                                    quiches||Quiches,
-                                                                                                                                                                                    salads||Salads,
-                                                                                                                                                                                    rice-grains||Rice & Grains,
-                                                                                                                                                                                    lentils-beans||Lentils & Beans,
-                                                                                                                                                                                    dessert-hot||Dessert: Hot,
-                                                                                                                                                                                    dessert-cold||Dessert: Cold,
-                                                                                                                                                                                    baking||Baking,
-                                                                                                                                                                                    bread||Bread,
-                                                                                                                                                                                    cakes||Cakes,
-                                                                                                                                                                                    tarts||Tarts,
-                                                                                                                                                                                    muffins-cupcakes-brownies-and-scones||Muffins, Cupcakes, Brownies & Scones,
-                                                                                                                                                                                    biscuits-and-rusks||Biscuits & Rusks,
-                                                                                                                                                                                    batters-pancakes-wraps||Batters, Pancakes, Wraps,
-                                                                                                                                                                                    pizza||Pizza,
-                                                                                                                                                                                    breakfast-eggs||Breakfast & Eggs,
-                                                                                                                                                                                    soup||Soup,
-                                                                                                                                                                                    starters||Starters,
-                                                                                                                                                                                    pates-spreads||Patés & Spreads,
-                                                                                                                                                                                    preserves-and-pickles||Preserves & Pickles,
-                                                                                                                                                                                    snacks-dips||Snacks & Dips,
-                                                                                                                                                                                    sambals||Sambals,
-                                                                                                                                                                                    beverages||Beverages,
-                                                                                                                                                                                    gluten-free||Gluten-Free,
-                                                                                                                                                                                    vegetarian-main||Vegetarian: Main,
-                                                                                                                                                                                    vegetarian-side||Vegetarian: Side,
-                                                                                                                                                                                    vegan||Vegan,
-                                                                                                                                                                                    traditional-homegrown-south-african-recipes||Traditional Homegrown South African Recipes,
-                                                                                                                                                                                    weeknight-winner||Weeknight Winner,
-                                                                                                                                                                                    inas-choice||Ina’s Choice,
-                                                                                                                                                                                    junior-chef||Junior Chef
-                                                                                                                                                                                    " | strip | split: ',' %}
+                                                                                                                                                                                                          meat-beef||Meat: Beef,
+                                                                                                                                                                                                          meat-lamb||Meat: Lamb,
+                                                                                                                                                                                                          meat-pork||Meat: Pork,
+                                                                                                                                                                                                          meat-game-venison||Meat: Game & Venison,
+                                                                                                                                                                                                          poultry-chicken||Poultry: Chicken,
+                                                                                                                                                                                                          poultry-duck||Poultry: Duck,
+                                                                                                                                                                                                          poultry-turkey||Poultry: Turkey,
+                                                                                                                                                                                                          fish-seafood||Fish & Seafood,
+                                                                                                                                                                                                          pasta||Pasta,
+                                                                                                                                                                                                          pies-pastries||Pies & Pastries,
+                                                                                                                                                                                                          quiches||Quiches,
+                                                                                                                                                                                                          salads||Salads,
+                                                                                                                                                                                                          rice-grains||Rice & Grains,
+                                                                                                                                                                                                          lentils-beans||Lentils & Beans,
+                                                                                                                                                                                                          dessert-hot||Dessert: Hot,
+                                                                                                                                                                                                          dessert-cold||Dessert: Cold,
+                                                                                                                                                                                                          baking||Baking,
+                                                                                                                                                                                                          bread||Bread,
+                                                                                                                                                                                                          cakes||Cakes,
+                                                                                                                                                                                                          tarts||Tarts,
+                                                                                                                                                                                                          muffins-cupcakes-brownies-and-scones||Muffins, Cupcakes, Brownies & Scones,
+                                                                                                                                                                                                          biscuits-and-rusks||Biscuits & Rusks,
+                                                                                                                                                                                                          batters-pancakes-wraps||Batters, Pancakes, Wraps,
+                                                                                                                                                                                                          pizza||Pizza,
+                                                                                                                                                                                                          breakfast-eggs||Breakfast & Eggs,
+                                                                                                                                                                                                          soup||Soup,
+                                                                                                                                                                                                          starters||Starters,
+                                                                                                                                                                                                          pates-spreads||Patés & Spreads,
+                                                                                                                                                                                                          preserves-and-pickles||Preserves & Pickles,
+                                                                                                                                                                                                          snacks-dips||Snacks & Dips,
+                                                                                                                                                                                                          sambals||Sambals,
+                                                                                                                                                                                                          beverages||Beverages,
+                                                                                                                                                                                                          gluten-free||Gluten-Free,
+                                                                                                                                                                                                          vegetarian-main||Vegetarian: Main,
+                                                                                                                                                                                                          vegetarian-side||Vegetarian: Side,
+                                                                                                                                                                                                          vegan||Vegan,
+                                                                                                                                                                                                          traditional-homegrown-south-african-recipes||Traditional Homegrown South African Recipes,
+                                                                                                                                                                                                          weeknight-winner||Weeknight Winner,
+                                                                                                                                                                                                          inas-choice||Ina’s Choice,
+                                                                                                                                                                                                          junior-chef||Junior Chef
+                                                                                                                                                                                                          " | strip | split: ',' %}
 
                     {% for category in categories %}
                       {% assign pair = category | split: ':' %}
@@ -203,8 +203,8 @@
       margin:       10,                   // mm
       filename:     '{{ article.title | handleize }}.pdf',       // nombre final
       image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      html2canvas:  { scale: 1, useCORS: true },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
     };
 
     // Esto dispara la descarga directa (sin diálogo de “Guardar como...”)
@@ -497,7 +497,10 @@
     {% assign thumbnail_url = "https://img.youtube.com/vi/" | append: video_id | append: "/maxresdefault.jpg" %}
 
     <!-- Content Start Video -->
-    <section class="content-area pt-0" style="margin-top:-55px">
+    <section
+      class="content-area pt-0"
+      style="margin-top:-55px"
+      data-html2canvas-ignore>
       <div class="container">
         <div class="row">
           <div class="col-lg-11 mx-auto">

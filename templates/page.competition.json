@@ -53,17 +53,29 @@
       "type": "blog-header",
       "name": "General Header",
       "settings": {
-        "sub_heading": "The Ina Paarman Blog:",
-        "heading": "Great Food, Great Living",
-        "paragraph_1": "",
+        "background_image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag.jpg",
+        "sub_heading": "Flavour Bomb",
+        "heading": "",
+        "paragraph_1": "<p>The first ten people to enter via the form below will win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</p>",
         "cta_text": "",
         "cta_link": ""
+      }
+    },
+    "competition_form_zAGimF": {
+      "type": "competition-form",
+      "name": "Competition Form",
+      "settings": {
+        "style": "style-1",
+        "sub_heading": "- Enter -",
+        "main_heading": "Ina Paarman's Kitchen Competition",
+        "description": ""
       }
     }
   },
   "order": [
     "about_info_mPKt8C",
     "our_story_NB6rJR",
-    "blog_header_aPy7ae"
+    "blog_header_aPy7ae",
+    "competition_form_zAGimF"
   ]
 }

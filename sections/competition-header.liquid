@@ -16,7 +16,7 @@
       {% if block.type == "content" %}
         {% if block.settings.style == "style-1" %}
           <section class="content-area {% if block.settings.remove_space %}pt-0{% else %}pt_220{% endif %} ">
-              <div class="container">
+              <div class="container background-color: #ee3124 ">
                   <div class="row align-items-lg-center">
                       <div class="col-sm-6">
                           <div class="content-img">
@@ -83,7 +83,7 @@
         {% elsif block.settings.style == "style-3" %}
           <section class="content-area relative pt-0">
               {% if block.settings.image != blank %}
-                  <div class="d-none d-lg-block" style="background-color: #ee3124 background: url({{ block.settings.image | image_url }}) no-repeat scroll center center /cover"></div>
+                  <div class="half_bg d-none d-lg-block" style="background: url({{ block.settings.image | image_url }}) no-repeat scroll center center /cover"></div>
               {% endif %}         
               <div class="container">
                   <div class="row">

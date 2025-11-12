@@ -1,107 +1,314 @@
 {% liquid
   assign variants_json = product.variants | json
+  assign current_variant = product.selected_or_first_available_variant
 %}
 <!-- Content Start -->
 <section class="product-details-area">
-    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="product_details_shape" >
+    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="product_details_shape" >
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mx-auto">
                 <ul class="product_social">
                     <li>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ product.url }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-green.svg" alt="Facebook">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook-green.svg" alt="Facebook">
                         </a>
                     </li>                    
                     <li>
                         <a href="https://www.instagram.com/?url={{ shop.url }}{{ product.url }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-green.svg" alt="Instagram">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-green.svg" alt="Instagram">
                         </a>
                     </li>                    
                     <li>
                         <a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ product.url }}&text={{ product.title }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-green.svg" alt="Twitter">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/twitter-green.svg" alt="Twitter">
                         </a>
                     </li>                    
                     <li>
                         <a href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | img_url: '1024x1024' }}&description={{ product.title }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-green.svg" alt="Pinterest">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-green.svg" alt="Pinterest">
                         </a>
                     </li>                    
                     <li>
                         <a href="mailto:?subject={{ product.title }}&body=Check out this product: {{ shop.url }}{{ product.url }}" target="_blank">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-green.svg" alt="Email">
+                            <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-green.svg" alt="Email">
                         </a>
                     </li>
                 </ul>          
-                <div class="product-single-box">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="half_bg">      
-                                <div>
-                                {% if product.images.size > 0 %}
-                                <div class="product-slider">
-                                    {% for image in product.images %}
-                                        <div class="ps-slide"><img src="{{ image | image_url }}" alt="{{ product.title }}"></div>
-                                    {% endfor %}
+                <div class="product-variant-selector" data-variants="{{ variants_json | escape }}" data-current-variant="{{ current_variant.id }}">
+                        <div class="product-single-box">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="half_bg">      
+                                        <div>
+                                        {% if product.images.size > 0 %}
+                                        <div class="product-slider">
+                                            {% for image in product.images %}
+                                                <div class="ps-slide"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ image | image_url }}" alt="{{ product.title }}"></div>
+                                            {% endfor %}
+                                        </div>
+                                        {% endif %}
+                                        </div>
+                                    </div>
                                 </div>
-                                {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="product-details">
-                                <div class="content">
-                                     {% assign product_category = product.metafields.custom.product_category %}
-                                     <span class="d-block sub_heading"> {{ product_category }}  </span>
-                                    {% if product.title != blank %}
-                                        <h1 class="h1"><strong>{{ product.title }}</strong></h1>
-                                    {% endif %}
+                                <div class="col-sm-6">
+                                    <div class="product-details">
+                                        <div class="content">
+                                             {% assign product_category = product.metafields.custom.product_category %}
+                                             <span class="d-block sub_heading"> {{ product_category }}  </span>
+                                            {% if product.title != blank %}
+                                                <h1 class="h1"><strong>{{ product.title }}</strong></h1>
+                                            {% endif %}
 
-                                    <div class="variant-meta-info">
-                                    {% for variant in product.variants %}
-                                        {% assign weight_metafield = variant.metafields.custom.weight %}
-                                        {% assign volume_metafield = variant.metafields.custom.volume %}
-                                        {% assign units_metafield = variant.metafields.custom.units %}
-                                        {% assign dimensions_metafield = variant.metafields.custom.dimensions %}
-                                        {% if weight_metafield != blank %}
-                                            {% assign weight_value = weight_metafield.value %}
-                                            {% assign weight_unit = weight_metafield.unit %}
-                                            <div class="variantmetagrams">{{ weight_value }} {{ weight_unit }}</div>
-                                        {% endif %}
-                                        {% if volume_metafield != blank %}    
-                                            {% assign volume_value = volume_metafield.value %}
-                                            {% assign volume_unit = volume_metafield.unit %}
-                                          <div class="variantmetagrams">{{ volume_value }} {{ volume_unit }}</div>
-                                        {% endif %}
-                                        {% if units_value != blank %}
-                                            {% assign units_value = units_metafield.value %}
-                                            {% assign units_unit = units_metafield.unit %}
-                                            <div class="variantmeta">{{ units_value }} Units</div>
-                                        {% endif %}
-                                        {% if dimensions_value != blank %}
-                                            {% assign dimensions_value = dimensions_metafield.value %}
-                                            {% assign dimensions_unit = dimensions_metafield.unit %}
-                                          <div class="variantmeta">{{ dimensions_value }} {{ dimensions_unit }}</div>
-                                        {% endif %}
-                                    {% endfor %}
-                                    </div>    
-                                    {% if product.description != blank %}
-                                        {{ product.description }}
-                                    {% endif %}
+
+
+                                            {% if product.has_only_default_variant %}
+                                            <!-- Dynamic Variant Meta Info -->
+                                            <div class="variant-meta-info" id="variant-meta-info">
+                                                {% assign weight_metafield = current_variant.metafields.custom.weight %}
+                                                {% assign volume_metafield = current_variant.metafields.custom.volume %}
+                                                {% assign units_metafield = current_variant.metafields.custom.units %}
+                                                {% assign dimensions_metafield = current_variant.metafields.custom.dimensions %}
+                                                {% if weight_metafield != blank %}
+                                                    {% assign weight_value = weight_metafield.value %}
+                                                    {% assign weight_unit = weight_metafield.unit %}
+                                                    <div class="variantmetagrams">{{ weight_value }} {{ weight_unit }}</div>
+                                                {% endif %}
+                                                {% if volume_metafield != blank %}    
+                                                    {% assign volume_value = volume_metafield.value %}
+                                                    {% assign volume_unit = volume_metafield.unit %}
+                                                  <div class="variantmetagrams">{{ volume_value }} {{ volume_unit }}</div>
+                                                {% endif %}
+                                                {% if units_metafield != blank %}
+                                                    {% assign units_value = units_metafield.value %}
+                                                    {% assign units_unit = units_metafield.unit %}
+                                                    <div class="variantmeta">{{ units_value }}</div>
+                                                {% endif %}
+                                                {% if dimensions_metafield != blank %}
+                                                    {% assign dimensions_value = dimensions_metafield.value %}
+                                                    {% assign dimensions_unit = dimensions_metafield.unit %}
+                                                  <div class="variantmeta">{{ dimensions_value }} {{ dimensions_unit }}</div>
+                                                {% endif %}
+                                            </div>    
+
+                                            {% else %}
+
+                                            <!-- Variant Selection -->
+                                                <div class="product-options">
+                                                    {% for option in product.options_with_values %}
+                                                        <div class="option-group mb-3">
+                                                            {% comment %} <p class="mb-2"><strong>{{ option.name }}:</strong></p> {% endcomment %}
+                                                            <div class="variant-meta-info">
+                                                                {% for value in option.values %}
+                                                                    {% comment %} Extract weight from "Container: Weight" format {% endcomment %}
+                                                                    {% assign value_parts = value | split: ':' %}
+                                                                    {% if value_parts.size > 1 %}
+                                                                        {% assign display_value = value_parts[1] | strip %}
+                                                                    {% else %}
+                                                                        {% assign display_value = value %}
+                                                                    {% endif %}
+                                                                    
+                                                                    <div 
+                                                                        class="variantmetagrams variant-option-btn"
+                                                                        data-option-position="{{ option.position }}"
+                                                                        data-option-value="{{ value | escape }}"
+                                                                        {% if option.selected_value == value %}data-selected="true"{% endif %}
+                                                                        style="cursor: pointer;">
+                                                                        {{ display_value }}
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
+
+
+
+                                            {% if product.description != blank %}
+                                                {{ product.description }}
+                                            {% endif %}
+                                        </div>
+                                        <!-- Dynamic SKU Display -->
+                                        <span class="d-block sku" id="variant-sku"><strong>SKU:</strong> <span class="sku-value">{{ current_variant.sku }}</span></span>
+                                    </div>
                                 </div>
-                                {% if product.variants.first.sku != blank %}
-                                    <span class="d-block sku"><strong>SKU:</strong> {{ product.variants.first.sku }}</span>
-                                {% endif %}
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- Content End -->
+
+<style>
+/* Variant selection styles */
+.variantmetagrams.variant-option-btn {
+  transition: all 0.3s ease;
+  opacity:0.65;
+}
+
+.variantmetagrams.variant-option-btn:hover {
+  opacity:1;
+}
+
+.variantmetagrams.variant-option-btn.active, .variantmetagrams.variant-option-btn.active:hover {
+    opacity:1;
+}
+</style>
+
+<script>
+// Simple variant selection without cart functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const variantSelector = document.querySelector('.product-variant-selector');
+  if (!variantSelector) return;
+  
+  const variants = JSON.parse(variantSelector.dataset.variants);
+  const optionButtons = variantSelector.querySelectorAll('.variant-option-btn');
+  const skuElement = document.querySelector('#variant-sku .sku-value');
+  const metaInfoContainer = document.querySelector('#variant-meta-info');
+  
+  // Track selected options
+  let selectedOptions = {};
+  
+  // Initialize selected options from current variant
+  const currentVariantId = parseInt(variantSelector.dataset.currentVariant);
+  const currentVariant = variants.find(v => v.id === currentVariantId);
+  if (currentVariant) {
+    currentVariant.options.forEach((option, index) => {
+      selectedOptions[index + 1] = option;
+    });
+  }
+  
+  // Set initial button states
+  optionButtons.forEach(btn => {
+    const position = parseInt(btn.dataset.optionPosition);
+    const value = btn.dataset.optionValue;
+    if (selectedOptions[position] === value) {
+      btn.classList.add('active');
+    }
+  });
+  
+  // Initialize slideshow - show first slide by default
+  if (variants.length > 1) {
+    const currentVariantIndex = variants.findIndex(v => v.id === currentVariantId);
+    switchToSlide(currentVariantIndex >= 0 ? currentVariantIndex : 0);
+  }
+  
+  // Handle option selection
+  optionButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const position = parseInt(this.dataset.optionPosition);
+      const value = this.dataset.optionValue;
+      
+      // Update selected options
+      selectedOptions[position] = value;
+      
+      // Update button states for this option group
+      const samePositionBtns = variantSelector.querySelectorAll(`[data-option-position="${position}"]`);
+      samePositionBtns.forEach(b => {
+        b.classList.remove('active');
+      });
+      
+      this.classList.add('active');
+      
+      // Find matching variant
+      const selectedOptionsArray = Object.keys(selectedOptions)
+        .sort((a, b) => parseInt(a) - parseInt(b))
+        .map(key => selectedOptions[key]);
+      
+      const matchingVariant = variants.find(variant => 
+        JSON.stringify(variant.options) === JSON.stringify(selectedOptionsArray)
+      );
+      
+      if (matchingVariant) {
+        updateVariantDisplay(matchingVariant);
+        
+        // Switch to corresponding slide if multiple variants
+        if (variants.length > 1) {
+          const variantIndex = variants.findIndex(v => v.id === matchingVariant.id);
+          switchToSlide(variantIndex);
+        }
+        
+        // Dispatch custom event for media gallery
+        window.dispatchEvent(new CustomEvent('kt.product.variant.change', {
+          detail: matchingVariant
+        }));
+      }
+    });
+  });
+  
+  function switchToSlide(slideIndex) {
+    const slider = document.querySelector('.product-slider');
+    if (!slider) return;
+    
+    // Primary method: trigger dot click (works reliably with Slick)
+    const dots = document.querySelectorAll('.product-slider .slick-dots button');
+    if (dots.length > slideIndex && dots[slideIndex]) {
+      dots[slideIndex].click();
+      return;
+    }
+    
+    // Fallback: try Slick API if jQuery and slick are available
+    if (typeof $ !== 'undefined' && $.fn.slick && slider.classList.contains('slick-initialized')) {
+      try {
+        $(slider).slick('slickGoTo', slideIndex);
+      } catch (error) {
+        console.log('Slick API not available, using dot navigation');
+      }
+    }
+  }
+  
+  function updateVariantDisplay(variant) {
+    // Update SKU
+    if (skuElement && variant.sku) {
+      skuElement.textContent = variant.sku;
+    }
+    
+    // Update variant meta information
+    if (metaInfoContainer) {
+      metaInfoContainer.innerHTML = '';
+      
+      let metaHtml = '';
+      
+      // Check for weight metafield
+      if (variant.metafields && variant.metafields.custom && variant.metafields.custom.weight) {
+        const weight = variant.metafields.custom.weight;
+        if (weight.value && weight.unit) {
+          metaHtml += `<div class="variantmetagrams">${weight.value} ${weight.unit}</div>`;
+        }
+      }
+      
+      // Check for volume metafield
+      if (variant.metafields && variant.metafields.custom && variant.metafields.custom.volume) {
+        const volume = variant.metafields.custom.volume;
+        if (volume.value && volume.unit) {
+          metaHtml += `<div class="variantmetagrams">${volume.value} ${volume.unit}</div>`;
+        }
+      }
+      
+      // Check for units metafield
+      if (variant.metafields && variant.metafields.custom && variant.metafields.custom.units) {
+        const units = variant.metafields.custom.units;
+        if (units.value) {
+          metaHtml += `<div class="variantmeta">${units.value} Units</div>`;
+        }
+      }
+      
+      // Check for dimensions metafield
+      if (variant.metafields && variant.metafields.custom && variant.metafields.custom.dimensions) {
+        const dimensions = variant.metafields.custom.dimensions;
+        if (dimensions.value && dimensions.unit) {
+          metaHtml += `<div class="variantmeta">${dimensions.value} ${dimensions.unit}</div>`;
+        }
+      }
+      
+      metaInfoContainer.innerHTML = metaHtml;
+    }
+  }
+});
+</script>
 {% if product.metafields.custom.ingredients.value %}
 <!-- Content Start -->
 <section class="content-area pt_40 pb-0">
@@ -111,79 +318,111 @@
                 <div class="product_tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">                 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="p1-tab" data-bs-toggle="tab" data-bs-target="#p1" type="button" role="tab" aria-controls="p1" aria-selected="true"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/ingredients-icon.svg" alt="icon"><span class="product-tabtext">Ingredients</span></button>
+                            <button class="nav-link active" id="p1-tab" data-bs-toggle="tab" data-bs-target="#p1" type="button" role="tab" aria-controls="p1" aria-selected="true"><span class="product-tabtext">Ingredients</span></button>
                         </li>                         
                         {% if product.metafields.custom.nutritional-info.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p2-tab" data-bs-toggle="tab" data-bs-target="#p2" type="button" role="tab" aria-controls="p2" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/nutritional-info.svg" alt="icon"><span class="product-tabtext">Nutritional Info</span></button>
+                            <button class="nav-link" id="p2-tab" data-bs-toggle="tab" data-bs-target="#p2" type="button" role="tab" aria-controls="p2" aria-selected="false"><span class="product-tabtext">Nutritional Info</span></button>
                         </li>
                         {% endif %}                        
                         {% if product.metafields.custom.allergens.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p3-tab" data-bs-toggle="tab" data-bs-target="#p3" type="button" role="tab" aria-controls="p3" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/allergens-icon.svg" alt="icon"><span class="product-tabtext">Allergens</span></button>
+                            <button class="nav-link" id="p3-tab" data-bs-toggle="tab" data-bs-target="#p3" type="button" role="tab" aria-controls="p3" aria-selected="false"><span class="product-tabtext">Allergens</span></button>
                         </li>
-                        {% endif %}                      
+                        {% endif %}    
+                      {% if product.metafields.custom.additional-info.value %}
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="p4-tab" data-bs-toggle="tab" data-bs-target="#p4" type="button" role="tab" aria-controls="p4" aria-selected="false"><span class="product-tabtext">Dietary Info</span></button>
+                        </li>                          
+                        {% endif %}
+                      {% if product.metafields.custom.additional-dietary-info-text.value %}
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="p5-tab" data-bs-toggle="tab" data-bs-target="#p5" type="button" role="tab" aria-controls="p5" aria-selected="false"><span class="product-tabtext">Dietary Info</span></button>
+                        </li>                          
+                        {% endif %}
                         {% if product.metafields.custom.additional-ingredients-required.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p4-tab" data-bs-toggle="tab" data-bs-target="#p4" type="button" role="tab" aria-controls="p4" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Ingredients_required.svg?v=1729890296" alt="icon"><span class="product-tabtext">Ingredients Required</span></button>
+                            <button class="nav-link" id="p6-tab" data-bs-toggle="tab" data-bs-target="#p6" type="button" role="tab" aria-controls="p6" aria-selected="false"><span class="product-tabtext">Ingredients Required</span></button>
                         </li>                          
                         {% endif %}  
                         {% if product.metafields.custom.equipment-required.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p5-tab" data-bs-toggle="tab" data-bs-target="#p5" type="button" role="tab" aria-controls="p5" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Equipment_required.svg?v=1729890296" alt="icon"><span class="product-tabtext">Equipment Required</span></button>
+                            <button class="nav-link" id="p7-tab" data-bs-toggle="tab" data-bs-target="#p7" type="button" role="tab" aria-controls="p7" aria-selected="false"><span class="product-tabtext">Equipment Required</span></button>
                         </li>                          
                         {% endif %}  
                         {% if product.metafields.custom.temperature-duration.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p6-tab" data-bs-toggle="tab" data-bs-target="#p6" type="button" role="tab" aria-controls="p6" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Temperature_duration.svg?v=1729890296" alt="icon"><span class="product-tabtext">Temperature & Duration</span></button>
+                            <button class="nav-link" id="p8-tab" data-bs-toggle="tab" data-bs-target="#p8" type="button" role="tab" aria-controls="p8" aria-selected="false"><span class="product-tabtext">Temperature & Duration</span></button>
                         </li>                          
                         {% endif %}  
                         {% if product.metafields.custom.instructions.value %}
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="p7-tab" data-bs-toggle="tab" data-bs-target="#p7" type="button" role="tab" aria-controls="p7" aria-selected="false"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Instructions.svg?v=1729890296" alt="icon"><span class="product-tabtext">Instructions</span></button>
+                            <button class="nav-link" id="p9-tab" data-bs-toggle="tab" data-bs-target="#p9" type="button" role="tab" aria-controls="p9" aria-selected="false"><span class="product-tabtext">Instructions</span></button>
                         </li>                          
-                        {% endif %}                      
-                    </ul>             
+                        {% endif %}
+                    </ul>  
+                    
                     <div class="tab-content" id="myTabContent">
                         {% if product.metafields.custom.ingredients.value %}
                         <div class="tab-pane fade show active" id="p1" role="tabpanel" aria-labelledby="p1-tab">
                             <div class="product-tab-content">
-                              {% if product.metafields.custom.ingredients %}
-                                  <div class="product-ingredients">
-                                      {% assign ingredients = product.metafields.custom.ingredients.value %}
-                                      {% for ingredient in ingredients %}
-                                          <span class="red_bullets"></span> {{ ingredient }}&nbsp;&nbsp;
-                                      {% endfor %}
-                                  </div>
-                              {% endif %}
+                                {% if product.metafields.custom.ingredients %}
+                                <div class="product-ingredients">
+                                    {% assign ingredients = product.metafields.custom.ingredients.value %}
+                                    {% for ingredient in ingredients %}
+                                    <li><span class="red_bullets"></span> {{ ingredient }}</li>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
-                        {% endif %}                    
+                        {% endif %}
                         {% if product.metafields.custom.nutritional-info.value %}
                         <div class="tab-pane fade" id="p2" role="tabpanel" aria-labelledby="p2-tab">
                             <div class="product-tab-content">
                                 {% if product.metafields.custom.nutritional-info %}
-                                    <img src="{{ product.metafields.custom.nutritional-info.value | image_url }}" alt="Nutritional Info">
-                                {% endif %}                              
+                                <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ product.metafields.custom.nutritional-info.value | image_url }}" alt="Nutritional Info">
+                                {% endif %}
                             </div>
                         </div>
-                        {% endif %}                        
+                        {% endif %}
                         {% if product.metafields.custom.allergens.value %}
                         <div class="tab-pane fade" id="p3" role="tabpanel" aria-labelledby="p3-tab">
                             <div class="product-tab-content">
-                              {% if product.metafields.custom.allergens %}
-                                  <ul>
-                                      {% assign allergens = product.metafields.custom.allergens.value %}
-                                      {% for allergen in allergens %}
-                                          <li><span class="red_bullets"></span> {{ allergen }}</li>
-                                      {% endfor %}
-                                  </ul>
-                              {% endif %}
+                                {% if product.metafields.custom.allergens %}
+                                <ul>
+                                    {% assign allergens = product.metafields.custom.allergens.value %}
+                                    {% for allergen in allergens %}
+                                    <li><span class="red_bullets"></span> {{ allergen }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
                             </div>
                         </div>
-                        {% endif %}                      
-                        {% if product.metafields.custom.additional-ingredients-required.value %}
+                        {% endif %}
+                        {% if product.metafields.custom.additional-info.value %}
                         <div class="tab-pane fade" id="p4" role="tabpanel" aria-labelledby="p4-tab">
+                            <div class="product-tab-content">
+                                {% if product.metafields.custom.additional-info %}
+                                <ul>
+                                    {% assign info = product.metafields.custom.additional-info.value %}
+                                    {% for info in info %}
+                                    <li><span class="red_bullets"></span> {{ info }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if product.metafields.custom.additional-dietary-info-text.value %}
+                        <div class="tab-pane fade" id="p5" role="tabpanel" aria-labelledby="p5-tab">
+                            <div class="product-tab-content">
+                                {{ product.metafields.custom.additional-dietary-info-text | metafield_tag }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if product.metafields.custom.additional-ingredients-required.value %}
+                        <div class="tab-pane fade" id="p6" role="tabpanel" aria-labelledby="p6-tab">
                             <div class="product-tab-content">
                                 {% if product.metafields.custom.additional-ingredients-required %}
                                   <ul>
@@ -197,7 +436,7 @@
                         </div>                        
                         {% endif %}  
                         {% if product.metafields.custom.equipment-required.value %}
-                        <div class="tab-pane fade" id="p5" role="tabpanel" aria-labelledby="p5-tab">
+                        <div class="tab-pane fade" id="p7" role="tabpanel" aria-labelledby="p7-tab">
                             <div class="product-tab-content">
                               {% if product.metafields.custom.equipment-required %}
                                   <ul>
@@ -211,7 +450,7 @@
                         </div>                       
                         {% endif %}  
                         {% if product.metafields.custom.temperature-duration.value %}
-                        <div class="tab-pane fade" id="p6" role="tabpanel" aria-labelledby="p6-tab">
+                        <div class="tab-pane fade" id="p8" role="tabpanel" aria-labelledby="p8-tab">
                             <div class="product-tab-content">
                               {% if product.metafields.custom.temperature-duration %}
                                   <ul>
@@ -225,7 +464,7 @@
                         </div>                      
                         {% endif %}  
                         {% if product.metafields.custom.instructions.value %}
-                        <div class="tab-pane fade" id="p7" role="tabpanel" aria-labelledby="p7-tab">
+                        <div class="tab-pane fade" id="p9" role="tabpanel" aria-labelledby="p9-tab">
                             <div class="product-tab-content">
                                 {{ product.metafields.custom.instructions | metafield_tag }}
                             </div>
@@ -237,8 +476,8 @@
         </div>
     </div>
 </section>
+{% endif %} 
 <!-- Content End -->
-{% endif %}
 {% if product.metafields.custom.tablepress != blank %}
 <section class="product-table pt-5 pb-0">
   <div class="container">
@@ -266,16 +505,24 @@
   </div>
 </section>
 {% endif %}
-{% if product.metafields.custom.video-embed.value != blank %}
+{% if product.metafields.custom.video.value != blank %}
   <section class="pt-5 pb-0">
     <div class="container">  
-        <div class="text-center mb-4">
-          <h4 class="h2"><strong>Video</strong></h4>
-        </div>
+        
         <div class="row">
-          <div class="col-lg-10 mx-auto">    
+          <div class="col-lg-10 mx-auto">
              <div class="ratio ratio-16x9">
-                {{ product.metafields.custom.video-embed.value }}                  
+                {% if product.metafields.custom.video != blank %}
+                  {% assign youtube_url = product.metafields.custom.video %}
+                  {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
+                  <iframe 
+                    src="https://www.youtube.com/embed/{{ video_id }}?rel=0" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                {% endif %}
              </div>
           </div>
         </div>
@@ -296,7 +543,7 @@
                             {% if article.title contains product.title or article.tags contains product.title %}
                                 <div class="slide">
                                     <a href="{{ article.url }}" class="recipe-gallery">
-                                        <img src="{{ article.featured_image | img_url: '1024x1024' }}" alt="image">
+                                        <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ article.featured_image | img_url: '1024x1024' }}" alt="image">
                                         <span class="d-block title">{{ article.title }}</span>
                                     </a>
                                 </div>
@@ -330,18 +577,19 @@
                         {% for related_product in related_products %}
                             <div class="slide">
                                 <a href="{{ shop.url | append: '/products/' | append: related_product.handle }}" class="related-product">
-                                    <img src="{{ related_product.featured_image | img_url: '500x' }}" alt="{{ related_product.title }}">
+                                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ related_product.featured_image | img_url: '500x' }}" alt="{{ related_product.title }}">
                                     <span class="d-block title">{{ related_product.title }}</span>
                                 </a>
                             </div>
                         {% endfor %}                   
                     {% else %}
                         <!-- Default Related Products (Fallback) -->
-                        {% assign default_related_products = collections['all'].products | limit: 4 %}
+                        {% assign default_related_products = collections['all'].products %}
+                        {% assign default_related_products = default_related_products | slice: 0, 4 %}
                         {% for product in default_related_products %}
                             <div class="slide">
                                 <a href="{{ shop.url | append: '/products/' | append: product.handle }}" class="related-product">
-                                    <img src="{{ product.featured_image | img_url: '500x' }}" alt="{{ product.title }}">
+                                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ product.featured_image | img_url: '500x' }}" alt="{{ product.title }}">
                                     <span class="d-block title">{{ product.title }}</span>
                                     <span class="d-block cta_btn btn_border_default">Shop Now</span>
                                 </a>

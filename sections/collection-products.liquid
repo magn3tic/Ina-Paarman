@@ -1,10 +1,10 @@
 <!-- Content Start -->
 {% if collection.image != _blank %}
 <section class="recipe-banner-area collection alt" style="background: url({{ collection.image | image_url }}) no-repeat scroll top center/cover;">
-  <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
+  <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.webp" alt="image" class="recipe_shape">
 {% else %}
-    <section class="recipe-banner-area collection alt" style="background: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Header-Image-Collections-F.jpg?v=1729870927') no-repeat top center; background-size: cover;">
-      <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.png" alt="image" class="recipe_shape">
+    <section class="recipe-banner-area collection alt" style="background: url('https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Header-Image-Collections-F.webp?v=1729870927') no-repeat top center; background-size: cover;">
+      <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/recipe-banner-shape.webp" alt="image" class="recipe_shape">
 {% endif %}
 {% if collection.metafields.custom.header_background_video %}
   <div class="header-background-video">
@@ -25,15 +25,15 @@
   {% assign leaflet_url = leaflet_raw | split: '"url":"' | last | split: '"' | first %}
   {% assign leaflet_text = leaflet_raw | split: '"text":"' | last | split: '"' | first %}
   <a href="{{ leaflet_url }}" target="_blank" class="cta_btn btn_default">
-    View Leaflet <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon" />
+    View Leaflet <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon" />
   </a>
 {% endif %}                  
                     <ul class="banner-social">
-                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/fb-white.svg" alt="Share on Facebook"></a></li>
-                        <li><a href="https://www.instagram.com/inapaarmanskitchen" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-white.svg" alt="Share on Instagram"></a></li>
-                        <li><a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/x-white.svg" alt="Share on Twitter"></a></li>
-                        <li><a href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ page.url }}" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-white.svg" alt="Share on Pinterest"></a></li>
-                        <li><a href="mailto:?subject=Check out this recipe&body={{ shop.url }}{{ page.url }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-white.svg" alt="Share via Email"></a></li>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ page.url }}" target="_blank"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/fb-white.svg" alt="Share on Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/inapaarmanskitchen" target="_blank"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram-white.svg" alt="Share on Instagram"></a></li>
+                        <li><a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ page.url }}" target="_blank"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/x-white.svg" alt="Share on Twitter"></a></li>
+                        <li><a href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ page.url }}" target="_blank"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest-white.svg" alt="Share on Pinterest"></a></li>
+                        <li><a href="mailto:?subject=Check out this recipe&body={{ shop.url }}{{ page.url }}"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/email-white.svg" alt="Share via Email"></a></li>
                     </ul>                           
                 </div>
             </div>
@@ -53,7 +53,7 @@
           {% for product in collection.products %}
              <div class="col-md-4 col-lg-3 col-6">
                 <a href="{{ shop.url | append: '/products/' | append: product.handle }}" class="related-product">
-                    <img src="{{ product.featured_image | img_url: '500x' }}" alt="{{ product.title }}">
+                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ product.featured_image | img_url: '500x' }}" alt="{{ product.title }}">
                     <span class="d-block title">{{ product.title }}</span>
                     <span class="d-block cta_btn btn_border_default">View</span>
                 </a>
@@ -63,14 +63,41 @@
        {% render 'pagination', paginate: paginate %}
       {% endif %}
     {% endpaginate %}
-{% if collection.metafields.custom.animation-video %}
-  <div class="ratio ratio-16x9 mb-5">
-    <video autoplay loop>
-      <source src="{{ collection.metafields.custom.animation-video | file_url }}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-{% endif %}     
+
+  {% if collection.metafields.custom['animation-video-youtube'] %}
+    <!-- Use this for Youtube -->
+    {% assign youtube_url = collection.metafields.custom['animation-video-youtube'].value %}
+    {% if youtube_url contains 'youtube.com/watch?v=' %}
+      {% assign video_id = youtube_url | split: 'v=' | last | split: '&' | first %}
+      {% assign embed_url = 'https://www.youtube.com/embed/' | append: video_id | append: '?rel=0' %}
+    {% elsif youtube_url contains 'youtu.be/' %}
+      {% assign video_id = youtube_url | split: 'youtu.be/' | last | split: '?' | first %}
+      {% assign embed_url = 'https://www.youtube.com/embed/' | append: video_id | append: '?rel=0' %}
+    {% else %}
+      {% assign embed_url = youtube_url %}
+      {% if youtube_url contains '?' %}
+        {% assign embed_url = embed_url | append: '&rel=0' %}
+      {% else %}
+        {% assign embed_url = embed_url | append: '?rel=0' %}
+      {% endif %}
+    {% endif %}
+    <div class="ratio ratio-16x9 mb-5">
+      <iframe src="{{ embed_url }}" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </div>
+  {% elsif collection.metafields.custom['animation-video'] %}
+  <!-- Use this for video file -->
+    <div class="ratio ratio-16x9 mb-5">
+      <video autoplay loop muted controls>
+        <source src="{{ collection.metafields.custom['animation-video'] | file_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  {% endif %}  
+    
   </div>
 </section>
 {% schema %}

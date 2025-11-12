@@ -11,6 +11,60 @@
   "type": "footer",
   "name": "Footer Group",
   "sections": {
+    "footer_mailblaze_FDWRGD": {
+      "type": "footer-Mailblaze",
+      "blocks": {
+        "block_1_hKJ3tF": {
+          "type": "block-1",
+          "settings": {
+            "fw_title": "RESOURCES",
+            "f_nav": "footer-resources"
+          }
+        },
+        "block_1_TPgEQp": {
+          "type": "block-1",
+          "settings": {
+            "fw_title": "Recipes",
+            "f_nav": "footer-recipes"
+          }
+        },
+        "block_1_JNTNcf": {
+          "type": "block-1",
+          "settings": {
+            "fw_title": "Connect",
+            "f_nav": "footer-connect"
+          }
+        },
+        "block_2_48xBXr": {
+          "type": "block-2",
+          "settings": {
+            "fw_phone": "+27 (0)21 705 6440",
+            "fw_email": "ina@paarman.co.za",
+            "fw_address": "<p><a href=\"https://maps.app.goo.gl/RMs4q9uH77vexe9D7\" target=\"_blank\" title=\"https://maps.app.goo.gl/RMs4q9uH77vexe9D7\">Unit B7, Diep River Industrial Park Greenville Road Diep River Cape Town 7945</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_1_hKJ3tF",
+        "block_1_TPgEQp",
+        "block_1_JNTNcf",
+        "block_2_48xBXr"
+      ],
+      "name": "Footer Mailblaize",
+      "settings": {
+        "flogo": "shopify://shop_images/logo.webp",
+        "fw_social_facebook": "https://www.facebook.com/inapaarmanskitchen/",
+        "fw_social_instagram": "https://www.instagram.com/inapaarmanskitchen/",
+        "fw_social_tiktok": "https://www.tiktok.com/@inapaarmanskitchen/",
+        "fw_social_pinterest": "https://pinterest.com/inapaarmanskitchen/",
+        "fw_social_youtube": "https://www.youtube.com/@inapaarmanskitchen/",
+        "fw_social_linkedin": "https://www.linkedin.com/company/ina-paarmans-kitchen/",
+        "fw_social_twitter": "https://x.com/inapaarman/",
+        "fw_nl_title": "Subscribe To Our Newsletter",
+        "fw_nl_code": "",
+        "f_legal_nav": "footer"
+      }
+    },
     "footer_eNzqWn": {
       "type": "footer",
       "blocks": {
@@ -50,6 +104,7 @@
         "block_1_dqeJqm",
         "block_2_RJgiKt"
       ],
+      "disabled": true,
       "settings": {
         "flogo": "shopify://shop_images/logo.png",
         "fw_social_facebook": "https://www.facebook.com/inapaarmanskitchen/",
@@ -66,6 +121,7 @@
     }
   },
   "order": [
+    "footer_mailblaze_FDWRGD",
     "footer_eNzqWn"
   ]
 }

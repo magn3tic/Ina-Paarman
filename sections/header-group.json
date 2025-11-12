@@ -1,1 +1,92 @@
-{"type":"header","name":"Header Group","sections":{"navbar_GHVmF9":{"type":"navbar","blocks":{"block_3_NpwYnH":{"type":"block-3","settings":{"link_title":"HOME","nn_link":"https:\/\/paarman.co.za\/"}},"block_1_NbRfLH":{"type":"block-1","settings":{"mm_title":"RECIPES","mm_link":"shopify:\/\/blogs\/all-recipes","mm1_dimage":"shopify:\/\/shop_images\/Mega-Menu-Recipes.jpg","mm1_image":"shopify:\/\/shop_images\/Mega-Menu-Menu-Of-The-Month.png","mm1_title":"Exciting Recipes This Month","mm1_nav":"shopify:\/\/pages\/new-recipes","mm2_image":"shopify:\/\/shop_images\/Mega-Menu-Whats-For-Supper.jpg","mm2_title":"What’s For Supper","mm2_nav":"shopify:\/\/pages\/recipes-whats-for-supper","mm3_image":"shopify:\/\/shop_images\/Mega-Menu-All-Recipes.png","mm3_title":"Browse All Recipes","mm3_nav":"shopify:\/\/blogs\/all-recipes","mm4_image":"shopify:\/\/shop_images\/Mega-Menu-Conversions.png","mm4_title":"Useful Conversions","mm4_nav":"shopify:\/\/pages\/conversions"}},"block_2_YfbKdB":{"type":"block-2","settings":{"dd_title":"PRODUCTS","dd_link":"shopify:\/\/collections\/our-products","dd_dimage":"shopify:\/\/shop_images\/Mega-Menu-Products.jpg","dd_nav":"main-menu","dd_nav_right":"main-menu-products-right"}},"block_3_LX73ML":{"type":"block-3","settings":{"link_title":"OUR STORY","nn_link":"shopify:\/\/pages\/about"}},"block_3_ehGDqt":{"type":"block-3","settings":{"link_title":"BLOG","nn_link":"shopify:\/\/blogs\/news"}},"block_3_attxye":{"type":"block-3","settings":{"link_title":"ALLERGEN & DIETARY INFO","nn_link":"https:\/\/cdn.shopify.com\/s\/files\/1\/0583\/8415\/4690\/files\/Ina-Paarmans-Product-Allergen-Information.pdf?v=1737579350"}},"block_3_LezR4a":{"type":"block-3","settings":{"link_title":"CONTACT","nn_link":"shopify:\/\/pages\/contact"}}},"block_order":["block_3_NpwYnH","block_1_NbRfLH","block_2_YfbKdB","block_3_LX73ML","block_3_ehGDqt","block_3_attxye","block_3_LezR4a"],"custom_css":[],"settings":{"logo":"shopify:\/\/shop_images\/logo.png"}}},"order":["navbar_GHVmF9"]}
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "navbar_GHVmF9": {
+      "type": "navbar",
+      "blocks": {
+        "block_3_NpwYnH": {
+          "type": "block-3",
+          "settings": {
+            "link_title": "HOME",
+            "nn_link": "https://paarman.co.za/"
+          }
+        },
+        "block_1_NbRfLH": {
+          "type": "block-1",
+          "settings": {
+            "mm_title": "RECIPES",
+            "mm_link": "shopify://blogs/all-recipes",
+            "mm1_dimage": "shopify://shop_images/Mega-Menu-Recipes.webp",
+            "mm1_image": "shopify://shop_images/Mega-Menu-Menu-Of-The-Month.webp",
+            "mm1_title": "Exciting Recipes This Month",
+            "mm1_nav": "shopify://pages/new-recipes",
+            "mm2_image": "shopify://shop_images/Mega-Menu-Whats-For-Supper.webp",
+            "mm2_title": "What’s For Supper",
+            "mm2_nav": "shopify://pages/recipes-whats-for-supper",
+            "mm3_image": "shopify://shop_images/Mega-Menu-All-Recipes.webp",
+            "mm3_title": "Browse All Recipes",
+            "mm3_nav": "shopify://blogs/all-recipes",
+            "mm4_image": "shopify://shop_images/Mega-Menu-Conversions.webp",
+            "mm4_title": "Useful Conversions",
+            "mm4_nav": "shopify://pages/conversions"
+          }
+        },
+        "block_2_YfbKdB": {
+          "type": "block-2",
+          "settings": {
+            "dd_title": "PRODUCTS",
+            "dd_link": "shopify://collections/our-products",
+            "dd_dimage": "shopify://shop_images/Mega-Menu-Products.webp",
+            "dd_nav": "main-menu",
+            "dd_nav_right": "main-menu-products-right"
+          }
+        },
+        "block_3_LX73ML": {
+          "type": "block-3",
+          "settings": {
+            "link_title": "OUR STORY",
+            "nn_link": "shopify://pages/about"
+          }
+        },
+        "block_3_ehGDqt": {
+          "type": "block-3",
+          "settings": {
+            "link_title": "BLOG",
+            "nn_link": "shopify://blogs/news"
+          }
+        },
+        "block_3_attxye": {
+          "type": "block-3",
+          "settings": {
+            "link_title": "ALLERGEN & DIETARY INFO",
+            "nn_link": "https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Ina-Paarmans-Product-Allergen-Information.pdf?v=1737579350"
+          }
+        },
+        "block_3_LezR4a": {
+          "type": "block-3",
+          "settings": {
+            "link_title": "CONTACT",
+            "nn_link": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "block_3_NpwYnH",
+        "block_1_NbRfLH",
+        "block_2_YfbKdB",
+        "block_3_LX73ML",
+        "block_3_ehGDqt",
+        "block_3_attxye",
+        "block_3_LezR4a"
+      ],
+      "custom_css": [],
+      "settings": {
+        "logo": "shopify://shop_images/logo.webp"
+      }
+    }
+  },
+  "order": [
+    "navbar_GHVmF9"
+  ]
+}

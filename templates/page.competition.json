@@ -1,0 +1,123 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_info_mPKt8C": {
+      "type": "about-info",
+      "disabled": true,
+      "settings": {
+        "style": "style-1",
+        "about_bg_image": "shopify://shop_images/Background-Image-Events.jpg",
+        "about_subheading": "",
+        "about_title": "Win a Cookbook",
+        "about_heading": "Competition",
+        "about_quote": "Lorem Ipsum sflksdj flsdkf ldskjf sdlkfj dslkfj dslkfj dslkfj",
+        "about_quote_author": "",
+        "about_text": "",
+        "about_cta_text": "Enter",
+        "about_cta_link": ""
+      }
+    },
+    "blog_header_aPy7ae": {
+      "type": "blog-header",
+      "disabled": true,
+      "name": "General Header",
+      "settings": {
+        "background_image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag.jpg",
+        "sub_heading": "Flavour Bomb",
+        "heading": "",
+        "paragraph_1": "<p>The first ten people to enter via the form below will win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</p>",
+        "cta_text": "",
+        "cta_link": ""
+      }
+    },
+    "competition_header_red_fNeJ4H": {
+      "type": "competition-header-red",
+      "blocks": {
+        "content_TmtfcC": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag.jpg",
+            "tagline": "Enter –",
+            "heading": "Flavour Bomb Competition",
+            "header_tag": false,
+            "bquote": "November 2025",
+            "description": "<h3><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag containing 5 Flavour Bombs!</strong></h3>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "content_469pJY": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Wider.jpg",
+            "tagline": "Enter –",
+            "heading": "Flavour Bomb Competition",
+            "header_tag": false,
+            "bquote": "November 2025",
+            "description": "<h3><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag containing 5 Flavour Bombs!</strong></h3>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "content_C9UGgJ": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
+            "tagline": "November 2025 –",
+            "heading": "Enter To Win!",
+            "header_tag": false,
+            "bquote": "Flavour Bomb Competition",
+            "description": "<h3><strong>The first ten people to enter via the form below each win a Flavour Bomb Cooler Bag containing 5 Flavour Bombs!</strong></h3>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_TmtfcC",
+        "content_469pJY",
+        "content_C9UGgJ"
+      ],
+      "custom_css": [
+        "p,h2,h3,h4,blockquote {color: #fff;}"
+      ],
+      "name": "Competition Header Red",
+      "settings": {}
+    },
+    "competition_form_zAGimF": {
+      "type": "competition-form",
+      "custom_css": [
+        "p,h2,h3,h4,blockquote {color: #064956;}"
+      ],
+      "name": "Competition Form",
+      "settings": {
+        "style": "style-1",
+        "sub_heading": "- Enter -",
+        "main_heading": "Ina Paarman's Kitchen Competition",
+        "description": ""
+      }
+    }
+  },
+  "order": [
+    "about_info_mPKt8C",
+    "blog_header_aPy7ae",
+    "competition_header_red_fNeJ4H",
+    "competition_form_zAGimF"
+  ]
+}

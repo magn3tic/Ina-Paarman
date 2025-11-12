@@ -4,57 +4,36 @@
 {% else %}
 <section class="content-area image-text-area pt-0">
 {% endif %}
-  
   <!-- Background Shape Image -->
   {% if section.settings.shape_image != blank %}
-    <img src="{{ section.settings.shape_image | image_url }}" alt="Background Shape" class="shape_bg">
+    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ section.settings.shape_image | image_url }}" alt="Background Shape" class="shape_bg">
   {% endif %}
-
   <div class="container">
-    <div class="image-text style1 {% if section.settings.image_position == 'right' %} image-right {% endif %}">
-      
-      <!-- Background Image for desktop -->
-      <div class="bg_image d-none d-lg-block" 
-           {% if section.settings.bg_image != blank %}
-             style="background: url({{ section.settings.bg_image | image_url  }}) no-repeat scroll 0 0/cover"
-           {% endif %}>
-      </div>
-
-      <div class="row">
-        
+    <div class="image-text style1 {% if section.settings.image_position == 'right' %} image-right {% endif %}"> 
+      <div class="row">   
         <!-- Switch position based on checkbox -->
         <div class="col-sm-6 {% if section.settings.image_position == 'right' %} order-sm-2 {% endif %}">
-          <!-- Mobile Image -->
-          <div class="content-img d-lg-none">
-            {% if section.settings.bg_image != blank %}
-              <img src="{{ section.settings.bg_image | image_url }}" alt="{{ section.settings.bg_image.alt | escape }}" width="{{ section.settings.bg_image.width }}" height = "{{ section.settings.bg_image.height }}" />
-            {% endif %}
-          </div>
+            {{ section.settings.bg_image | image_url: width: 800 | image_tag: class: 'bg-image', loading: 'lazy' }}    
         </div>
-
         <div class="col-sm-6">
           <div class="content-text">
             {% if section.settings.sub_heading != blank %}
               <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
             {% endif %}
-
             {% if section.settings.heading != blank %}
               <h2 class="heading">{{ section.settings.heading }}</h2>
             {% endif %}
-
             {% if section.settings.rich_content != blank %}
               <p>{{ section.settings.rich_content }}</p>
             {% endif %}
-
             {% if section.settings.button_link != blank and section.settings.button_text != blank %}
               <a href="{{ section.settings.button_link }}" class="cta_btn btn_default">
                 {{ section.settings.button_text }}
-                <img src="{{ 'arrow-right-white.svg' | file_url }}" alt="icon">
+                <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ 'arrow-right-white.svg' | file_url }}" width = "20" height = "20" alt="icon">
               </a>
             {% endif %}
           </div>
-        </div>
-        
+        </div>  
       </div>
     </div>
   </div>

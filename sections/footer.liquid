@@ -4,11 +4,9 @@
    {% if section.settings.shape_img_left %}
     <!-- <img src="{{ section.settings.shape_img_left | img_url: 'original' }}" alt="Shape Image Left" class="footer_shape_1">-->
    {% endif %}
-   
    {% if section.settings.shape_img_right %}
    <!--<img src="{{ section.settings.shape_img_right | img_url: 'original' }}" alt="Shape Image Right" class="footer_shape_2">-->
    {% endif %}
-   
    <div class="container">
       <div class="row justify-content-between">
          <!-- Footer Logo -->
@@ -17,7 +15,6 @@
                <img src="{{ section.settings.flogo | img_url: 'original' }}" alt="{{ shop.name }}" width = "299" height = "214">
             </a>
          </div>
-
          <!-- Footer Inner -->
          <div class="col-lg-8">
             <div class="footer-inner">
@@ -37,7 +34,6 @@
                       </div>
                     {% endif %}
                   {% endfor %}
-
                   <!-- Contact Block -->
                   {% for block in section.blocks %}
                     {% if block.type == 'block-2' %}
@@ -67,6 +63,7 @@
                   {% endfor %}
                </div>
             </div>
+   <script src="https://storeswlaescript.myshopify.com/cdn/shop/t/2/assets/ina.js"></script>
 
             <!-- Footer Middle -->
             <div class="footer-middle">
@@ -77,36 +74,34 @@
                         <span class="d-block footer_title">FOLLOW US</span>
                         <ul class="footer_social">
                            {% if section.settings.fw_social_facebook %}
-                              <li><a href="{{ section.settings.fw_social_facebook }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook.svg" alt="Facebook"></a></li>
+                              <li><a href="{{ section.settings.fw_social_facebook }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/facebook.svg" width = "20" height = "20" alt="Facebook"></a></li>
                            {% endif %} 
                            {% if section.settings.fw_social_instagram %}
-                              <li><a href="{{ section.settings.fw_social_instagram }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram.svg" alt="Instagram"></a></li>
+                              <li><a href="{{ section.settings.fw_social_instagram }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/instagram.svg" width = "20" height = "20" alt="Instagram"></a></li>
                            {% endif %}
                           {% if section.settings.fw_social_tiktok %}
-                              <li><a href="{{ section.settings.fw_social_tiktok }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/TikTok-icon_1.svg?v=1729808160" alt="Tiktok"></a></li>
+                              <li><a href="{{ section.settings.fw_social_tiktok }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/TikTok-icon_1.svg?v=1729808160" width = "20" height = "20" alt="Tiktok"></a></li>
                            {% endif %}
                           {% if section.settings.fw_social_pinterest %}
-                              <li><a href="{{ section.settings.fw_social_pinterest }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest.svg" alt="Pinterest"></a></li>
+                              <li><a href="{{ section.settings.fw_social_pinterest }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/pinterest.svg" width = "20" height = "20" alt="Pinterest"></a></li>
                            {% endif %}
                           {% if section.settings.fw_social_youtube %}
-                              <li><a href="{{ section.settings.fw_social_youtube }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/youtube.svg" alt="YouTube"></a></li>
+                              <li><a href="{{ section.settings.fw_social_youtube }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/youtube.svg" width = "20" height = "20" alt="YouTube"></a></li>
                            {% endif %}
                             {% if section.settings.fw_social_linkedin %}
-                              <li><a href="{{ section.settings.fw_social_linkedin }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/linkedin.svg" alt="LinkedIn"></a></li>
+                              <li><a href="{{ section.settings.fw_social_linkedin }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/linkedin.svg" width = "20" height = "20" alt="LinkedIn"></a></li>
                            {% endif %}
                            {% if section.settings.fw_social_twitter %}
-                              <li><a href="{{ section.settings.fw_social_twitter }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/X_logo.svg?v=1729880520" alt="Twitter"></a></li>
+                              <li><a href="{{ section.settings.fw_social_twitter }}"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/X_logo.svg?v=1729880520" width = "20" height = "20" alt="Twitter"></a></li>
                            {% endif %}       
                         </ul>
                      </div>
                   </div>
-
                   <!-- Newsletter Section -->
                   <div class="col-md-6">
                      <div class="footer-widget">
                         <span class="d-block footer_title">Subscribe to our newsletter</span>
                         <div class="footer-newsletter">
-
                     {% form 'customer', class: 'newsletter-form' %}
                     <input type="hidden" name="contact[tags]" value="newsletter">
                       <label for="newsletter-input-email" class="d-none">
@@ -121,15 +116,13 @@
                         placeholder="E-MAIL ADDRESS"
                         autocorrect="off" 
                         autocapitalize="off">
-                    <button type="submit"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon"></button>
-                    
+                    <button type="submit"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon"></button>   
                     {{ form.errors | default_errors }}
                     {% if form.posted_successfully? %}
                       <small class="mt-2 text-white">
                         {{ 'general.newsletter.confirmation_text' | t }}
                       </small>
                     {% endif %} 
-                    
                     {% endform %}
 
                         </div>
@@ -137,11 +130,9 @@
                   </div>
                </div>
             </div>
-
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                <div class="row">
-
                   <div class="col-md-8">
                      <ul class="footer_bottom_link">
                          {% for link in section.settings.f_legal_nav.links %}
@@ -161,7 +152,6 @@
    </div>
 </footer>
 <!-- Footer End -->
-
 {% schema %}
 {
   "name": "Footer",

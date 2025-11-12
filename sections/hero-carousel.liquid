@@ -2,9 +2,8 @@
 <section class="hero-area">
   <div class="container">
     {% if section.settings.patternimage != blank %}
-      <img src="{{ section.settings.patternimage | image_url }}" alt="image" class="hero_bg">
+      {{ section.settings.patternimage | image_url | image_tag: width:670 }}
     {% endif %}
-
     <div class="row align-items-lg-center">
       <!-- Text Slider -->
       <div class="col-sm-6 order-sm-1 order-2">
@@ -15,18 +14,15 @@
               {% if block.settings.sub_heading != blank %}
                 <span class="d-block sub_heading">{{ block.settings.sub_heading }}</span>
               {% endif %}
-              
               {% if block.settings.heading != blank %}
-                <h1 class="heading">{{ block.settings.heading }}</h1>
+                <{% if block.settings.header_tag == true %}h2{% else %}h1{% endif %} class="heading h1">{{ block.settings.heading }}</{% if block.settings.header_tag == true %}h2{% else %}h1{% endif %}>
               {% endif %}
-              
               {% if block.settings.rich_content != blank %}
                 {{ block.settings.rich_content }}
               {% endif %}
-              
               {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}
                 <a href="{{ block.settings.cta_link }}" class="cta_btn btn_default">{{ block.settings.cta_text }}
-                  <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon">
+                  <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" class ="white-arrow" width ="20" height = "20" alt="icon">
                 </a>
               {% endif %}
             </div>
@@ -34,7 +30,6 @@
           {% endfor %}
         </div>
       </div>
-
       <!-- Image Slider -->
       <div class="col-sm-6 order-sm-2 order-1">
         <div class="hero-slider">
@@ -47,12 +42,12 @@
                       <div class="hero-play"><svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM10.6935 15.8458L15.4137 13.059C16.1954 12.5974 16.1954 11.4026 15.4137 10.941L10.6935 8.15419C9.93371 7.70561 9 8.28947 9 9.21316V14.7868C9 15.7105 9.93371 16.2944 10.6935 15.8458Z" fill="#fff"/>
 </svg></div>
-                      {{ block.settings.image | image_url: width: 670 | image_tag: preload: true }}
+                      {{ block.settings.image | image_url: width: 591, format: 'webp' | image_tag: preload: true, width: 591, height: 569, class: 'object-fit-cover skip-lazy', fetchpriority: 'high', loading: 'eager'  }}
                     </a>
                   {% endif %}
               {% else %}    
                   {% if block.settings.image != blank %}
-                    <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width = "670" height = "645">
+                    {{ block.settings.image | image_url: width: master, format: 'webp' | image_tag: preload: false, width: 591, height: 569, class: 'object-fit-cover', loading: 'lazy' }}
                   {% endif %}                
               {% endif %}    
             </div>
@@ -60,19 +55,17 @@
           {% endfor %}
         </div>
         <div class="hero_slider_navigation d-flex align-items-center justify-content-between">
-          <div class="hero-prev"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-left.svg" alt="icon"></div>
-          <div class="slides-numbers" style="display: block;">
+          <div class="hero-prev"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-left.svg" alt="icon" width = "20" height = "20"></div>
+          <div class="slides-numbers">
             <span class="active">01</span> - <span class="total"></span>
           </div>
-          <div class="hero-next"><img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right.svg" alt="icon"></div>
+          <div class="hero-next"><img data-wpsob="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right.svg" alt="icon" width = "20" height="20"></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 <!-- Hero End -->
-
 {% schema %}
 {
   "name": "Hero Section",
@@ -109,6 +102,12 @@
           "id": "heading",
           "label": "Heading",
           "default": "It Starts At Home"
+        },
+        {
+          "type": "checkbox",
+          "id": "header_tag",
+          "default" :false,
+          "label": "H2 Header Tag"
         },
         {
           "type": "richtext",

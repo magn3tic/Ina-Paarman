@@ -1,0 +1,60 @@
+<!-- Content Start -->
+<section class="technical-content-area technical-content-area--blog">
+    <div class="container">
+        <div class="row mx-3">
+            <div class="col-md-8 offset-md-2">
+                <div class="content-text post-content">
+                    {% assign blog_tagline = article.metafields.custom.tagline %}
+                    {% if blog_tagline %}
+                        <span class="d-block sub_heading">{{ blog_tagline }}</span>
+                    {% endif %}                  
+                    <h1 class="heading">{{ article.title }}</h1>
+                    <span class="date_author"><a>{{ article.created_at | date: "%d %B %Y" }}</a></span>
+                    {% comment %} <hr /> {% endcomment %}
+
+
+                    <div class="content-img w-100 my-4" style="aspect-ratio: 1/1; background-image: url({{ article.image | image_url: width: 800, height: 800, crop: 'center' }}); background-size: cover; background-position: center;">         
+                    </div>
+
+                    {{ article.content }}
+
+                    {% if article.metafields.custom.author %}
+                      <div class="author-info">
+                          {% if article.metafields.custom['author-image'] %}
+                            <div class="author-image">
+                              <img src="{{ article.metafields.custom['author-image'] | file_url }}" alt="{{ article.metafields.custom.author }}">
+                            </div>
+                          {% endif %}
+                    
+                          {% if article.metafields.custom['author-biography'] %}
+                            <div class="author-bio">
+                              <h4>{{ article.metafields.custom.author }}</h4>
+                              {{ article.metafields.custom['author-biography'] | metafield_tag }}
+                            </div>
+                          {% endif %}
+                      </div>
+                    {% endif %}
+                  
+                    <div class="mt-5">
+                        <a href="{{ shop.url }}/blogs/news/" class="cta_btn btn_border_default">All Articles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content End -->
+
+{% schema %}
+{
+  "name": "Article Column - News",
+  "settings": [
+  ],
+  "templates": ["article"],
+  "presets": [
+    {
+      "name": "Article Column - News"
+    }
+  ]
+}
+{% endschema %}

@@ -26,7 +26,7 @@
                           </div>
                       </div>
                       <div class="col-sm-6">
-                          <div class="content-text" style="color: #ffffff;">
+                          <div class="content-text">
                               {% if block.settings.tagline != blank %}
                                   <span class="d-block text_light sub_heading">{{ block.settings.tagline }}</span>
                               {% endif %}
@@ -36,7 +36,7 @@
                               {% if block.settings.bquote != blank %}
                                   <blockquote>{{ block.settings.bquote }}</blockquote>
                               {% endif %}
-                              {% if block.settings.description != blank %}
+                              {% if block.settings.description != blank %}style="color: #ffffff;"
                                 {{ block.settings.description }}
                               {% endif %}
                               {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}

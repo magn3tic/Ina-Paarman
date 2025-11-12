@@ -43,6 +43,7 @@
       "blocks": {
         "content_C64Kwj": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "style": "style-1",
             "remove_space": false,

@@ -38,16 +38,6 @@
         "cta_link": ""
       }
     },
-    "competition_form_zAGimF": {
-      "type": "competition-form",
-      "name": "Competition Form",
-      "settings": {
-        "style": "style-1",
-        "sub_heading": "- Enter -",
-        "main_heading": "Ina Paarman's Kitchen Competition",
-        "description": ""
-      }
-    },
     "competition_header_red_fNeJ4H": {
       "type": "competition-header-red",
       "blocks": {
@@ -163,17 +153,27 @@
         "content_nX383V"
       ],
       "custom_css": [
-        "p,h3,blockquote {color: #fff}"
+        "p,h3,blockquote {color: #fff;}"
       ],
       "name": "Competition Header Beige",
       "settings": {}
+    },
+    "competition_form_zAGimF": {
+      "type": "competition-form",
+      "name": "Competition Form",
+      "settings": {
+        "style": "style-1",
+        "sub_heading": "- Enter -",
+        "main_heading": "Ina Paarman's Kitchen Competition",
+        "description": ""
+      }
     }
   },
   "order": [
     "about_info_mPKt8C",
     "blog_header_aPy7ae",
-    "competition_form_zAGimF",
     "competition_header_red_fNeJ4H",
-    "competition_header_beige_JNm4XA"
+    "competition_header_beige_JNm4XA",
+    "competition_form_zAGimF"
   ]
 }

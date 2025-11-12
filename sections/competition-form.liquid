@@ -1,4 +1,3 @@
-{% if section.settings.style == 'style-2' %}
 <!-- Content Start -->
 <section class="newsletter-area-style3" style="background: url({{ section.settings.background_image | image_url }}) no-repeat scroll center center/cover">
     <div class="container">
@@ -25,36 +24,6 @@
     </div>
 </section>
 <!-- Content End -->
-{% else %}
-<!-- Content Start -->
-<section class="newsletter-area">
-    {% if section.settings.shape_image_left %}
-    <img src="{{ section.settings.shape_image_left | image_url }}" width = "{{ section.settings.shape_image_left.width }}" height = "{{ section.settings.shape_image_left.height }}" alt="image" class="newsletter_shape">
-    {% endif %}
-    {% if section.settings.shape_image_right %}
-    <img src="{{ section.settings.shape_image_right | image_url }}" width = "{{ section.settings.shape_image_right.width }}" height = "{{ section.settings.shape_image_right.height }}" alt="image" class="newsletter_shape_right">
-    {% endif %}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-7 mx-auto">
-                <div class="inner text-center">
-                    {% if section.settings.sub_heading != blank %}
-                    <span class="d-block text_light sub_heading">{{ section.settings.sub_heading }}</span>
-                    {% endif %}
-                    {% if section.settings.main_heading != blank %}
-                    <h3 class="heading text_light">{{ section.settings.main_heading }}</h3>
-                    {% endif %}
-                    {% if section.settings.description != blank %}
-                      {{ section.settings.description }}
-                    {% endif %}
-                    <iframe src="https://control.mailblaze.com/index.php/lists/nh3494wv8a7d6/brand/dd699ot1jk446/subscribe?output=embed&width=600&height=auto" width="100%" height="365" frameborder="0" scrolling="no"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Content End -->
-{% endif %}
 {% schema %}
 {
   "name": "Competition Form",

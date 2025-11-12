@@ -143,8 +143,9 @@
           "settings": {
             "style": "style-1",
             "remove_space": false,
-            "tagline": "Enter -",
-            "heading": "Heading",
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
+            "tagline": "Flavour Bomb Competition –",
+            "heading": "Enter To Win!",
             "header_tag": false,
             "bquote": "",
             "description": "",

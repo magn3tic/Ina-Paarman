@@ -55,10 +55,26 @@
             "cta_text": "",
             "cta_link": ""
           }
+        },
+        "content_j9DaGD": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
+            "tagline": "Flavour Bomb Competition –",
+            "heading": "Enter to Win!",
+            "header_tag": false,
+            "bquote": "November 2025",
+            "description": "<h3><strong>The first ten people to enter via the form below will win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</strong></h3>",
+            "cta_text": "",
+            "cta_link": ""
+          }
         }
       },
       "block_order": [
-        "content_C64Kwj"
+        "content_C64Kwj",
+        "content_j9DaGD"
       ],
       "name": "Competition Header",
       "settings": {}

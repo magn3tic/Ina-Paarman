@@ -66,20 +66,6 @@
             "cta_link": ""
           }
         },
-        "content_C9UGgJ": {
-          "type": "content",
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "tagline": "Enter -",
-            "heading": "Heading",
-            "header_tag": false,
-            "bquote": "",
-            "description": "",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
         "content_469pJY": {
           "type": "content",
           "settings": {
@@ -94,12 +80,27 @@
             "cta_text": "",
             "cta_link": ""
           }
+        },
+        "content_C9UGgJ": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
+            "tagline": "Flavour Bomb Competition –",
+            "heading": "Enter To Win!",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
         }
       },
       "block_order": [
         "content_TmtfcC",
-        "content_C9UGgJ",
-        "content_469pJY"
+        "content_469pJY",
+        "content_C9UGgJ"
       ],
       "name": "Competition Header Red",
       "settings": {}
@@ -122,20 +123,6 @@
             "cta_link": ""
           }
         },
-        "content_nX383V": {
-          "type": "content",
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "tagline": "Enter -",
-            "heading": "Heading",
-            "header_tag": false,
-            "bquote": "",
-            "description": "",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
         "content_njgdK7": {
           "type": "content",
           "settings": {
@@ -150,12 +137,26 @@
             "cta_text": "",
             "cta_link": ""
           }
+        },
+        "content_nX383V": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
         }
       },
       "block_order": [
         "content_jdRFm4",
-        "content_nX383V",
-        "content_njgdK7"
+        "content_njgdK7",
+        "content_nX383V"
       ],
       "name": "Competition Header Beige",
       "settings": {}

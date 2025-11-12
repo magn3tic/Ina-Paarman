@@ -104,10 +104,9 @@
       "type": "competition-form",
       "name": "Competition Form",
       "settings": {
-        "style": "style-1",
         "sub_heading": "- Enter -",
         "main_heading": "Ina Paarman's Kitchen Competition",
-        "description": ""
+        "description": "<p>sf</p>"
       }
     }
   },

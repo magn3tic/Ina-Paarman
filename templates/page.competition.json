@@ -95,7 +95,8 @@
         "content_C9UGgJ"
       ],
       "custom_css": [
-        "p,h2,h3,h4,blockquote {color: #fff;}"
+        "p,h2,h3,h4,blockquote {color: #fff;}",
+        ".story-area {padding-bottom: 0;}"
       ],
       "name": "Competition Header Red",
       "settings": {}
@@ -103,7 +104,8 @@
     "competition_form_zAGimF": {
       "type": "competition-form",
       "custom_css": [
-        "p,h2,h3,h4,blockquote {color: #064956;}"
+        "p,h2,h3,h4,blockquote {color: #064956;}",
+        ".newsletter-area {padding-bottom: 90px;}"
       ],
       "name": "Competition Form",
       "settings": {

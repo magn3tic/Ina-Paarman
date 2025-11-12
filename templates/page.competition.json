@@ -38,51 +38,6 @@
         "cta_link": ""
       }
     },
-    "competition_header_AeUi9J": {
-      "type": "competition-header",
-      "blocks": {
-        "content_C64Kwj": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag.jpg",
-            "tagline": "November 2025 -",
-            "heading": "Flavour Bomb",
-            "header_tag": false,
-            "bquote": "Experience our new products!",
-            "description": "<p>The first ten people to enter via the form below will win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</p>",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "content_j9DaGD": {
-          "type": "content",
-          "settings": {
-            "style": "style-1",
-            "remove_space": false,
-            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
-            "tagline": "Flavour Bomb Competition –",
-            "heading": "Enter to Win!",
-            "header_tag": false,
-            "bquote": "November 2025",
-            "description": "<h3><strong>The first ten people to enter via the form below will win a Flavour Bomb Cooler Bag and 5 Flavour Bombs!</strong></h3>",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_C64Kwj",
-        "content_j9DaGD"
-      ],
-      "custom_css": [
-        "p,h3,blockquote {color: #fff;}"
-      ],
-      "name": "Competition Header",
-      "settings": {}
-    },
     "competition_form_zAGimF": {
       "type": "competition-form",
       "name": "Competition Form",
@@ -92,12 +47,123 @@
         "main_heading": "Ina Paarman's Kitchen Competition",
         "description": ""
       }
+    },
+    "competition_header_red_fNeJ4H": {
+      "type": "competition-header-red",
+      "blocks": {
+        "content_TmtfcC": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "content_C9UGgJ": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "content_469pJY": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_TmtfcC",
+        "content_C9UGgJ",
+        "content_469pJY"
+      ],
+      "name": "Competition Header Red",
+      "settings": {}
+    },
+    "competition_header_beige_JNm4XA": {
+      "type": "competition-header-beige",
+      "blocks": {
+        "content_jdRFm4": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "image": "shopify://shop_images/Flavour-Bomb-Cooler-Bag-Only.jpg",
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "content_nX383V": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "content_njgdK7": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_jdRFm4",
+        "content_nX383V",
+        "content_njgdK7"
+      ],
+      "name": "Competition Header Beige",
+      "settings": {}
     }
   },
   "order": [
     "about_info_mPKt8C",
     "blog_header_aPy7ae",
-    "competition_header_AeUi9J",
-    "competition_form_zAGimF"
+    "competition_form_zAGimF",
+    "competition_header_red_fNeJ4H",
+    "competition_header_beige_JNm4XA"
   ]
 }

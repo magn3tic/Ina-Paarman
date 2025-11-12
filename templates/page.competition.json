@@ -94,6 +94,7 @@
         "content_469pJY",
         "content_C9UGgJ"
       ],
+      "disabled": true,
       "custom_css": [
         "p,h3,blockquote {color: #fff;}"
       ],
@@ -105,6 +106,7 @@
       "blocks": {
         "content_jdRFm4": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "style": "style-1",
             "remove_space": false,
@@ -135,6 +137,7 @@
         },
         "content_nX383V": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "style": "style-1",
             "remove_space": false,
@@ -154,7 +157,6 @@
         "content_njgdK7",
         "content_nX383V"
       ],
-      "disabled": true,
       "custom_css": [
         "p,h3,blockquote {color: #fff;}"
       ],

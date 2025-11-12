@@ -75,47 +75,47 @@
                   {% assign selected_categories = '' %}
 
                   {% assign recipe_labels = "
-                                                                                                  meat-beef||Meat: Beef,
-                                                                                                  meat-lamb||Meat: Lamb,
-                                                                                                  meat-pork||Meat: Pork,
-                                                                                                  meat-game-venison||Meat: Game & Venison,
-                                                                                                  poultry-chicken||Poultry: Chicken,
-                                                                                                  poultry-duck||Poultry: Duck,
-                                                                                                  poultry-turkey||Poultry: Turkey,
-                                                                                                  fish-seafood||Fish & Seafood,
-                                                                                                  pasta||Pasta,
-                                                                                                  pies-pastries||Pies & Pastries,
-                                                                                                  quiches||Quiches,
-                                                                                                  salads||Salads,
-                                                                                                  rice-grains||Rice & Grains,
-                                                                                                  lentils-beans||Lentils & Beans,
-                                                                                                  dessert-hot||Dessert: Hot,
-                                                                                                  dessert-cold||Dessert: Cold,
-                                                                                                  baking||Baking,
-                                                                                                  bread||Bread,
-                                                                                                  cakes||Cakes,
-                                                                                                  tarts||Tarts,
-                                                                                                  muffins-cupcakes-brownies-and-scones||Muffins, Cupcakes, Brownies & Scones,
-                                                                                                  biscuits-and-rusks||Biscuits & Rusks,
-                                                                                                  batters-pancakes-wraps||Batters, Pancakes, Wraps,
-                                                                                                  pizza||Pizza,
-                                                                                                  breakfast-eggs||Breakfast & Eggs,
-                                                                                                  soup||Soup,
-                                                                                                  starters||Starters,
-                                                                                                  pates-spreads||Patés & Spreads,
-                                                                                                  preserves-and-pickles||Preserves & Pickles,
-                                                                                                  snacks-dips||Snacks & Dips,
-                                                                                                  sambals||Sambals,
-                                                                                                  beverages||Beverages,
-                                                                                                  gluten-free||Gluten-Free,
-                                                                                                  vegetarian-main||Vegetarian: Main,
-                                                                                                  vegetarian-side||Vegetarian: Side,
-                                                                                                  vegan||Vegan,
-                                                                                                  traditional-homegrown-south-african-recipes||Traditional Homegrown South African Recipes,
-                                                                                                  weeknight-winner||Weeknight Winner,
-                                                                                                  inas-choice||Ina’s Choice,
-                                                                                                  junior-chef||Junior Chef
-                                                                                                  " | strip | split: ',' %}
+                                                                                                                      meat-beef||Meat: Beef,
+                                                                                                                      meat-lamb||Meat: Lamb,
+                                                                                                                      meat-pork||Meat: Pork,
+                                                                                                                      meat-game-venison||Meat: Game & Venison,
+                                                                                                                      poultry-chicken||Poultry: Chicken,
+                                                                                                                      poultry-duck||Poultry: Duck,
+                                                                                                                      poultry-turkey||Poultry: Turkey,
+                                                                                                                      fish-seafood||Fish & Seafood,
+                                                                                                                      pasta||Pasta,
+                                                                                                                      pies-pastries||Pies & Pastries,
+                                                                                                                      quiches||Quiches,
+                                                                                                                      salads||Salads,
+                                                                                                                      rice-grains||Rice & Grains,
+                                                                                                                      lentils-beans||Lentils & Beans,
+                                                                                                                      dessert-hot||Dessert: Hot,
+                                                                                                                      dessert-cold||Dessert: Cold,
+                                                                                                                      baking||Baking,
+                                                                                                                      bread||Bread,
+                                                                                                                      cakes||Cakes,
+                                                                                                                      tarts||Tarts,
+                                                                                                                      muffins-cupcakes-brownies-and-scones||Muffins, Cupcakes, Brownies & Scones,
+                                                                                                                      biscuits-and-rusks||Biscuits & Rusks,
+                                                                                                                      batters-pancakes-wraps||Batters, Pancakes, Wraps,
+                                                                                                                      pizza||Pizza,
+                                                                                                                      breakfast-eggs||Breakfast & Eggs,
+                                                                                                                      soup||Soup,
+                                                                                                                      starters||Starters,
+                                                                                                                      pates-spreads||Patés & Spreads,
+                                                                                                                      preserves-and-pickles||Preserves & Pickles,
+                                                                                                                      snacks-dips||Snacks & Dips,
+                                                                                                                      sambals||Sambals,
+                                                                                                                      beverages||Beverages,
+                                                                                                                      gluten-free||Gluten-Free,
+                                                                                                                      vegetarian-main||Vegetarian: Main,
+                                                                                                                      vegetarian-side||Vegetarian: Side,
+                                                                                                                      vegan||Vegan,
+                                                                                                                      traditional-homegrown-south-african-recipes||Traditional Homegrown South African Recipes,
+                                                                                                                      weeknight-winner||Weeknight Winner,
+                                                                                                                      inas-choice||Ina’s Choice,
+                                                                                                                      junior-chef||Junior Chef
+                                                                                                                      " | strip | split: ',' %}
 
                   {% for category in categories %}
                     {% assign pair = category | split: ':' %}
@@ -192,7 +192,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
   // Ajusta este selector al contenedor que quieres “convertir” a PDF
-  const pdfSourceSelector = '#main'; // por ejemplo
+  const pdfSourceSelector = '.shopify-section'; // por ejemplo
 
   function downloadAsPdf() {
     const el = document.querySelector(pdfSourceSelector) || document.body;
@@ -437,15 +437,13 @@
             {% endif %}
 
           <!-- Method Gallery
-          {% if article.metafields["global"]["Method-Gallery"] %}        {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}        {% for image in method_images %}            <div class="slide">                <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">
-                          </a>
+          {% if article.metafields["global"]["Method-Gallery"] %}        {% assign method_images = article.metafields["global"]["Method-Gallery"] | split: ',' %}        {% for image in method_images %}            <div class="slide">                <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">                </a>
                       </div>
                   {% endfor %}
           {% endif %}
           -->
           <!-- Tip Gallery
-          {% if article.metafields["global"]["Tip-Gallery"] %}      {% assign tip_images = article.metafields["global"]["Tip-Gallery"] | split: ',' %}      {% for image in tip_images %}          <div class="slide">              <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">
-                        </a>
+          {% if article.metafields["global"]["Tip-Gallery"] %}      {% assign tip_images = article.metafields["global"]["Tip-Gallery"] | split: ',' %}      {% for image in tip_images %}          <div class="slide">              <a class="recipe-gallery">                  <img src="{{ image | strip }}" alt="{{ image.alt }}">              </a>
                     </div>
                 {% endfor %}
           {% endif %}

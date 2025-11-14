@@ -41,11 +41,36 @@
         "main_heading": "Ina Paarman’s Kitchen Newsletter",
         "description": ""
       }
+    },
+    "competition_header_video_qVraFt": {
+      "type": "competition-header-video",
+      "blocks": {
+        "content_hihrdw": {
+          "type": "content",
+          "settings": {
+            "style": "style-1",
+            "remove_space": false,
+            "tagline": "Enter -",
+            "heading": "Heading",
+            "header_tag": false,
+            "bquote": "",
+            "description": "<p>sfsf</p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_hihrdw"
+      ],
+      "name": "Competition Header Video",
+      "settings": {}
     }
   },
   "order": [
     "blog_header_A6Bg6C",
     "html_YDrUnz",
-    "newsletter_mailblaze_ibqEcQ"
+    "newsletter_mailblaze_ibqEcQ",
+    "competition_header_video_qVraFt"
   ]
 }

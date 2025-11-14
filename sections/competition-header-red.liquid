@@ -3,7 +3,7 @@
       <img src="{{ 'fb__hero-background.jpg' | asset_url }}" alt="A dramatic hero image showing the range of Flavour Bombs with delicious food." class="w-100" style="object-position: center; object-fit: cover; min-height: calc(100vh);">
       <video src="https://cdn.shopify.com/videos/c/o/v/a8c5027ebae343cfa619ef986130ecd2.mp4" autoplay="" muted="" loop="" playsinline="" class="w-100" style="position: absolute; top: 0; left: 0; width: 100%; object-position: center; object-fit: cover; min-height: calc(100vh); pointer-events:none;"></video>
     </div>
-
+    <div class="position-relative">
 
     {% if section.settings.shape_1 != blank %}
         <img src="{{ section.settings.shape_1 | image_url }}" alt="image" class="story_shape_1">
@@ -163,7 +163,7 @@
          </section>
        {% endif %}
      {% endfor %}
-  
+  </div>
 </div>
 
 {% schema %}

@@ -1,1 +1,51 @@
-{"sections":{"blog_header_A6Bg6C":{"type":"blog-header","settings":{"background_image":"shopify:\/\/shop_images\/Header-Image-Equivalents-Conversions.jpg","sub_heading":"International –","heading":"Testing Page","paragraph_1":"<p>We want to make your cooking and baking journey easier.<\/p><p>Instead of spending time on measurement equivalents and conversions, use our tables – so you can spend less time calculating and more time creating.<\/p>","cta_text":"RECIPES","cta_link":"shopify:\/\/blogs\/all-recipes"}},"html_YDrUnz":{"type":"html","settings":{"liquid":"<div class='TablePress' data-table='51219'><\/div>","header_title":"Nutritional Info","remove_space":false,"remove_bspace":false}},"newsletter_mailblaze_ibqEcQ":{"type":"newsletter-mailblaze","name":"Newsletter Mailblaze","settings":{"style":"style-1","sub_heading":"- sign up -","main_heading":"Ina Paarman’s Kitchen Newsletter","description":""}}},"order":["blog_header_A6Bg6C","html_YDrUnz","newsletter_mailblaze_ibqEcQ"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog_header_A6Bg6C": {
+      "type": "blog-header",
+      "disabled": true,
+      "settings": {
+        "background_image": "shopify://shop_images/Header-Image-Equivalents-Conversions.jpg",
+        "sub_heading": "International –",
+        "heading": "Testing Page",
+        "paragraph_1": "<p>We want to make your cooking and baking journey easier.</p><p>Instead of spending time on measurement equivalents and conversions, use our tables – so you can spend less time calculating and more time creating.</p>",
+        "cta_text": "RECIPES",
+        "cta_link": "shopify://blogs/all-recipes"
+      }
+    },
+    "html_YDrUnz": {
+      "type": "html",
+      "disabled": true,
+      "settings": {
+        "liquid": "<div class='TablePress' data-table='51219'></div>",
+        "header_title": "Nutritional Info",
+        "remove_space": false,
+        "remove_bspace": false
+      }
+    },
+    "newsletter_mailblaze_ibqEcQ": {
+      "type": "newsletter-mailblaze",
+      "disabled": true,
+      "name": "Newsletter Mailblaze",
+      "settings": {
+        "style": "style-1",
+        "sub_heading": "- sign up -",
+        "main_heading": "Ina Paarman’s Kitchen Newsletter",
+        "description": ""
+      }
+    }
+  },
+  "order": [
+    "blog_header_A6Bg6C",
+    "html_YDrUnz",
+    "newsletter_mailblaze_ibqEcQ"
+  ]
+}

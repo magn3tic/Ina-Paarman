@@ -25,14 +25,14 @@
               </div>
               <div class="container position-relative">
                   <div class="row align-items-lg-center">
-                      <div class="col-sm-6">
+                      <div class="col-md-6">
                           <div class="content-img">
                               {% if block.settings.image != blank %}
                                   <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt | escape }}" class="mx_700">
                               {% endif %}
                           </div>
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-md-6">
                           <div class="content-text px-2">
                               {% if block.settings.tagline != blank %}
                                   <span class="d-block text_white sub_heading">{{ block.settings.tagline }}</span>

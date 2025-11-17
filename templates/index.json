@@ -12,20 +12,6 @@
     "hero_carousel_CmDneU": {
       "type": "hero-carousel",
       "blocks": {
-        "hero_slide_CXydqx": {
-          "type": "hero_slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Ina-Paarmans-Winter-Pasta-Sauces.jpg",
-            "video_link": "https://www.youtube.com/watch?v=NGiXee-bX94",
-            "sub_heading": "Cold Much? –",
-            "heading": "There’s a Simpler Way to Do Winter",
-            "header_tag": false,
-            "rich_content": "<p>Winter often sees us South Africans become a little… Dramatic. But staying cosy doesn’t have to be so over-the-top!</p><p>Our Ready To Serve Soups, Cook-In Curry and Pasta Sauces bring comfort with heartwarming meals, ready in a flash. It’s The Simple Way to Do Winter.</p>",
-            "cta_text": "Browse Pasta Sauces",
-            "cta_link": "shopify://collections/pasta-sauces"
-          }
-        },
         "hero_slide_UybmEB": {
           "type": "hero_slide",
           "settings": {
@@ -77,14 +63,84 @@
             "cta_text": "View Cookbook",
             "cta_link": "shopify://pages/cookbook"
           }
+        },
+        "hero_slide_CXydqx": {
+          "type": "hero_slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Winter-Pasta-Sauces.jpg",
+            "video_link": "https://www.youtube.com/watch?v=NGiXee-bX94",
+            "sub_heading": "Cold Much? –",
+            "heading": "There’s a Simpler Way to Do Winter",
+            "header_tag": false,
+            "rich_content": "<p>Winter often sees us South Africans become a little… Dramatic. But staying cosy doesn’t have to be so over-the-top!</p><p>Our Ready To Serve Soups, Cook-In Curry and Pasta Sauces bring comfort with heartwarming meals, ready in a flash. It’s The Simple Way to Do Winter.</p>",
+            "cta_text": "Browse Pasta Sauces",
+            "cta_link": "shopify://collections/pasta-sauces"
+          }
+        },
+        "hero_slide_CeXGQQ": {
+          "type": "hero_slide",
+          "disabled": true,
+          "settings": {
+            "video_link": "",
+            "sub_heading": "Flavour Bombs –",
+            "heading": "Meet Your Kitchen's New Secret Weapon",
+            "header_tag": false,
+            "rich_content": "<p>Achieve explosive flavour with zero effort. Flavour Bombs Concentrated Cooking Pastes are now available at all major retailers near you.</p>",
+            "cta_text": "Learn More",
+            "cta_link": "shopify://pages/flavour-bombs"
+          }
+        },
+        "hero_slide_n8RV3j": {
+          "type": "hero_slide",
+          "disabled": true,
+          "settings": {
+            "video_link": "",
+            "sub_heading": "Snip It. Mix It. Cook It. –",
+            "heading": "Boom. Delicious.",
+            "header_tag": false,
+            "rich_content": "<p>Spicy Cajun, Zesty Lemon, Portuguese Peri-Peri, Steakhouse Pepper, and Spanish Tomato.</p><p>With 5 Concentrated Cooking Pastes to choose from, Flavour Bombs are here to see traditional cooking go up in flames.</p>",
+            "cta_text": "Explore Recipes",
+            "cta_link": "https://paarman.co.za/pages/flavour-bombs/#explore-recipes"
+          }
+        },
+        "hero_slide_Y8TxwT": {
+          "type": "hero_slide",
+          "disabled": true,
+          "settings": {
+            "video_link": "",
+            "sub_heading": "Obliterate Bland –",
+            "heading": "Unleash Big Taste in Seconds",
+            "header_tag": false,
+            "rich_content": "<p>Locked, loaded, and ready to deploy at a moment’s notice – bold flavour just got foolproofed.</p><p>Our nutrient-dense, umami-laden Concentrated Cooking Pastes elevate home cooking to rock star levels of deliciousness with ease.</p>",
+            "cta_text": "Download Leaflet",
+            "cta_link": "https://cdn.shopify.com/s/files/1/0583/8415/4690/files/IPK_Flavour_Bomb_Leaflet.pdf"
+          }
+        },
+        "hero_slide_Q3n8YQ": {
+          "type": "hero_slide",
+          "disabled": true,
+          "settings": {
+            "video_link": "",
+            "sub_heading": "Much-Loved Favourites, New Flexible Format –",
+            "heading": "Introducing:  200 g Doy Pack Pasta Sauces",
+            "header_tag": false,
+            "rich_content": "<p>Crafted with the same passion, premium ingredients, and authentic flavour you’ve come to expect, our 200 g Tomato & Basil and Beef Bolognaise Pasta Sauces bring convenience when you prefer a pack size suited for 1-2 servings.</p>",
+            "cta_text": "Browse Pasta Sauces",
+            "cta_link": "https://paarman.co.za/collections/pasta-sauces"
+          }
         }
       },
       "block_order": [
-        "hero_slide_CXydqx",
         "hero_slide_UybmEB",
         "hero_slide_dyEFja",
         "hero_slide_p3bmFB",
-        "hero_slide_R4EJK8"
+        "hero_slide_R4EJK8",
+        "hero_slide_CXydqx",
+        "hero_slide_CeXGQQ",
+        "hero_slide_n8RV3j",
+        "hero_slide_Y8TxwT",
+        "hero_slide_Q3n8YQ"
       ],
       "settings": {}
     },

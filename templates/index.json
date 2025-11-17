@@ -82,7 +82,7 @@
           "type": "hero_slide",
           "disabled": true,
           "settings": {
-            "video_link": "",
+            "video_link": "https://www.youtube.com/watch?v=7JAcVIyhjP4",
             "sub_heading": "Flavour Bombs –",
             "heading": "Meet Your Kitchen's New Secret Weapon",
             "header_tag": false,
@@ -95,6 +95,7 @@
           "type": "hero_slide",
           "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Flavour-Bombs.jpg",
             "video_link": "",
             "sub_heading": "Snip It. Mix It. Cook It. –",
             "heading": "Boom. Delicious.",
@@ -108,6 +109,7 @@
           "type": "hero_slide",
           "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Spicy-Cajun-Flavour-Bomb.jpg",
             "video_link": "",
             "sub_heading": "Obliterate Bland –",
             "heading": "Unleash Big Taste in Seconds",
@@ -123,7 +125,7 @@
           "settings": {
             "video_link": "",
             "sub_heading": "Much-Loved Favourites, New Flexible Format –",
-            "heading": "Introducing:  200 g Doy Pack Pasta Sauces",
+            "heading": "Introducing:  200 g Pasta Sauces",
             "header_tag": false,
             "rich_content": "<p>Crafted with the same passion, premium ingredients, and authentic flavour you’ve come to expect, our 200 g Tomato & Basil and Beef Bolognaise Pasta Sauces bring convenience when you prefer a pack size suited for 1-2 servings.</p>",
             "cta_text": "Browse Pasta Sauces",

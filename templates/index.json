@@ -82,6 +82,7 @@
           "type": "hero_slide",
           "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Flavour-Bomb-Products.jpg",
             "video_link": "https://www.youtube.com/watch?v=7JAcVIyhjP4",
             "sub_heading": "Flavour Bombs –",
             "heading": "Meet Your Kitchen's New Secret Weapon",
@@ -123,6 +124,7 @@
           "type": "hero_slide",
           "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Ina-Paarmans-Pasta-Sauces.jpg",
             "video_link": "",
             "sub_heading": "Much-Loved Favourites, New Flexible Format –",
             "heading": "Introducing:  200 g Pasta Sauces",

@@ -14,6 +14,7 @@
       "blocks": {
         "hero_slide_UybmEB": {
           "type": "hero_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Ina-Paarmans-Kitchen.webp",
             "video_link": "https://www.youtube.com/watch?v=TV-c3dKX3bg",
@@ -27,6 +28,7 @@
         },
         "hero_slide_dyEFja": {
           "type": "hero_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Ina-Paarman-Products.webp",
             "video_link": "",
@@ -40,6 +42,7 @@
         },
         "hero_slide_p3bmFB": {
           "type": "hero_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Ina-Paarman-Meals.webp",
             "video_link": "",
@@ -53,6 +56,7 @@
         },
         "hero_slide_R4EJK8": {
           "type": "hero_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/My-Favourite-Recipes.webp",
             "video_link": "",
@@ -80,7 +84,6 @@
         },
         "hero_slide_CeXGQQ": {
           "type": "hero_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Ina-Paarmans-Flavour-Bomb-Products.jpg",
             "video_link": "https://www.youtube.com/watch?v=7JAcVIyhjP4",
@@ -94,7 +97,6 @@
         },
         "hero_slide_n8RV3j": {
           "type": "hero_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Ina-Paarmans-Flavour-Bombs.jpg",
             "video_link": "",
@@ -108,7 +110,6 @@
         },
         "hero_slide_Y8TxwT": {
           "type": "hero_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Ina-Paarmans-Spicy-Cajun-Flavour-Bomb.jpg",
             "video_link": "",
@@ -122,7 +123,6 @@
         },
         "hero_slide_Q3n8YQ": {
           "type": "hero_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Ina-Paarmans-Pasta-Sauces.jpg",
             "video_link": "https://www.youtube.com/watch/-S9IlQ4YMaE",

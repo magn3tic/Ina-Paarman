@@ -677,15 +677,13 @@
       const style = document.createElement('style');
       style.id = 'pdf-temp-style';
       style.innerHTML = `
-  .print-only * {
-  overflow: visible !important;
+      .print-only {
+    display: block !important;
+    overflow: visible !important;
+    padding-bottom: 20px !important;
   }
-
-  .print-only .row,
-  .print-only [class*="col-"] {
-  display: block !important;
-  float: none !important;
-  width: 100% !important;
+  .print-only * {
+    overflow: visible !important;
   }
     .html2pdf__page-break {
   page-break-before: always;
@@ -705,10 +703,9 @@
       const opts = {
         margin: 5,
         filename: '{{ article.title | handleize }}.pdf',
-       html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
-  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-
-        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' },
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 1, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['css', 'legacy'] }
       };
 

@@ -656,7 +656,7 @@
       </div>
     </div>
 
-    <div class="print-only-2">
+    <div class="print-only">
       <div class="method">
         <h3 class="h2 mb-4">
           <strong>Method:</strong>
@@ -677,6 +677,7 @@
       const style = document.createElement('style');
       style.id = 'pdf-temp-style';
       style.innerHTML = `
+      .print-only{ display: block !important;  }
       `;
       document.head.appendChild(style);
     }

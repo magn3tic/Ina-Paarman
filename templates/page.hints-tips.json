@@ -313,6 +313,7 @@
     },
     "new_recipes_jpYPNg": {
       "type": "new-recipes",
+      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Food-On-The-Go.jpg",
@@ -326,12 +327,11 @@
     },
     "new_recipes_HXrgay": {
       "type": "new-recipes",
-      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Two-Tone-Custard-Cake.jpg",
         "sub_heading": "December 2025 –",
         "heading": "New Recipes",
-        "rich_content": "<p>Festive Season is upon us! We’ve done the planning and recipe testing for you, so prepare for a sensational family feast.</p><p>For starters, try a slice of Upside Down Shallot Tart with crumbled goat’s cheese. Our Stuffed Pork Loin Roast is the perfect show-stopping centrepiece, complete with crispy crackling. Serve it with Bacon Stuffing Balls on the side. For those who love the comfort of a pie, the Chicken and Mushroom Pie with pour-over crust will delight the whole family. Finally, the feather-light, sweet ending comes in the form of a Pavlova Wreath with seasonal fruit, whipped cream, and homemade lemon curd.</p><p>Enjoy!</p>",
+        "rich_content": "<p>Festive Season is upon us! We’ve done the planning and recipe testing for you, so prepare for a sensational family feast.</p><p>For starters, try a slice of Upside Down Shallot Tart with crumbled goat’s cheese. Our Stuffed Pork Loin Roast is the perfect show-stopping centrepiece, complete with crispy crackling. Serve it with Bacon Stuffing Balls on the side. For those who love the comfort of a pie, the Chicken and Mushroom Pie with pour-over crust will delight the whole family.</p><p>Finally, the feather-light, sweet ending comes in the form of a Pavlova Wreath with seasonal fruit, whipped cream, and homemade lemon curd.</p><p>Enjoy!</p>",
         "button_text": "Discover Menu",
         "button_link": "shopify://pages/december-2025",
         "image_position": false

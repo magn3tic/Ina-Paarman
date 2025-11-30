@@ -150,6 +150,7 @@
     },
     "new_recipes_y9m9KP": {
       "type": "new-recipes",
+      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Food-On-The-Go.jpg",
@@ -163,7 +164,6 @@
     },
     "new_recipes_7YgaEa": {
       "type": "new-recipes",
-      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Recipes-December-2025.jpg",
         "sub_heading": "December 2025 –",

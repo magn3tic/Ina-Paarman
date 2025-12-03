@@ -165,6 +165,30 @@
     "video_gallery_hUhJ44": {
       "type": "video-gallery",
       "blocks": {
+        "video_Qj4JkJ": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "CASfisBw3LY"
+          }
+        },
+        "video_kGnGjU": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "agAhYEwDycg"
+          }
+        },
+        "video_TYc8Nf": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "qcqSqH07Nao"
+          }
+        },
+        "video_JxDYfH": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "tnvQeAthKcU"
+          }
+        },
         "video_ypnGwL": {
           "type": "video",
           "settings": {
@@ -287,6 +311,10 @@
         }
       },
       "block_order": [
+        "video_Qj4JkJ",
+        "video_kGnGjU",
+        "video_TYc8Nf",
+        "video_JxDYfH",
         "video_ypnGwL",
         "video_iDfeUw",
         "video_QfkaUx",

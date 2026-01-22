@@ -341,6 +341,7 @@
     },
     "new_recipes_jpYPNg": {
       "type": "new-recipes",
+      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Lunchbox-Solutions-2026.jpg",

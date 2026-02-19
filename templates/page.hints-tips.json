@@ -355,6 +355,7 @@
     },
     "new_recipes_jpYPNg": {
       "type": "new-recipes",
+      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Lunchbox-Solutions-2026.jpg",
@@ -368,7 +369,6 @@
     },
     "new_recipes_HXrgay": {
       "type": "new-recipes",
-      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarman_s-Kitchen-March-Recipes.jpg",
         "sub_heading": "March 2026 –",

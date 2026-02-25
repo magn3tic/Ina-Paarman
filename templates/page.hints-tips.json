@@ -165,6 +165,12 @@
     "video_gallery_hUhJ44": {
       "type": "video-gallery",
       "blocks": {
+        "video_LbxfdH": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "yGsQc5ZFj-w"
+          }
+        },
         "video_DdaE9U": {
           "type": "video",
           "settings": {
@@ -335,6 +341,7 @@
         }
       },
       "block_order": [
+        "video_LbxfdH",
         "video_DdaE9U",
         "video_GTB884",
         "video_cTVyNk",

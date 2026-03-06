@@ -3,13 +3,10 @@
     <div class="row">
         {% assign block_count = 0 %}
         {% for block in section.blocks %}
-           
-              {% unless section.settings.description == blank %}
-      <div class="description rte mt-3 mb-0">
-        {{ section.settings.description }}
-      </div>
-        {% endunless %}
-
+        
+          {% if section.settings.sub_heading != blank %}
+              <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
+            {% endif %}
 
           <div class="col-sm-6 col-md-4 mb-4">
               {% assign youtube_id = block.settings.youtube_id %}
@@ -36,8 +33,8 @@
       "name": "Video",
       "settings": [
         {
-      "type": "richtext",
-      "id": "description",
+      "type": "text",
+      "id": "sub_heading",
       "label": "Video Title",
     },
         {

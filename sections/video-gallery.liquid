@@ -3,7 +3,15 @@
     <div class="row">
         {% assign block_count = 0 %}
         {% for block in section.blocks %}
-            <div class="col-sm-6 col-md-4 mb-4">
+           
+              {% unless section.settings.description == blank %}
+      <div class="description rte mt-3 mb-0">
+        {{ section.settings.description }}
+      </div>
+        {% endunless %}
+
+
+          <div class="col-sm-6 col-md-4 mb-4">
               {% assign youtube_id = block.settings.youtube_id %}
               <div class="ratio ratio-16x9">
                 <iframe

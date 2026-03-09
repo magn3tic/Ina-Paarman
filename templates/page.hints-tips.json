@@ -214,13 +214,6 @@
             "youtube_id": "qcqSqH07Nao"
           }
         },
-        "video_iDfeUw": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "Three ways to rub butter into flour",
-            "youtube_id": "r4MR_eDBqXs"
-          }
-        },
         "video_QfkaUx": {
           "type": "video",
           "settings": {
@@ -319,13 +312,6 @@
             "youtube_id": "nGr1pyH4uSg"
           }
         },
-        "video_amnNMH": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to make muffin liners using baking paper",
-            "youtube_id": "Xnt2ZN3Zdj4"
-          }
-        },
         "video_i8Xhtf": {
           "type": "video",
           "settings": {
@@ -356,7 +342,6 @@
         "video_Qj4JkJ",
         "video_kGnGjU",
         "video_TYc8Nf",
-        "video_iDfeUw",
         "video_QfkaUx",
         "video_WWnGkQ",
         "video_M6bcie",
@@ -371,7 +356,6 @@
         "video_J8yqFf",
         "video_eiWDie",
         "video_VR7f4D",
-        "video_amnNMH",
         "video_i8Xhtf",
         "video_p7TMMp",
         "video_ywUAkt"
@@ -388,10 +372,26 @@
             "sub_heading": "How to flatten dough in a baking tray",
             "youtube_id": "tnvQeAthKcU"
           }
+        },
+        "video_zCyqcU": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "Three ways to rub butter into flour",
+            "youtube_id": "r4MR_eDBqXs"
+          }
+        },
+        "video_MKAyRF": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to make muffin liners using baking paper",
+            "youtube_id": "Xnt2ZN3Zdj4"
+          }
         }
       },
       "block_order": [
-        "video_Gx6fxw"
+        "video_Gx6fxw",
+        "video_zCyqcU",
+        "video_MKAyRF"
       ],
       "name": "Video Gallery",
       "settings": {}

@@ -312,13 +312,6 @@
             "youtube_id": "nGr1pyH4uSg"
           }
         },
-        "video_i8Xhtf": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to sift dry ingredients into wet ingredients",
-            "youtube_id": "1ECY-U0Y40s"
-          }
-        },
         "video_p7TMMp": {
           "type": "video",
           "settings": {
@@ -356,7 +349,6 @@
         "video_J8yqFf",
         "video_eiWDie",
         "video_VR7f4D",
-        "video_i8Xhtf",
         "video_p7TMMp",
         "video_ywUAkt"
       ],
@@ -386,12 +378,20 @@
             "sub_heading": "How to make muffin liners using baking paper",
             "youtube_id": "Xnt2ZN3Zdj4"
           }
+        },
+        "video_YpP7kY": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to sift dry ingredients into wet ingredients",
+            "youtube_id": "1ECY-U0Y40s"
+          }
         }
       },
       "block_order": [
         "video_Gx6fxw",
         "video_zCyqcU",
-        "video_MKAyRF"
+        "video_MKAyRF",
+        "video_YpP7kY"
       ],
       "name": "Video Gallery",
       "settings": {}

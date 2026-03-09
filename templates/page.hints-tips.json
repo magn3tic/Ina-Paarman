@@ -214,13 +214,6 @@
             "youtube_id": "qcqSqH07Nao"
           }
         },
-        "video_ypnGwL": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to protect your stacked cookware",
-            "youtube_id": "Q5SRbyA0HDA"
-          }
-        },
         "video_iDfeUw": {
           "type": "video",
           "settings": {
@@ -363,7 +356,6 @@
         "video_Qj4JkJ",
         "video_kGnGjU",
         "video_TYc8Nf",
-        "video_ypnGwL",
         "video_iDfeUw",
         "video_QfkaUx",
         "video_WWnGkQ",
@@ -423,6 +415,18 @@
     },
     "video_gallery_8bFMLz": {
       "type": "video-gallery",
+      "blocks": {
+        "video_XfnVcj": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to protect your stacked cookware",
+            "youtube_id": "Q5SRbyA0HDA"
+          }
+        }
+      },
+      "block_order": [
+        "video_XfnVcj"
+      ],
       "name": "Video Gallery",
       "settings": {}
     },

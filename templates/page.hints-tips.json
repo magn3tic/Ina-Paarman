@@ -193,20 +193,6 @@
             "youtube_id": "x4Cwr4Jubf8"
           }
         },
-        "video_Qj4JkJ": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to carve a pork loin roast",
-            "youtube_id": "CASfisBw3LY"
-          }
-        },
-        "video_kGnGjU": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to butterfly a chicken",
-            "youtube_id": "agAhYEwDycg"
-          }
-        },
         "video_TYc8Nf": {
           "type": "video",
           "settings": {
@@ -332,8 +318,6 @@
         "video_DdaE9U",
         "video_GTB884",
         "video_zdCPbX",
-        "video_Qj4JkJ",
-        "video_kGnGjU",
         "video_TYc8Nf",
         "video_QfkaUx",
         "video_WWnGkQ",
@@ -405,10 +389,26 @@
             "sub_heading": "Is it necessary to peel a potato?",
             "youtube_id": "fbuadPJHA0c"
           }
+        },
+        "video_jGdEG7": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to carve a pork loin roast",
+            "youtube_id": "CASfisBw3LY"
+          }
+        },
+        "video_KrJgjk": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to butterfly a chicken",
+            "youtube_id": "agAhYEwDycg"
+          }
         }
       },
       "block_order": [
-        "video_668YiM"
+        "video_668YiM",
+        "video_jGdEG7",
+        "video_KrJgjk"
       ],
       "name": "Video Gallery",
       "settings": {}

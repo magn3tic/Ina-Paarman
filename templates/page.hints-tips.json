@@ -172,13 +172,6 @@
             "youtube_id": "yGsQc5ZFj-w"
           }
         },
-        "video_DdaE9U": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to pipe a meringue nest",
-            "youtube_id": "C5qsuhK_wbo"
-          }
-        },
         "video_GTB884": {
           "type": "video",
           "settings": {
@@ -280,7 +273,6 @@
       },
       "block_order": [
         "video_LbxfdH",
-        "video_DdaE9U",
         "video_GTB884",
         "video_zdCPbX",
         "video_TYc8Nf",
@@ -302,6 +294,13 @@
     "video_gallery_7mmBJn": {
       "type": "video-gallery",
       "blocks": {
+        "video_CBDhHj": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to pipe a meringue nest",
+            "youtube_id": "C5qsuhK_wbo"
+          }
+        },
         "video_Gx6fxw": {
           "type": "video",
           "settings": {
@@ -332,6 +331,7 @@
         }
       },
       "block_order": [
+        "video_CBDhHj",
         "video_Gx6fxw",
         "video_zCyqcU",
         "video_MKAyRF",

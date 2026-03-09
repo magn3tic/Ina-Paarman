@@ -186,13 +186,6 @@
             "youtube_id": "gCzFGHUHswA"
           }
         },
-        "video_cTVyNk": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "Is it necessary to peel a potato?",
-            "youtube_id": "fbuadPJHA0c"
-          }
-        },
         "video_zdCPbX": {
           "type": "video",
           "settings": {
@@ -366,7 +359,6 @@
         "video_LbxfdH",
         "video_DdaE9U",
         "video_GTB884",
-        "video_cTVyNk",
         "video_zdCPbX",
         "video_Qj4JkJ",
         "video_kGnGjU",
@@ -414,6 +406,18 @@
     },
     "video_gallery_RbknMH": {
       "type": "video-gallery",
+      "blocks": {
+        "video_668YiM": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "Is it necessary to peel a potato?",
+            "youtube_id": "fbuadPJHA0c"
+          }
+        }
+      },
+      "block_order": [
+        "video_668YiM"
+      ],
       "name": "Video Gallery",
       "settings": {}
     },

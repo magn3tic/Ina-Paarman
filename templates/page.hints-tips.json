@@ -200,13 +200,6 @@
             "youtube_id": "qcqSqH07Nao"
           }
         },
-        "video_WWnGkQ": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to core a tomato",
-            "youtube_id": "_-Rl1gE4ECE"
-          }
-        },
         "video_M6bcie": {
           "type": "video",
           "settings": {
@@ -312,7 +305,6 @@
         "video_GTB884",
         "video_zdCPbX",
         "video_TYc8Nf",
-        "video_WWnGkQ",
         "video_M6bcie",
         "video_gief7V",
         "video_FWjBY8",
@@ -402,13 +394,21 @@
             "sub_heading": "How to plate tagliatelle like a pro",
             "youtube_id": "D9X6XY9Rnnk"
           }
+        },
+        "video_DyC8MJ": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to core a tomato",
+            "youtube_id": "_-Rl1gE4ECE"
+          }
         }
       },
       "block_order": [
         "video_668YiM",
         "video_jGdEG7",
         "video_KrJgjk",
-        "video_MKcmTV"
+        "video_MKcmTV",
+        "video_DyC8MJ"
       ],
       "name": "Video Gallery",
       "settings": {}

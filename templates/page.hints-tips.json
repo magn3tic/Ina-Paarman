@@ -221,13 +221,6 @@
             "youtube_id": "0ib7ifrtKjI"
           }
         },
-        "video_iFGDCL": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to fold a wrap",
-            "youtube_id": "SJKYolOVWYI"
-          }
-        },
         "video_dYTw8t": {
           "type": "video",
           "settings": {
@@ -247,13 +240,6 @@
           "settings": {
             "sub_heading": "How to make simple pizza wrap toast",
             "youtube_id": "gACCyiMGmmI"
-          }
-        },
-        "video_74394T": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to portion a cooked chicken",
-            "youtube_id": "ITYDnvlOgFY"
           }
         },
         "video_J8yqFf": {
@@ -301,11 +287,9 @@
         "video_gief7V",
         "video_FWjBY8",
         "video_mXe94T",
-        "video_iFGDCL",
         "video_dYTw8t",
         "video_Ekryij",
         "video_njQy9e",
-        "video_74394T",
         "video_J8yqFf",
         "video_eiWDie",
         "video_VR7f4D",
@@ -400,6 +384,13 @@
             "sub_heading": "How to easily slice and serve fresh mango",
             "youtube_id": "UgHsEcS79l8"
           }
+        },
+        "video_8Y8weJ": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to fold a wrap",
+            "youtube_id": "SJKYolOVWYI"
+          }
         }
       },
       "block_order": [
@@ -408,7 +399,8 @@
         "video_KrJgjk",
         "video_MKcmTV",
         "video_DyC8MJ",
-        "video_ar8Qw3"
+        "video_ar8Qw3",
+        "video_8Y8weJ"
       ],
       "name": "Video Gallery",
       "settings": {}

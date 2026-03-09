@@ -391,6 +391,13 @@
             "sub_heading": "How to fold a wrap",
             "youtube_id": "SJKYolOVWYI"
           }
+        },
+        "video_7HVcLF": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to portion a cooked chicken",
+            "youtube_id": "ITYDnvlOgFY"
+          }
         }
       },
       "block_order": [
@@ -400,7 +407,8 @@
         "video_MKcmTV",
         "video_DyC8MJ",
         "video_ar8Qw3",
-        "video_8Y8weJ"
+        "video_8Y8weJ",
+        "video_7HVcLF"
       ],
       "name": "Video Gallery",
       "settings": {}

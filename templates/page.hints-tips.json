@@ -200,13 +200,6 @@
             "youtube_id": "qcqSqH07Nao"
           }
         },
-        "video_M6bcie": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to easily slice and serve fresh mango",
-            "youtube_id": "UgHsEcS79l8"
-          }
-        },
         "video_gief7V": {
           "type": "video",
           "settings": {
@@ -305,7 +298,6 @@
         "video_GTB884",
         "video_zdCPbX",
         "video_TYc8Nf",
-        "video_M6bcie",
         "video_gief7V",
         "video_FWjBY8",
         "video_mXe94T",
@@ -401,6 +393,13 @@
             "sub_heading": "How to core a tomato",
             "youtube_id": "_-Rl1gE4ECE"
           }
+        },
+        "video_ar8Qw3": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to easily slice and serve fresh mango",
+            "youtube_id": "UgHsEcS79l8"
+          }
         }
       },
       "block_order": [
@@ -408,7 +407,8 @@
         "video_jGdEG7",
         "video_KrJgjk",
         "video_MKcmTV",
-        "video_DyC8MJ"
+        "video_DyC8MJ",
+        "video_ar8Qw3"
       ],
       "name": "Video Gallery",
       "settings": {}

@@ -289,7 +289,9 @@
         "video_ywUAkt"
       ],
       "name": "Video Gallery",
-      "settings": {}
+      "settings": {
+        "heading": "Cooking Tips"
+      }
     },
     "video_gallery_7mmBJn": {
       "type": "video-gallery",
@@ -338,7 +340,9 @@
         "video_YpP7kY"
       ],
       "name": "Video Gallery",
-      "settings": {}
+      "settings": {
+        "heading": "Baking Tips"
+      }
     },
     "video_gallery_RbknMH": {
       "type": "video-gallery",
@@ -411,7 +415,9 @@
         "video_7HVcLF"
       ],
       "name": "Video Gallery",
-      "settings": {}
+      "settings": {
+        "heading": "Slicing & Serving Tips"
+      }
     },
     "video_gallery_8bFMLz": {
       "type": "video-gallery",
@@ -428,7 +434,9 @@
         "video_XfnVcj"
       ],
       "name": "Video Gallery",
-      "settings": {}
+      "settings": {
+        "heading": "General Tips"
+      }
     },
     "new_recipes_jpYPNg": {
       "type": "new-recipes",

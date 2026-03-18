@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "Header Group",
@@ -42,6 +51,13 @@
             "dd_nav_right": "main-menu-products-right"
           }
         },
+        "block_3_JTQxcF": {
+          "type": "block-3",
+          "settings": {
+            "link_title": "TIPS",
+            "nn_link": "shopify://pages/tips"
+          }
+        },
         "block_3_LX73ML": {
           "type": "block-3",
           "settings": {
@@ -75,6 +91,7 @@
         "block_3_NpwYnH",
         "block_1_NbRfLH",
         "block_2_YfbKdB",
+        "block_3_JTQxcF",
         "block_3_LX73ML",
         "block_3_ehGDqt",
         "block_3_attxye",

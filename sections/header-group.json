@@ -51,13 +51,6 @@
             "dd_nav_right": "main-menu-products-right"
           }
         },
-        "block_3_JTQxcF": {
-          "type": "block-3",
-          "settings": {
-            "link_title": "TIPS",
-            "nn_link": "shopify://pages/tips"
-          }
-        },
         "block_3_LX73ML": {
           "type": "block-3",
           "settings": {
@@ -91,7 +84,6 @@
         "block_3_NpwYnH",
         "block_1_NbRfLH",
         "block_2_YfbKdB",
-        "block_3_JTQxcF",
         "block_3_LX73ML",
         "block_3_ehGDqt",
         "block_3_attxye",

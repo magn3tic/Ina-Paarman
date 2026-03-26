@@ -22,16 +22,7 @@
   <meta name="google-site-verification" content="-Cw1X_0oNJ3wkiQUtoGhzeliW_B2LvV6EusafGT0h7U" />
 
 
-{%- assign normalized_page_title = page_title | strip | downcase -%}
-{%- assign normalized_h1_title = '' -%}
-
-{%- if request.page_type == 'article' -%}
-  {%- assign normalized_h1_title = article.title | default: '' | strip | downcase -%}
-{%- elsif request.page_type == 'blog' -%}
-  {%- assign normalized_h1_title = blog.title | default: '' | strip | downcase -%}
-{%- endif -%}
-
-<title>{{ page_title }}{% if normalized_h1_title != blank and normalized_page_title == normalized_h1_title %} | Ina Paarman{% endif %}</title>
+<title>{{ page_title }}</title>
 
   {% if page_description %}
     {% if template == 'list-collections' %}

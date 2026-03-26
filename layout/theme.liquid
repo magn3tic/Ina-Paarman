@@ -21,7 +21,13 @@
  
   <meta name="google-site-verification" content="-Cw1X_0oNJ3wkiQUtoGhzeliW_B2LvV6EusafGT0h7U" />
 
-<title>{{ page_title }} | Ina Paarman</title>
+{%- liquid
+  assign h1_title = article.title | default: blog.title | default: ''
+  assign normalized_page_title = page_title | strip | downcase
+  assign normalized_h1_title = h1_title | strip | downcase
+-%}
+
+<title>{{ page_title }}{% if normalized_h1_title != blank and normalized_page_title == normalized_h1_title %} | Ina Paarman{% endif %}</title>
 
   {% if page_description %}
     {% if template == 'list-collections' %}

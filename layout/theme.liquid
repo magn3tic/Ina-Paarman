@@ -21,14 +21,15 @@
  
   <meta name="google-site-verification" content="-Cw1X_0oNJ3wkiQUtoGhzeliW_B2LvV6EusafGT0h7U" />
 {%- assign normalized_page_title = page_title | strip | downcase -%}
-{%- assign normalized_product_title = product.title | default: '' | strip | downcase -%}
-{%- assign title_suffix = '' -%}
+{%- assign normalized_h1_title = '' -%}
 
-{%- if product and normalized_page_title == normalized_product_title -%}
-  {%- assign title_suffix = ' | Ina Paarman' -%}
+{%- if request.page_type == 'article' -%}
+  {%- assign normalized_h1_title = article.title | default: '' | strip | downcase -%}
+{%- elsif request.page_type == 'blog' -%}
+  {%- assign normalized_h1_title = blog.title | default: '' | strip | downcase -%}
 {%- endif -%}
 
-<title>{{ page_title }}{{ title_suffix }}</title>
+<title>{{ page_title }}{% if normalized_h1_title != blank and normalized_page_title == normalized_h1_title %} | Ina Paarman{% endif %}</title>
 
   {% if page_description %}
     {% if template == 'list-collections' %}

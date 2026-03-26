@@ -22,8 +22,13 @@
   <meta name="google-site-verification" content="-Cw1X_0oNJ3wkiQUtoGhzeliW_B2LvV6EusafGT0h7U" />
 {%- assign normalized_page_title = page_title | strip | downcase -%}
 {%- assign normalized_product_title = product.title | default: '' | strip | downcase -%}
+{%- assign title_suffix = '' -%}
 
-<title>{{ page_title }}{% if product and normalized_page_title == normalized_product_title %} | Ina Paarman{% endif %}</title>
+{%- if product and normalized_page_title == normalized_product_title -%}
+  {%- assign title_suffix = ' | Ina Paarman' -%}
+{%- endif -%}
+
+<title>{{ page_title }}{{ title_suffix }}</title>
 
   {% if page_description %}
     {% if template == 'list-collections' %}

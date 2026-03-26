@@ -20,7 +20,10 @@
 
  
   <meta name="google-site-verification" content="-Cw1X_0oNJ3wkiQUtoGhzeliW_B2LvV6EusafGT0h7U" />
-<title>{{ page_title }}{% if page_title | strip | downcase == product.title | strip | downcase %} | Ina Paarman{% endif %}</title>
+{%- assign normalized_page_title = page_title | strip | downcase -%}
+{%- assign normalized_product_title = product.title | default: '' | strip | downcase -%}
+
+<title>{{ page_title }}{% if product and normalized_page_title == normalized_product_title %} | Ina Paarman{% endif %}</title>
 
   {% if page_description %}
     {% if template == 'list-collections' %}

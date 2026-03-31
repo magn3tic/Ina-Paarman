@@ -67,9 +67,19 @@
         },
         "block_3_attxye": {
           "type": "block-3",
+          "disabled": true,
           "settings": {
             "link_title": "ALLERGEN & DIETARY INFO",
             "nn_link": "https://cdn.shopify.com/s/files/1/0583/8415/4690/files/Ina-Paarmans-Product-Allergen-Information.pdf?v=1737579350"
+          }
+        },
+        "block_2_NzeYKE": {
+          "type": "block-2",
+          "settings": {
+            "dd_title": "Resources",
+            "dd_link": "",
+            "dd_nav": "",
+            "dd_nav_right": "footer-resources"
           }
         },
         "block_3_LezR4a": {
@@ -87,6 +97,7 @@
         "block_3_LX73ML",
         "block_3_ehGDqt",
         "block_3_attxye",
+        "block_2_NzeYKE",
         "block_3_LezR4a"
       ],
       "custom_css": [],

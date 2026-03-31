@@ -440,7 +440,6 @@
     },
     "new_recipes_jpYPNg": {
       "type": "new-recipes",
-      "disabled": true,
       "name": "New Recipes",
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Braised-Lamb-Rib-Roll.jpg",
@@ -454,6 +453,7 @@
     },
     "new_recipes_HXrgay": {
       "type": "new-recipes",
+      "disabled": true,
       "settings": {
         "bg_image": "shopify://shop_images/Ina-Paarmans-Kitchen-March-Recipes.jpg",
         "sub_heading": "March 2026 –",

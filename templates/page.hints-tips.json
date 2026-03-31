@@ -347,6 +347,13 @@
     "video_gallery_RbknMH": {
       "type": "video-gallery",
       "blocks": {
+        "video_hdmcJb": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to portion a brick of butter",
+            "youtube_id": "E3ykp-3OzO0"
+          }
+        },
         "video_jEmENP": {
           "type": "video",
           "settings": {
@@ -412,6 +419,7 @@
         }
       },
       "block_order": [
+        "video_hdmcJb",
         "video_jEmENP",
         "video_668YiM",
         "video_jGdEG7",

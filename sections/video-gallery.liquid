@@ -25,18 +25,19 @@
       {% assign filter_array = all_filters | split: ',' %}
 
       <div class="row mb-4">
-        <div class="col-md-4 mx-auto">
+        <div class="col-md-4">
           <select class="form-select video-filter">
-            <option value="all">All</option>
             {% for f in filter_array %}
               {% if f != blank %}
-                <option value="{{ f | handle }}">{{ f }}</option>
+                <option value="{{ f | handle }}" {% if forloop.first %}selected{% endif %}>
+                  {{ f }}
+                </option>
               {% endif %}
             {% endfor %}
           </select>
         </div>
       </div>
-    {% endif %}    
+    {% endif %}   
   
     <div class="row align-items-end">
         {% assign block_count = 0 %}

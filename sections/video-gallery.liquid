@@ -81,9 +81,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const filterSelect = document.querySelector(".video-filter");
-  const items = document.querySelectorAll(".video-item");
 
   if (!filterSelect) return;
+
+  const items = document.querySelectorAll(".video-item");
 
   filterSelect.addEventListener("change", function () {
     const value = this.value;

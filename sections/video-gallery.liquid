@@ -2,7 +2,7 @@
   <div class="container">
 
     {% if section.settings.heading != blank %}
-    <div class="row">
+    <div class="row {% if section.settings.enable_filter %}text-center{% endif %}">
       <div class="col-12 text-start mb-4">
           <h3><b>{{ section.settings.heading }}</b></h3>
         </div>

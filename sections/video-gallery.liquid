@@ -53,8 +53,10 @@
   {% assign filter_handles = filter_handles | append: f | strip | handle | append: ' ' %}
 {% endfor %}
 
-<div class="col-sm-6 col-md-4 mb-4 video-item"
-     data-filter="{{ filter_handles }}">
+<div class="col-sm-6 col-md-4 mb-4 video-item {% if section.settings.enable_filter %}video-filter-item{% endif %}"
+     {% if section.settings.enable_filter %}
+     data-filter="{{ filter_handles }}"
+     {% endif %}>
 
               {% assign youtube_id = block.settings.youtube_id %}
               {% if block.settings.sub_heading != blank %}
@@ -81,10 +83,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const filterSelect = document.querySelector(".video-filter");
-
   if (!filterSelect) return;
 
-  const items = document.querySelectorAll(".video-item");
+  const items = document.querySelectorAll(".video-filter-item");
 
   filterSelect.addEventListener("change", function () {
     const value = this.value;

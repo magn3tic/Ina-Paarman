@@ -478,6 +478,27 @@
         "button_link": "shopify://pages/march-2026",
         "image_position": false
       }
+    },
+    "video_gallery_DVFxhg": {
+      "type": "video-gallery",
+      "blocks": {
+        "video_3pAqUz": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "ABC",
+            "youtube_id": "",
+            "filters": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_3pAqUz"
+      ],
+      "name": "Video Gallery",
+      "settings": {
+        "heading": "",
+        "enable_filter": false
+      }
     }
   },
   "order": [
@@ -486,6 +507,7 @@
     "spacer_DXVDhW",
     "video_gallery_hUhJ44",
     "new_recipes_jpYPNg",
-    "new_recipes_HXrgay"
+    "new_recipes_HXrgay",
+    "video_gallery_DVFxhg"
   ]
 }

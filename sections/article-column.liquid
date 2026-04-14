@@ -9,7 +9,7 @@
                         <span class="d-block sub_heading">{{ blog_tagline }}</span>
                     {% endif %}                  
                     <h1 class="heading">{{ article.title }}</h1>
-                    <span class="date_author"><a>{{ article.created_at | date: "%d %B %Y" }}</a></span>
+                    <span class="date_author"><a>{{ article.updated_at | date: "%d %B %Y" }}</a></span>
                     {% comment %} <hr /> {% endcomment %}
 
 

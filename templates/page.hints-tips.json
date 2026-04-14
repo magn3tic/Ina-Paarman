@@ -324,6 +324,94 @@
             "youtube_id": "1ECY-U0Y40s",
             "filters": "Baking Tips"
           }
+        },
+        "video_NYJcdn": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to portion a brick of butter",
+            "youtube_id": "E3ykp-3OzO0",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_RF6iqf": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "Why you need a microplane grater",
+            "youtube_id": "LfkCTdTv8XU",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_d3FRKK": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "Is it necessary to peel a potato?",
+            "youtube_id": "fbuadPJHA0c",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_M7DLYd": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to carve a pork loin roast",
+            "youtube_id": "CASfisBw3LY",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_qcmCjE": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to butterfly a chicken",
+            "youtube_id": "agAhYEwDycg",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_LxWghB": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to plate tagliatelle like a pro",
+            "youtube_id": "D9X6XY9Rnnk",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_JUGeww": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to core a tomato",
+            "youtube_id": "_-Rl1gE4ECE",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_ajTfJC": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to easily slice and serve fresh mango",
+            "youtube_id": "UgHsEcS79l8",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_MiMFgQ": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to fold a wrap",
+            "youtube_id": "SJKYolOVWYI",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_AhrCTG": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to portion a cooked chicken",
+            "youtube_id": "ITYDnvlOgFY",
+            "filters": "Slicing & Serving Tips"
+          }
+        },
+        "video_bXx8Ni": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to protect your stacked cookware",
+            "youtube_id": "Q5SRbyA0HDA",
+            "filters": "General Tips"
+          }
         }
       },
       "block_order": [
@@ -346,135 +434,23 @@
         "video_wzdryz",
         "video_MMy8KM",
         "video_MdEYyQ",
-        "video_EWGfkx"
+        "video_EWGfkx",
+        "video_NYJcdn",
+        "video_RF6iqf",
+        "video_d3FRKK",
+        "video_M7DLYd",
+        "video_qcmCjE",
+        "video_LxWghB",
+        "video_JUGeww",
+        "video_ajTfJC",
+        "video_MiMFgQ",
+        "video_AhrCTG",
+        "video_bXx8Ni"
       ],
       "name": "Video Gallery",
       "settings": {
         "heading": "",
         "enable_filter": true
-      }
-    },
-    "video_gallery_RbknMH": {
-      "type": "video-gallery",
-      "blocks": {
-        "video_hdmcJb": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to portion a brick of butter",
-            "youtube_id": "E3ykp-3OzO0",
-            "filters": ""
-          }
-        },
-        "video_jEmENP": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "Why you need a microplane grater",
-            "youtube_id": "LfkCTdTv8XU",
-            "filters": ""
-          }
-        },
-        "video_668YiM": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "Is it necessary to peel a potato?",
-            "youtube_id": "fbuadPJHA0c",
-            "filters": ""
-          }
-        },
-        "video_jGdEG7": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to carve a pork loin roast",
-            "youtube_id": "CASfisBw3LY",
-            "filters": ""
-          }
-        },
-        "video_KrJgjk": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to butterfly a chicken",
-            "youtube_id": "agAhYEwDycg",
-            "filters": ""
-          }
-        },
-        "video_MKcmTV": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to plate tagliatelle like a pro",
-            "youtube_id": "D9X6XY9Rnnk",
-            "filters": ""
-          }
-        },
-        "video_DyC8MJ": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to core a tomato",
-            "youtube_id": "_-Rl1gE4ECE",
-            "filters": ""
-          }
-        },
-        "video_ar8Qw3": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to easily slice and serve fresh mango",
-            "youtube_id": "UgHsEcS79l8",
-            "filters": ""
-          }
-        },
-        "video_8Y8weJ": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to fold a wrap",
-            "youtube_id": "SJKYolOVWYI",
-            "filters": ""
-          }
-        },
-        "video_7HVcLF": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to portion a cooked chicken",
-            "youtube_id": "ITYDnvlOgFY",
-            "filters": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_hdmcJb",
-        "video_jEmENP",
-        "video_668YiM",
-        "video_jGdEG7",
-        "video_KrJgjk",
-        "video_MKcmTV",
-        "video_DyC8MJ",
-        "video_ar8Qw3",
-        "video_8Y8weJ",
-        "video_7HVcLF"
-      ],
-      "name": "Video Gallery",
-      "settings": {
-        "heading": "SLICING & SERVING TIPS",
-        "enable_filter": false
-      }
-    },
-    "video_gallery_8bFMLz": {
-      "type": "video-gallery",
-      "blocks": {
-        "video_XfnVcj": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to protect your stacked cookware",
-            "youtube_id": "Q5SRbyA0HDA",
-            "filters": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_XfnVcj"
-      ],
-      "name": "Video Gallery",
-      "settings": {
-        "heading": "GENERAL TIPS",
-        "enable_filter": false
       }
     },
     "new_recipes_jpYPNg": {
@@ -509,8 +485,6 @@
     "richtext_7btbGw",
     "spacer_DXVDhW",
     "video_gallery_hUhJ44",
-    "video_gallery_RbknMH",
-    "video_gallery_8bFMLz",
     "new_recipes_jpYPNg",
     "new_recipes_HXrgay"
   ]

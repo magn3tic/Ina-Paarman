@@ -8,6 +8,35 @@
         </div>
       </div>
     {% endif %}
+
+    {% if section.settings.enable_filter %}
+      {% assign all_filters = '' %}
+
+      {% for block in section.blocks %}
+        {% assign block_filters = block.settings.filters | split: ',' %}
+        {% for f in block_filters %}
+          {% assign f_clean = f | strip %}
+          {% unless all_filters contains f_clean %}
+            {% assign all_filters = all_filters | append: f_clean | append: ',' %}
+          {% endunless %}
+        {% endfor %}
+      {% endfor %}
+
+      {% assign filter_array = all_filters | split: ',' %}
+
+      <div class="row mb-4">
+        <div class="col-md-4 mx-auto">
+          <select class="form-select video-filter">
+            <option value="all">All</option>
+            {% for f in filter_array %}
+              {% if f != blank %}
+                <option value="{{ f | handle }}">{{ f }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    {% endif %}    
   
     <div class="row align-items-end">
         {% assign block_count = 0 %}
@@ -17,7 +46,16 @@
               <span class="d-block sub_heading">{{ section.settings.sub_heading }}</span>
             {% endif %}
 
-          <div class="col-sm-6 col-md-4 mb-4">
+{% assign filters = block.settings.filters | split: ',' %}
+{% assign filter_handles = '' %}
+
+{% for f in filters %}
+  {% assign filter_handles = filter_handles | append: f | strip | handle | append: ' ' %}
+{% endfor %}
+
+<div class="col-sm-6 col-md-4 mb-4 video-item"
+     data-filter="{{ filter_handles }}">
+
               {% assign youtube_id = block.settings.youtube_id %}
               {% if block.settings.sub_heading != blank %}
                 <h3 class="h4 text-start mt-2">{{ block.settings.sub_heading }}</h3>
@@ -39,6 +77,33 @@
   </div>
 </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const filterSelect = document.querySelector(".video-filter");
+  const items = document.querySelectorAll(".video-item");
+
+  if (!filterSelect) return;
+
+  filterSelect.addEventListener("change", function () {
+    const value = this.value;
+
+    items.forEach(item => {
+      if (value === "all") {
+        item.style.display = "block";
+      } else {
+        if (item.dataset.filter.includes(value)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      }
+    });
+  });
+
+});
+</script>
+
 {% schema %}
 {
   "name": "Video Gallery",
@@ -47,7 +112,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading"
-    }
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filter",
+      "label": "Enable Filter",
+      "default": false
+    }    
   ],
   "blocks": [
     {
@@ -58,13 +129,19 @@
       "type": "text",
       "id": "sub_heading",
       "label": "Video Title",
-    },
-        {
+      },
+      {
+        "type": "text",
+        "id": "youtube_id",
+        "label": "YouTube Video ID",
+        "info": "Enter the unique YouTube video ID (e.g., dQw4w9WgXcQ)"
+      },
+      {
           "type": "text",
-          "id": "youtube_id",
-          "label": "YouTube Video ID",
-          "info": "Enter the unique YouTube video ID (e.g., dQw4w9WgXcQ)"
-        }
+          "id": "filters",
+          "label": "Filters (comma separated for multiple)",
+          "info": "Example: Engine, Setup, Maintenance"
+        }      
       ]
     }
   ],

@@ -169,105 +169,160 @@
           "type": "video",
           "settings": {
             "sub_heading": "The secret to fluffy mashed potatoes",
-            "youtube_id": "yGsQc5ZFj-w"
+            "youtube_id": "yGsQc5ZFj-w",
+            "filters": "Cooking Tips"
           }
         },
         "video_GTB884": {
           "type": "video",
           "settings": {
             "sub_heading": "Homemade soft cheese",
-            "youtube_id": "gCzFGHUHswA"
+            "youtube_id": "gCzFGHUHswA",
+            "filters": "Cooking Tips"
           }
         },
         "video_zdCPbX": {
           "type": "video",
           "settings": {
             "sub_heading": "Microwave mealies",
-            "youtube_id": "x4Cwr4Jubf8"
+            "youtube_id": "x4Cwr4Jubf8",
+            "filters": "Cooking Tips"
           }
         },
         "video_TYc8Nf": {
           "type": "video",
           "settings": {
             "sub_heading": "How to use gelatine powder",
-            "youtube_id": "qcqSqH07Nao"
+            "youtube_id": "qcqSqH07Nao",
+            "filters": "Cooking Tips"
           }
         },
         "video_gief7V": {
           "type": "video",
           "settings": {
             "sub_heading": "How to make Hollandaise Sauce",
-            "youtube_id": "xz9qr3_FVz8"
+            "youtube_id": "xz9qr3_FVz8",
+            "filters": "Cooking Tips"
           }
         },
         "video_FWjBY8": {
           "type": "video",
           "settings": {
             "sub_heading": "How to poach eggs",
-            "youtube_id": "BmAOwIcrIFY"
+            "youtube_id": "BmAOwIcrIFY",
+            "filters": "Cooking Tips"
           }
         },
         "video_mXe94T": {
           "type": "video",
           "settings": {
             "sub_heading": "How to make perfectly fried eggs",
-            "youtube_id": "0ib7ifrtKjI"
+            "youtube_id": "0ib7ifrtKjI",
+            "filters": "Cooking Tips"
           }
         },
         "video_dYTw8t": {
           "type": "video",
           "settings": {
             "sub_heading": "How to thaw frozen fish",
-            "youtube_id": "d0DG1bY5qpY"
+            "youtube_id": "d0DG1bY5qpY",
+            "filters": "Cooking Tips"
           }
         },
         "video_Ekryij": {
           "type": "video",
           "settings": {
             "sub_heading": "How to reheat flatbread in an airfryer",
-            "youtube_id": "9UiggHTMv30"
+            "youtube_id": "9UiggHTMv30",
+            "filters": "Cooking Tips"
           }
         },
         "video_njQy9e": {
           "type": "video",
           "settings": {
             "sub_heading": "How to make simple pizza wrap toast",
-            "youtube_id": "gACCyiMGmmI"
+            "youtube_id": "gACCyiMGmmI",
+            "filters": "Cooking Tips"
           }
         },
         "video_J8yqFf": {
           "type": "video",
           "settings": {
             "sub_heading": "How to remove excess fat from a slow-cooked stew",
-            "youtube_id": "QU-Pz7H3WT8"
+            "youtube_id": "QU-Pz7H3WT8",
+            "filters": "Cooking Tips"
           }
         },
         "video_eiWDie": {
           "type": "video",
           "settings": {
             "sub_heading": "How to prevent a pot of pasta from boiling over",
-            "youtube_id": "gAjub5ZOgSk"
+            "youtube_id": "gAjub5ZOgSk",
+            "filters": "Cooking Tips"
           }
         },
         "video_VR7f4D": {
           "type": "video",
           "settings": {
             "sub_heading": "How to make the crispiest, flat bacon strips",
-            "youtube_id": "nGr1pyH4uSg"
+            "youtube_id": "nGr1pyH4uSg",
+            "filters": "Cooking Tips"
           }
         },
         "video_p7TMMp": {
           "type": "video",
           "settings": {
             "sub_heading": "How to easily peel a cooked potato",
-            "youtube_id": "crlPN7nQb08"
+            "youtube_id": "crlPN7nQb08",
+            "filters": "Cooking Tips"
           }
         },
         "video_ywUAkt": {
           "type": "video",
           "settings": {
             "sub_heading": "How to make perfect scrambled eggs",
-            "youtube_id": "FRuoCZNInYM"
+            "youtube_id": "FRuoCZNInYM",
+            "filters": "Cooking Tips"
+          }
+        },
+        "video_NKApYY": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to pipe a meringue nest",
+            "youtube_id": "C5qsuhK_wbo",
+            "filters": "Baking Tips"
+          }
+        },
+        "video_wzdryz": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to flatten dough in a baking tray",
+            "youtube_id": "tnvQeAthKcU",
+            "filters": "Baking Tips"
+          }
+        },
+        "video_MMy8KM": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "Three ways to rub butter into flour",
+            "youtube_id": "r4MR_eDBqXs",
+            "filters": "Baking Tips"
+          }
+        },
+        "video_MdEYyQ": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to make muffin liners using baking paper",
+            "youtube_id": "Xnt2ZN3Zdj4",
+            "filters": "Baking Tips"
+          }
+        },
+        "video_EWGfkx": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "How to sift dry ingredients into wet ingredients",
+            "youtube_id": "1ECY-U0Y40s",
+            "filters": "Baking Tips"
           }
         }
       },
@@ -286,62 +341,17 @@
         "video_eiWDie",
         "video_VR7f4D",
         "video_p7TMMp",
-        "video_ywUAkt"
+        "video_ywUAkt",
+        "video_NKApYY",
+        "video_wzdryz",
+        "video_MMy8KM",
+        "video_MdEYyQ",
+        "video_EWGfkx"
       ],
       "name": "Video Gallery",
       "settings": {
-        "heading": "COOKING TIPS"
-      }
-    },
-    "video_gallery_7mmBJn": {
-      "type": "video-gallery",
-      "blocks": {
-        "video_CBDhHj": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to pipe a meringue nest",
-            "youtube_id": "C5qsuhK_wbo"
-          }
-        },
-        "video_Gx6fxw": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to flatten dough in a baking tray",
-            "youtube_id": "tnvQeAthKcU"
-          }
-        },
-        "video_zCyqcU": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "Three ways to rub butter into flour",
-            "youtube_id": "r4MR_eDBqXs"
-          }
-        },
-        "video_MKAyRF": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to make muffin liners using baking paper",
-            "youtube_id": "Xnt2ZN3Zdj4"
-          }
-        },
-        "video_YpP7kY": {
-          "type": "video",
-          "settings": {
-            "sub_heading": "How to sift dry ingredients into wet ingredients",
-            "youtube_id": "1ECY-U0Y40s"
-          }
-        }
-      },
-      "block_order": [
-        "video_CBDhHj",
-        "video_Gx6fxw",
-        "video_zCyqcU",
-        "video_MKAyRF",
-        "video_YpP7kY"
-      ],
-      "name": "Video Gallery",
-      "settings": {
-        "heading": "BAKING TIPS"
+        "heading": "",
+        "enable_filter": true
       }
     },
     "video_gallery_RbknMH": {
@@ -351,70 +361,80 @@
           "type": "video",
           "settings": {
             "sub_heading": "How to portion a brick of butter",
-            "youtube_id": "E3ykp-3OzO0"
+            "youtube_id": "E3ykp-3OzO0",
+            "filters": ""
           }
         },
         "video_jEmENP": {
           "type": "video",
           "settings": {
             "sub_heading": "Why you need a microplane grater",
-            "youtube_id": "LfkCTdTv8XU"
+            "youtube_id": "LfkCTdTv8XU",
+            "filters": ""
           }
         },
         "video_668YiM": {
           "type": "video",
           "settings": {
             "sub_heading": "Is it necessary to peel a potato?",
-            "youtube_id": "fbuadPJHA0c"
+            "youtube_id": "fbuadPJHA0c",
+            "filters": ""
           }
         },
         "video_jGdEG7": {
           "type": "video",
           "settings": {
             "sub_heading": "How to carve a pork loin roast",
-            "youtube_id": "CASfisBw3LY"
+            "youtube_id": "CASfisBw3LY",
+            "filters": ""
           }
         },
         "video_KrJgjk": {
           "type": "video",
           "settings": {
             "sub_heading": "How to butterfly a chicken",
-            "youtube_id": "agAhYEwDycg"
+            "youtube_id": "agAhYEwDycg",
+            "filters": ""
           }
         },
         "video_MKcmTV": {
           "type": "video",
           "settings": {
             "sub_heading": "How to plate tagliatelle like a pro",
-            "youtube_id": "D9X6XY9Rnnk"
+            "youtube_id": "D9X6XY9Rnnk",
+            "filters": ""
           }
         },
         "video_DyC8MJ": {
           "type": "video",
           "settings": {
             "sub_heading": "How to core a tomato",
-            "youtube_id": "_-Rl1gE4ECE"
+            "youtube_id": "_-Rl1gE4ECE",
+            "filters": ""
           }
         },
         "video_ar8Qw3": {
           "type": "video",
           "settings": {
             "sub_heading": "How to easily slice and serve fresh mango",
-            "youtube_id": "UgHsEcS79l8"
+            "youtube_id": "UgHsEcS79l8",
+            "filters": ""
           }
         },
         "video_8Y8weJ": {
           "type": "video",
           "settings": {
             "sub_heading": "How to fold a wrap",
-            "youtube_id": "SJKYolOVWYI"
+            "youtube_id": "SJKYolOVWYI",
+            "filters": ""
           }
         },
         "video_7HVcLF": {
           "type": "video",
           "settings": {
             "sub_heading": "How to portion a cooked chicken",
-            "youtube_id": "ITYDnvlOgFY"
+            "youtube_id": "ITYDnvlOgFY",
+            "filters": ""
           }
         }
       },
@@ -432,7 +452,8 @@
       ],
       "name": "Video Gallery",
       "settings": {
-        "heading": "SLICING & SERVING TIPS"
+        "heading": "SLICING & SERVING TIPS",
+        "enable_filter": false
       }
     },
     "video_gallery_8bFMLz": {
@@ -442,7 +463,8 @@
           "type": "video",
           "settings": {
             "sub_heading": "How to protect your stacked cookware",
-            "youtube_id": "Q5SRbyA0HDA"
+            "youtube_id": "Q5SRbyA0HDA",
+            "filters": ""
           }
         }
       },
@@ -451,7 +473,8 @@
       ],
       "name": "Video Gallery",
       "settings": {
-        "heading": "GENERAL TIPS"
+        "heading": "GENERAL TIPS",
+        "enable_filter": false
       }
     },
     "new_recipes_jpYPNg": {
@@ -486,7 +509,6 @@
     "richtext_7btbGw",
     "spacer_DXVDhW",
     "video_gallery_hUhJ44",
-    "video_gallery_7mmBJn",
     "video_gallery_RbknMH",
     "video_gallery_8bFMLz",
     "new_recipes_jpYPNg",

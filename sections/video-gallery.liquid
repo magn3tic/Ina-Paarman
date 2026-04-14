@@ -88,21 +88,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const items = document.querySelectorAll(".video-filter-item");
 
-  filterSelect.addEventListener("change", function () {
-    const value = this.value;
-
+  function applyFilter(value) {
     items.forEach(item => {
-      if (value === "all") {
+      if (item.dataset.filter.includes(value)) {
         item.style.display = "block";
       } else {
-        if (item.dataset.filter.includes(value)) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
-        }
+        item.style.display = "none";
       }
     });
+  }
+
+  filterSelect.addEventListener("change", function () {
+    applyFilter(this.value);
   });
+
+  applyFilter(filterSelect.value);
 
 });
 </script>

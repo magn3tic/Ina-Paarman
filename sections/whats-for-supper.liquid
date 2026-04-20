@@ -28,72 +28,111 @@
 <section class="recipes-listing-area supper-box-area pt_40">
     <div class="container">
         <div class="px-lg-10">
-            <div class="row" id="blog-container">{{page.content}}</div>
+        {{page.content}}
+          <div class="row" id="recipe-results"></div>
         </div>
     </div>
 </section>
 
-<script>
-  var blogTags = "{{ "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday" | downcase }}".split(',');
-</script>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-  var postsByTag = {}; // Temporary storage for posts by tag
+  var blogTags = "monday,tuesday,wednesday,thursday,friday,saturday".split(',');
+  var recipeBlogLoading = false;
+  var recipeBlogInitialized = false;
 
-  blogTags.forEach(function(tag) {
-    postsByTag[tag] = [];
-  });
+  function initRecipeBlog() {
+    var $container = $('#recipe-results');
+    if (!$container.length || recipeBlogLoading) return;
 
-  blogTags.forEach(function(tag) {
-    var tagUrl = `/blogs/all-recipes/tagged/${tag}`;
+    // On live storefront, run once.
+    // In theme editor, allow re-run when Shopify reloads the section.
+    if (recipeBlogInitialized && !(window.Shopify && Shopify.designMode)) return;
 
-    function fetchBlogPosts(pageNumber) {
-      jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
-        var html = $(response);
+    recipeBlogLoading = true;
 
-        html.find('.recipe-box-alt').each(function() {
-          var postUrl = $(this).attr('href');
-          var postImage = $(this).find('img').attr('src');
-          var postTitle = $(this).find('.title').text();
+    var postsByTag = {};
+    var pendingRequests = blogTags.length * 3;
+    var totalPosts = 0;
 
-          var postElement = $('<a>')
-            .attr('href', postUrl)
-            .addClass('recipe-box-alt v2')
-            .append($('<span>').addClass('d-block sub_heading').text(tag))
-            .append($('<img>').attr('src', postImage).attr('alt', postTitle))
-            .append($('<span>').addClass('d-block title').text(postTitle));
+    blogTags.forEach(function(tag) {
+      postsByTag[tag] = [];
+    });
 
-          var wrappedElement = $('<div>')
-            .addClass('col-md-2 col-sm-4 col-6')
-            .attr('data-tag', tag)
-            .append(postElement);
+    function finishRequest() {
+      pendingRequests--;
 
-          postsByTag[tag].push(wrappedElement); // Add to tag-specific array
+      if (pendingRequests !== 0) return;
+
+      recipeBlogLoading = false;
+      recipeBlogInitialized = true;
+
+      // If nothing came back, do NOT wipe what's already on screen
+      if (!totalPosts) return;
+
+      $container.empty();
+
+      blogTags.forEach(function(tag) {
+        postsByTag[tag].forEach(function(postElement) {
+          $container.append(postElement);
         });
-
-        if (pageNumber < 3) {
-          fetchBlogPosts(pageNumber + 1);
-        } else {
-          if (Object.keys(postsByTag).every(t => postsByTag[t].length)) {
-            appendPostsInOrder();
-          }
-        }
       });
     }
 
-    fetchBlogPosts(1);
-  });
-
-  function appendPostsInOrder() {
     blogTags.forEach(function(tag) {
-      postsByTag[tag].forEach(function(postElement) {
-        $('#blog-container').append(postElement);
-      });
+      var tagUrl = '/blogs/all-recipes/tagged/' + tag;
+
+      for (var pageNumber = 1; pageNumber <= 3; pageNumber++) {
+        (function(tag, pageNumber) {
+          $.get(tagUrl + '?page=' + pageNumber)
+            .done(function(response) {
+              var html = $(response);
+
+              html.find('.recipe-box-alt').each(function() {
+                var postUrl = $(this).attr('href');
+                var postImage = $(this).find('img').attr('src');
+                var postTitle = $(this).find('.title').text().trim();
+
+                if (!postUrl || !postTitle) return;
+
+                var postElement = $('<a>')
+                  .attr('href', postUrl)
+                  .addClass('recipe-box-alt v2')
+                  .append($('<span>').addClass('d-block sub_heading').text(tag))
+                  .append($('<img>').attr('src', postImage).attr('alt', postTitle))
+                  .append($('<span>').addClass('d-block title').text(postTitle));
+
+                var wrappedElement = $('<div>')
+                  .addClass('col-md-2 col-sm-4 col-6')
+                  .attr('data-tag', tag)
+                  .append(postElement);
+
+                postsByTag[tag].push(wrappedElement);
+                totalPosts++;
+              });
+            })
+            .always(function() {
+              finishRequest();
+            });
+        })(tag, pageNumber);
+      }
     });
   }
-});
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRecipeBlog);
+  } else {
+    initRecipeBlog();
+  }
+
+  // Only use Shopify section reloads inside the theme editor
+  if (window.Shopify && Shopify.designMode) {
+    document.addEventListener('shopify:section:load', function() {
+      recipeBlogInitialized = false;
+      initRecipeBlog();
+    });
+  }
 </script>
 
 

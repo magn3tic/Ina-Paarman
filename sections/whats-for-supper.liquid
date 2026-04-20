@@ -28,23 +28,26 @@
 <section class="recipes-listing-area supper-box-area pt_40">
     <div class="container">
         <div class="px-lg-10">
-          {{page.content}}
-          <div class="row" id="blog-container"></div>
+            <div class="row" id="blog-container">{{page.content}}</div>
         </div>
     </div>
 </section>
 
-<script>
-  var blogTags = "{{ "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday" | downcase }}".split(',');
-</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+  var blogTags = "monday,tuesday,wednesday,thursday,friday,saturday".split(',');
+  var recipeBlogInitialized = false;
 
   function initRecipeBlog() {
-    if (!window.blogTags || !$('#blog-container').length) return;
+    var $container = $('#recipe-results');
 
-    var $container = $('#blog-container');
+    if (!$container.length) return;
+
+    // Prevent duplicate re-runs on storefront
+    if (recipeBlogInitialized && !Shopify.designMode) return;
+    recipeBlogInitialized = true;
+
     $container.empty();
 
     var postsByTag = {};
@@ -90,6 +93,11 @@
               appendPostsInOrder();
             }
           }
+        }).fail(function() {
+          completedTags++;
+          if (completedTags === blogTags.length) {
+            appendPostsInOrder();
+          }
         });
       }
 
@@ -97,6 +105,7 @@
     });
 
     function appendPostsInOrder() {
+      $container.empty();
       blogTags.forEach(function(tag) {
         postsByTag[tag].forEach(function(postElement) {
           $container.append(postElement);
@@ -105,16 +114,17 @@
     }
   }
 
-  // Run immediately if DOM is already ready, otherwise wait
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initRecipeBlog);
   } else {
     initRecipeBlog();
   }
 
-  // Re-run inside Shopify theme editor when section reloads
   document.addEventListener('shopify:section:load', function() {
-    initRecipeBlog();
+    if (Shopify.designMode) {
+      recipeBlogInitialized = false;
+      initRecipeBlog();
+    }
   });
 </script>
 

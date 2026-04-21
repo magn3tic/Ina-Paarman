@@ -122,39 +122,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-  var $boxes = $('.recipe-box-alt');
-  var batchSize = 3;
-  var delay = 2000;
-  var index = 0;
+  $('.recipe-box-alt').each(function() {
+    var $this = $(this);
+    var month = $this.data('month');
+    var year = $this.data('year');
+    var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
 
-  function loadBatch() {
-    var batch = $boxes.slice(index, index + batchSize);
-    if (!batch.length) return;
+    // Fetch the first post with matching tag to get the image
+    $.get(tagUrl, function(response) {
+      var html = $(response);
+      var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
 
-    batch.each(function() {
-      var $this = $(this);
-      var month = $this.data('month');
-      var year = $this.data('year');
-      var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
-
-      $.get(tagUrl, function(response) {
-        var html = $(response);
-        var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
-
-        if (firstPostImage) {
-          $this.find('.dynamic-image').attr('src', firstPostImage);
-        }
-      });
+      // Replace the placeholder image with the retrieved image
+      if (firstPostImage) {
+        $this.find('.dynamic-image').attr('src', firstPostImage);
+      }
     });
-
-    index += batchSize;
-
-    if (index < $boxes.length) {
-      setTimeout(loadBatch, delay);
-    }
-  }
-
-  loadBatch();
+  });
 });
 </script>
 

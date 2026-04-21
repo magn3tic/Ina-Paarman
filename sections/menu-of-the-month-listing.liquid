@@ -122,23 +122,42 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-  $('.recipe-box-alt').each(function() {
-    var $this = $(this);
+  var $boxes = $('.recipe-box-alt');
+  var index = 0;
+  var delay = 2000;
+
+  function loadNext() {
+    if (index >= $boxes.length) return;
+
+    var $this = $boxes.eq(index);
     var month = $this.data('month');
     var year = $this.data('year');
     var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
 
-    // Fetch the first post with matching tag to get the image
-    $.get(tagUrl, function(response) {
-      var html = $(response);
-      var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
+    $.get(tagUrl)
+      .done(function(response) {
+        var html = $(response);
+        var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
 
-      // Replace the placeholder image with the retrieved image
-      if (firstPostImage) {
-        $this.find('.dynamic-image').attr('src', firstPostImage);
-      }
-    });
-  });
+        if (firstPostImage) {
+          $this.find('.dynamic-image').attr('src', firstPostImage);
+        }
+
+        index++;
+        setTimeout(loadNext, delay);
+      })
+      .fail(function(xhr) {
+        if (xhr.status === 429) {
+          // Wait longer and retry the same one
+          setTimeout(loadNext, 5000);
+        } else {
+          index++;
+          setTimeout(loadNext, delay);
+        }
+      });
+  }
+
+  loadNext();
 });
 </script>
 

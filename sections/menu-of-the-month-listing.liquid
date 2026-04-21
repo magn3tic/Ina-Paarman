@@ -74,7 +74,7 @@
                   <img class="dynamic-image" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="Placeholder Image">
           
                   <span class="d-block sub_heading">{{ month }} {{ year }} —</span>
-                  <span class="d-block title">{{ link.title }}</span>
+                  <span class="d-block title">{{ link.title | raw }}</span>
                 </a>
               </div>
             {% endfor %}

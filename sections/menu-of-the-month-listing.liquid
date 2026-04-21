@@ -121,71 +121,48 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(document).ready(function () {
+$(document).ready(function() {
+  var $boxes = $('.recipe-box-alt');
+  var index = 0;
+  var delay = 5000;
+  var maxRetries = 3;
+  var initialDelay = 5000;
 
-  const cache = {};
-  const DELAY = 1200;
+  function loadNext(retryCount) {
+    if (index >= $boxes.length) return;
 
-  const uniqueKeys = [];
+    var $this = $boxes.eq(index);
+    var month = $this.data('month');
+    var year = $this.data('year');
+    var tagUrl = '/blogs/all-recipes/tagged/' + month + '-' + year;
 
-  $('.recipe-box-alt').each(function () {
-    const month = $(this).data('month');
-    const year = $(this).data('year');
-    const key = `${month}-${year}`;
+    $.get(tagUrl)
+      .done(function(response) {
+        var html = $(response);
+        var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
 
-    if (!uniqueKeys.includes(key)) {
-      uniqueKeys.push(key);
-    }
-  });
-
-  let index = 0;
-
-  function processNext() {
-    if (index >= uniqueKeys.length) return;
-
-    const key = uniqueKeys[index];
-    const [month, year] = key.split('-');
-    const url = `/blogs/all-recipes/tagged/${key}`;
-
-    if (cache[key]) {
-      applyImage(month, year, cache[key]);
-      index++;
-      processNext();
-      return;
-    }
-
-    $.get(url)
-      .done(function (response) {
-        const html = $(response);
-        const img = html.find('.recipe-box-alt img').first().attr('src');
-
-        if (img) {
-          cache[key] = img;
-          applyImage(month, year, img);
+        if (firstPostImage) {
+          $this.find('.dynamic-image').attr('src', firstPostImage);
         }
-      })
-      .fail(function (err) {
-        if (err.status === 429) {
-          console.warn('Rate limited, waiting...', key);
 
-          setTimeout(processNext, 3000); 
-          return;
-        }
-      })
-      .always(function () {
         index++;
-        setTimeout(processNext, DELAY); 
+        setTimeout(loadNext, delay, 0);
+      })
+      .fail(function(xhr) {
+        if (xhr.status === 429 && retryCount < maxRetries) {
+          var backoff = delay * Math.pow(2, retryCount + 1);
+          console.log('Rate limited, retrying ' + month + '-' + year + ' in ' + (backoff/1000) + 's');
+          setTimeout(loadNext, backoff, retryCount + 1);
+        } else {
+          console.warn('Skipping ' + month + '-' + year);
+          index++;
+          setTimeout(loadNext, delay, 0);
+        }
       });
   }
 
-  function applyImage(month, year, img) {
-    $(`.recipe-box-alt[data-month="${month}"][data-year="${year}"]`)
-      .find('.dynamic-image')
-      .attr('src', img);
-  }
-
-  processNext();
-
+  // Wait for page to fully load and other requests to settle
+  setTimeout(loadNext, initialDelay, 0);
 });
 </script>
 

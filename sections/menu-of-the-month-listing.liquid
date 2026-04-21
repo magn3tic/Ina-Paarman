@@ -123,63 +123,99 @@
 <script>
 $(document).ready(function() {
   var $boxes = $('.recipe-box-alt');
-  var index = 0;
+  var queue = [];
   var delay = 500;
   var maxRetries = 2;
   var initialDelay = 1000;
   var concurrent = 4;
   var active = 0;
+  var cacheKey = 'recipe-images-cache';
+  var cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours
 
-  function loadNext(retryCount) {
-    if (index >= $boxes.length) return;
+  // Load cache
+  var cache = {};
+  try {
+    var stored = localStorage.getItem(cacheKey);
+    if (stored) {
+      var parsed = JSON.parse(stored);
+      // Check if cache is still valid
+      if (parsed.timestamp && (Date.now() - parsed.timestamp) < cacheExpiry) {
+        cache = parsed.data || {};
+      }
+    }
+  } catch (e) {}
 
-    var currentIndex = index;
-    index++;
-    active++;
+  function saveCache() {
+    try {
+      localStorage.setItem(cacheKey, JSON.stringify({
+        timestamp: Date.now(),
+        data: cache
+      }));
+    } catch (e) {}
+  }
 
-    var $this = $boxes.eq(currentIndex);
+  // Apply cached images first, queue the rest
+  $boxes.each(function() {
+    var $this = $(this);
+    var month = $this.data('month');
+    var year = $this.data('year');
+    var key = month + '-' + year;
+
+    if (cache[key]) {
+      $this.find('.dynamic-image').attr('src', cache[key]);
+    } else {
+      queue.push({ el: $this, retries: 0, key: key });
+    }
+  });
+
+  function processQueue() {
+    while (active < concurrent && queue.length > 0) {
+      loadOne(queue.shift());
+    }
+    // Save cache when all done
+    if (active === 0 && queue.length === 0) {
+      saveCache();
+    }
+  }
+
+  function loadOne(item) {
+    var $this = item.el;
     var month = $this.data('month');
     var year = $this.data('year');
     var tagUrl = '/blogs/all-recipes/tagged/' + month + '-' + year;
+
+    active++;
 
     $.get(tagUrl)
       .done(function(response) {
         var html = $(response);
         var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
-
         if (firstPostImage) {
           $this.find('.dynamic-image').attr('src', firstPostImage);
+          cache[item.key] = firstPostImage;
         }
+        active--;
+        setTimeout(processQueue, delay);
       })
       .fail(function(xhr) {
-        if (xhr.status === 429 && retryCount < maxRetries) {
-          var backoff = delay * Math.pow(2, retryCount + 1);
-          console.log('Rate limited, retrying ' + month + '-' + year + ' in ' + (backoff / 1000) + 's');
-          index--;
-          $boxes.splice(currentIndex, 0, $this);
-          active--;
-          setTimeout(function() { loadNext(retryCount + 1); }, backoff);
-          return;
-        } else {
-          console.warn('Skipping ' + month + '-' + year);
-        }
-      })
-      .always(function() {
         active--;
-        setTimeout(function() {
-          if (active < concurrent) {
-            loadNext(0);
-          }
-        }, delay);
+        if (xhr.status === 429 && item.retries < maxRetries) {
+          item.retries++;
+          var backoff = delay * Math.pow(2, item.retries + 1);
+          console.log('Rate limited, retrying ' + item.key + ' in ' + (backoff / 1000) + 's');
+          queue.unshift(item);
+          setTimeout(processQueue, backoff);
+        } else {
+          console.warn('Skipping ' + item.key);
+          setTimeout(processQueue, delay);
+        }
       });
-
-    // Fill remaining slots immediately
-    while (active < concurrent && index < $boxes.length) {
-      loadNext(0);
-    }
   }
 
-  setTimeout(function() { loadNext(0); }, initialDelay);
+  // Only fetch if there's anything not cached
+  if (queue.length > 0) {
+    setTimeout(processQueue, initialDelay);
+  }
 });
 </script>
 

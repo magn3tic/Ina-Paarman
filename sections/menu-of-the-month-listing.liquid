@@ -127,11 +127,17 @@ $(document).ready(function() {
   var delay = 500;
   var maxRetries = 2;
   var initialDelay = 1000;
+  var concurrent = 4;
+  var active = 0;
 
   function loadNext(retryCount) {
     if (index >= $boxes.length) return;
 
-    var $this = $boxes.eq(index);
+    var currentIndex = index;
+    index++;
+    active++;
+
+    var $this = $boxes.eq(currentIndex);
     var month = $this.data('month');
     var year = $this.data('year');
     var tagUrl = '/blogs/all-recipes/tagged/' + month + '-' + year;
@@ -144,24 +150,37 @@ $(document).ready(function() {
         if (firstPostImage) {
           $this.find('.dynamic-image').attr('src', firstPostImage);
         }
-
-        index++;
-        setTimeout(loadNext, delay, 0);
       })
       .fail(function(xhr) {
         if (xhr.status === 429 && retryCount < maxRetries) {
           var backoff = delay * Math.pow(2, retryCount + 1);
-          console.log('Rate limited, retrying ' + month + '-' + year + ' in ' + (backoff/1000) + 's');
-          setTimeout(loadNext, backoff, retryCount + 1);
+          console.log('Rate limited, retrying ' + month + '-' + year + ' in ' + (backoff / 1000) + 's');
+          // Put it back in the queue
+          index--;
+          $boxes.splice(currentIndex, 0, $this);
+          active--;
+          setTimeout(function() { loadNext(retryCount + 1); }, backoff);
+          return;
         } else {
           console.warn('Skipping ' + month + '-' + year);
-          index++;
-          setTimeout(loadNext, delay, 0);
         }
+      })
+      .always(function() {
+        active--;
+        setTimeout(function() {
+          if (active < concurrent) {
+            loadNext(0);
+          }
+        }, delay);
       });
+
+    // Fill remaining slots immediately
+    while (active < concurrent && index < $boxes.length) {
+      loadNext(0);
+    }
   }
 
-  setTimeout(loadNext, initialDelay, 0);
+  setTimeout(function() { loadNext(0); }, initialDelay);
 });
 </script>
 

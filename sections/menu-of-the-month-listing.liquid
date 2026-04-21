@@ -124,15 +124,18 @@
 (function() {
 
   const cache = {};
+  const requested = new Set();
   const queue = [];
-  let active = 0;
-  const MAX_CONCURRENT = 2; 
+
+  let active = false;
+  const DELAY = 1200; // 🔥 important (Shopify safe)
+  const MAX_RETRIES = 2;
 
   function processQueue() {
-    if (queue.length === 0 || active >= MAX_CONCURRENT) return;
+    if (active || queue.length === 0) return;
 
     const job = queue.shift();
-    active++;
+    active = true;
 
     $.get(job.url)
       .done(function(response) {
@@ -142,6 +145,7 @@
         if (img) {
           cache[job.key] = img;
 
+          // Apply to all matching elements
           $(`.recipe-box-alt[data-month="${job.month}"][data-year="${job.year}"]`)
             .find('.dynamic-image')
             .attr('src', img);
@@ -149,13 +153,29 @@
       })
       .fail(function(err) {
         if (err.status === 429) {
-          console.warn('Rate limited, retrying...', job.key);
-          setTimeout(() => queue.push(job), 2000); 
+          job.retries = (job.retries || 0) + 1;
+
+          if (job.retries <= MAX_RETRIES) {
+            console.warn('Retrying...', job.key);
+
+            // push back to queue with delay
+            setTimeout(() => {
+              queue.push(job);
+              active = false;
+              processQueue();
+            }, 3000);
+
+            return;
+          } else {
+            console.warn('Skipped after retries:', job.key);
+          }
         }
       })
       .always(function() {
-        active--;
-        setTimeout(processQueue, 300); 
+        setTimeout(() => {
+          active = false;
+          processQueue();
+        }, DELAY);
       });
   }
 
@@ -165,12 +185,15 @@
     const key = `${month}-${year}`;
     const url = `/blogs/all-recipes/tagged/${key}`;
 
+    // ✅ Use cache instantly
     if (cache[key]) {
       $el.find('.dynamic-image').attr('src', cache[key]);
       return;
     }
 
-    if (queue.find(q => q.key === key)) return;
+    // ✅ Prevent duplicate requests
+    if (requested.has(key)) return;
+    requested.add(key);
 
     queue.push({ key, url, month, year });
     processQueue();

@@ -121,44 +121,68 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-  var $boxes = $('.recipe-box-alt');
-  var index = 0;
-  var delay = 2000;
+(function() {
 
-  function loadNext() {
-    if (index >= $boxes.length) return;
+  const cache = {};
+  const queue = [];
+  let active = 0;
+  const MAX_CONCURRENT = 2; 
 
-    var $this = $boxes.eq(index);
-    var month = $this.data('month');
-    var year = $this.data('year');
-    var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
+  function processQueue() {
+    if (queue.length === 0 || active >= MAX_CONCURRENT) return;
 
-    $.get(tagUrl)
+    const job = queue.shift();
+    active++;
+
+    $.get(job.url)
       .done(function(response) {
-        var html = $(response);
-        var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
+        const html = $(response);
+        const img = html.find('.recipe-box-alt img').first().attr('src');
 
-        if (firstPostImage) {
-          $this.find('.dynamic-image').attr('src', firstPostImage);
+        if (img) {
+          cache[job.key] = img;
+
+          $(`.recipe-box-alt[data-month="${job.month}"][data-year="${job.year}"]`)
+            .find('.dynamic-image')
+            .attr('src', img);
         }
-
-        index++;
-        setTimeout(loadNext, delay);
       })
-      .fail(function(xhr) {
-        if (xhr.status === 429) {
-          // Wait longer and retry the same one
-          setTimeout(loadNext, 5000);
-        } else {
-          index++;
-          setTimeout(loadNext, delay);
+      .fail(function(err) {
+        if (err.status === 429) {
+          console.warn('Rate limited, retrying...', job.key);
+          setTimeout(() => queue.push(job), 2000); 
         }
+      })
+      .always(function() {
+        active--;
+        setTimeout(processQueue, 300); 
       });
   }
 
-  loadNext();
-});
+  function addToQueue($el) {
+    const month = $el.data('month');
+    const year = $el.data('year');
+    const key = `${month}-${year}`;
+    const url = `/blogs/all-recipes/tagged/${key}`;
+
+    if (cache[key]) {
+      $el.find('.dynamic-image').attr('src', cache[key]);
+      return;
+    }
+
+    if (queue.find(q => q.key === key)) return;
+
+    queue.push({ key, url, month, year });
+    processQueue();
+  }
+
+  $(document).ready(function() {
+    $('.recipe-box-alt').each(function() {
+      addToQueue($(this));
+    });
+  });
+
+})();
 </script>
 
 {% schema %}

@@ -123,93 +123,72 @@
 <script>
 $(document).ready(function() {
   var $boxes = $('.recipe-box-alt');
-  var queue = [];
-  var delay = 500;
-  var maxRetries = 2;
-  var initialDelay = 1000;
-  var concurrent = 4;
-  var active = 0;
-  var cacheKey = 'recipe-images-cache';
-  var cacheExpiry = 24 * 60 * 60 * 1000;
-
   var cache = {};
+  var queue = [];
+  var active = 0;
+  var concurrent = 4;
+  var delay = 500;
+
+  // Load 24hr cache
   try {
-    var stored = localStorage.getItem(cacheKey);
+    var stored = localStorage.getItem('recipe-images');
     if (stored) {
       var parsed = JSON.parse(stored);
-      if (parsed.timestamp && (Date.now() - parsed.timestamp) < cacheExpiry) {
-        cache = parsed.data || {};
+      if (parsed.ts && (Date.now() - parsed.ts) < 86400000) {
+        cache = parsed.d || {};
       }
     }
-  } catch (e) {}
+  } catch(e) {}
 
-  function saveCache() {
-    try {
-      localStorage.setItem(cacheKey, JSON.stringify({
-        timestamp: Date.now(),
-        data: cache
-      }));
-    } catch (e) {}
-  }
-
+  // Cached = apply instantly, uncached = queue for fetch
   $boxes.each(function() {
     var $this = $(this);
-    var month = $this.data('month');
-    var year = $this.data('year');
-    var key = month + '-' + year;
-
+    var key = $this.data('month') + '-' + $this.data('year');
     if (cache[key]) {
       $this.find('.dynamic-image').attr('src', cache[key]);
     } else {
-      queue.push({ el: $this, retries: 0, key: key });
+      queue.push({ el: $this, key: key });
     }
   });
 
+  function saveCache() {
+    try {
+      localStorage.setItem('recipe-images', JSON.stringify({ ts: Date.now(), d: cache }));
+    } catch(e) {}
+  }
+
   function processQueue() {
-    while (active < concurrent && queue.length > 0) {
+    while (active < concurrent && queue.length) {
       loadOne(queue.shift());
     }
-    if (active === 0 && queue.length === 0) {
-      saveCache();
-    }
+    if (!active && !queue.length) saveCache();
   }
 
   function loadOne(item) {
-    var $this = item.el;
-    var month = $this.data('month');
-    var year = $this.data('year');
-    var tagUrl = '/blogs/all-recipes/tagged/' + month + '-' + year;
-
     active++;
 
-    $.get(tagUrl)
-      .done(function(response) {
-        var html = $(response);
-        var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
-        if (firstPostImage) {
-          $this.find('.dynamic-image').attr('src', firstPostImage);
-          cache[item.key] = firstPostImage;
+    $.getJSON('/blogs/all-recipes/tagged/' + item.key + '.json')
+      .done(function(data) {
+        if (data.articles && data.articles.length && data.articles[0].image) {
+          var src = data.articles[0].image.src;
+          item.el.find('.dynamic-image').attr('src', src);
+          cache[item.key] = src;
         }
-        active--;
-        setTimeout(processQueue, delay);
       })
       .fail(function(xhr) {
-        active--;
-        if (xhr.status === 429 && item.retries < maxRetries) {
-          item.retries++;
-          var backoff = delay * Math.pow(2, item.retries + 1);
-          console.log('Rate limited, retrying ' + item.key + ' in ' + (backoff / 1000) + 's');
+        if (xhr.status === 429 && (!item.retries || item.retries < 2)) {
+          item.retries = (item.retries || 0) + 1;
           queue.unshift(item);
-          setTimeout(processQueue, backoff);
-        } else {
-          console.warn('Skipping ' + item.key);
-          setTimeout(processQueue, delay);
         }
+      })
+      .always(function() {
+        active--;
+        setTimeout(processQueue, delay);
       });
   }
 
-  if (queue.length > 0) {
-    setTimeout(processQueue, initialDelay);
+  if (queue.length) {
+    setTimeout(processQueue, 1000);
   }
 });
 </script>

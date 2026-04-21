@@ -120,22 +120,26 @@
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-{% comment %} Build the JSON data server-side {% endcomment %}
 <script>
-var recipeImages = {
-  {% for tag in blog.all_tags %}
-    {% assign articles = blog.articles | where: 'tags', tag %}
-    {% if articles.first and articles.first.image %}
-      "{{ tag | handleize }}": "{{ articles.first.image.src | img_url: 'medium' }}"{% unless forloop.last %},{% endunless %}
+var recipeImages = {};
+{% assign target_blog = blogs['all-recipes'] %}
+{% paginate target_blog.articles by 1000 %}
+  {% for article in target_blog.articles %}
+    {% if article.image %}
+      {% for tag in article.tags %}
+        {% assign tag_key = tag | handleize %}
+        {% unless recipeImages[tag_key] %}
+          recipeImages["{{ tag_key }}"] = "{{ article.image.src | img_url: 'medium' }}";
+        {% endunless %}
+      {% endfor %}
     {% endif %}
   {% endfor %}
-};
+{% endpaginate %}
 
 $(document).ready(function() {
   $('.recipe-box-alt').each(function() {
     var $this = $(this);
     var key = $this.data('month') + '-' + $this.data('year');
-
     if (recipeImages[key]) {
       $this.find('.dynamic-image').attr('src', recipeImages[key]);
     }

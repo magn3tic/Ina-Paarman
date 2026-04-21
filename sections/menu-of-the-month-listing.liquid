@@ -124,9 +124,9 @@
 $(document).ready(function() {
   var $boxes = $('.recipe-box-alt');
   var index = 0;
-  var delay = 2000;
-  var maxRetries = 3;
-  var initialDelay = 2000;
+  var delay = 500;
+  var maxRetries = 2;
+  var initialDelay = 1000;
 
   function loadNext(retryCount) {
     if (index >= $boxes.length) return;
@@ -161,7 +161,6 @@ $(document).ready(function() {
       });
   }
 
-  // Wait for page to fully load and other requests to settle
   setTimeout(loadNext, initialDelay, 0);
 });
 </script>

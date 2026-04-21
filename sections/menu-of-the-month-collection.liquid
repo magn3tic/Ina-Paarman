@@ -65,7 +65,7 @@ var blogPosts = {};
       blogPosts["{{ tag_key }}"].push({
         url: "{{ article.url }}",
         image: "{{ article.image.src | img_url: 'medium' }}",
-        title: "{{ article.title | escape }}"
+        title: "{{ article.title | json }}"
       });
     {% endfor %}
   {% endfor %}

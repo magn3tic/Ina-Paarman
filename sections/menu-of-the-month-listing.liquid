@@ -122,55 +122,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 (function() {
-  const loadedMap = new WeakSet();
+
+  const cache = {};
 
   function loadImage($el) {
-    if (loadedMap.has($el[0])) return;
-
     const month = $el.data('month');
     const year = $el.data('year');
-    const tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
+    const key = month + '-' + year;
+    const tagUrl = `/blogs/all-recipes/tagged/${key}`;
 
+    // ✅ If already cached → use instantly
+    if (cache[key]) {
+      $el.find('.dynamic-image').attr('src', cache[key]);
+      return;
+    }
+
+    // ✅ Fetch only once per tag
     $.get(tagUrl, function(response) {
       const html = $(response);
       const img = html.find('.recipe-box-alt img').first().attr('src');
 
       if (img) {
-        $el.find('.dynamic-image').attr('src', img);
-        loadedMap.add($el[0]);
+        cache[key] = img;
+
+        // apply to ALL matching elements instantly
+        $(`.recipe-box-alt[data-month="${month}"][data-year="${year}"]`)
+          .find('.dynamic-image')
+          .attr('src', img);
       }
     });
   }
 
-  // 👇 Load only when visible
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const $el = $(entry.target);
-        loadImage($el);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  function initElements() {
+  function init() {
     $('.recipe-box-alt').each(function() {
-      observer.observe(this);
+      loadImage($(this));
     });
   }
 
-  // Initial run
   $(document).ready(function() {
-    initElements();
-  });
-
-  // 👇 Watch for DOM changes (AJAX / dynamic content)
-  const mutationObserver = new MutationObserver(() => {
-    initElements();
-  });
-
-  mutationObserver.observe(document.body, {
-    childList: true,
-    subtree: true
+    init();
   });
 
 })();

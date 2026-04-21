@@ -53,36 +53,39 @@
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% assign target_blog = blogs['all-recipes'] %}
+
 <script>
-$(document).ready(function() {
-  // Construct the tag URL with the formatted month and year
-  var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
-
-  function fetchBlogPosts(pageNumber) {
-    jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
-      var html = $(response);
-
-      html.find('.recipe-box-alt').each(function() {
-        var postUrl = $(this).attr('href');
-        var postImage = $(this).find('img').attr('src');
-        var postTitle = $(this).find('.title').text();
-
-        var postElement = $('<a>')
-          .attr('href', postUrl)
-          .addClass('recipe-box-alt')
-          .append($('<img>').attr('src', postImage).attr('alt', postTitle))
-          .append($('<span>').addClass('d-block title').text(postTitle));
-
-        var wrappedElement = $('<div>').addClass('col-md-3 col-6').append(postElement);
-
-        $('#blog-container').append(wrappedElement);
+var blogPosts = {};
+{% paginate target_blog.articles by 1000 %}
+  {% for article in target_blog.articles %}
+    {% for tag in article.tags %}
+      {% assign tag_key = tag | handleize %}
+      if (!blogPosts["{{ tag_key }}"]) blogPosts["{{ tag_key }}"] = [];
+      blogPosts["{{ tag_key }}"].push({
+        url: "{{ article.url }}",
+        image: "{{ article.image.src | img_url: 'medium' }}",
+        title: "{{ article.title | escape }}"
       });
-    });
-  }
+    {% endfor %}
+  {% endfor %}
+{% endpaginate %}
 
-  for (let i = 1; i <= 25; i++) {
-    fetchBlogPosts(i);
-  }
+$(document).ready(function() {
+  var key = month + '-' + year;
+  var posts = blogPosts[key] || [];
+
+  posts.forEach(function(post) {
+    var postElement = $('<a>')
+      .attr('href', post.url)
+      .addClass('recipe-box-alt')
+      .append($('<img>').attr('src', post.image).attr('alt', post.title))
+      .append($('<span>').addClass('d-block title').text(post.title));
+
+    var wrappedElement = $('<div>').addClass('col-md-3 col-6').append(postElement);
+
+    $('#blog-container').append(wrappedElement);
+  });
 });
 </script>
 

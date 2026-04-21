@@ -121,25 +121,59 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-  $('.recipe-box-alt').each(function() {
-    var $this = $(this);
-    var month = $this.data('month');
-    var year = $this.data('year');
-    var tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
+(function() {
+  const loadedMap = new WeakSet();
 
-    // Fetch the first post with matching tag to get the image
+  function loadImage($el) {
+    if (loadedMap.has($el[0])) return;
+
+    const month = $el.data('month');
+    const year = $el.data('year');
+    const tagUrl = `/blogs/all-recipes/tagged/${month}-${year}`;
+
     $.get(tagUrl, function(response) {
-      var html = $(response);
-      var firstPostImage = html.find('.recipe-box-alt img').first().attr('src');
+      const html = $(response);
+      const img = html.find('.recipe-box-alt img').first().attr('src');
 
-      // Replace the placeholder image with the retrieved image
-      if (firstPostImage) {
-        $this.find('.dynamic-image').attr('src', firstPostImage);
+      if (img) {
+        $el.find('.dynamic-image').attr('src', img);
+        loadedMap.add($el[0]);
       }
     });
+  }
+
+  // 👇 Load only when visible
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const $el = $(entry.target);
+        loadImage($el);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  function initElements() {
+    $('.recipe-box-alt').each(function() {
+      observer.observe(this);
+    });
+  }
+
+  // Initial run
+  $(document).ready(function() {
+    initElements();
   });
-});
+
+  // 👇 Watch for DOM changes (AJAX / dynamic content)
+  const mutationObserver = new MutationObserver(() => {
+    initElements();
+  });
+
+  mutationObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+})();
 </script>
 
 {% schema %}

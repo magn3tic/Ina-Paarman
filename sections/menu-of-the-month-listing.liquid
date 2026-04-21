@@ -121,87 +121,72 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-(function() {
+$(document).ready(function () {
 
   const cache = {};
-  const requested = new Set();
-  const queue = [];
+  const DELAY = 1200;
 
-  let active = false;
-  const DELAY = 1200; 
-  const MAX_RETRIES = 2;
+  const uniqueKeys = [];
 
-  function processQueue() {
-    if (active || queue.length === 0) return;
+  $('.recipe-box-alt').each(function () {
+    const month = $(this).data('month');
+    const year = $(this).data('year');
+    const key = `${month}-${year}`;
 
-    const job = queue.shift();
-    active = true;
+    if (!uniqueKeys.includes(key)) {
+      uniqueKeys.push(key);
+    }
+  });
 
-    $.get(job.url)
-      .done(function(response) {
+  let index = 0;
+
+  function processNext() {
+    if (index >= uniqueKeys.length) return;
+
+    const key = uniqueKeys[index];
+    const [month, year] = key.split('-');
+    const url = `/blogs/all-recipes/tagged/${key}`;
+
+    if (cache[key]) {
+      applyImage(month, year, cache[key]);
+      index++;
+      processNext();
+      return;
+    }
+
+    $.get(url)
+      .done(function (response) {
         const html = $(response);
         const img = html.find('.recipe-box-alt img').first().attr('src');
 
         if (img) {
-          cache[job.key] = img;
-
-          $(`.recipe-box-alt[data-month="${job.month}"][data-year="${job.year}"]`)
-            .find('.dynamic-image')
-            .attr('src', img);
+          cache[key] = img;
+          applyImage(month, year, img);
         }
       })
-      .fail(function(err) {
+      .fail(function (err) {
         if (err.status === 429) {
-          job.retries = (job.retries || 0) + 1;
+          console.warn('Rate limited, waiting...', key);
 
-          if (job.retries <= MAX_RETRIES) {
-            console.warn('Retrying...', job.key);
-
-            setTimeout(() => {
-              queue.push(job);
-              active = false;
-              processQueue();
-            }, 3000);
-
-            return;
-          } else {
-            console.warn('Skipped after retries:', job.key);
-          }
+          setTimeout(processNext, 3000); 
+          return;
         }
       })
-      .always(function() {
-        setTimeout(() => {
-          active = false;
-          processQueue();
-        }, DELAY);
+      .always(function () {
+        index++;
+        setTimeout(processNext, DELAY); 
       });
   }
 
-  function addToQueue($el) {
-    const month = $el.data('month');
-    const year = $el.data('year');
-    const key = `${month}-${year}`;
-    const url = `/blogs/all-recipes/tagged/${key}`;
-
-    if (cache[key]) {
-      $el.find('.dynamic-image').attr('src', cache[key]);
-      return;
-    }
-
-    if (requested.has(key)) return;
-    requested.add(key);
-
-    queue.push({ key, url, month, year });
-    processQueue();
+  function applyImage(month, year, img) {
+    $(`.recipe-box-alt[data-month="${month}"][data-year="${year}"]`)
+      .find('.dynamic-image')
+      .attr('src', img);
   }
 
-  $(document).ready(function() {
-    $('.recipe-box-alt').each(function() {
-      addToQueue($(this));
-    });
-  });
+  processNext();
 
-})();
+});
 </script>
 
 {% schema %}

@@ -130,15 +130,13 @@ $(document).ready(function() {
   var concurrent = 4;
   var active = 0;
   var cacheKey = 'recipe-images-cache';
-  var cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours
+  var cacheExpiry = 24 * 60 * 60 * 1000;
 
-  // Load cache
   var cache = {};
   try {
     var stored = localStorage.getItem(cacheKey);
     if (stored) {
       var parsed = JSON.parse(stored);
-      // Check if cache is still valid
       if (parsed.timestamp && (Date.now() - parsed.timestamp) < cacheExpiry) {
         cache = parsed.data || {};
       }
@@ -154,7 +152,6 @@ $(document).ready(function() {
     } catch (e) {}
   }
 
-  // Apply cached images first, queue the rest
   $boxes.each(function() {
     var $this = $(this);
     var month = $this.data('month');
@@ -172,7 +169,6 @@ $(document).ready(function() {
     while (active < concurrent && queue.length > 0) {
       loadOne(queue.shift());
     }
-    // Save cache when all done
     if (active === 0 && queue.length === 0) {
       saveCache();
     }
@@ -212,7 +208,6 @@ $(document).ready(function() {
       });
   }
 
-  // Only fetch if there's anything not cached
   if (queue.length > 0) {
     setTimeout(processQueue, initialDelay);
   }

@@ -124,9 +124,9 @@
 $(document).ready(function() {
   var $boxes = $('.recipe-box-alt');
   var index = 0;
-  var delay = 500;
+  var delay = 300;
   var maxRetries = 2;
-  var initialDelay = 1000;
+  var initialDelay = 500;
   var concurrent = 4;
   var active = 0;
 
@@ -155,7 +155,6 @@ $(document).ready(function() {
         if (xhr.status === 429 && retryCount < maxRetries) {
           var backoff = delay * Math.pow(2, retryCount + 1);
           console.log('Rate limited, retrying ' + month + '-' + year + ' in ' + (backoff / 1000) + 's');
-          // Put it back in the queue
           index--;
           $boxes.splice(currentIndex, 0, $this);
           active--;

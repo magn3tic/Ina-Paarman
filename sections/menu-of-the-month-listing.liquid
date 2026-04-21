@@ -128,7 +128,7 @@
   const queue = [];
 
   let active = false;
-  const DELAY = 1200; // 🔥 important (Shopify safe)
+  const DELAY = 1200; 
   const MAX_RETRIES = 2;
 
   function processQueue() {
@@ -145,7 +145,6 @@
         if (img) {
           cache[job.key] = img;
 
-          // Apply to all matching elements
           $(`.recipe-box-alt[data-month="${job.month}"][data-year="${job.year}"]`)
             .find('.dynamic-image')
             .attr('src', img);
@@ -158,7 +157,6 @@
           if (job.retries <= MAX_RETRIES) {
             console.warn('Retrying...', job.key);
 
-            // push back to queue with delay
             setTimeout(() => {
               queue.push(job);
               active = false;
@@ -185,13 +183,11 @@
     const key = `${month}-${year}`;
     const url = `/blogs/all-recipes/tagged/${key}`;
 
-    // ✅ Use cache instantly
     if (cache[key]) {
       $el.find('.dynamic-image').attr('src', cache[key]);
       return;
     }
 
-    // ✅ Prevent duplicate requests
     if (requested.has(key)) return;
     requested.add(key);
 

@@ -120,76 +120,26 @@
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% comment %} Build the JSON data server-side {% endcomment %}
 <script>
+var recipeImages = {
+  {% for tag in blog.all_tags %}
+    {% assign articles = blog.articles | where: 'tags', tag %}
+    {% if articles.first and articles.first.image %}
+      "{{ tag | handleize }}": "{{ articles.first.image.src | img_url: 'medium' }}"{% unless forloop.last %},{% endunless %}
+    {% endif %}
+  {% endfor %}
+};
+
 $(document).ready(function() {
-  var $boxes = $('.recipe-box-alt');
-  var cache = {};
-  var queue = [];
-  var active = 0;
-  var concurrent = 4;
-  var delay = 500;
-
-  // Load 24hr cache
-  try {
-    var stored = localStorage.getItem('recipe-images');
-    if (stored) {
-      var parsed = JSON.parse(stored);
-      if (parsed.ts && (Date.now() - parsed.ts) < 86400000) {
-        cache = parsed.d || {};
-      }
-    }
-  } catch(e) {}
-
-  // Cached = apply instantly, uncached = queue for fetch
-  $boxes.each(function() {
+  $('.recipe-box-alt').each(function() {
     var $this = $(this);
     var key = $this.data('month') + '-' + $this.data('year');
-    if (cache[key]) {
-      $this.find('.dynamic-image').attr('src', cache[key]);
-    } else {
-      queue.push({ el: $this, key: key });
+
+    if (recipeImages[key]) {
+      $this.find('.dynamic-image').attr('src', recipeImages[key]);
     }
   });
-
-  function saveCache() {
-    try {
-      localStorage.setItem('recipe-images', JSON.stringify({ ts: Date.now(), d: cache }));
-    } catch(e) {}
-  }
-
-  function processQueue() {
-    while (active < concurrent && queue.length) {
-      loadOne(queue.shift());
-    }
-    if (!active && !queue.length) saveCache();
-  }
-
-  function loadOne(item) {
-    active++;
-
-    $.getJSON('/blogs/all-recipes/tagged/' + item.key + '.json')
-      .done(function(data) {
-        if (data.articles && data.articles.length && data.articles[0].image) {
-          var src = data.articles[0].image.src;
-          item.el.find('.dynamic-image').attr('src', src);
-          cache[item.key] = src;
-        }
-      })
-      .fail(function(xhr) {
-        if (xhr.status === 429 && (!item.retries || item.retries < 2)) {
-          item.retries = (item.retries || 0) + 1;
-          queue.unshift(item);
-        }
-      })
-      .always(function() {
-        active--;
-        setTimeout(processQueue, delay);
-      });
-  }
-
-  if (queue.length) {
-    setTimeout(processQueue, 1000);
-  }
 });
 </script>
 

@@ -122,28 +122,55 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 var recipeImages = {};
-{% assign target_blog = blogs['all-recipes'] %}
-{% paginate target_blog.articles by 1000 %}
-  {% for article in target_blog.articles %}
-    {% if article.image %}
-      {% for tag in article.tags %}
-        {% assign tag_key = tag | handleize %}
-        {% unless recipeImages[tag_key] %}
-          recipeImages["{{ tag_key }}"] = "{{ article.image.src | img_url: 'medium' }}";
-        {% endunless %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
-{% endpaginate %}
 
-$(document).ready(function() {
+function parseSection(html) {
+  var div = document.createElement('div');
+  div.innerHTML = html;
+  div.querySelectorAll('.ri-item').forEach(function(el) {
+    if (!recipeImages[el.dataset.tag]) recipeImages[el.dataset.tag] = el.dataset.src;
+  });
+  var meta = div.querySelector('.ri-meta');
+  return meta ? parseInt(meta.dataset.pages, 10) : 1;
+}
+
+function applyImages() {
   $('.recipe-box-alt').each(function() {
     var $this = $(this);
     var key = $this.data('month') + '-' + $this.data('year');
-    if (recipeImages[key]) {
-      $this.find('.dynamic-image').attr('src', recipeImages[key]);
-    }
+    if (recipeImages[key]) $this.find('.dynamic-image').attr('src', recipeImages[key]);
   });
+}
+
+$(document).ready(function() {
+  // Try cache first
+  var cached = sessionStorage.getItem('recipeImages');
+  if (cached) {
+    recipeImages = JSON.parse(cached);
+    applyImages();
+    return;
+  }
+
+  // Fetch page 1, discover total, fetch rest in parallel
+  fetch('/?sections=recipe-index')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var totalPages = parseSection(data['recipe-index']);
+      if (totalPages <= 1) { finish(); return; }
+
+      var rest = [];
+      for (var i = 2; i <= totalPages; i++) {
+        rest.push(fetch('/?sections=recipe-index&page=' + i).then(function(r) { return r.json(); }));
+      }
+      Promise.all(rest).then(function(results) {
+        results.forEach(function(d) { parseSection(d['recipe-index']); });
+        finish();
+      });
+    });
+
+  function finish() {
+    sessionStorage.setItem('recipeImages', JSON.stringify(recipeImages));
+    applyImages();
+  }
 });
 </script>
 

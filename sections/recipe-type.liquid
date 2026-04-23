@@ -198,67 +198,39 @@ var recipetype = "{{ page.metafields.custom.recipe_type | downcase }}"
 </script>
 
 <script>
-var blogPosts = {};
-
-function parseSection(html) {
-  var div = document.createElement('div');
-  div.innerHTML = html;
-  div.querySelectorAll('.ri-item').forEach(function(el) {
-    var tag = el.dataset.tag;
-    if (!blogPosts[tag]) blogPosts[tag] = [];
-    blogPosts[tag].push({
-      url: el.dataset.url,
-      image: el.dataset.image,
-      title: el.dataset.title
-    });
-  });
-  var meta = div.querySelector('.ri-meta');
-  return meta ? parseInt(meta.dataset.pages, 10) : 1;
-}
-
-function renderPosts() {
-  var posts = blogPosts[recipetype] || [];
-  var $container = $('#blog-container');
-  posts.forEach(function(post) {
-    var postElement = $('<a>')
-      .attr('href', post.url)
-      .addClass('recipe-box-alt')
-      .append($('<img>').attr('src', post.image).attr('alt', post.title))
-      .append($('<span>').addClass('d-block title').text(post.title));
-    $container.append($('<div>').addClass('col-md-3 col-6').append(postElement));
-  });
-}
-
 $(document).ready(function() {
-  var cached = sessionStorage.getItem('blogPosts');
-  if (cached) {
-    blogPosts = JSON.parse(cached);
-    renderPosts();
-    return;
-  }
+  // Construct the tag URL with the formatted month and year
+  var tagUrl = `/blogs/all-recipes/tagged/${recipetype}`;
 
-  fetch('/?sections=recipe-posts')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var totalPages = parseSection(data['recipe-posts']);
-      if (totalPages <= 1) { finish(); return; }
+  function fetchBlogPosts(pageNumber) {
+    jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
+      var html = $(response);
 
-      var rest = [];
-      for (var i = 2; i <= totalPages; i++) {
-        rest.push(fetch('/?sections=recipe-posts&page=' + i).then(function(r) { return r.json(); }));
-      }
-      Promise.all(rest).then(function(results) {
-        results.forEach(function(d) { parseSection(d['recipe-posts']); });
-        finish();
+      html.find('.recipe-box-alt').each(function() {
+        var postUrl = $(this).attr('href');
+        var postImage = $(this).find('img').attr('src');
+        var postTitle = $(this).find('.title').text();
+
+        var postElement = $('<a>')
+          .attr('href', postUrl)
+          .addClass('recipe-box-alt')
+          .append($('<img>').attr('src', postImage).attr('alt', postTitle))
+          .append($('<span>').addClass('d-block title').text(postTitle));
+
+        var wrappedElement = $('<div>').addClass('col-md-3 col-6').append(postElement);
+
+        $('#blog-container').append(wrappedElement);
       });
     });
+  }
 
-  function finish() {
-    sessionStorage.setItem('blogPosts', JSON.stringify(blogPosts));
-    renderPosts();
+  for (let i = 1; i <= 25; i++) {
+    fetchBlogPosts(i);
   }
 });
+
 </script>
+
 
 {% schema %}
   

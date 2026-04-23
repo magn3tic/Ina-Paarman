@@ -199,38 +199,45 @@ var recipetype = "{{ page.metafields.custom.recipe_type | downcase }}"
 
 <script>
 $(document).ready(function() {
-  // Construct the tag URL with the formatted month and year
-  var tagUrl = `/blogs/all-recipes/tagged/${recipetype}`;
+  var tagUrl = '/blogs/all-recipes/tagged/' + recipetype;
+  var $container = $('#blog-container');
 
-  function fetchBlogPosts(pageNumber) {
-    jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
-      var html = $(response);
+  function parseAndRender(html) {
+    var div = document.createElement('div');
+    div.innerHTML = html;
 
-      html.find('.recipe-box-alt').each(function() {
-        var postUrl = $(this).attr('href');
-        var postImage = $(this).find('img').attr('src');
-        var postTitle = $(this).find('.title').text();
+    div.querySelectorAll('.ri-item').forEach(function(el) {
+      var postElement = $('<a>')
+        .attr('href', el.dataset.url)
+        .addClass('recipe-box-alt')
+        .append($('<img>').attr('src', el.dataset.image).attr('alt', el.dataset.title))
+        .append($('<span>').addClass('d-block title').text(el.dataset.title));
 
-        var postElement = $('<a>')
-          .attr('href', postUrl)
-          .addClass('recipe-box-alt')
-          .append($('<img>').attr('src', postImage).attr('alt', postTitle))
-          .append($('<span>').addClass('d-block title').text(postTitle));
+      $container.append($('<div>').addClass('col-md-3 col-6').append(postElement));
+    });
 
-        var wrappedElement = $('<div>').addClass('col-md-3 col-6').append(postElement);
+    var meta = div.querySelector('.ri-meta');
+    return meta ? parseInt(meta.dataset.pages, 10) : 1;
+  }
 
-        $('#blog-container').append(wrappedElement);
+  fetch(tagUrl + '?sections=recipe-tag')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var totalPages = parseAndRender(data['recipe-tag']);
+      if (totalPages <= 1) return;
+
+      var rest = [];
+      for (var i = 2; i <= totalPages; i++) {
+        rest.push(
+          fetch(tagUrl + '?sections=recipe-tag&page=' + i).then(function(r) { return r.json(); })
+        );
+      }
+      Promise.all(rest).then(function(results) {
+        results.forEach(function(d) { parseAndRender(d['recipe-tag']); });
       });
     });
-  }
-
-  for (let i = 1; i <= 25; i++) {
-    fetchBlogPosts(i);
-  }
 });
-
 </script>
-
 
 {% schema %}
   

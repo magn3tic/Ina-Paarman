@@ -143,7 +143,7 @@ function applyImages() {
 
 $(document).ready(function() {
   // Try cache first
-  var cached = sessionStorage.getItem('recipeImages');
+  var cached = sessionStorage.getItem('recipeImages_v2');
   if (cached) {
     recipeImages = JSON.parse(cached);
     applyImages();
@@ -168,7 +168,7 @@ $(document).ready(function() {
     });
 
   function finish() {
-    sessionStorage.setItem('recipeImages', JSON.stringify(recipeImages));
+    sessionStorage.setItem('recipeImages_v2', JSON.stringify(recipeImages));
     applyImages();
   }
 });

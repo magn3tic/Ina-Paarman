@@ -127,7 +127,7 @@ function parseSection(html) {
   var div = document.createElement('div');
   div.innerHTML = html;
   div.querySelectorAll('.ri-item').forEach(function(el) {
-    if (!recipeImages[el.dataset.tag]) recipeImages[el.dataset.tag] = el.dataset.src;
+    if (!recipeImages[el.dataset.tag]) recipeImages[el.dataset.tag] = el.dataset.image;
   });
   var meta = div.querySelector('.ri-meta');
   return meta ? parseInt(meta.dataset.pages, 10) : 1;

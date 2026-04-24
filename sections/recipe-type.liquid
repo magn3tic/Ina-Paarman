@@ -1,6 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<section class="recipe-filter banner-cta-area py-0 dddd">
+<section class="recipe-filter banner-cta-area py-0">
   <div class="container">
     <div class="inner">
       <div class="select-wrap">
@@ -179,56 +179,83 @@
 </script>
 
 
-<section class="content-area receipe_list pt-0 ">
-    <div class="container">
-        <div class="row justify-content-center" id="blog-container">
-         
-        </div>
+<section class="content-area receipe_list pt-0">
+  <div class="container">
+    <div class="row justify-content-center" id="blog-container"></div>
   </div>
 </section>
 
-
-<!-- Use Liquid to output the metafield values into JavaScript variables -->
 <script>
-var recipetype = "{{ page.metafields.custom.recipe_type | downcase }}"
-    .replace(/[^a-z0-9\s-]/g, '')  
-    .replace(/\s+/g, '-')           
-    .replace(/-+/g, '-');           
-  
+  var recipetype = "{{ page.metafields.custom.recipe_type | downcase }}"
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
 </script>
 
 <script>
-$(document).ready(function() {
-  // Construct the tag URL with the formatted month and year
-  var tagUrl = `/blogs/all-recipes/tagged/${recipetype}`;
+$(document).ready(function () {
+  if (!recipetype) {
+    console.warn('No recipe type defined on this page.');
+    return;
+  }
 
-  function fetchBlogPosts(pageNumber) {
-    jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
-      var html = $(response);
+  var SECTION_URL = '/?section_id=recipe-index';
+  var seenUrls = new Set();
 
-      html.find('.recipe-box-alt').each(function() {
-        var postUrl = $(this).attr('href');
-        var postImage = $(this).find('img').attr('src');
-        var postTitle = $(this).find('.title').text();
+  function fetchPage(pageNumber) {
+    return $.get(SECTION_URL + '&page=' + pageNumber);
+  }
 
-        var postElement = $('<a>')
-          .attr('href', postUrl)
-          .addClass('recipe-box-alt')
-          .append($('<img>').attr('src', postImage).attr('alt', postTitle))
-          .append($('<span>').addClass('d-block title').text(postTitle));
+  function renderItems($html) {
+    $html.find('.ri-item').each(function () {
+      var $item = $(this);
+      if ($item.data('tag') !== recipetype) return;
 
-        var wrappedElement = $('<div>').addClass('col-md-3 col-6').append(postElement);
+      var url = $item.data('url');
+      if (!url || seenUrls.has(url)) return;
+      seenUrls.add(url);
 
-        $('#blog-container').append(wrappedElement);
-      });
+      var $post = $('<a>')
+        .attr('href', url)
+        .addClass('recipe-box-alt')
+        .append($('<img>').attr({
+          src: $item.data('image'),
+          alt: $item.data('title'),
+          loading: 'lazy'
+        }))
+        .append($('<span>').addClass('d-block title').text($item.data('title')));
+
+      $('<div>').addClass('col-md-3 col-6').append($post).appendTo('#blog-container');
     });
   }
 
-  for (let i = 1; i <= 25; i++) {
-    fetchBlogPosts(i);
-  }
-});
+  // Fetch page 1 first to learn total page count
+  fetchPage(1).then(function (response) {
+    var $html = $('<div>').html(response);
+    var totalPages = parseInt($html.find('.ri-meta').data('pages'), 10) || 1;
 
+    renderItems($html);
+
+    if (totalPages <= 1) return;
+
+    // Fetch remaining pages in parallel, then render in order
+    var requests = [];
+    for (var i = 2; i <= totalPages; i++) {
+      requests.push(fetchPage(i));
+    }
+
+    $.when.apply($, requests).done(function () {
+      // When only one extra request, arguments is a single response
+      var responses = requests.length === 1 ? [arguments] : Array.prototype.slice.call(arguments);
+      responses.forEach(function (args) {
+        renderItems($('<div>').html(args[0]));
+      });
+    });
+  }).fail(function (err) {
+    console.error('Failed to load recipe index', err);
+  });
+});
 </script>
 
 

@@ -1,0 +1,13 @@
+{
+  "name": "ina-paarman",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "shopify theme dev --store=$SHOPIFY_STORE --theme=$DEBUG_THEME_ID",
+    "pull": "shopify theme pull --store=$SHOPIFY_STORE --theme=$LIVE_THEME_ID",
+    "pull:debug": "shopify theme pull --store=$SHOPIFY_STORE --theme=$DEBUG_THEME_ID",
+    "deploy:debug": "bash scripts/deploy-debug.sh",
+    "deploy:live": "bash scripts/deploy-live.sh",
+    "themes": "shopify theme list --store=$SHOPIFY_STORE"
+  }
+}

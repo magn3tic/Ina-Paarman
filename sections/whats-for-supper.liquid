@@ -26,74 +26,102 @@
 
 <!-- Content Start -->
 <section class="recipes-listing-area supper-box-area pt_40">
-    <div class="container">
-        <div class="px-lg-10">
-          {{page.content}}
-            <div class="row" id="blog-container"></div>
-        </div>
+  <div class="container">
+    <div class="px-lg-10">
+      {{ page.content }}
+      <div class="row" id="blog-container"></div>
     </div>
+  </div>
 </section>
 
 <script>
-  var blogTags = "{{ "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday" | downcase }}".split(',');
+  var blogTags = ['monday','tuesday','wednesday','thursday','friday','saturday'];
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-  var postsByTag = {}; // Temporary storage for posts by tag
+$(document).ready(function () {
+  var SECTION_URL = '/?section_id=recipe-index';
+  var postsByTag = {};
+  var seenByTag = {};
 
-  blogTags.forEach(function(tag) {
+  blogTags.forEach(function (tag) {
     postsByTag[tag] = [];
+    seenByTag[tag] = new Set();
   });
 
-  blogTags.forEach(function(tag) {
-    var tagUrl = `/blogs/all-recipes/tagged/${tag}`;
+  function fetchPage(pageNumber) {
+    return $.get(SECTION_URL + '&page=' + pageNumber);
+  }
 
-    function fetchBlogPosts(pageNumber) {
-      jQuery.get(`${tagUrl}?page=${pageNumber}`, function(response) {
-        var html = $(response);
+  function collectItems($html) {
+    $html.find('.ri-item').each(function () {
+      var $item = $(this);
+      var tag = $item.data('tag');
+      if (blogTags.indexOf(tag) === -1) return;
 
-        html.find('.recipe-box-alt').each(function() {
-          var postUrl = $(this).attr('href');
-          var postImage = $(this).find('img').attr('src');
-          var postTitle = $(this).find('.title').text();
+      var url = $item.data('url');
+      if (!url || seenByTag[tag].has(url)) return;
+      seenByTag[tag].add(url);
 
-          var postElement = $('<a>')
-            .attr('href', postUrl)
-            .addClass('recipe-box-alt v2')
-            .append($('<span>').addClass('d-block sub_heading').text(tag))
-            .append($('<img>').attr('src', postImage).attr('alt', postTitle))
-            .append($('<span>').addClass('d-block title').text(postTitle));
+      var title = $item.data('title');
+      var image = $item.data('image');
 
-          var wrappedElement = $('<div>')
-            .addClass('col-md-2 col-sm-4 col-6')
-            .attr('data-tag', tag)
-            .append(postElement);
+      // Capitalize for display
+      var displayTag = tag.charAt(0).toUpperCase() + tag.slice(1);
 
-          postsByTag[tag].push(wrappedElement); // Add to tag-specific array
-        });
+      var $post = $('<a>')
+        .attr('href', url)
+        .addClass('recipe-box-alt v2')
+        .append($('<span>').addClass('d-block sub_heading').text(displayTag))
+        .append($('<img>').attr({ src: image, alt: title, loading: 'lazy' }))
+        .append($('<span>').addClass('d-block title').text(title));
 
-        if (pageNumber < 3) {
-          fetchBlogPosts(pageNumber + 1);
-        } else {
-          if (Object.keys(postsByTag).every(t => postsByTag[t].length)) {
-            appendPostsInOrder();
-          }
-        }
-      });
-    }
+      var $wrapped = $('<div>')
+        .addClass('col-md-2 col-sm-4 col-6')
+        .attr('data-tag', tag)
+        .append($post);
 
-    fetchBlogPosts(1);
-  });
+      postsByTag[tag].push($wrapped);
+    });
+  }
 
-  function appendPostsInOrder() {
-    blogTags.forEach(function(tag) {
-      postsByTag[tag].forEach(function(postElement) {
-        $('#blog-container').append(postElement);
+  function appendInTagOrder() {
+    var $container = $('#blog-container');
+    blogTags.forEach(function (tag) {
+      postsByTag[tag].forEach(function ($el) {
+        $container.append($el);
       });
     });
   }
+
+  // Page 1 first to discover pagination
+  fetchPage(1).then(function (response) {
+    var $html = $('<div>').html(response);
+    var totalPages = parseInt($html.find('.ri-meta').data('pages'), 10) || 1;
+
+    collectItems($html);
+
+    if (totalPages <= 1) {
+      appendInTagOrder();
+      return;
+    }
+
+    var requests = [];
+    for (var i = 2; i <= totalPages; i++) {
+      requests.push(fetchPage(i));
+    }
+
+    $.when.apply($, requests).done(function () {
+      var responses = requests.length === 1 ? [arguments] : Array.prototype.slice.call(arguments);
+      responses.forEach(function (args) {
+        collectItems($('<div>').html(args[0]));
+      });
+      appendInTagOrder();
+    });
+  }).fail(function (err) {
+    console.error('Failed to load recipe index', err);
+  });
 });
 </script>
 

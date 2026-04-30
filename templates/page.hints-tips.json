@@ -165,6 +165,14 @@
     "video_gallery_hUhJ44": {
       "type": "video-gallery",
       "blocks": {
+        "video_xCRjiC": {
+          "type": "video",
+          "settings": {
+            "sub_heading": "Can I use a pizza stone in my home oven?",
+            "youtube_id": "svolT_opNLw",
+            "filters": "General Tips"
+          }
+        },
         "video_LbxfdH": {
           "type": "video",
           "settings": {
@@ -415,6 +423,7 @@
         }
       },
       "block_order": [
+        "video_xCRjiC",
         "video_LbxfdH",
         "video_GTB884",
         "video_zdCPbX",

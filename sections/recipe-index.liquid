@@ -1,0 +1,15 @@
+{%- layout none -%}
+{% assign target_blog = blogs['all-recipes'] %}
+{% paginate target_blog.articles by 50 %}
+  <span class="ri-meta" data-pages="{{ paginate.pages }}"></span>
+  {% for article in target_blog.articles %}
+    {% for tag in article.tags %}
+      <span class="ri-item"
+        data-tag="{{ tag | handleize }}"
+        data-url="{{ article.url }}"
+        data-image="{{ article.image.src | img_url: 'medium' }}"
+        data-title="{{ article.title | escape }}"></span>
+    {% endfor %}
+  {% endfor %}
+{% endpaginate %}
+

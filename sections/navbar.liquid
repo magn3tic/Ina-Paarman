@@ -4,8 +4,8 @@
     <div class="header-inn d-flex align-items-center justify-content-between">
       <!-- Logo -->
       <a class="site-logo" href="{{ routes.root_url }}">
-        {% if settings.logo %}
-          <img class="mx-auto" class = "head-logo" src="{{ settings.logo | image_url: height: logo_height_x2 }}" alt="{{ shop.name }}" loading="eager" width = "210" height = "151">
+        {% if settings.logo %}  
+        {{ settings.logo | image_url: height: logo_height_x2 | image_tag:alt: shop.name, class: 'head-logo mx-auto', loading:'eager' }}
         {% else %}
           <span>{{ shop.name }}</span>
         {% endif %}
@@ -181,6 +181,7 @@
     </form>  
   </div>
 </div>
+
 {% schema %}
 {
   "name": "Navbar",

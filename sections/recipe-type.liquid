@@ -5,178 +5,97 @@
     <div class="inner">
       <div class="select-wrap">
 
-          {% if section.settings.mm_link %}
-            <div class="select-container" id="select1">
-              <div class="select-button">Filter by Recipe Category</div>
-              <ul class="options">
-                {% for link in linklists[section.settings.mm_link].links %}
-                  <li>
-                    <!-- Extract the handle from the link URL -->
-                    {% assign link_handle = link.url | split: '/' | last %}
-          
-                    <!-- Fetch the page dynamically using the extracted handle -->
-                    {% assign target_page = pages[link_handle] %}
-          
-                    <!-- Check if the target page exists and has the recipe_type metafield -->
-                    {% if target_page and target_page.metafields.custom.recipe_type %}
-                      <a href="{{ link.url }}" class="recipe-link" 
-                         data-handle="{{ link_handle }}" 
-                         data-recipetype="{{ target_page.metafields.custom.recipe_type | downcase }}">
-                        {{ link.title }} <span id="total-posts-count-{{ link_handle }}"></span>
-                      </a>
-                    {% else %}
-                      <p>No recipe type defined for this page.</p>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
+        {% if section.settings.mm_link %}
+          <div class="select-container" id="select1">
+            <div class="select-button">
+              {% assign current_handle = page.handle %}
+              {% assign current_label = 'Filter by Recipe Category' %}
+              {% for link in linklists[section.settings.mm_link].links %}
+                {% assign link_handle = link.url | split: '/' | last %}
+                {% if link_handle == current_handle %}
+                  {% assign current_label = link.title %}
+                {% endif %}
+              {% endfor %}
+              {{ current_label }}
             </div>
-          
-            <script>
-              $(document).ready(function() {
-                $('.recipe-link').each(function() {
-                  var linkHandle = $(this).data('handle');  
-                  var recipetype = $(this).data('recipetype'); 
-          
-                  var formattedRecipetype = recipetype
-                    .toLowerCase()                         
-                    .replace(/[^a-z0-9\s-]/g, '')            
-                    .replace(/\s+/g, '-')                    
-                    .replace(/-+/g, '-');                    
-          
-                  $(this).attr('data-recipetype', formattedRecipetype);
-          
-                  var tagUrl = '/blogs/all-recipes/tagged/' + formattedRecipetype;
-          
-                  function countBlogPosts(handle) {
-                    var totalPosts = 0;
-                    var maxPages = 10;  
-                    var delay = 200;   
-          
-                    for (let i = 1; i <= maxPages; i++) {
-                      setTimeout(function() {
-                        $.get(tagUrl + '?page=' + i, function(response) {
-                          var html = $(response);
-                          var posts = html.find('.recipe-box-alt'); 
-                          totalPosts += posts.length; 
-          
-                          if (i === maxPages) {
-                            $('#total-posts-count-' + handle).text('(' + totalPosts + ')');
-                          }
-                        });
-                      }, i * delay); 
-                    }
-                  }
-          
-                  countBlogPosts(linkHandle);
-                });
-              });
-            </script>
-          
-          {% endif %}
-
-          {% if section.settings.mmm_link %}
-            <div class="select-container" id="select2">
-              <div class="select-button">Filter by Recipe Category</div>
-              <ul class="options">
-                {% for link in linklists[section.settings.mmm_link].links %}
+            <ul class="options">
+              <li>
+                <a href="/blogs/all-recipes" class="recipe-link">All Categories</a>
+              </li>
+              {% for link in linklists[section.settings.mm_link].links %}
+                {% assign link_handle = link.url | split: '/' | last %}
+                {% assign target_page = pages[link_handle] %}
+                {% if target_page and target_page.metafields.custom.recipe_type %}
                   <li>
-                    <!-- Extract the handle from the link URL -->
-                    {% assign link_handle = link.url | split: '/' | last %}
-          
-                    <!-- Fetch the page dynamically using the extracted handle -->
-                    {% assign target_page = pages[link_handle] %}
-          
-                    <!-- Check if the target page exists and has the recipe_type metafield -->
-                    {% if target_page and target_page.metafields.custom.recipe_type %}
-                      <a href="{{ link.url }}" class="recipe-link" 
-                         data-handle="{{ link_handle }}" 
-                         data-recipetype="{{ target_page.metafields.custom.recipe_type | downcase }}">
-                        {{ link.title }} <span id="total-posts-count-{{ link_handle }}"></span>
-                      </a>
-                    {% else %}
-                      <p>No recipe type defined for this page.</p>
-                    {% endif %}
+                    <a href="{{ link.url }}" class="recipe-link{% if link_handle == current_handle %} active{% endif %}">
+                      {{ link.title }}
+                    </a>
                   </li>
-                {% endfor %}
-              </ul>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {% if section.settings.mmm_link %}
+          <div class="select-container" id="select2">
+            <div class="select-button">
+              {% assign current_label2 = 'Filter by Occasion' %}
+              {% for link in linklists[section.settings.mmm_link].links %}
+                {% assign link_handle = link.url | split: '/' | last %}
+                {% if link_handle == current_handle %}
+                  {% assign current_label2 = link.title %}
+                {% endif %}
+              {% endfor %}
+              {{ current_label2 }}
             </div>
-          
-            <script>
-              $(document).ready(function() {
-                $('.recipe-link').each(function() {
-                  var linkHandle = $(this).data('handle');  
-                  var recipetype = $(this).data('recipetype'); 
-          
-                  var formattedRecipetype = recipetype
-                    .toLowerCase()                         
-                    .replace(/[^a-z0-9\s-]/g, '')            
-                    .replace(/\s+/g, '-')                    
-                    .replace(/-+/g, '-');                    
-          
-                  $(this).attr('data-recipetype', formattedRecipetype);
-          
-                  var tagUrl = '/blogs/all-recipes/tagged/' + formattedRecipetype;
-          
-                  function countBlogPosts(handle) {
-                    var totalPosts = 0;
-                    var maxPages = 10;  
-                    var delay = 200;   
-          
-                    for (let i = 1; i <= maxPages; i++) {
-                      setTimeout(function() {
-                        $.get(tagUrl + '?page=' + i, function(response) {
-                          var html = $(response);
-                          var posts = html.find('.recipe-box-alt'); 
-                          totalPosts += posts.length; 
-          
-                          if (i === maxPages) {
-                            $('#total-posts-count-' + handle).text('(' + totalPosts + ')');
-                          }
-                        });
-                      }, i * delay); 
-                    }
-                  }
-          
-                  countBlogPosts(linkHandle);
-                });
-              });
-            </script>
-          
-          {% endif %}        
+            <ul class="options">
+              <li>
+                <a href="/blogs/all-recipes" class="recipe-link">All Occasions</a>
+              </li>
+              {% for link in linklists[section.settings.mmm_link].links %}
+                {% assign link_handle = link.url | split: '/' | last %}
+                {% assign target_page = pages[link_handle] %}
+                {% if target_page and target_page.metafields.custom.recipe_type %}
+                  <li>
+                    <a href="{{ link.url }}" class="recipe-link{% if link_handle == current_handle %} active{% endif %}">
+                      {{ link.title }}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
 
-        </div>
+      </div>
 
-        <div class="search-wrap-recipes">
-            <form action="/search" method="get" class="search-form">
-              <input type="text" name="q" placeholder="Search..." class="search-input" aria-label="Search" />
-              <button type="submit" class="search-button"><svg height=800px version=1.1 viewBox="0 0 32 32"width=800px xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink><defs></defs><g fill=none id=Page-1 sketch:type=MSPage fill-rule=evenodd stroke=none stroke-width=1><g fill=#000000 id=Icon-Set sketch:type=MSLayerGroup transform="translate(-256.000000, -1139.000000)"><path d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z"id=search sketch:type=MSShapeGroup></path></g></g></svg></button>
-            </form>  
-        </div>
+      <div class="search-wrap-recipes">
+        <form action="/search" method="get" class="search-form">
+          <input
+            type="text"
+            name="q"
+            placeholder="SEARCH"
+            class="search-input"
+            aria-label="Search"
+            value="{{ search.terms }}"
+          />
+          <input type="hidden" name="type" value="article" />
+          <button type="submit" class="search-button">
+            <svg height="800px" version="1.1" viewBox="0 0 32 32" width="800px" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+                <g fill="#000000" transform="translate(-256.000000, -1139.000000)">
+                  <path d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z"/>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
-
-
-<script>
-
-  const selectContainers = document.querySelectorAll('.select-container');
-
-  selectContainers.forEach(container => {
-    const button = container.querySelector('.select-button');
-    button.addEventListener('click', () => {
-      container.classList.toggle('open');
-    });
-  });
-
-  document.addEventListener('click', (event) => {
-    selectContainers.forEach(container => {
-      if (!container.contains(event.target)) {
-        container.classList.remove('open');
-      }
-    });
-  });
-</script>
 
 
 <section class="content-area receipe_list pt-0">
@@ -185,27 +104,41 @@
   </div>
 </section>
 
+
 <script>
+$(document).ready(function () {
+
+  // ─── Dropdown Toggle ────────────────────────────────────────────────────────
+
+  var selectContainers = document.querySelectorAll('.select-container');
+
+  selectContainers.forEach(function(container) {
+    container.querySelector('.select-button').addEventListener('click', function(e) {
+      e.stopPropagation();
+      selectContainers.forEach(function(c) { if (c !== container) c.classList.remove('open'); });
+      container.classList.toggle('open');
+    });
+  });
+
+  document.addEventListener('click', function() {
+    selectContainers.forEach(function(c) { c.classList.remove('open'); });
+  });
+
+
+  // ─── Load Recipes for Current Page ──────────────────────────────────────────
+
   var recipetype = "{{ page.metafields.custom.recipe_type | downcase }}"
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-+|-+$/g, '');
-</script>
 
-<script>
-$(document).ready(function () {
   if (!recipetype) {
     console.warn('No recipe type defined on this page.');
     return;
   }
 
-  var SECTION_URL = '/?section_id=recipe-index';
   var seenUrls = new Set();
-
-  function fetchPage(pageNumber) {
-    return $.get(SECTION_URL + '&page=' + pageNumber);
-  }
 
   function renderItems($html) {
     $html.find('.ri-item').each(function () {
@@ -219,55 +152,53 @@ $(document).ready(function () {
       var $post = $('<a>')
         .attr('href', url)
         .addClass('recipe-box-alt')
-        .append($('<img>').attr({
-          src: $item.data('image'),
-          alt: $item.data('title'),
-          loading: 'lazy'
-        }))
+        .append($('<img>').attr({ src: $item.data('image'), alt: $item.data('title'), loading: 'lazy' }))
         .append($('<span>').addClass('d-block title').text($item.data('title')));
 
       $('<div>').addClass('col-md-3 col-6').append($post).appendTo('#blog-container');
     });
   }
 
-  // Fetch page 1 first to learn total page count
-  fetchPage(1).then(function (response) {
-    var $html = $('<div>').html(response);
+  function fetchPage(n) {
+    return $.get('/?section_id=recipe-index&page=' + n);
+  }
+
+  fetchPage(1).then(function(response) {
+    var $html      = $('<div>').html(response);
     var totalPages = parseInt($html.find('.ri-meta').data('pages'), 10) || 1;
 
     renderItems($html);
 
     if (totalPages <= 1) return;
 
-    // Fetch remaining pages in parallel, then render in order
     var requests = [];
-    for (var i = 2; i <= totalPages; i++) {
-      requests.push(fetchPage(i));
-    }
+    for (var i = 2; i <= totalPages; i++) requests.push(fetchPage(i));
 
-    $.when.apply($, requests).done(function () {
-      // When only one extra request, arguments is a single response
-      var responses = requests.length === 1 ? [arguments] : Array.prototype.slice.call(arguments);
-      responses.forEach(function (args) {
+    $.when.apply($, requests).done(function() {
+      var responses = requests.length === 1
+        ? [arguments]
+        : Array.prototype.slice.call(arguments);
+      responses.forEach(function(args) {
         renderItems($('<div>').html(args[0]));
       });
     });
-  }).fail(function (err) {
-    console.error('Failed to load recipe index', err);
+
+  }).fail(function() {
+    console.error('Failed to load recipes.');
   });
+
 });
 </script>
 
 
 {% schema %}
-  
 {
   "name": "Recipe Type",
   "settings": [
     {
       "type": "header",
-      "content": "Filter",
-    },    
+      "content": "Filter"
+    },
     {
       "type": "link_list",
       "id": "mm_link",
@@ -277,7 +208,7 @@ $(document).ready(function () {
       "type": "link_list",
       "id": "mmm_link",
       "label": "Occasion"
-    }      
+    }
   ],
   "presets": [
     {

@@ -18,7 +18,11 @@
             </div>
             <div class="col-md-6" style="background-color: #fdf0dd">
                 <div class="ps-lg-5">
-                 <iframe src="https://control.mailblaze.com/index.php/lists/cf9560mzx5bba/brand/ms7834nj1r1d4/subscribe?output=embed&width=600&height=570" width="600" height="350" frameborder="0" scrolling="no"></iframe>
+                 
+                <div class="mailblaze-lazy" 
+                data-src="https://control.mailblaze.com/index.php/lists/cf9560mzx5bba/brand/ms7834nj1r1d4/subscribe?output=embed&width=600&height=570"
+                width="600" height="350" frameborder="0" scrolling="no"
+                ></div>
                 </div>
             </div>
         </div>
@@ -47,12 +51,38 @@
                     {% if section.settings.description != blank %}
                       {{ section.settings.description }}
                     {% endif %}
-                    <iframe src="https://control.mailblaze.com/index.php/lists/cf9560mzx5bba/brand/ms7834nj1r1d4/subscribe?output=embed&width=600&height=570" width="100%" height="350" frameborder="0" scrolling="no"></iframe>
-                </div>
+                   
+                    <div class="mailblaze-lazy" 
+                    data-src="https://control.mailblaze.com/index.php/lists/cf9560mzx5bba/brand/ms7834nj1r1d4/subscribe?output=embed&width=600&height=570" 
+                    width="100%" height="350" frameborder="0" scrolling="no"
+                    ></div>
+                  </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var div = entry.target;
+        var iframe = document.createElement('iframe');
+        iframe.src = div.getAttribute('data-src');
+        iframe.width = '100%';
+        iframe.height = '200';
+        iframe.frameBorder = '0';
+        div.parentNode.replaceChild(iframe, div);
+        observer.unobserve(div);
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  document.querySelectorAll('.mailblaze-lazy').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
 <!-- Content End -->
 {% endif %}
 {% schema %}

@@ -22,7 +22,16 @@
   {% endif %}
   {% endif %}
   {% render 'meta-tags' %}
+ 
   {% include 'wp-page-speed-optimization-header' %} {% render 'sb-js-lazyload' %} 
+
+  {% if template contains 'index' or template contains 'collection' or template contains 'product' %}
+  <script 
+    src="https://app.speedboostr.io/lazyloadjs/ina-paarman.myshopify.com.js?shop={{ shop.domain }}&page_type={{ request.page_type }}" 
+    async>
+  </script>
+  {% endif %}
+
      <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

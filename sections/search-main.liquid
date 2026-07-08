@@ -16,70 +16,50 @@
 <section class="search-results-container pt-0">
   <div class="container">
 
-{% paginate search.results by 16 %}
-{% assign productCount = 0 %}
-{% assign articleCount = 0 %}
-
-{% for item in search.results %}
-{% case item.object_type %}
-  {% when 'article' %}
-    {% assign articleCount = articleCount | plus: 1 %}
-  {% when 'product' %}
-    {% assign productCount = productCount | plus: 1 %}
-  {% endcase %}
-{% endfor %}
+    {% paginate search.results by 16 %}
 
     <div class="row">
-  
 
-            {% liquid
-              assign index = 1
-            %}
-            {% for item in search.results %}
-              {% if item.object_type == 'product' %}
-
-                  <div class="col-md-3 col-6 type-product">
-                  <a href="{{ item.url | split: '?' | first }}" class="recipe-box-alt">
-                    <span class="type-label">Product</span>
-                  {% if item.featured_image %}
-                    <img src="{{ item.featured_image | image_url }}" class="fimage" alt="{{ item.title }}">
-                  {% else %}
-                    <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="{{ item.title }}">
-                  {% endif %}                              
-                  <span class="d-block title">{{ item.title }}</span>
-                  </a>
-                  </div>
-                
+      {% comment %} Articles (recipes) first {% endcomment %}
+      {% for item in search.results %}
+        {% if item.object_type == 'article' %}
+          <div class="col-md-3 col-6">
+            <a href="{{ item.url | split: '?' | first }}" class="recipe-box-alt">
+              {% if item.image %}
+                <img src="{{ item.image | image_url }}" alt="{{ item.title }}">
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="{{ item.title }}">
               {% endif %}
-            {% endfor %}
-            {% liquid
-              assign index = 1
-            %}
+              <span class="d-block title">{{ item.title }}</span>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
 
-            {% for item in search.results %}
-              {% if item.object_type == 'article' %}
-
-                  <div class="col-md-3 col-6">
-                  <a href="{{ item.url | split: '?' | first }}" class="recipe-box-alt">
-                  {% if item.image %}
-                  <img src="{{ item.image | image_url }}" alt="{{ item.title }}">
-                  {% else %}
-                  <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="{{ item.title }}">
-                  {% endif %}                              
-                  <span class="d-block title">{{ item.title }}</span>
-                  </a>
-                  </div>
-                
+      {% comment %} Products last {% endcomment %}
+      {% for item in search.results %}
+        {% if item.object_type == 'product' %}
+          <div class="col-md-3 col-6 type-product">
+            <a href="{{ item.url | split: '?' | first }}" class="recipe-box-alt">
+              <span class="type-label">Product</span>
+              {% if item.featured_image %}
+                <img src="{{ item.featured_image | image_url }}" class="fimage" alt="{{ item.title }}">
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/blog-thumbnail.jpg" alt="{{ item.title }}">
               {% endif %}
-            {% endfor %}
-              </div>
-            {%- if paginate.pages > 1 -%}
-              {%- render 'pagination', paginate: paginate, index: 1 -%}
-            {%- endif -%}
-        {%- endpaginate -%}
-      
-      
-     
+              <span class="d-block title">{{ item.title }}</span>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      {%- render 'pagination', paginate: paginate, index: 1 -%}
+    {%- endif -%}
+
+    {%- endpaginate -%}
 
   </div>
 </section>
@@ -93,7 +73,7 @@
       "type": "image_picker",
       "id": "background_image",
       "label": "Background Image"
-    }    
+    }
   ],
   "templates": ["search"],
   "presets": [

@@ -20,13 +20,34 @@ else if (page_type.indexOf("product") != -1)
     page_type = "product";
 
       if(typeof(sb_index_jslazyload)=="undefined")
-        sb_index_jslazyload = [ /cdn\.shopify\.com\/extensions/, /cdn\.shopify\.com\/s\/trekkie\.storefront/, /cdn\.shopify\.com\/shopifycloud\/boomerang/, /cdn\.shopify\.com\/shopifycloud\/consent-tracking-api\/v0\.1\/consent-tracking-api\.js/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/shop_events_listener/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/features/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/load_feature/, /cdn\.shopify\.com\/shopifycloud\/shopify_chat\/storefront\/shopifyChatV1\.js/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/bars/, ]
+        sb_index_jslazyload = [ /\/cdn\/s\/trekkie\.storefront/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/storefront\/load_feature/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/shop_events_listener/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/storefront\/origin_trials/,
+        /\/cdn\/shopifycloud\/consent-tracking-api\/v0\.1\/consent-tracking-api\.js/,
+        /\/cdn\/shopifycloud\/perf-kit\//,
+        /\/cdn\/shopifycloud\/shop-js\//,
+        /cdn\.shopify\.com\/shopifycloud\/storefront\/assets\/storefront\/origin_trials/, ]
 
       if(typeof(sb_collection_jslazyload)=="undefined")
-        sb_collection_jslazyload = [ /cdn\.shopify\.com\/extensions/, /cdn\.shopify\.com\/s\/trekkie\.storefront/, /cdn\.shopify\.com\/shopifycloud\/boomerang/, /cdn\.shopify\.com\/shopifycloud\/consent-tracking-api\/v0\.1\/consent-tracking-api\.js/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/shop_events_listener/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/features/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/load_feature/, /cdn\.shopify\.com\/shopifycloud\/shopify_chat\/storefront\/shopifyChatV1\.js/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/bars/, ]
+        sb_collection_jslazyload = [ /\/cdn\/s\/trekkie\.storefront/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/storefront\/load_feature/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/shop_events_listener/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/storefront\/origin_trials/,
+        /\/cdn\/shopifycloud\/consent-tracking-api\/v0\.1\/consent-tracking-api\.js/,
+        /\/cdn\/shopifycloud\/perf-kit\//,
+        /\/cdn\/shopifycloud\/shop-js\//,
+        /cdn\.shopify\.com\/shopifycloud\/storefront\/assets\/storefront\/origin_trials/, ]
 
       if(typeof(sb_product_jslazyload)=="undefined")
-        sb_product_jslazyload = [ /cdn\.shopify\.com\/extensions/, /cdn\.shopify\.com\/s\/trekkie\.storefront/, /cdn\.shopify\.com\/shopifycloud\/boomerang/, /cdn\.shopify\.com\/shopifycloud\/consent-tracking-api\/v0\.1\/consent-tracking-api\.js/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/shop_events_listener/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/features/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/load_feature/, /cdn\.shopify\.com\/shopifycloud\/shopify_chat\/storefront\/shopifyChatV1\.js/, /cdn\.shopify\.com\/shopifycloud\/shopify\/assets\/storefront\/bars/, ]
+        sb_product_jslazyload = [ /\/cdn\/s\/trekkie\.storefront/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/storefront\/load_feature/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/shop_events_listener/,
+        /\/cdn\/shopifycloud\/storefront\/assets\/storefront\/origin_trials/,
+        /\/cdn\/shopifycloud\/consent-tracking-api\/v0\.1\/consent-tracking-api\.js/,
+        /\/cdn\/shopifycloud\/perf-kit\//,
+        /\/cdn\/shopifycloud\/shop-js\//,
+        /cdn\.shopify\.com\/shopifycloud\/storefront\/assets\/storefront\/origin_trials/, ]
 
 if (page_type == 'index') {
     window.LAZYLOADURL = sb_index_jslazyload;

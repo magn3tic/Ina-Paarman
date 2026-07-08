@@ -25,7 +25,14 @@
   {% assign leaflet_url = leaflet_raw | split: '"url":"' | last | split: '"' | first %}
   {% assign leaflet_text = leaflet_raw | split: '"text":"' | last | split: '"' | first %}
   <a href="{{ leaflet_url }}" target="_blank" class="cta_btn btn_default">
-    View Leaflet <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" alt="icon" />
+    View Leaflet <img
+  src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg"
+  width="20"
+  height="20"
+  alt=""
+  loading="lazy"
+  decoding="async"
+>
   </a>
 {% endif %}                  
                     <ul class="banner-social">

@@ -5,3 +5,10 @@ select.video-filter {
     outline: 0 !important;
     box-shadow: none !important;
 }
+
+.head-logo{
+height:auto !important
+}
+input:-internal-autofill-selected {
+    background-color:transform !important
+}

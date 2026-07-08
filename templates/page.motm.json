@@ -1,1 +1,33 @@
-{"sections":{"separator_6LrTFb":{"type":"separator","settings":{"bg_color":"bg-primary","bg_opacity":10,"height":1,"container":"","container_max_width":"","pt":10,"pb":10}},"menu_of_the_month_collection_D4WyEG":{"type":"menu-of-the-month-collection","settings":{}}},"order":["separator_6LrTFb","menu_of_the_month_collection_D4WyEG"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "separator_6LrTFb": {
+      "type": "separator",
+      "settings": {
+        "bg_color": "bg-primary",
+        "bg_opacity": 10,
+        "height": 1,
+        "container": "",
+        "container_max_width": "",
+        "pt": 10,
+        "pb": 10
+      }
+    },
+    "menu_of_the_month_collection_D4WyEG": {
+      "type": "menu-of-the-month-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "separator_6LrTFb",
+    "menu_of_the_month_collection_D4WyEG"
+  ]
+}

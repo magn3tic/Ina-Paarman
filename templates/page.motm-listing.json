@@ -1,1 +1,23 @@
-{"sections":{"menu_of_the_month_listing_TM6PUi":{"type":"menu-of-the-month-listing","settings":{"background_image":"shopify:\/\/shop_images\/Ina-Paarman-New-Recipes.jpg","mm_link":"menu-of-the-month"}}},"order":["menu_of_the_month_listing_TM6PUi"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "menu_of_the_month_listing_TM6PUi": {
+      "type": "menu-of-the-month-listing",
+      "settings": {
+        "background_image": "shopify://shop_images/Ina-Paarman-New-Recipes.jpg",
+        "mm_link": "menu-of-the-month"
+      }
+    }
+  },
+  "order": [
+    "menu_of_the_month_listing_TM6PUi"
+  ]
+}

@@ -1,1 +1,22 @@
-{"sections":{"whats_for_supper_D4ygYA":{"type":"whats-for-supper","settings":{"background_image":"shopify:\/\/shop_images\/whats-for-supper-banner.png"}}},"order":["whats_for_supper_D4ygYA"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "whats_for_supper_D4ygYA": {
+      "type": "whats-for-supper",
+      "settings": {
+        "background_image": "shopify://shop_images/whats-for-supper-banner.png"
+      }
+    }
+  },
+  "order": [
+    "whats_for_supper_D4ygYA"
+  ]
+}

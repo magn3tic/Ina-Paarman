@@ -45,14 +45,13 @@
 
   {% if block.settings.image != blank %}
 
-    {%- comment -%} ---------- Preload (only for the eager/video variant) ---------- {%- endcomment -%}
     {% if block.settings.video_link != blank %}
       {% if has_mobile %}
         <link rel="preload" as="image"
           media="(max-width: 575px)"
-          href="{{ block.settings.mobile_image | image_url: width: 600, format: 'webp' }}"
-          imagesrcset="{{ block.settings.mobile_image | image_url: width: 400, format: 'webp' }} 400w, {{ block.settings.mobile_image | image_url: width: 600, format: 'webp' }} 600w, {{ block.settings.mobile_image | image_url: width: 800, format: 'webp' }} 800w"
-          imagesizes="100vw" fetchpriority="high">
+          href="{{ block.settings.mobile_image | image_url: width: 970, format: 'webp' }}"
+          imagesrcset="{{ block.settings.mobile_image | image_url: width: 485, format: 'webp' }} 485w, {{ block.settings.mobile_image | image_url: width: 970, format: 'webp' }} 970w, {{ block.settings.mobile_image | image_url: width: 1455, format: 'webp' }} 1455w"
+          imagesizes="485px" fetchpriority="high">
         <link rel="preload" as="image"
           media="(min-width: 576px)"
           href="{{ block.settings.image | image_url: width: 900, format: 'webp' }}"
@@ -71,10 +70,10 @@
           {% if has_mobile %}
             <source
               media="(max-width: 575px)"
-              srcset="{{ block.settings.mobile_image | image_url: width: 400, format: 'webp' }} 400w, {{ block.settings.mobile_image | image_url: width: 600, format: 'webp' }} 600w, {{ block.settings.mobile_image | image_url: width: 800, format: 'webp' }} 800w"
-              sizes="100vw"
-              width="{{ block.settings.mobile_image.width }}"
-              height="{{ block.settings.mobile_image.height }}">
+              srcset="{{ block.settings.mobile_image | image_url: width: 485, format: 'webp' }} 485w, {{ block.settings.mobile_image | image_url: width: 970, format: 'webp' }} 970w, {{ block.settings.mobile_image | image_url: width: 1455, format: 'webp' }} 1455w"
+              sizes="485px"
+              width="485"
+              height="645">
           {% endif %}
           {% if block.settings.video_link != blank %}
             {{ block.settings.image | image_url: width: 900, format: 'webp' | image_tag: preload: false, widths: '400, 600, 900', sizes: '(min-width: 576px) 50vw, 100vw', width: 591, height: 569, class: 'object-fit-cover skip-lazy', fetchpriority: 'high', loading: 'eager' }}

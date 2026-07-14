@@ -13,7 +13,13 @@
       <div class="row">   
         <!-- Switch position based on checkbox -->
         <div class="col-sm-6 {% if section.settings.image_position == 'right' %} order-sm-2 {% endif %}">
-            {{ section.settings.bg_image | image_url: width: 800 | image_tag: widths: '450, 650, 800', sizes: '(min-width: 576px) 50vw, 100vw', class: 'bg-image', loading: 'lazy' }}
+            {{ section.settings.bg_image
+            | image_url: width: 800, format: 'webp', quality: 75
+            | image_tag:
+              widths: '360, 450, 550, 650, 750, 800',
+              sizes: '(min-width: 576px) 50vw, calc(100vw - 24px)',
+              class: 'bg-image',
+              loading: 'lazy' }}
         </div>
         <div class="col-sm-6">
           <div class="content-text">

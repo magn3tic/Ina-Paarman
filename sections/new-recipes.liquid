@@ -16,8 +16,8 @@
             {{ section.settings.bg_image
             | image_url: width: 800, format: 'webp', quality: 75
             | image_tag:
-              widths: '360, 450, 550, 650, 750, 800',
-              sizes: '(min-width: 576px) 50vw, calc(100vw - 24px)',
+              widths: '360, 450, 550, 650, 680, 750, 800',
+              sizes: '(min-width: 1350px) 621px, (min-width: 576px) calc(50vw - 24px), calc(100vw - 24px)',
               class: 'bg-image',
               loading: 'lazy' }}
         </div>

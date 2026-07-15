@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-sm-6 order-sm-2 order-1">
             {% if section.settings.review_bg_image != blank %}
-              {{ section.settings.review_bg_image | image_url: width: 670 | image_tag: class: 'bg-image', loading: 'lazy' }} 
+              {{ section.settings.review_bg_image | image_url: width: 670, format: 'webp', quality: 75 | image_tag: widths: '360, 450, 550, 670', sizes: '(min-width: 1350px) 621px, (min-width: 576px) calc(50vw - 24px), calc(100vw - 24px)', class: 'bg-image', loading: 'lazy' }} 
             {% endif %}
         </div>
         <div class="col-sm-6 order-sm-1 order-2">
@@ -43,7 +43,7 @@
             {% if section.settings.cta_link != blank %}
               <a href="{{ section.settings.cta_link }}" class="cta_btn btn_default">
                 {{ section.settings.cta_text }}
-                <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
+                <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/8415/4690/files/arrow-right-white.svg" width = "20" height = "20" alt="icon">
               </a>
             {% endif %}
           </div>

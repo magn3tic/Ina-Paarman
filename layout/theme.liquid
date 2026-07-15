@@ -213,6 +213,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js" defer></script>
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
 <script src="{{ 'custom.js' | asset_url }}" defer></script>
+{% comment %}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var lazyFrames = document.querySelectorAll("iframe[data-src]");
@@ -229,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
   lazyFrames.forEach(function (frame) { io.observe(frame); });
 });
 </script>
+{% endcomment %}
   <div class="main-wrapper">
     
     <div id="header-group" class="sticky-top">

@@ -298,7 +298,54 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 </script>
 <!-- END app block --><!-- BEGIN app block: shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea -->
+<script>
+  var TP_IDX_url = "https://app.identixweb.com/";
+  console.log("==========>", TP_IDX_url)
+  document.addEventListener("DOMContentLoaded", () => {
+    if (
+      typeof specificBunLoad == 'undefined' &&
+      !window.TABLEPRESS_APP_LOADING &&
+      !window.TABLEPRESS_INITIALIZED
+    ){
 
+      window.TABLEPRESS_APP_LOADING = true;
+
+      let TablepressInter = setInterval(()=>{
+        if(document.getElementsByTagName("head")[0] != null){
+            function tablepressScriptLoad(e){
+              console.log("%c%s", "background: #1c64f6; color: #fff; font-size: 10px; font-weight:bold; padding: 5px 10px; border-radius: 3px", "🗲 Tablepress is loaded... 🗲");
+                var s_tag = document.createElement("script");
+                s_tag.setAttribute('id','tablepressProd');
+                s_tag.setAttribute('src',e);
+                document.getElementsByTagName("head")[0].appendChild(s_tag);
+                window.TABLEPRESS_INITIALIZED = true;
+            }
+            tablepressScriptLoad("https://tablepress.identixweb.com/tablepress.bundle.js")
+                clearInterval(TablepressInter);
+        }
+      },10);
+    }
+
+    const getTablepressDiv = document.getElementById('tablepress_react');
+    if(!getTablepressDiv) {
+      var container = document.createElement("div");
+      container.setAttribute('id','tablepress_react');
+      let spClass = document.getElementsByTagName("body")[0];
+      spClass.insertBefore(container, spClass.firstChild);
+    }
+ 
+    const getTablepressCss = document.getElementById('tablepressCss');
+    if(!getTablepressCss) {
+      let link = document.createElement('link');
+      link.rel = "stylesheet";
+      link.id = "tablepressCss";
+      link.type = "text/css";
+      link.href = "https://tablepress.identixweb.com/static/css/tablepress.css";
+      link.media = "all";
+      document.getElementsByTagName('HEAD')[0].appendChild(link);
+    }
+  })
+</script>
 </body>
 
 <!--Speed Optimized By SpeedBoostr WebPlanex Infotech App-->

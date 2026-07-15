@@ -1,48 +1,33 @@
-<script>
-  var TP_IDX_url = "https://app.identixweb.com/";
-  console.log("==========>", TP_IDX_url)
-  document.addEventListener("DOMContentLoaded", () => {
-    if (
-      typeof specificBunLoad == 'undefined' &&
-      !window.TABLEPRESS_APP_LOADING &&
-      !window.TABLEPRESS_INITIALIZED
-    ){
+{% comment %}
+  TablePress (IdentixWeb) performance scoping
+  --------------------------------------------
+  The app's embed loader skips fetching tablepress.bundle.js (~399KB)
+  when a global `specificBunLoad` variable is already defined, and skips
+  injecting tablepress.css (~29KB) when an element with id "tablepressCss"
+  already exists. This snippet uses both hooks to suppress TablePress on
+  templates that never contain tables.
 
-      window.TABLEPRESS_APP_LOADING = true;
+  Design: BLOCKLIST. We only suppress on known table-free, high-traffic
+  templates. All regular pages (template.name == 'page') are left alone,
+  so if a table is ever added to a new page it works with no code change.
 
-      let TablepressInter = setInterval(()=>{
-        if(document.getElementsByTagName("head")[0] != null){
-            function tablepressScriptLoad(e){
-              console.log("%c%s", "background: #1c64f6; color: #fff; font-size: 10px; font-weight:bold; padding: 5px 10px; border-radius: 3px", "🗲 Tablepress is loaded... 🗲");
-                var s_tag = document.createElement("script");
-                s_tag.setAttribute('id','tablepressProd');
-                s_tag.setAttribute('src',e);
-                document.getElementsByTagName("head")[0].appendChild(s_tag);
-                window.TABLEPRESS_INITIALIZED = true;
-            }
-            tablepressScriptLoad("https://tablepress.identixweb.com/tablepress.bundle.js")
-                clearInterval(TablepressInter);
-        }
-      },10);
-    }
+  Include from theme.liquid inside <head>:  {% render 'tablepress-scope' %}
+{% endcomment %}
 
-    const getTablepressDiv = document.getElementById('tablepress_react');
-    if(!getTablepressDiv) {
-      var container = document.createElement("div");
-      container.setAttribute('id','tablepress_react');
-      let spClass = document.getElementsByTagName("body")[0];
-      spClass.insertBefore(container, spClass.firstChild);
-    }
- 
-    const getTablepressCss = document.getElementById('tablepressCss');
-    if(!getTablepressCss) {
-      let link = document.createElement('link');
-      link.rel = "stylesheet";
-      link.id = "tablepressCss";
-      link.type = "text/css";
-      link.href = "https://tablepress.identixweb.com/static/css/tablepress.css";
-      link.media = "all";
-      document.getElementsByTagName('HEAD')[0].appendChild(link);
-    }
-  })
-</script>
+{%- liquid
+  assign block_tablepress = false
+
+  case template.name
+    when 'index', 'collection', 'list-collections', 'blog', 'article', 'search', 'cart', '404', 'password'
+      assign block_tablepress = true
+    when 'product'
+      if product.metafields.custom.tablepress == blank
+        assign block_tablepress = true
+      endif
+  endcase
+-%}
+
+{%- if block_tablepress -%}
+  <script>var specificBunLoad = true;</script>
+  <style id="tablepressCss"></style>
+{%- endif -%}

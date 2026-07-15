@@ -246,7 +246,85 @@ document.addEventListener("DOMContentLoaded", function () {
   %}
 
 
- {% render 'sb-preload-booster' %} </body>
+ {% render 'sb-preload-booster' %}
+<script>
+  var TP_IDX_url = "https://app.identixweb.com/";
+  console.log("==========>", TP_IDX_url)
+  document.addEventListener("DOMContentLoaded", () => {
+    if (
+      typeof specificBunLoad == 'undefined' &&
+      !window.TABLEPRESS_APP_LOADING &&
+      !window.TABLEPRESS_INITIALIZED
+    ){
+
+      window.TABLEPRESS_APP_LOADING = true;
+
+      let TablepressInter = setInterval(()=>{
+        if(document.getElementsByTagName("head")[0] != null){
+            function tablepressScriptLoad(e){
+              console.log("%c%s", "background: #1c64f6; color: #fff; font-size: 10px; font-weight:bold; padding: 5px 10px; border-radius: 3px", "🗲 Tablepress is loaded... 🗲");
+                var s_tag = document.createElement("script");
+                s_tag.setAttribute('id','tablepressProd');
+                s_tag.setAttribute('src',e);
+                document.getElementsByTagName("head")[0].appendChild(s_tag);
+                window.TABLEPRESS_INITIALIZED = true;
+            }
+            tablepressScriptLoad("https://tablepress.identixweb.com/tablepress.bundle.js")
+                clearInterval(TablepressInter);
+        }
+      },10);
+    }
+
+    const getTablepressDiv = document.getElementById('tablepress_react');
+    if(!getTablepressDiv) {
+      var container = document.createElement("div");
+      container.setAttribute('id','tablepress_react');
+      let spClass = document.getElementsByTagName("body")[0];
+      spClass.insertBefore(container, spClass.firstChild);
+    }
+ 
+    const getTablepressCss = document.getElementById('tablepressCss');
+    if(!getTablepressCss) {
+      let link = document.createElement('link');
+      link.rel = "stylesheet";
+      link.id = "tablepressCss";
+      link.type = "text/css";
+      link.href = "https://tablepress.identixweb.com/static/css/tablepress.css";
+      link.media = "all";
+      document.getElementsByTagName('HEAD')[0].appendChild(link);
+    }
+  })
+</script>
+<!-- END app block --><!-- BEGIN app block: shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea -->
+<script type="text/javascript">
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=shopify";
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+
+    c.Shopify.loadFeatures([{ name: "consent-tracking-api", version: "0.1" }], error => {
+      if (error) {
+        console.error("Error loading Shopify features:", error);
+        return;
+      }
+
+      c[a]('consentv2', {
+        ad_Storage: c.Shopify.customerPrivacy.marketingAllowed() ? "granted" : "denied",
+        analytics_Storage: c.Shopify.customerPrivacy.analyticsProcessingAllowed() ? "granted" : "denied",
+        source: 101,
+      });
+    });
+
+    l.addEventListener("visitorConsentCollected", function (e) {
+      c[a]('consentv2', {
+        ad_Storage: e.detail.marketingAllowed ? "granted" : "denied",
+        analytics_Storage: e.detail.analyticsAllowed ? "granted" : "denied",
+        source: 101,
+      });
+    });
+  })(window, document, "clarity", "script", "vcnvh2utrc");
+</script>
+</body>
 
 <!--Speed Optimized By SpeedBoostr WebPlanex Infotech App-->
 </html>

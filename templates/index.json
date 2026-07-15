@@ -148,20 +148,6 @@
       ],
       "settings": {}
     },
-    "new_recipes_y9m9KP": {
-      "type": "new-recipes",
-      "disabled": true,
-      "name": "New Recipes",
-      "settings": {
-        "bg_image": "shopify://shop_images/Ina-Paarmans-Lamb-Roast.jpg",
-        "sub_heading": "June 2026 –",
-        "heading": "New Recipes",
-        "rich_content": "<p>This month, we’ve planned a special menu in honour of Father’s Day.</p><p>Do try Dad’s Best Roasted Lamb Shoulder. This delicious slow roast can easily be portioned after twisting out the bones. For dessert, our saucy Brandy and Coke Chocolate Pudding. And for midweek supper, take a look at our ultimate Cajun Chicken Burger recipe and scrumptious Roasted Vegetable Salad.</p><p>Stay warm, everyone!</p>",
-        "button_text": "Discover Menu",
-        "button_link": "shopify://pages/june-2026",
-        "image_position": false
-      }
-    },
     "new_recipes_7YgaEa": {
       "type": "new-recipes",
       "settings": {
@@ -423,16 +409,6 @@
         "description": "<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>"
       }
     },
-    "newsletter_6ezKfV": {
-      "type": "newsletter",
-      "disabled": true,
-      "settings": {
-        "style": "style-1",
-        "sub_heading": "- Sign Up -",
-        "main_heading": "Ina Paarman’s Kitchen Newsletter",
-        "description": "<p>Check back regularly, follow us on social media, or sign up for our newsletter to ensure you’re the first to receive news about our latest personal appearances, book signings, competitions, and other events.</p>"
-      }
-    },
     "contact_info_aUjhYE": {
       "type": "contact-info",
       "settings": {
@@ -462,7 +438,6 @@
   },
   "order": [
     "hero_carousel_CmDneU",
-    "new_recipes_y9m9KP",
     "new_recipes_7YgaEa",
     "spacer_8qbHJ6",
     "recipe_box_krqVzA",
@@ -470,7 +445,6 @@
     "shop_KYhExg",
     "about_info_NfmaLP",
     "newsletter_mailblaze_t9JpEj",
-    "newsletter_6ezKfV",
     "contact_info_aUjhYE",
     "featured_blog_posts_agdx88"
   ]

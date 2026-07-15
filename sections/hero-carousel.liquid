@@ -51,8 +51,8 @@
                 {% if forloop.first %}
                   <link rel="preload" as="image"
                     href="{{ block.settings.image | image_url: width: 670, format: 'webp' }}"
-                    imagesrcset="{{ block.settings.image | image_url: width: 400, format: 'webp' }} 400w, {{ block.settings.image | image_url: width: 450, format: 'webp'}} 450w, {{ block.settings.image | image_url: width: 550, format: 'webp' }} 550w, {{ block.settings.image | image_url: width: 700, format: 'webp'}} 700w, {{ block.settings.image | image_url: width: 850, format: 'webp' }} 850w, {{ block.settings.image | image_url: width: 1050, format: 'webp' }} 1050w, {{ block.settings.image | image_url: width: 1350, format: 'webp' }} 1350w"
-                    imagesizes="(min-width: 1401px) 670px, (min-width: 1024px) 420px, (min-width: 576px) calc(50vw - 60px), calc(100vw - 54px)"
+                    imagesrcset="{{ block.settings.image | image_url: width: 320, format: 'webp' }} 320w, {{ block.settings.image | image_url: width: 390, format: 'webp'}} 390w, {{ block.settings.image | image_url: width: 600, format: 'webp' }} 600w, {{ block.settings.image | image_url: width: 670, format: 'webp'}} 670w"
+                    imagesizes="(max-width: 749px) 100vw, 50vw"
                     fetchpriority="high">
                 {% endif %}
 
@@ -64,8 +64,8 @@
                     </svg></div>
                     {{ block.settings.image | image_url: width: 670, format: 'webp' | image_tag:
                     preload: false,
-                    widths: '400, 450, 550, 700, 850, 1050, 1350',
-                    sizes: '(min-width: 1401px) 670px, (min-width: 1024px) 420px, (min-width: 576px) calc(50vw - 60px), calc(100vw - 54px)',
+                    widths: '320, 390, 480, 600, 670',
+                    sizes: '(max-width: 749px) 100vw, 50vw',
                     width: 670, height: 645,
                     class: 'object-fit-cover skip-lazy',
                     fetchpriority: img_priority, loading: img_loading }}
@@ -73,10 +73,10 @@
 
                 {% else %}
 
-                  {{ block.settings.image | image_url: width: 900, format: 'webp', quality: 75 | image_tag:
+                  {{ block.settings.image | image_url: width: 670, format: 'webp' | image_tag:
                     preload: false,
-                    widths: '400, 450, 550, 700, 850, 1050, 1350',
-                    sizes: '(min-width: 1401px) 670px, (min-width: 1024px) 420px, (min-width: 576px) calc(50vw - 60px), calc(100vw - 54px)',
+                    widths: '320, 390, 480, 600, 670',
+                    sizes: '(max-width: 749px) 100vw, 50vw',
                     width: 670, height: 645,
                     class: 'object-fit-cover skip-lazy',
                     fetchpriority: img_priority, loading: img_loading }}

@@ -49,13 +49,13 @@
           <a href="{{ block.settings.slide_link }}" class="recipe-box">
             {% if block.settings.slide_image != blank %} 
             {{ block.settings.slide_image
-                | image_url: width: 450
-                | image_tag:
-                    widths: '280,320,402,450,620',
-                    sizes: '(min-width: 992px) 402px, 100vw',
-                    class: 'object-fit-cover w-100',
-                    loading: 'lazy'
-              }}
+              | image_url: width: 450, format: 'webp', quality: 75
+              | image_tag:
+                  widths: '280,320,402,450,620',
+                  sizes: '(min-width: 992px) 402px, 100vw',
+                  class: 'object-fit-cover w-100',
+                  loading: 'lazy'
+            }}
             {% endif %}
             {% if block.settings.title != blank %}
               <span class="d-block title">{{ block.settings.title }}</span>

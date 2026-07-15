@@ -50,6 +50,8 @@
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css"></noscript>
 
   {% render 'styles-scripts' %}
+
+  {% render 'tablepress-scope' %}
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Select all anchor tags
@@ -296,34 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 </script>
 <!-- END app block --><!-- BEGIN app block: shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea -->
-<script type="text/javascript">
-  (function (c, l, a, r, i, t, y) {
-    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=shopify";
-    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
 
-    c.Shopify.loadFeatures([{ name: "consent-tracking-api", version: "0.1" }], error => {
-      if (error) {
-        console.error("Error loading Shopify features:", error);
-        return;
-      }
-
-      c[a]('consentv2', {
-        ad_Storage: c.Shopify.customerPrivacy.marketingAllowed() ? "granted" : "denied",
-        analytics_Storage: c.Shopify.customerPrivacy.analyticsProcessingAllowed() ? "granted" : "denied",
-        source: 101,
-      });
-    });
-
-    l.addEventListener("visitorConsentCollected", function (e) {
-      c[a]('consentv2', {
-        ad_Storage: e.detail.marketingAllowed ? "granted" : "denied",
-        analytics_Storage: e.detail.analyticsAllowed ? "granted" : "denied",
-        source: 101,
-      });
-    });
-  })(window, document, "clarity", "script", "vcnvh2utrc");
-</script>
 </body>
 
 <!--Speed Optimized By SpeedBoostr WebPlanex Infotech App-->

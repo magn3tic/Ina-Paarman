@@ -24,7 +24,7 @@
                       <div class="row">
                         <div class="col-lg-6">
                           <div class="megamenu-banner pe-lg-5">
-                            {{ block.settings.mm1_dimage | image_url: width: 670, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }} 
+                            {% if block.settings.mm1_dimage %}<img class="js-mm-img" data-src="{{ block.settings.mm1_dimage | image_url: width: 900, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.mm1_dimage | image_url: width: 450, format: 'webp', quality: 75 }} 450w, {{ block.settings.mm1_dimage | image_url: width: 670, format: 'webp', quality: 75 }} 670w, {{ block.settings.mm1_dimage | image_url: width: 900, format: 'webp', quality: 75 }} 900w" sizes="(min-width: 992px) 600px, 100vw" width="670" height="{{ 670.0 | divided_by: block.settings.mm1_dimage.aspect_ratio | round }}" alt="{{ block.settings.mm1_dimage.alt | escape }}" loading="lazy">{% endif %} 
                           </div>
                         </div>
                         <div class="col-lg-6">
@@ -34,7 +34,7 @@
                                 <div class="col-sm-6">
                                   <a href="{{ block.settings.mm1_nav }}" class="menu-box">
                                     <div class="image">
-                                      {{ block.settings.mm1_image | image_url: width: 347, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }} 
+                                      {% if block.settings.mm1_image %}<img class="js-mm-img" data-src="{{ block.settings.mm1_image | image_url: width: 700, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.mm1_image | image_url: width: 347, format: 'webp', quality: 75 }} 347w, {{ block.settings.mm1_image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.mm1_image | image_url: width: 700, format: 'webp', quality: 75 }} 700w" sizes="357px" width="347" height="{{ 347.0 | divided_by: block.settings.mm1_image.aspect_ratio | round }}" alt="{{ block.settings.mm1_image.alt | escape }}" loading="lazy">{% endif %} 
                                     </div>
                                     {{ block.settings.mm1_title }}
                                   </a>
@@ -44,7 +44,7 @@
                                 <div class="col-sm-6">
                                   <a href="{{ block.settings.mm2_nav }}" class="menu-box">
                                     <div class="image">
-                                      {{ block.settings.mm2_image | image_url: width: 347, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }}
+                                      {% if block.settings.mm2_image %}<img class="js-mm-img" data-src="{{ block.settings.mm2_image | image_url: width: 700, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.mm2_image | image_url: width: 347, format: 'webp', quality: 75 }} 347w, {{ block.settings.mm2_image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.mm2_image | image_url: width: 700, format: 'webp', quality: 75 }} 700w" sizes="357px" width="347" height="{{ 347.0 | divided_by: block.settings.mm2_image.aspect_ratio | round }}" alt="{{ block.settings.mm2_image.alt | escape }}" loading="lazy">{% endif %}
                                     </div>
                                     {{ block.settings.mm2_title }}
                                   </a>
@@ -54,7 +54,7 @@
                                 <div class="col-sm-6">
                                   <a href="{{ block.settings.mm3_nav }}" class="menu-box">
                                     <div class="image">
-                                      {{ block.settings.mm3_image | image_url: width: 347, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }}
+                                      {% if block.settings.mm3_image %}<img class="js-mm-img" data-src="{{ block.settings.mm3_image | image_url: width: 700, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.mm3_image | image_url: width: 347, format: 'webp', quality: 75 }} 347w, {{ block.settings.mm3_image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.mm3_image | image_url: width: 700, format: 'webp', quality: 75 }} 700w" sizes="357px" width="347" height="{{ 347.0 | divided_by: block.settings.mm3_image.aspect_ratio | round }}" alt="{{ block.settings.mm3_image.alt | escape }}" loading="lazy">{% endif %}
                                     </div>
                                     {{ block.settings.mm3_title }}
                                   </a>
@@ -64,7 +64,7 @@
                                 <div class="col-sm-6">
                                   <a href="{{ block.settings.mm4_nav }}" class="menu-box">
                                     <div class="image">
-                                      {{ block.settings.mm4_image | image_url: width: 347, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }}
+                                      {% if block.settings.mm4_image %}<img class="js-mm-img" data-src="{{ block.settings.mm4_image | image_url: width: 700, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.mm4_image | image_url: width: 347, format: 'webp', quality: 75 }} 347w, {{ block.settings.mm4_image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.mm4_image | image_url: width: 700, format: 'webp', quality: 75 }} 700w" sizes="357px" width="347" height="{{ 347.0 | divided_by: block.settings.mm4_image.aspect_ratio | round }}" alt="{{ block.settings.mm4_image.alt | escape }}" loading="lazy">{% endif %}
                                     </div>
                                     {{ block.settings.mm4_title }}
                                   </a>
@@ -74,7 +74,7 @@
                                 <div class="col-sm-6">
                                   <a href="{{ block.settings.mm5_nav }}" class="menu-box">
                                     <div class="image">
-                                      {{ block.settings.mm5_image | image_url: width: 347, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }}
+                                      {% if block.settings.mm5_image %}<img class="js-mm-img" data-src="{{ block.settings.mm5_image | image_url: width: 700, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.mm5_image | image_url: width: 347, format: 'webp', quality: 75 }} 347w, {{ block.settings.mm5_image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.mm5_image | image_url: width: 700, format: 'webp', quality: 75 }} 700w" sizes="357px" width="347" height="{{ 347.0 | divided_by: block.settings.mm5_image.aspect_ratio | round }}" alt="{{ block.settings.mm5_image.alt | escape }}" loading="lazy">{% endif %}
                                     </div>
                                     {{ block.settings.mm5_title }}
                                   </a>
@@ -84,7 +84,7 @@
                                 <div class="col-sm-6">
                                   <a href="{{ block.settings.mm6_nav }}" class="menu-box">
                                     <div class="image">
-                                      {{ block.settings.mm6_image | image_url: width: 347, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }}
+                                      {% if block.settings.mm6_image %}<img class="js-mm-img" data-src="{{ block.settings.mm6_image | image_url: width: 700, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.mm6_image | image_url: width: 347, format: 'webp', quality: 75 }} 347w, {{ block.settings.mm6_image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.mm6_image | image_url: width: 700, format: 'webp', quality: 75 }} 700w" sizes="357px" width="347" height="{{ 347.0 | divided_by: block.settings.mm6_image.aspect_ratio | round }}" alt="{{ block.settings.mm6_image.alt | escape }}" loading="lazy">{% endif %}
                                     </div>
                                     {{ block.settings.mm6_title }}
                                   </a>
@@ -106,7 +106,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="megamenu-banner pe-lg-5">
-                                {{ block.settings.dd_dimage | image_url: width: 670, format: 'webp', quality: 75 | image_tag: loading: 'lazy' }} 
+                                {% if block.settings.dd_dimage %}<img class="js-mm-img" data-src="{{ block.settings.dd_dimage | image_url: width: 900, format: 'webp', quality: 75 }}" data-srcset="{{ block.settings.dd_dimage | image_url: width: 450, format: 'webp', quality: 75 }} 450w, {{ block.settings.dd_dimage | image_url: width: 670, format: 'webp', quality: 75 }} 670w, {{ block.settings.dd_dimage | image_url: width: 900, format: 'webp', quality: 75 }} 900w" sizes="(min-width: 992px) 600px, 100vw" width="670" height="{{ 670.0 | divided_by: block.settings.dd_dimage.aspect_ratio | round }}" alt="{{ block.settings.dd_dimage.alt | escape }}" loading="lazy">{% endif %} 
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -181,6 +181,37 @@
     </form>  
   </div>
 </div>
+
+
+<script>
+  (function () {
+    var loaded = false;
+    function loadMenuImages() {
+      if (loaded) return;
+      loaded = true;
+      var imgs = document.querySelectorAll('img.js-mm-img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        var ss = img.getAttribute('data-srcset');
+        var src = img.getAttribute('data-src');
+        if (ss) img.setAttribute('srcset', ss);
+        if (src) img.setAttribute('src', src);
+      }
+    }
+    function arm() {
+      var header = document.querySelector('.header-area');
+      if (!header) { loadMenuImages(); return; }
+      ['mouseover', 'touchstart', 'focusin'].forEach(function (ev) {
+        header.addEventListener(ev, loadMenuImages, { once: true, passive: true });
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', arm);
+    } else {
+      arm();
+    }
+  })();
+</script>
 
 {% schema %}
 {

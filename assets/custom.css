@@ -11823,7 +11823,8 @@ blockquote {
 }
 .mainmenu ul li a.menu-box img {
   margin-bottom: 15px;
-  border-radius: 8px
+  border-radius: 8px;
+  width:100%
 }
 .header-area {
   -webkit-animation-duration: .5s;

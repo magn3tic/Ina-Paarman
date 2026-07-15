@@ -40,8 +40,12 @@
 <!-- End Google Tag Manager -->
   {{ content_for_header }}
 
-  {{ 'bootstrap.css' | asset_url | stylesheet_tag:preload: true }}
+{%comment %}
+{{ 'bootstrap.css' | asset_url | stylesheet_tag:preload: true }}
 {{ 'custom.css' | asset_url | stylesheet_tag:preload: true}}
+{% endcomment %}
+{{ 'theme-combined.css' | asset_url | stylesheet_tag: preload: true }}
+
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"></noscript>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">

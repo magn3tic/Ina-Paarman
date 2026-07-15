@@ -98,11 +98,6 @@
     "cart_img_border": "img-thumbnail",
     "content_for_index": [],
     "blocks": {
-      "14464196051010714522": {
-        "type": "shopify://apps/tablepress/blocks/tablepress-block-dev/0315ebd4-567b-4721-9e07-500c79914395",
-        "disabled": false,
-        "settings": {}
-      },
       "13768625480086291342": {
         "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": false,
@@ -115,6 +110,11 @@
       },
       "2200952712151285029": {
         "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": true,
+        "settings": {}
+      },
+      "14464196051010714522": {
+        "type": "shopify://apps/tablepress-size-chart/blocks/tablepress-block-dev/0315ebd4-567b-4721-9e07-500c79914395",
         "disabled": true,
         "settings": {}
       }

@@ -50,7 +50,7 @@
 
                 {% if forloop.first %}
                   <link rel="preload" as="image"
-                    href="{{ block.settings.image | image_url: width: 670, format: 'webp', quality: 75 }}"
+                    href="{{ block.settings.image | image_url: width: 900, format: 'webp', quality: 75 }}"
                     imagesrcset="{{ block.settings.image | image_url: width: 400, format: 'webp', quality: 75 }} 400w, {{ block.settings.image | image_url: width: 450, format: 'webp', quality: 75 }} 450w, {{ block.settings.image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.image | image_url: width: 700, format: 'webp', quality: 75 }} 700w, {{ block.settings.image | image_url: width: 850, format: 'webp', quality: 75 }} 850w, {{ block.settings.image | image_url: width: 1050, format: 'webp', quality: 75 }} 1050w, {{ block.settings.image | image_url: width: 1350, format: 'webp', quality: 75 }} 1350w"
                     imagesizes="(min-width: 1401px) 670px, (min-width: 1024px) 420px, (min-width: 576px) calc(50vw - 60px), calc(100vw - 54px)"
                     fetchpriority="high">

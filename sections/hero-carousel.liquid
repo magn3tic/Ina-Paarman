@@ -50,9 +50,9 @@
 
                 {% if forloop.first %}
                   <link rel="preload" as="image"
-                    href="{{ block.settings.image | image_url: width: 670, format: 'webp' }}"
-                    imagesrcset="{{ block.settings.image | image_url: width: 320, format: 'webp' }} 320w, {{ block.settings.image | image_url: width: 390, format: 'webp'}} 390w, {{ block.settings.image | image_url: width: 600, format: 'webp' }} 600w, {{ block.settings.image | image_url: width: 670, format: 'webp'}} 670w"
-                    imagesizes="(max-width: 749px) 100vw, 50vw"
+                    href="{{ block.settings.image | image_url: width: 670, format: 'webp', quality: 75 }}"
+                    imagesrcset="{{ block.settings.image | image_url: width: 400, format: 'webp', quality: 75 }} 400w, {{ block.settings.image | image_url: width: 450, format: 'webp', quality: 75 }} 450w, {{ block.settings.image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.image | image_url: width: 700, format: 'webp', quality: 75 }} 700w, {{ block.settings.image | image_url: width: 850, format: 'webp', quality: 75 }} 850w, {{ block.settings.image | image_url: width: 1050, format: 'webp', quality: 75 }} 1050w, {{ block.settings.image | image_url: width: 1350, format: 'webp', quality: 75 }} 1350w"
+                    imagesizes="(min-width: 1401px) 670px, (min-width: 1024px) 420px, (min-width: 576px) calc(50vw - 60px), calc(100vw - 54px)"
                     fetchpriority="high">
                 {% endif %}
 
@@ -62,10 +62,10 @@
                     <div class="hero-play"><svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM10.6935 15.8458L15.4137 13.059C16.1954 12.5974 16.1954 11.4026 15.4137 10.941L10.6935 8.15419C9.93371 7.70561 9 8.28947 9 9.21316V14.7868C9 15.7105 9.93371 16.2944 10.6935 15.8458Z" fill="#fff"/>
                     </svg></div>
-                    {{ block.settings.image | image_url: width: 670, format: 'webp' | image_tag:
+                    {{ block.settings.image | image_url: width: 900, format: 'webp', quality: 75 | image_tag:
                     preload: false,
-                    widths: '320, 390, 480, 600, 670',
-                    sizes: '(max-width: 749px) 100vw, 50vw',
+                    widths: '400, 450, 550, 700, 850, 1050, 1350',
+                    sizes: '(min-width: 1401px) 670px, (min-width: 1024px) 420px, (min-width: 576px) calc(50vw - 60px), calc(100vw - 54px)',
                     width: 670, height: 645,
                     class: 'object-fit-cover skip-lazy',
                     fetchpriority: img_priority, loading: img_loading }}
@@ -73,10 +73,10 @@
 
                 {% else %}
 
-                  {{ block.settings.image | image_url: width: 670, format: 'webp' | image_tag:
+                  {{ block.settings.image | image_url: width: 900, format: 'webp', quality: 75 | image_tag:
                     preload: false,
-                    widths: '320, 390, 480, 600, 670',
-                    sizes: '(max-width: 749px) 100vw, 50vw',
+                    widths: '400, 450, 550, 700, 850, 1050, 1350',
+                    sizes: '(min-width: 1401px) 670px, (min-width: 1024px) 420px, (min-width: 576px) calc(50vw - 60px), calc(100vw - 54px)',
                     width: 670, height: 645,
                     class: 'object-fit-cover skip-lazy',
                     fetchpriority: img_priority, loading: img_loading }}

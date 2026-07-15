@@ -115,7 +115,7 @@
       },
       "14464196051010714522": {
         "type": "shopify://apps/tablepress-size-chart/blocks/tablepress-block-dev/0315ebd4-567b-4721-9e07-500c79914395",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     }

@@ -39,10 +39,6 @@
               {% if block.settings.image != blank %}
 
                 {%- liquid
-                  comment
-                    The first slide is visible before Slick initializes, so it is the LCP.
-                    Only the first slide gets preload + eager + high priority; all others lazy.
-                  endcomment
                   if forloop.first
                     assign img_loading = 'eager'
                     assign img_priority = 'high'

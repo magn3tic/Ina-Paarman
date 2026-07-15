@@ -38,13 +38,29 @@
             <div class="hero-img">
               {% if block.settings.image != blank %}
 
-                {% if block.settings.video_link != blank %}
+                {%- liquid
+                  comment
+                    The first slide is visible before Slick initializes, so it is the LCP.
+                    Only the first slide gets preload + eager + high priority; all others lazy.
+                  endcomment
+                  if forloop.first
+                    assign img_loading = 'eager'
+                    assign img_priority = 'high'
+                  else
+                    assign img_loading = 'lazy'
+                    assign img_priority = 'auto'
+                  endif
+                -%}
 
+                {% if forloop.first %}
                   <link rel="preload" as="image"
                     href="{{ block.settings.image | image_url: width: 900, format: 'webp', quality: 75 }}"
-                    imagesrcset="{{ block.settings.image | image_url: width: 400, format: 'webp', quality: 75 }} 400w, {{ block.settings.image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.image | image_url: width: 700, format: 'webp', quality: 75 }} 700w, {{ block.settings.image | image_url: width: 850, format: 'webp', quality: 75 }} 850w, {{ block.settings.image | image_url: width: 1100, format: 'webp', quality: 75 }} 1100w"
-                    imagesizes="(min-width: 576px) 50vw, calc(100vw - 24px)"
+                    imagesrcset="{{ block.settings.image | image_url: width: 400, format: 'webp', quality: 75 }} 400w, {{ block.settings.image | image_url: width: 550, format: 'webp', quality: 75 }} 550w, {{ block.settings.image | image_url: width: 700, format: 'webp', quality: 75 }} 700w, {{ block.settings.image | image_url: width: 850, format: 'webp', quality: 75 }} 850w, {{ block.settings.image | image_url: width: 1050, format: 'webp', quality: 75 }} 1050w, {{ block.settings.image | image_url: width: 1350, format: 'webp', quality: 75 }} 1350w, {{ block.settings.image | image_url: width: 1750, format: 'webp', quality: 75 }} 1750w"
+                    imagesizes="(min-width: 1200px) calc(50vw - 12px), (min-width: 992px) 85vw, (min-width: 576px) calc(50vw - 21px), calc(100vw - 24px)"
                     fetchpriority="high">
+                {% endif %}
+
+                {% if block.settings.video_link != blank %}
 
                   <a href="{{ block.settings.video_link }}" data-lity>
                     <div class="hero-play"><svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
@@ -56,7 +72,7 @@
                     sizes: '(min-width: 1200px) calc(50vw - 12px), (min-width: 992px) 85vw, (min-width: 576px) calc(50vw - 21px), calc(100vw - 24px)',
                     width: 670, height: 645,
                     class: 'object-fit-cover skip-lazy',
-                    fetchpriority: 'high', loading: 'eager' }}
+                    fetchpriority: img_priority, loading: img_loading }}
                   </a>
 
                 {% else %}
@@ -67,7 +83,7 @@
                     sizes: '(min-width: 1200px) calc(50vw - 12px), (min-width: 992px) 85vw, (min-width: 576px) calc(50vw - 21px), calc(100vw - 24px)',
                     width: 670, height: 645,
                     class: 'object-fit-cover skip-lazy',
-                    loading: 'lazy' }}
+                    fetchpriority: img_priority, loading: img_loading }}
 
                 {% endif %}
 

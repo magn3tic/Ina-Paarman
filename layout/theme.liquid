@@ -239,6 +239,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     render 'rich-snippets'
   %}
 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  var lazyFrames = document.querySelectorAll("iframe[data-src]");
+  if (!lazyFrames.length) return;
+  if (!("IntersectionObserver" in window)) {
+    lazyFrames.forEach(function (f) { f.src = f.dataset.src; f.removeAttribute("data-src"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var frame = entry.target;
+      frame.src = frame.dataset.src;
+      frame.removeAttribute("data-src");
+      obs.unobserve(frame);
+    });
+  }, { rootMargin: "600px 0px" });
+  lazyFrames.forEach(function (frame) { io.observe(frame); });
+});
+</script>
 </body>
 
 </html>

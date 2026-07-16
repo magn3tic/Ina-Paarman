@@ -14470,7 +14470,6 @@ input:-internal-autofill-selected {
 .bg-image {
   width: 100%
 }
-
 /* --- Pre-init layout for multi-column sliders (prevents stack-then-collapse shift) --- */
 .three-column-slider:not(.slick-initialized),
 .recipe-details-slider:not(.slick-initialized),

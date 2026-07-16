@@ -49,7 +49,7 @@
           <a href="{{ block.settings.slide_link }}" class="recipe-box">
             {% if block.settings.slide_image != blank %} 
             {{ block.settings.slide_image
-              | image_url: width: 402, format: 'webp', quality: 75
+              | image_url: width: 402, format: 'webp', quality: 70
               | image_tag:
                   widths: '280, 320, 402, 560, 620',
                   sizes: '(min-width: 992px) 402px, (min-width: 768px) 29vw, calc(100vw - 110px)',

@@ -37,8 +37,14 @@
   ['mousemove','touchstart','scroll','keydown'].forEach(function(evt){
     w.addEventListener(evt, loadGtm, {passive:true, once:true});
   });
-  setTimeout(loadGtm, 3500);
-})(window,document,'script','dataLayer','GTM-KH7XJXJP');</script>
+  setTimeout(function(){
+  if ('requestIdleCallback' in w) { requestIdleCallback(loadGtm, {timeout: 3000}); }
+  else { loadGtm(); }
+  }, 3500);
+(window,document,'script','dataLayer','GTM-KH7XJXJP');</script>
+})
+
+
 <!-- End Google Tag Manager -->
   {{ content_for_header }}
 

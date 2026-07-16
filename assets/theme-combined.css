@@ -10822,6 +10822,7 @@ section {
   position: relative;
   z-index: 2;
   height: 270px;
+  Width:100%;
   object-fit: contain;
   margin: 0 auto
 }

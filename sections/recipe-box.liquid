@@ -51,8 +51,8 @@
             {{ block.settings.slide_image
               | image_url: width: 402, format: 'webp', quality: 75
               | image_tag:
-                  widths: '280,320,402,450,620',
-                  sizes: '(min-width: 992px) 402px, 100vw',
+                  widths: '280, 320, 402, 560, 620',
+                  sizes: '(min-width: 992px) 402px, (min-width: 768px) 29vw, calc(100vw - 110px)',
                   class: 'object-fit-cover w-100',
                   loading: 'lazy'
             }}

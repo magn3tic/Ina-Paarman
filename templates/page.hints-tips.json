@@ -512,12 +512,12 @@
       "disabled": true,
       "name": "New Recipes",
       "settings": {
-        "bg_image": "shopify://shop_images/Ina-Paarmans-Lamb-Roast.jpg",
-        "sub_heading": "June 2026 –",
+        "bg_image": "shopify://shop_images/Ina-Paarmans-Midweek-Marvels.jpg",
+        "sub_heading": "August 2026 –",
         "heading": "New Recipes",
-        "rich_content": "<p>This month, we’ve planned a special menu in honour of Father’s Day.</p><p>Do try Dad’s Best Roasted Lamb Shoulder. This delicious slow roast can easily be portioned after twisting out the bones. For dessert, our saucy Brandy and Coke Chocolate Pudding. And for midweek supper, take a look at our ultimate Cajun Chicken Burger recipe and scrumptious Roasted Vegetable Salad.</p><p>Stay warm, everyone!</p>",
+        "rich_content": "<p>In August, we stay cosy with comforting, family-friendly favourites.</p><p>Midweek meals include our delicious Air Fryer Chips, made from scratch. Stretch your budget with clever ideas like making two meals out of one rotisserie chicken. And try something new with an easy-to-follow recipe for Smoked Yellowtail, an affordable upmarket treat.</p>",
         "button_text": "Discover Menu",
-        "button_link": "shopify://pages/june-2026",
+        "button_link": "shopify://pages/august-2026",
         "image_position": false
       }
     },
